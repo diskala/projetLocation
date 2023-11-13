@@ -2,13 +2,18 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\UserRepository;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -40,10 +45,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 100)]
     private ?string $phone = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthDate = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $dateDrivingLicence = null;
 
     #[ORM\Column(length: 100, nullable: true)]
@@ -51,6 +56,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 13, nullable: true)]
     private ?string $siret = null;
+
+    
+
+    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Reservation::class)]
+    private Collection $reserved;
+
+    #[ORM\Column(type: 'boolean')]
+    private $isVerified = false;
+
+    public function __construct()
+    {
+        
+        $this->reserved = new ArrayCollection();
+
+        $roles[] = 'ROLE_USER';
+        $this->roles = $roles;
+    }
 
     public function getId(): ?int
     {
@@ -217,4 +239,78 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): static
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): static
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            // set the owning side to null (unless already changed)
+            if ($reservation->getUser() === $this) {
+                $reservation->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReserved(): Collection
+    {
+        return $this->reserved;
+    }
+
+    public function addReserved(Reservation $reserved): static
+    {
+        if (!$this->reserved->contains($reserved)) {
+            $this->reserved->add($reserved);
+            $reserved->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReserved(Reservation $reserved): static
+    {
+        if ($this->reserved->removeElement($reserved)) {
+            // set the owning side to null (unless already changed)
+            if ($reserved->getUsers() === $this) {
+                $reserved->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): static
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    
 }

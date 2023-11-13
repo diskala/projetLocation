@@ -19,8 +19,10 @@ class Invoice
     #[ORM\Column]
     private ?float $price_TTC = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?Reservation $Reservation = null;
+    #[ORM\OneToOne(inversedBy: 'invoice', cascade: ['persist', 'remove'])]
+    private ?Reservation $reserve = null;
+
+     
 
     public function getId(): ?int
     {
@@ -51,15 +53,18 @@ class Invoice
         return $this;
     }
 
-    public function getReservation(): ?Reservation
+    public function getReserve(): ?Reservation
     {
-        return $this->Reservation;
+        return $this->reserve;
     }
 
-    public function setReservation(?Reservation $Reservation): static
+    public function setReserve(?Reservation $reserve): static
     {
-        $this->Reservation = $Reservation;
+        $this->reserve = $reserve;
 
         return $this;
     }
+
+     
+    
 }

@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ReservationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Nullable;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
 class Reservation
@@ -14,10 +15,10 @@ class Reservation
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $start_date = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $end_date = null;
 
     #[ORM\Column]
@@ -31,9 +32,15 @@ class Reservation
 
     #[ORM\Column(nullable: true)]
     private ?bool $decoration = null;
-
+    
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     private ?Car $car = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reserved')]
+    private ?User $users = null;
+
+    #[ORM\OneToOne(mappedBy: 'reserve', cascade: ['persist', 'remove'])]
+    private ?Invoice $invoice = null;
 
     public function getId(): ?int
     {
@@ -123,4 +130,40 @@ class Reservation
 
         return $this;
     }
+
+    public function getUsers(): ?User
+    {
+        return $this->users;
+    }
+
+    public function setUsers(?User $users): static
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    public function getInvoice(): ?Invoice
+    {
+        return $this->invoice;
+    }
+
+    public function setInvoice(?Invoice $invoice): static
+    {
+        // unset the owning side of the relation if necessary
+        if ($invoice === null && $this->invoice !== null) {
+            $this->invoice->setReserve(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($invoice !== null && $invoice->getReserve() !== $this) {
+            $invoice->setReserve($this);
+        }
+
+        $this->invoice = $invoice;
+
+        return $this;
+    }
+
+        
 }
