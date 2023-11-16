@@ -21,10 +21,22 @@ class ImageRepository extends ServiceEntityRepository
         parent::__construct($registry, Image::class);
     }
 
+// jointure entity Image et Car
+
+    public function findcarInImage()
+{
+    return $this->createQueryBuilder('i')
+        ->leftJoin('i.cars', 'c') // Assuming 'books' is the property name in Author entity
+        ->addSelect('c')
+        ->getQuery()
+        ->getResult();
+        
+ 
+}
 //    /**
 //     * @return Image[] Returns an array of Image objects
 //     */
-//    public function findByExampleField($value): array
+//    public function carImage(): array
 //    {
 //        return $this->createQueryBuilder('i')
 //            ->andWhere('i.exampleField = :val')

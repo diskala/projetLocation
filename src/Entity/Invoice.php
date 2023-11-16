@@ -22,6 +22,9 @@ class Invoice
     #[ORM\OneToOne(inversedBy: 'invoice', cascade: ['persist', 'remove'])]
     private ?Reservation $reserve = null;
 
+    #[ORM\Column]
+    private ?int $number = null;
+
      
 
     public function getId(): ?int
@@ -61,6 +64,18 @@ class Invoice
     public function setReserve(?Reservation $reserve): static
     {
         $this->reserve = $reserve;
+
+        return $this;
+    }
+
+    public function getNumber(): ?int
+    {
+        return $this->number;
+    }
+
+    public function setNumber(int $number): static
+    {
+        $this->number = $number;
 
         return $this;
     }

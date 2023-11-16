@@ -21,6 +21,17 @@ class ReservationRepository extends ServiceEntityRepository
         parent::__construct($registry, Reservation::class);
     }
 
+
+    // jointure entity reservation avec user et car
+
+    public function jointResCarImage()
+    {
+        return $this->createQueryBuilder('r')
+        ->leftJoin('r.car' , 'c')
+        ->leftJoin('r.users', 'u')
+        ->getQuery()
+        ->getResult();
+    }
 //    /**
 //     * @return Reservation[] Returns an array of Reservation objects
 //     */

@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Car;
+use App\Entity\Image;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -24,6 +25,19 @@ class CarRepository extends ServiceEntityRepository
 //    /**
 //     * @return Car[] Returns an array of Car objects
 //     */
+
+// public function findcarIn()
+// {
+//     return $this->createQueryBuilder('c')
+//         ->leftJoin('c.images', 'i') // Assuming 'books' is the property name in Author entity
+//         ->addSelect('i')
+//         ->getQuery()
+//         ->getResult();
+        
+ 
+// }
+
+
 //    public function findByExampleField($value): array
 //    {
 //        return $this->createQueryBuilder('c')

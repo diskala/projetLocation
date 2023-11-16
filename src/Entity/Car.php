@@ -54,15 +54,17 @@ class Car
     #[ORM\Column]
     private ?bool $available = null;
 
-    #[ORM\OneToOne(mappedBy: 'car', cascade: ['persist', 'remove'])]
-    private ?Image $pic = null;
-
     #[ORM\OneToMany(mappedBy: 'car', targetEntity: Reservation::class)]
     private Collection $reservations;
+
+    #[ORM\OneToMany(mappedBy: 'cars', targetEntity: Image::class)]
+    private Collection $images;
 
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+        $this->images = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
@@ -226,28 +228,6 @@ class Car
         return $this;
     }
 
-    public function getPic(): ?Image
-    {
-        return $this->pic;
-    }
-
-    public function setPic(?Image $pic): static
-    {
-        // unset the owning side of the relation if necessary
-        if ($pic === null && $this->pic !== null) {
-            $this->pic->setCar(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($pic !== null && $pic->getCar() !== $this) {
-            $pic->setCar($this);
-        }
-
-        $this->pic = $pic;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Reservation>
      */
@@ -277,4 +257,38 @@ class Car
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setCars($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getCars() === $this) {
+                $image->setCars(null);
+            }
+        }
+
+        return $this;
+    }
+
+    
+    
+
 }

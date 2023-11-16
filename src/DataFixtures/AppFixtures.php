@@ -22,7 +22,7 @@ class AppFixtures extends Fixture
     {
         //instancier Faker pour les données aléatoire en français
         $faker = Factory::create($fakerLocale = 'fr_FR');
-
+        $carArray=[];
         // on crée un tableau vide qui contient tous les Utilisateurs
         // on boucle avec i=10  pour pouvoir charger 10 utilisateurs dans la base de données
          $userArray=[];
@@ -55,6 +55,10 @@ class AppFixtures extends Fixture
         }
         
 
+        
+       
+  
+
         // on importe un fichier CSV pour charger la table Car dans la base de données 
        $carArray=[];
         $fichier= "import/voiture.csv";
@@ -70,10 +74,12 @@ class AppFixtures extends Fixture
         // on fait une boucle pour pouvoir charger chaque ligne
         // le compteur $j pour les colones de tableau;
         $j=0;
-        for($i = 1; $i < $countArraycsv - 2; $i++)
+        for($i = 1; $i <  $countArraycsv - 2; $i++)
         {
           $j++;
+          
           $car= new Car();
+        
           $car->setBrand($arraycsv[$i][0]);
           $car->setModel($arraycsv[$i][1]);
           $car->setCategory($arraycsv[$i][2]);
@@ -86,13 +92,54 @@ class AppFixtures extends Fixture
           $car->setPriceKmUnlimited($arraycsv[$i][9]);
           $car->setStock($arraycsv[$i][10]);
           $car->setBail($arraycsv[$i][11]);
-
-          // la dernier colonne une boolean aléatoire
-           $car->setAvailable($faker->boolean());
-           array_push($carArray, $car);
+          // Available colonne  boolean aléatoire
+          $car->setAvailable($faker->boolean());
+          // $car->setImage($imagesTab[$i]);
+          array_push($carArray, $car);
           $manager->persist($car);
 
         }
+       
+
+        $imagesTab=[];
+        $imagesCsv="import/photos-voitures.csv";
+        $fileCsv=fopen($imagesCsv, "r");
+        while(!feof($fileCsv))
+        {
+          $arrayImages[]=fgetcsv($fileCsv, 300, ',');
+        }
+  
+        $countArrayimages=count($arrayImages);
+       
+        $j=0;
+  
+        for($i=0; $i<$countArrayimages - 2; $i++)
+        {
+          $j++;
+          $image=new Image();
+          $image->setSlug($arrayImages[$i][0]);
+          $image->setImage1($arrayImages[$i][1]);
+          $image->setImage2($arrayImages[$i][2]);
+          $image->setImage3($arrayImages[$i][3]);
+          $image->setImage4($arrayImages[$i][4]);
+          $image->setImage5($arrayImages[$i][5]);
+          $image->setImage6($arrayImages[$i][6]);
+          $image->setImage7($arrayImages[$i][7]);
+          $image->setImage8($arrayImages[$i][8]);
+          $image->setImage9($arrayImages[$i][9]);
+          $image->setImage10($arrayImages[$i][10]);
+          $image->setCars($carArray[$i]);
+          array_push($imagesTab, $image);
+          $manager->persist($image);
+  
+  
+  
+        }
+
+
+
+
+
 
 
         $reservedArray=[];
@@ -125,6 +172,7 @@ class AppFixtures extends Fixture
         $invoice->setPriceHT($faker->randomFloat(1000, 4200, 5000));
         $invoice->setPriceTTC($faker->randomFloat(1500, 4800, 6000));
         $invoice->setReserve($reservedArray[$i]);
+        $invoice->setNumber($faker->numberBetween(1111111111 , 9999999999));
         
         array_push($invoiceArray, $invoice);
         $manager->persist($invoice);
@@ -152,41 +200,7 @@ class AppFixtures extends Fixture
         $manager->persist($agence);
       }
        
-      $imagesTab=[];
-      $imagesCsv="import/photos-voitures.csv";
-      $fileCsv=fopen($imagesCsv, "r");
-      while(!feof($fileCsv))
-      {
-        $arrayImages[]=fgetcsv($fileCsv, 300, ',');
-      }
-
-      $countArrayimages=count($arrayImages);
      
-      $j=0;
-
-      for($i=1; $i<$countArrayimages - 1; $i++)
-      {
-        $j++;
-        $image=new Image();
-        $image->setSlug($arrayImages[$i][0]);
-        $image->setImage1($arrayImages[$i][1]);
-        $image->setImage2($arrayImages[$i][2]);
-        $image->setImage3($arrayImages[$i][3]);
-        $image->setImage4($arrayImages[$i][4]);
-        $image->setImage5($arrayImages[$i][5]);
-        $image->setImage6($arrayImages[$i][6]);
-        $image->setImage7($arrayImages[$i][7]);
-        $image->setImage8($arrayImages[$i][8]);
-        $image->setImage9($arrayImages[$i][9]);
-        $image->setImage10($arrayImages[$i][10]);
-
-        array_push($imagesTab, $image);
-        $manager->persist($image);
-
-
-
-      }
-
 
         $manager->flush();
     }

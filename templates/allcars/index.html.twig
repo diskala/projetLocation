@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AllcarsController!{% endblock %}
+
+{% block body %}
+  
+  {% for item in images %}
+    {{ item.cars.brand}}
+  {% endfor %}
+    
+{% endblock %}
