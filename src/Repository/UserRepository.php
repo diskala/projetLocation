@@ -63,4 +63,20 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+public function userReservationCars($id)
+{
+    return $this->createQueryBuilder('u')
+        ->leftJoin('u.reserved', 'r') 
+        ->addSelect('u')
+        ->addSelect('r')
+        -> where('u.id= :id')
+        ->setParameter('id', $id)
+        ->getQuery()
+        ->getResult();
+        
+ 
+
+
+}
 }

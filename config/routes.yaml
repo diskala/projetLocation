@@ -3,3 +3,26 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+accepter:
+    path: '/cart/success/{id}'
+    controller: 'App\Controller\CartController::paymentSuccess'
+    methods: ['GET']
+    
+
+annuler:
+    path: '/cart/cancel/{id}'
+    controller: 'App\Controller\CartController::paymentCancel'
+    methods: ['GET']
+
+app_confirme:
+    path: '/admin/confirme/{id}'
+    controller: 'App\Controller\Admin\DashboardController::sendConfirmationEmail'
+
+download_pdf:
+    path: '/dashboard/fichierPdf/{id}'
+    controller: App\Controller\ReservationController::downloadPDF
+ 
+    
+
+ 

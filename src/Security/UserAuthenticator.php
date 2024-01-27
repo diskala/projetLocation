@@ -49,7 +49,12 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        if (in_array('ROLE_ADMIN', $token->getRoleNames())) {
+            return new RedirectResponse($this->urlGenerator->generate('admin'));
+        }else{
+            return new RedirectResponse($this->urlGenerator->generate('app_allcars_'));
+        }
+       
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

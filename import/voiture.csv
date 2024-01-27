@@ -1,4 +1,3 @@
-"brand","model","category","energy","power","gear_box","number_place","price_day","price_dpkm","price_km_unlimited","stock","bail","availabl"
 "Aston Martin","DB5 Superleggera","coupé","Essence","725 chevaux à 6 500 tr/m","automatique",2,1390,11,2200,3,8000
 "Aston Martin","Vantage V12 Bi-Turbo","coupé","Essence","426 ch à 4700 tr/mn","automatique",2,1110,9,1850,2,15000
 "Aston Martin","DB11 V8 4.0-Turbo","coupé","Essence","510 ch à 6000 tr/min","automatique",2,1459,11,2100,1,15000
@@ -25,18 +24,18 @@
 "Bugatti","CHIRON Sport","SuperCar","Essence","1600 ch à 7050 tr/min","automatique",2,2199,15,3570,1,25000
 "Bugatti","Divo W16","SuperCar","Essence","1500 ch à 6700 trs/min","automatique",2,2460,20,3780,1,32000
 "Bugatti","Centodieci Quadri-turbos","SuperCar","Essence","1600 ch à 7000 tr/min","automatique",2,2700,25,4000,1,40000
-Ferrari,"812 SUPERFAST V12","coupé","Essence","800 ch à 8500 tr/min","automatique",2,1890,11,2350,1,9260
-Ferrari,"SF90 Stradale","superCar","Essence","1000 ch à 8000 tr/min","automatique",2,2400,16,2560,2,30000
-Ferrari,"F8 TRIBUTO V8","suoerCar","Essence","1200 ch à 7000 tr/min","automatique",2,2390,9.5,3050,2,25000
-Ferrari,"GTC4Lusso","break","Essence","689 ch à 8000 tr/min","automatique",4,1990,12,2560,2,22000
-Ferrari,"Portofino","cabriolet","Essence","620 ch à 7500 tr/min","automatique",4,2150,11,3020,1,20000
+"Ferrari","812 SUPERFAST V12","coupé","Essence","800 ch à 8500 tr/min","automatique",2,1890,11,2350,1,9260
+"Ferrari","SF90 Stradale","superCar","Essence","1000 ch à 8000 tr/min","automatique",2,2400,16,2560,2,30000
+"Ferrari","F8 TRIBUTO V8","suoerCar","Essence","1200 ch à 7000 tr/min","automatique",2,2390,9.5,3050,2,25000
+"Ferrari","GTC4Lusso","break","Essence","689 ch à 8000 tr/min","automatique",4,1990,12,2560,2,22000
+"Ferrari","Portofino","cabriolet","Essence","620 ch à 7500 tr/min","automatique",4,2150,11,3020,1,20000
 "Jaguar","XJ 3.0 V6 AWD","berline ","Essence","340 ch à 6500 tr/min","manuelle",4,1125,9,1689,2,15000
 "Jaguar","F-TYPE R 5.0","coupé","Essence","550 ch à 6500 tr/min","automatique",2,1320,11,1859,2,22000
 "Jaguar","E-PACE P250","suv","Essence","250 ch à 5500 tr/min","automatique",5,1980,12,2489,2,25000
-Lamborghini,"AVENTADOR LP 700-4","superCar","Essence","1250 ch à 9250 tr/min","automatique",2,2650,25,3890,1,35000
-Lamborghini,"HURACAN Sterrato","superCar","Essence","610 ch à 8250 tr/min","automatique",2,2380,25,3970,1,35000
-Lamborghini,"URUS V8 4.0","suv","Essence","650 ch à 6000 tr/min","automatique",5,2350,12,3150,1,25000
-Lamborghini,"Sián","coupé","hybride","785 ch à 6000 tr/min","automatique",2,2470,18,3375,1,30000
+"Lamborghini","AVENTADOR LP 700-4","superCar","Essence","1250 ch à 9250 tr/min","automatique",2,2650,25,3890,1,35000
+"Lamborghini","HURACAN Sterrato","superCar","Essence","610 ch à 8250 tr/min","automatique",2,2380,25,3970,1,35000
+"Lamborghini","URUS V8 4.0","suv","Essence","650 ch à 6000 tr/min","automatique",5,2350,12,3150,1,25000
+"Lamborghini","Sian","coupé","hybride","785 ch à 6000 tr/min","automatique",2,2470,18,3375,1,30000
 "Lexus","LEXUS LS","berline ","Essence","380 ch à 6400 tr/min","manuelle",5,1469,15,2170,1,18000
 "Lexus","LEXUS LC 500","cabriolet","Essence","464 ch à 7100 tr/min","automatique",2,1745,20,2359,1,25000
 "Lexus","UX 300e","suv","Electrique","184 ch à 7100 tr/min","automatique",5,1689,17,2420,1,25000
@@ -68,4 +67,4 @@ Lamborghini,"Sián","coupé","hybride","785 ch à 6000 tr/min","automatique",2,2470
 "Lotus","EXIGE S","coupé","Essence","300 ch à 7200 tr/mn","automatique",2,787,15,1245,1,8000
 "Lotus","ELISE","cabriolet","Essence","220 ch à 5000tr/mn","automatique",2,678,8,1010,1,8000
 "Jaguar","F-TYPE SVR","coupé","Essence","575 ch à 7800 tr/mn","automatique",2,899,11,1425,2,12000
- 
+

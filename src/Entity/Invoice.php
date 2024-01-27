@@ -13,17 +13,14 @@ class Invoice
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?float $price_HT = null;
-
-    #[ORM\Column]
+    #[ORM\Column(type:"string", nullable:true)]
     private ?float $price_TTC = null;
 
     #[ORM\OneToOne(inversedBy: 'invoice', cascade: ['persist', 'remove'])]
     private ?Reservation $reserve = null;
 
-    #[ORM\Column]
-    private ?int $number = null;
+    #[ORM\Column(type:"string")]
+    private ?string $number = null;
 
      
 
@@ -32,19 +29,9 @@ class Invoice
         return $this->id;
     }
 
-    public function getPriceHT(): ?float
-    {
-        return $this->price_HT;
-    }
+    
 
-    public function setPriceHT(float $price_HT): static
-    {
-        $this->price_HT = $price_HT;
-
-        return $this;
-    }
-
-    public function getPriceTTC(): ?float
+    public function getPriceTTC(): ?string
     {
         return $this->price_TTC;
     }
@@ -68,18 +55,43 @@ class Invoice
         return $this;
     }
 
-    public function getNumber(): ?int
+    public function getNumber(): ?string
     {
         return $this->number;
     }
 
-    public function setNumber(int $number): static
+    public function setNumber(string $number): static
     {
         $this->number = $number;
 
         return $this;
     }
 
-     
+    public function __toString()
+    {
+        
+    
+return $this->getId(); // Replace with the property or method you want to use as a string representation
+    } 
+
+
+
+     /**
+     * Génère un numéro de facture unique en utilisant l'ID de la réservation.
+     */
+    public function generateInvoiceNumber() 
+    {
+        // Préfixe de la facture (peut être personnalisé selon vos besoins)
+        $prefix = 'INV';
+
+        // Identifiant unique de la réservation
+        $uniId = random_int(11111 , 99999);
+
+        // Partie de la date actuelle (année, mois, jour)
+        $datePart = date('Ymd');
+
+        // Combine les éléments pour former le numéro de facture
+        $this->number = $prefix . '-'.'-' . $uniId;
+    }
     
 }

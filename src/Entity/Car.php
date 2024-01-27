@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CarRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CarRepository::class)]
@@ -34,7 +35,7 @@ class Car
     private ?string $gear_box = null;
 
     #[ORM\Column]
-    private ?int $number_place = null;
+    private ?string $number_place = null;
 
     #[ORM\Column]
     private ?float $price_day = null;
@@ -54,17 +55,27 @@ class Car
     #[ORM\Column]
     private ?bool $available = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $priceSeatChild = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $priceDecoration = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $priceDriver = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Image $image = null;
+
     #[ORM\OneToMany(mappedBy: 'car', targetEntity: Reservation::class)]
     private Collection $reservations;
 
-    #[ORM\OneToMany(mappedBy: 'cars', targetEntity: Image::class)]
-    private Collection $images;
+    #[ORM\Column(length: 255)]
+    private ?string $quantity = null;
 
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
-        $this->images = new ArrayCollection();
-        
     }
 
     public function getId(): ?int
@@ -144,7 +155,7 @@ class Car
         return $this;
     }
 
-    public function getNumberPlace(): ?int
+    public function getNumberPlace(): ?string
     {
         return $this->number_place;
     }
@@ -228,6 +239,61 @@ class Car
         return $this;
     }
 
+    public function getPriceSeatChild(): ?int
+    {
+        return $this->priceSeatChild;
+    }
+
+    public function setPriceSeatChild(?int $priceSeatChild): static
+    {
+        $this->priceSeatChild = $priceSeatChild;
+
+        return $this;
+    }
+
+    public function getPriceDecoration(): ?int
+    {
+        return $this->priceDecoration;
+    }
+
+    public function setPriceDecoration(?int $priceDecoration): static
+    {
+        $this->priceDecoration = $priceDecoration;
+
+        return $this;
+    }
+
+    public function getPriceDriver(): ?int
+    {
+        return $this->priceDriver;
+    }
+
+    public function setPriceDriver(?int $priceDriver): static
+    {
+        $this->priceDriver = $priceDriver;
+
+        return $this;
+    }
+     
+    public function __toString()
+    {
+        
+        
+      return $this->getBrand(); // Replace with the property or method you want to use as a string representation
+    }
+
+    public function getImage(): ?Image
+    {
+        return $this->image;
+    }
+
+    public function setImage(?Image $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Reservation>
      */
@@ -258,37 +324,22 @@ class Car
         return $this;
     }
 
-    /**
-     * @return Collection<int, Image>
-     */
-    public function getImages(): Collection
+    public function getQuantity(): ?string
     {
-        return $this->images;
+        return $this->quantity;
     }
 
-    public function addImage(Image $image): static
+    public function setQuantity(string $quantity): static
     {
-        if (!$this->images->contains($image)) {
-            $this->images->add($image);
-            $image->setCars($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Image $image): static
-    {
-        if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getCars() === $this) {
-                $image->setCars(null);
-            }
-        }
+        $this->quantity = $quantity;
 
         return $this;
     }
 
     
-    
+     
+     
+
+     
 
 }

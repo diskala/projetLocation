@@ -22,17 +22,19 @@ class ImageRepository extends ServiceEntityRepository
     }
 
 // jointure entity Image et Car
-
-    public function findcarInImage()
+public function findcarInImage()
 {
     return $this->createQueryBuilder('i')
-        ->leftJoin('i.cars', 'c') // Assuming 'books' is the property name in Author entity
+        ->leftJoin('i.car', 'c')  
         ->addSelect('c')
         ->getQuery()
         ->getResult();
         
  
-}
+}       
+    
+
+
 //    /**
 //     * @return Image[] Returns an array of Image objects
 //     */

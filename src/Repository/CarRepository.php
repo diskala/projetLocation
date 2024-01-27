@@ -33,8 +33,147 @@ class CarRepository extends ServiceEntityRepository
 //         ->addSelect('i')
 //         ->getQuery()
 //         ->getResult();
+
+public function findcar()
+{
+    return $this->createQueryBuilder('c')
+        ->leftJoin('c.image', 'i')  
+        ->addSelect('i')
+        ->getQuery()
+        ->getResult();
         
  
+}       
+
+
+
+// Effectuer une jointure tables Car et Image
+public function findcarInImage()
+{
+    return $this->createQueryBuilder('c')
+        ->leftJoin('c.image', 'i')  
+        ->addSelect('i')
+        ->getQuery()
+        ->getResult();
+        
+ 
+}       
+ 
+// Effectuer une jointure tables Car et Image plus choix par ID
+public function findcarInImageById($id)
+{
+    return $this->createQueryBuilder('c')
+        ->leftJoin('c.image', 'i') 
+        -> leftJoin('c.reservations', 'r') 
+        ->addSelect('i')
+        ->addSelect('r')
+        -> where('c.id= :id')
+        ->setParameter('id', $id)
+        ->getQuery()
+        ->getResult();
+        
+ 
+}
+
+// Effectuer un affichage de toutes les voitures disponible
+public function carsSiDisponible()
+{
+    return $this->createQueryBuilder('c')
+    ->leftJoin('c.image', 'i') 
+    ->addSelect('i')
+        -> where('c.available= :available')
+        ->setParameter('available', true)
+        ->getQuery()
+        ->getResult();
+        
+
+
+}
+
+// fonction retourne nombre de voitures disponible
+public function NombrecarsDisponible()
+{
+    return $this->createQueryBuilder('c')
+    ->leftJoin('c.image', 'i') 
+    ->addSelect('i')
+    
+        -> where('c.available= :available')
+        
+        ->setParameter('available', true)
+        ->select('COUNT(c)')
+        ->getQuery()
+        ->getResult();
+        
+
+
+}
+
+// effectuer un affichage de toutes les voitures disponible par leur ID
+public function carsSiDispo($id)
+{
+    return $this->createQueryBuilder('c')
+    ->leftJoin('c.image', 'i') 
+    ->addSelect('i')
+        ->where('c.id > :id')
+        -> andWhere('c.available= :available')
+        ->setParameter('id', $id)
+        ->setParameter('available', true)
+        ->getQuery()
+        ->getResult();
+        
+
+
+}
+
+// recherche des voitures disponible par marque et categories
+public function searchMarqueCategory($marques, $categorys){
+
+    return $this->createQueryBuilder('c')
+    ->leftJoin('c.image', 'i') 
+    ->addSelect('i')
+        // -> andWhere('c.available= :available')
+        ->andWhere('c.brand = :marque')
+        ->andWhere('c.category = :category')
+        // ->setParameter('available', true)
+        ->setParameter('marque', $marques)
+        ->setParameter('category', $categorys)
+        ->getQuery()
+        ->getResult();
+
+
+}
+
+// recherche de voiture par Marque parmis toutes les voitures disponible
+public function searchMarque($marque){
+
+    return $this->createQueryBuilder('c')
+    ->leftJoin('c.image', 'i') 
+    ->addSelect('i')
+        -> andWhere('c.available= :available')
+        ->andWhere('c.brand = :marque')
+        ->setParameter('available', true)
+        ->setParameter('marque', $marque)
+        ->getQuery()
+        ->getResult();
+
+
+}
+
+// recherche de voitures disponible  par categorie 
+public function searchCategory($category){
+
+    return $this->createQueryBuilder('c')
+    ->leftJoin('c.image', 'i') 
+    ->addSelect('i')
+        -> andWhere('c.available= :available')
+        ->andWhere('c.category = :category')
+        ->setParameter('available', true)
+        ->setParameter('category', $category)
+        ->getQuery()
+        ->getResult();
+
+
+}
 // }
 
 

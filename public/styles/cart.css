@@ -1,0 +1,289 @@
+﻿ body{
+   margin: 0;
+   padding: 0;
+ 
+ }
+ 
+ .container_panier{
+  
+    
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+ }
+
+ .second_container{
+    
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    
+    
+ }
+ .image{
+    
+    width: auto;
+    
+    height: 10rem;
+ }
+
+ .image img{
+    max-width: 100%;
+    height: 100%;
+ }
+ .article{
+   
+    width: 70%;
+    height: 10rem;
+    background-color: rgb(39, 39, 39);
+    margin-left: 1rem;
+     
+ }
+
+ .article .infos{
+    
+    width: 100%;
+  
+    
+   
+ }
+
+ .infos{
+    display: flex;
+   
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 1rem;
+ }
+ .infos p{
+    
+    font-size: 15px;
+    height: 100%;
+    margin-left: 1rem;
+    color: white;
+ }
+.infos .facture{
+    /* background-color: brown; */
+    
+    
+    width: 20%;
+    color: rgb(189, 252, 73);
+     
+}
+ 
+.article .date_prix {
+    margin-left: 1rem;
+    
+    font-size: 15px;
+    
+}
+
+.article .date_prix p , h4{
+   margin-top: 1rem;
+    color: white;
+}
+ .supprime_modif{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+     
+    
+ }
+
+ .supprime_modif .supp , .modif{
+           width: 12rem;
+           height: 2rem;
+          margin-left: 4rem;
+           margin-bottom: 1rem;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background-color: rgb(250, 126, 10);
+           border-radius: 20px;
+           -webkit-border-radius: 20px;
+           -moz-border-radius: 20px;
+           -ms-border-radius: 20px;
+           -o-border-radius: 20px;
+}
+
+.supp a , .modif a{
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 578px) and (max-width: 1200px) {
+
+   .second_container{
+      width: 100%;
+    height: 15rem;
+      display: flex;
+       justify-content: left;
+       
+     
+   }
+
+   .article .infos{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .infos p, .article .date_prix {
+      font-size: 12px;
+   } 
+
+   .article .date_prix{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .image{
+     
+      width: auto;
+      height: 5rem;
+      
+   }
+  
+   .image img{
+      width: 100%;
+      height: 5rem;
+   }
+
+   .article{
+     
+      width: 100%;
+      height: 10rem;
+      background-color: rgb(39, 39, 39);
+      margin-left: 1rem;
+       
+   }
+  
+   .article .infos{
+      
+      width: 100%;
+    
+      
+      
+   }
+   .article{
+      
+      width: 100%;
+      height: auto;
+      background-color: rgb(39, 39, 39);
+      margin-left: 1rem;
+       
+   }
+   .article .date_prix {
+      margin-left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      height: auto;
+      font-size: 15px;
+      
+  }
+
+  .supprime_modif{
+   display: flex;
+   justify-content:space-between;
+   width: 100%;
+   
+   margin-top: 1rem;
+    
+   
+}
+
+.supprime_modif .supp , .modif{
+   width: 10rem;
+   height: 2rem;
+  margin-left: 2rem;
+   margin-bottom: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: rgb(250, 126, 10);
+   border-radius: 20px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+}
+
+.infos .facture{
+   width: 30%;
+   font-size: 15px;
+}
+  
+}
+
+@media screen and (max-width: 578px) {
+   .second_container{
+     
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      
+      
+   }
+   .article{
+      
+      width: 100%;
+      height: 10rem;
+      background-color: rgb(39, 39, 39);
+      margin-left: 0;
+       
+   }
+   .article .infos{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .infos p, .article .date_prix {
+      font-size: 10px;
+   } 
+   .supprime_modif{
+      display: flex;
+      justify-content:space-between;
+      width: 100%;
+      
+      margin-top: 1rem;
+       
+      
+   }
+   
+   .supprime_modif .supp , .modif{
+      width: 10rem;
+      height: 2rem;
+     margin-left: 0;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(250, 126, 10);
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+   }
+   
+
+}

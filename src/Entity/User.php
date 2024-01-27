@@ -57,8 +57,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 13, nullable: true)]
     private ?string $siret = null;
 
-    
-
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Reservation::class)]
     private Collection $reserved;
 
@@ -240,35 +238,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Reservation>
-     */
-    public function getReservations(): Collection
-    {
-        return $this->reservations;
-    }
-
-    public function addReservation(Reservation $reservation): static
-    {
-        if (!$this->reservations->contains($reservation)) {
-            $this->reservations->add($reservation);
-            $reservation->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeReservation(Reservation $reservation): static
-    {
-        if ($this->reservations->removeElement($reservation)) {
-            // set the owning side to null (unless already changed)
-            if ($reservation->getUser() === $this) {
-                $reservation->setUser(null);
-            }
-        }
-
-        return $this;
-    }
+   
 
     /**
      * @return Collection<int, Reservation>
@@ -312,5 +282,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    
+    public function __toString()
+    {
+        
+        
+     return $this->getFirstname(); // Replace with the property or method you want to use as a string representation
+    }
 }

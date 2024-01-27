@@ -1,0 +1,80 @@
+﻿body{
+     margin: 0;
+     padding: 0;
+}
+
+.container_mail{
+    width: 80%;
+    height: 80vh;
+    padding: 4rem;
+    margin-left: 10%;
+    
+    border: 2px solid black;
+    display: flex;
+   justify-content: center;
+     
+     background-image: url("/pictures/voiture20.png");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: 20%;
+ }
+ .champss{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+     
+ }   
+span{
+    color: white;
+    font-size: 30px;
+   
+  
+}  
+    
+.mail{
+    width: auto;
+    height: 2rem;
+    border-color: rgb(6, 6, 6);
+    font-size: 20px;
+    margin-left: 1rem;
+}
+
+
+.envois_mail{
+    border: 4px solid rgb(241, 241, 241);
+   
+    width: 50%;
+    height: 30%;
+    padding: 1rem;
+}
+ 
+.petit_message p{
+     font-weight: bold;
+     color: rgb(209, 250, 1);
+     font-size: 18px;
+}
+h1{
+    text-align: center;
+    color:rgb(249, 100, 0);
+}
+.boutton{
+    display: flex;
+    justify-content: center;
+}
+button{
+    
+    height: 3rem;
+    background-color:rgb(249, 100, 0);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+     text-align: center;
+}
+
+.btn{
+    font-size: 20px;
+    cursor: pointer;
+}

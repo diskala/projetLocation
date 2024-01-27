@@ -1,12 +1,105 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello HomeController!{% endblock %}
-
+ {% block stylesheets %}
+              <link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
+              <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
+               <link rel="stylesheet" href= {{ asset("./styles/home.css") }} >
+        
+        {% endblock %}
+     {% block javascripts %}
+        <script src={{ asset('./js/home.js') }} defer></script>
+        <script src={{ asset('./js/headers.js') }} defer></script>
+        {% endblock %}
+       
 {% block body %}
-   
-   {# {{ dump(controle ) }} #}
+      {{ include("./_partials/header.html.twig") }}
+          <span class="numero">Nous contacter au<br> 01.22.56.45.30</span>
+        <div class="louer_acheter">
+              <span class="louer"><a href= {{ path("app_allcars_") }}>LOUER</a></span>
+               <span class="achat"><a id="phone" href= "#">ACHETER</a></span>
+			  
+               
+          </div>
+<div class="image_home">
+        
+       {# <img src = "{{randomImage}}"  alt="Image aléatoire">  #}
+       	<div class="carrousel" style="--object-fit:cover">
+			<div class="slides">
+				<img src="/pictures/voiture1.png">
+				<img src="/pictures/voiture2.jpg">
+				<img src="/pictures/voiture3.jpg">
+				<img src="/pictures/voiture4.jpg">
+                <img src="/pictures/voiture5.jpg">
+				<img src="/pictures/voiture6.jpg">
+				<img src="/pictures/voiture7.jpg">
+				<img src="/pictures/voiture8.jpg">
+                <img src="/pictures/voiture9.jpg">
+				<img src="/pictures/voiture10.jpg">
+				<img src="/pictures/voiture11.jpg">
+				<img src="/pictures/voiture12.jpg">
+                <img src="/pictures/voiture13.jpg">
+				<img src="/pictures/voiture14.jpg">
+				<img src="/pictures/voiture15.jpg">
+				<img src="/pictures/voiture16.jpg">
+                <img src="/pictures/voiture17.jpg">
+				<img src="/pictures/voiture18.jpg">
+				<img src="/pictures/voiture19.jpg">
+				<img src="/pictures/voiture20.png">
+                <img src="/pictures/voiture21.jpg">
+				<img src="/pictures/voiture22.jpg">
+                <img src="/pictures/voiture23.jpg">
+				<img src="/pictures/voiture24.jpg">
+				<img src="/pictures/voiture25.jpg">
+				<img src="/pictures/voiture26.png">
+                            
+			</div>
+		</div>
 
-   {% for item in controle %}
-      
-   {% endfor %}
+
+
+              	{# <h2>Controls</h2>
+	<p>When carrousel in focus-state (white outline)</p>
+	<div class="controls-info">
+		<div class="title desc">Description</div>
+		<div class="title icon">Click</div>
+		<div class="title key">Key</div>
+		
+		<div class="desc">previous / next slide</div>
+		<div class="icon">
+			<i class="fa-solid fa-circle-left"></i>
+			<i class="fa-solid fa-circle-right"></i>
+		</div>
+		<div class="key">left / right arrow</div>
+
+		<div class="desc">go to n-th slide</div>
+		<div class="icon"><i class="fa-regular fa-circle"></i></div>
+		<div class="key">1-9 (single)</div>
+		
+		<div class="desc">toggle autoslide</div>
+		<div class="icon">
+			<i class="fa-solid fa-play"></i>
+			<i class="fa-solid fa-pause"></i>
+		</div>
+		<div class="key">spacebar</div>
+		
+		<div class="desc">toggle fullscreen</div>
+		<div class="icon">
+			<i class="fa-solid fa-maximize"></i>
+			<i class="fa-solid fa-minimize"></i>
+		</div>
+		<div class="key">enter</div>
+	
+		<div class="desc">toggle fullscreen</div>
+		<div class="double">Double click image</div>
+		
+		<div class="desc">toggle controls</div>
+		<div class="icon">
+			<i class="fa-solid fa-eye-slash"></i>
+			<i class="fa-solid fa-eye"></i>
+		</div>
+		<div class="key">C / c</div> #}
+	{# </div> #}
+</div>
 {% endblock %}
+ 

@@ -46,9 +46,6 @@ class Image
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image10 = null;
 
-    #[ORM\ManyToOne(inversedBy: 'images')]
-    private ?Car $cars = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -186,18 +183,12 @@ class Image
         return $this;
     }
 
-    public function getCars(): ?Car
-    {
-        return $this->cars;
-    }
-
-    public function setCars(?Car $cars): static
-    {
-        $this->cars = $cars;
-
-        return $this;
-    }
-
     
+    public function __toString()
+    {
+        
+        
+     return $this->getImage1(); // Replace with the property or method you want to use as a string representation
+    }
    
 }

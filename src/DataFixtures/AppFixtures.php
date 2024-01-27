@@ -55,7 +55,43 @@ class AppFixtures extends Fixture
         }
         
 
-        
+        $imagesTab=[];
+        $imagesCsv="import/photos-voitures.csv";
+        $fileCsv=fopen($imagesCsv, "r");
+        while(!feof($fileCsv))
+        {
+          $arrayImages[]=fgetcsv($fileCsv, 300, ',');
+        }
+  
+        $countArrayimages=count($arrayImages);
+       
+        $j=0;
+  
+        for($i=0; $i<$countArrayimages - 2 ; $i++)
+        {
+          $j++;
+
+          $image=new Image();
+          $image->setSlug($arrayImages[$i][0]);
+          $image->setImage1($arrayImages[$i][1]);
+          $image->setImage2($arrayImages[$i][2]);
+          $image->setImage3($arrayImages[$i][3]);
+          $image->setImage4($arrayImages[$i][4]);
+          $image->setImage5($arrayImages[$i][5]);
+          $image->setImage6($arrayImages[$i][6]);
+          $image->setImage7($arrayImages[$i][7]);
+          $image->setImage8($arrayImages[$i][8]);
+          $image->setImage9($arrayImages[$i][9]);
+          $image->setImage10($arrayImages[$i][10]);
+          // $image->setCars($carArray[$i]);
+          array_push($imagesTab, $image);
+          $manager->persist($image);
+  
+  
+  
+        }
+
+
        
   
 
@@ -74,7 +110,7 @@ class AppFixtures extends Fixture
         // on fait une boucle pour pouvoir charger chaque ligne
         // le compteur $j pour les colones de tableau;
         $j=0;
-        for($i = 1; $i <  $countArraycsv - 2; $i++)
+        for($i = 1; $i <  $countArraycsv - 3; $i++)
         {
           $j++;
           
@@ -94,49 +130,14 @@ class AppFixtures extends Fixture
           $car->setBail($arraycsv[$i][11]);
           // Available colonne  boolean aléatoire
           $car->setAvailable($faker->boolean());
-          // $car->setImage($imagesTab[$i]);
+          $car->setImage($imagesTab[$i]);
           array_push($carArray, $car);
           $manager->persist($car);
 
         }
        
 
-        $imagesTab=[];
-        $imagesCsv="import/photos-voitures.csv";
-        $fileCsv=fopen($imagesCsv, "r");
-        while(!feof($fileCsv))
-        {
-          $arrayImages[]=fgetcsv($fileCsv, 300, ',');
-        }
-  
-        $countArrayimages=count($arrayImages);
        
-        $j=0;
-  
-        for($i=0; $i<$countArrayimages - 2; $i++)
-        {
-          $j++;
-          $image=new Image();
-          $image->setSlug($arrayImages[$i][0]);
-          $image->setImage1($arrayImages[$i][1]);
-          $image->setImage2($arrayImages[$i][2]);
-          $image->setImage3($arrayImages[$i][3]);
-          $image->setImage4($arrayImages[$i][4]);
-          $image->setImage5($arrayImages[$i][5]);
-          $image->setImage6($arrayImages[$i][6]);
-          $image->setImage7($arrayImages[$i][7]);
-          $image->setImage8($arrayImages[$i][8]);
-          $image->setImage9($arrayImages[$i][9]);
-          $image->setImage10($arrayImages[$i][10]);
-          $image->setCars($carArray[$i]);
-          array_push($imagesTab, $image);
-          $manager->persist($image);
-  
-  
-  
-        }
-
-
 
 
 
@@ -158,6 +159,8 @@ class AppFixtures extends Fixture
          $reservation->setOptionDriver($faker->boolean());
          $reservation->setOptChildSeat($faker->boolean());
          $reservation->setDecoration($faker->boolean());
+        //  $reservation->setDrivingLicense($faker->mimeType(),$faker->fileExtension());
+         $reservation->setDayDate($faker->dateTimeBetween('-3 week', '-1 week'));
          $reservation->setUsers($userArray[$i]);
          $reservation->setCar($carArray[$i]);
           array_push($reservedArray, $reservation);
@@ -165,19 +168,19 @@ class AppFixtures extends Fixture
 
       }
        
-      $invoiceArray=[];
-      for($i=0; $i<5; $i++)
-      {
-        $invoice=new Invoice();
-        $invoice->setPriceHT($faker->randomFloat(1000, 4200, 5000));
-        $invoice->setPriceTTC($faker->randomFloat(1500, 4800, 6000));
-        $invoice->setReserve($reservedArray[$i]);
-        $invoice->setNumber($faker->numberBetween(1111111111 , 9999999999));
+      // $invoiceArray=[];
+      // for($i=0; $i<5; $i++)
+      // {
+      //   $invoice=new Invoice();
+      //   $invoice->setPriceHT($faker->randomFloat(1000, 4200, 5000));
+      //   $invoice->setPriceTTC($faker->randomFloat(1500, 4800, 6000));
+      //   $invoice->setReserve($reservedArray[$i]);
+      //   $invoice->setNumber($faker->numberBetween(1111111111 , 9999999999));
         
-        array_push($invoiceArray, $invoice);
-        $manager->persist($invoice);
+      //   array_push($invoiceArray, $invoice);
+      //   $manager->persist($invoice);
 
-      }
+      // }
 
 
      $objetDepartement=['Paris', 'Alpes-Maritimes', 'Gironde', 'Moselle',

@@ -1,1 +1,167 @@
 ﻿{% extends '@EasyAdmin/page/content.html.twig' %}
+ 
+ 
+ 
+ 
+
+	 
+{% block page_content %}
+
+  <div class="res_confirmer">
+                     
+                     <p><a href= {{ path('app_selection') }}> Reservations confirmées</a> </p>
+
+               </div>
+
+<div class="container_indicateurs">
+
+             
+               <div class="nombre_voiture">
+                     <h4>  {{ nombreTotalVoitures }}   </h4>
+                     <p> Total Voitures </p>
+
+               </div>
+
+               
+                <div class="voitures_sorties">
+                     <h4>  {{ nombreVoitureSortie }}  </h4>
+                     <h4> voitures sorties </h4>
+
+               </div>
+                <div class="voitures_auStock">
+                     <h3>  {{ nombresAuStock }}   </h3>
+                     <p> voitures au stock</p>
+
+               </div>
+
+               <div class="nombre_commandes">
+                     <h3>  {{ nombreReaservation }} </h3>
+                     <p> Reseravtions en attente de confirmation </p>
+
+               </div>
+     
+
+</div>
+
+
+
+<div class="container_table_principal">
+<h1> Reservations en attente de confirmation</h1>
+
+<div class="container_table">
+
+<table class="table">
+<tr class="container_titre">
+<td class="titre">Sélectionner</td>
+<td class="titre">N° Reservation</td>
+<td class="titre">Nom et Prénom</td>
+<td class="titre">Email</td>
+<td class="titre">Marque et Model</td>
+<td class="titre">Date de Reservation</td>
+<td class="titre">Date de debut</td>
+<td class="titre">Date de fin</td>
+<td class="titre"> Caution</td>
+<td class="titre"> Permis de conduire</td>
+<td class="titre"> Total à payer</td>
+<td colspan="2" class="titre" > actions </td>
+</tr>
+
+{% for item in reserved %}
+     {# <h1> <img src="/images/{{ item.car.image.image1 }}"  />  </h1> #}
+     
+    
+ 
+    {% if item.isConfirmed %}
+    
+        {% else %}
+ <tr class="donnees">
+ <td><form>
+ <input type="checkbox" class="car-checkbox" data-car-id="{{ item.id }}"   />
+ </form></td>
+<td> {{ item.id }} </td>
+<td> {{ item.users.firstname }} {{ item.users.lastname }} </td>
+<td> {{ item.users.email }} </td>
+<td> {{ item.car.brand }} | {{ item.car.Model }} </td>
+<td> {{ item.DayDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </td>
+<td> {{ item.StartDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </td>
+<td> {{ item.EndDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </td>
+ {% if item.status %}
+    <td> Payée </td>
+{% else %}
+    <td> Paiement refusé </td>
+{% endif %}
+
+<td><a href="{{ path('app_FichierPdf', {'id': item.id}) }}">Télécharger PDF</a></td>
+ <td> {{ item.TotalPrice }} </td>
+  {% if item.confirmed %}
+     <td> <p> Reservation Confirmée</p> </td>
+        {% else %}
+  <td   class="actions"> <a href={{ path('app_confirme', {'id': item.id}) }}> confirmation par Mail</a> </td>
+   {% endif %}
+ 
+ 
+
+  
+ {# {% if item is not null and item.actionStatus is not null %}
+    {% if item.actionStatus.rentedCar is not null %} 
+        {% if item.actionStatus.rentedCar %}
+            <td><a href="{{ path('app_restitueStock', {'id': item.id}) }}">Restituée</a></td>
+        {% else %}
+            <td><a href="{{ path('app_updateStock', {'id': item.id}) }}">Louée</a></td>
+        {% endif %}
+
+    {% else %}
+        La propriété rentedCar n'est pas définie pour cette réservation.
+    {% endif %}
+{% else %}
+    La réservation ou l'actionStatus est nulle.
+{% endif %} #}
+ 
+    
+   
+    
+ 
+  
+  {# <td><a href="">Voiture Restituée</a></td> #}
+ </tr>
+
+
+
+
+  
+
+ 
+    
+{% endif %}
+    
+       
+
+   
+ 
+
+</div>
+    
+{% endfor %}
+
+
+
+ 
+
+
+</table>
+
+</div>
+ <script>
+    // Détecter le clic sur la case à cocher
+    document.querySelectorAll('.car-checkbox').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Récupérer l'ID de la voiture correspondant
+                var carId = this.getAttribute('data-car-id');
+                console.log('ID de la voiture sélectionnée :', carId);
+                // Vous pouvez maintenant utiliser carId comme vous le souhaitez, par exemple, l'envoyer via AJAX à votre contrôleur Symfony
+            }
+        });
+    });
+</script>
+{% endblock %}

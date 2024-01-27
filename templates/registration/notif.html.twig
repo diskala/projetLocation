@@ -1,7 +1,39 @@
 ﻿{% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Notification!{% endblock %}
+{% block stylesheets %}
+            <style>
+            #notif{
+               
+                height: 5rem;
+                width: 50%;
+                margin-left:25%;
+                margin-top:20%;
+
+            }
+            h1{
+                color:black;
+               
+            }
+
+            h1 span{
+              text-align:center;
+              color:red;
+            }
+            </style>
+        {% endblock %}
 
 {% block body %}
- {{ notif }}
+         
+ 
+         
+                     <div id="notif">
+                      <h1> {{ message }} </h1>
+                      </div>
+              
+
+               
+       
+   
+    
 {% endblock %}

@@ -1,0 +1,151 @@
+﻿{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/footer.css") }}>
+    <link rel="stylesheet" href={{ asset("./styles/modifier.css") }}>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src={{ asset('./js/headers.js') }} defer>
+
+
+	{% endblock %}
+			
+			 
+			{% block body %}
+			
+			  {{ include ("./_partials/header.html.twig") }} 
+			
+			  {# {{ app.user.userIdentifier }} #} 
+	
+			<div id="page_reservation">
+ 
+ 
+		 
+		 
+		 <div class="div_centre">
+		    <p class="titre_centre"> Reservez votre</p>
+			<p class="centre"> {{ reservation.car.brand|upper }} | {{ reservation.car.model }} </p>
+
+			{# <p class="infos">  
+			Une caution de <span> {{ item.bail }} € </span> doit etre payer obligatoirement pour cette voiture pour pouvoir valider définitivement la reservation.
+	      </p>#}
+		  </div>
+
+
+		  
+		
+	 
+
+
+		    {# Vérifiez si des messages flash existent #}
+		  <div id="messageAlert">
+		{% for flashMessage in app.session.flashbag.get('alert') %}
+		    <div class="alert alert-warning" role="alert">
+		       <h1> {{ flashMessage }} <a href= {{ path('app_allcars_') }}>choisir une autre voiture</a> </h1>
+		    </div>
+		{% endfor %}
+		 </div>
+		
+		        
+		
+		
+<section id="container_reserve">
+		
+		 
+
+		 
+		
+		                <div class="container_pic_formulaire">     
+		                    <div class="photo">
+	
+			               <img src= "/images/{{ reservation.car.image.image2 }}" alt="" />
+			  
+			                </div> 
+		
+		
+		                    <div class="formulaire">  
+							{{ form_errors(formModification) }}
+
+<div class="erreur">
+    {# Affichez les erreurs du champ spécifique avec une classe CSS personnalisée #}
+	 
+    {{ form_errors(formModification.end_date) }}
+</div>
+							<h1> Veuillez remplir votre formulaire de reservation</h1>
+		                        {{ form_start(formModification) }}
+		
+		                        <ul class="formulaire_reserve">
+
+                                  <li class="reserve"> 
+		  
+		                        <p class="marq"> {{ reservation.car.brand|upper }} | {{ reservation.car.model }} | {{ reservation.car.power}}  </p>
+		  
+		                        </li>
+
+								 
+
+
+
+		                        <li class="reserve"> 
+		  
+		                        {{ form_label(formModification.start_date, '- Date de debut') }}
+		                        {{ form_widget(formModification.start_date, {'attr': {'class': 'res'}}) }} 
+		  
+		                        </li>
+		                        <li class="reserve">  
+		  
+		                        {{ form_label(formModification.end_date, '- Date de fin') }}
+		                        {{ form_widget(formModification.end_date, {'attr': {'class': 'fin'}}) }}
+		  
+		                        </li>
+		 
+		                        <li class="reserve">
+		                        {{ form_label(formModification.fichierPdf, '- Permis de conduire: ') }} 
+		                        {{ form_widget(formModification.fichierPdf, {'attr': {'class': 'pdf'}}) }}
+		                        </li>
+		 
+		
+		 
+		                        <li class="reserve"> <h5>Options et prestations:</h5></li>
+		 
+		
+		 
+		                        <li class="reserve"> {{ form_label(formModification.priceunlimitedKm, ' - Kilométrage illimité') }} | <span> {{ reservation.car.priceKmUnlimited }} € /jour </span>
+		                        {{ form_widget(formModification.priceunlimitedKm, {'attr': {'class': 'chek'}}) }} </li>
+		 
+		
+		 
+		                        <li class="reserve">{{ form_label(formModification.option_driver, '- Chauffeur professionnel') }} | <span> 80 € </span>
+		                        {{ form_widget(formModification.option_driver, {'attr': {'class': 'chek'}}) }} </li>
+		 
+		
+		 
+		                        <li class="reserve"> {{ form_label(formModification.opt_child_seat, '- Siege pour enfant') }} | <span> 30 € </span>
+		                        {{ form_widget(formModification.opt_child_seat, {'attr': {'class': 'chek'}}) }} </li>
+		 
+		
+		 
+		                        <li class="reserve"> {{ form_label(formModification.decoration, '- Decoration pour mariage') }} | <span> 120 € </span>
+		                        {{ form_widget(formModification.decoration, {'attr': {'class': 'chek'}}) }} </li>
+		 
+		
+		                        <li class="reserve"> {{ form_label(formModification.bail, '- Caution') }} <span> {{ reservation.car.bail }} € </span>
+		                        {{ form_widget(formModification.bail, {'attr': {'class': 'chek'}}) }}</li> 
+
+		                         <li class="reserve"><button type="submit" class="boutton">Modifier</button></li>
+								 <li class="reserve"> {{ form_widget(formModification.envoyer, {'attr': {'hidden': 'true'}}) }}</li>
+		                        {{ form_end(formModification) }}
+		                    </div>
+		            </div> 
+		                       
+		   
+		        </section>
+		    </div>
+		 
+			{% endblock %}

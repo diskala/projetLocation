@@ -1,0 +1,129 @@
+﻿{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_content %}
+<div class="container_confirme">
+
+             
+
+               
+
+               
+                <div class="nombre_sorties">
+                     <h1>  {{ nombreVoitureSortie }}  </h1>
+                     <h4> voitures sorties </h4>
+
+               </div>
+                <div class="nombre_auStock">
+                     <h1>  {{ nombresAuStock }}   </h1>
+                     <h4> voitures au stock</h4>
+
+               </div>
+
+               
+     
+
+</div> 
+
+
+
+<div class="container_table_confirme">
+<h1> Les Reservations Confirmées</h1>
+
+<div class="container_table_reserve">
+
+<table class="tables">
+<tr class="container_titre_confirme">
+<td class="titres">Sélectionner</td>
+<td class="titres">N° Reservation</td>
+<td class="titres">Nom et Prénom</td>
+<td class="titres">Email</td>
+<td class="titres">Marque et Model</td>
+<td class="titres">Date de Reservation</td>
+<td class="titres">Date de debut</td>
+<td class="titres">Date de fin</td>
+<td class="titres"> Caution</td>
+<td class="titres"> Permis de conduire</td>
+<td class="titres"> Total à payer</td>
+<td colspan="2" class="titres" > actions </td>
+</tr>
+
+{% for item in reserved %}
+     {# <h1> <img src="/images/{{ item.car.image.image1 }}"  />  </h1> #}
+     
+    
+{% if item.actionStatus %}
+    {% if item.actionStatus.returnedCar %}
+    
+        {% else %}
+ <tr class="donnees_confirme">
+ <td><form>
+ <input type="checkbox" class="car-checkbox" data-car-id="{{ item.id }}"   />
+ </form></td>
+<td> {{ item.id }} </td>
+<td> {{ item.users.firstname }} {{ item.users.lastname }} </td>
+<td> {{ item.users.email }} </td>
+<td> {{ item.car.brand }} | {{ item.car.Model }} </td>
+<td> {{ item.DayDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </td>
+<td> {{ item.StartDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </td>
+<td> {{ item.EndDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </td>
+ {% if item.status %}
+    <td> Payée </td>
+{% else %}
+    <td> Paiement refusé </td>
+{% endif %}
+
+<td><a href="{{ path('app_FichierPdf', {'id': item.id}) }}">Télécharger PDF</a></td>
+ <td> {{ item.TotalPrice }} </td>
+  {% if item.confirmed %}
+     <td> <p> Reservation Confirmée</p> </td>
+        {% else %}
+  <td   class="actions_confirme"> <a href={{ path('app_confirme', {'id': item.id}) }}> confirmation par Mail</a> </td>
+   {% endif %}
+ 
+ 
+
+  
+  
+        {% if item.actionStatus.isRentedCar %}
+            <td><a href="{{ path('app_restitueStock', {'id': item.id}) }}">Restituée</a></td>
+        {% else %}
+            <td><a href="{{ path('app_updateStock', {'id': item.id}) }}">Louée</a></td>
+        {% endif %}
+
+    
+    
+   
+    
+ 
+  
+  {# <td><a href="">Voiture Restituée</a></td> #}
+ </tr>
+
+
+
+
+    {% endif %}
+
+{% else %}
+    
+{% endif %}
+    
+       
+
+   
+ 
+
+</div>
+    
+{% endfor %}
+
+
+
+ 
+
+
+</table>
+
+</div>
+
+{% endblock %}

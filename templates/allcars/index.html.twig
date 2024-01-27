@@ -1,11 +1,57 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello AllcarsController!{% endblock %}
+  
+       {% block stylesheets %}
+             <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
+              <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
+             <link rel="stylesheet" href= {{ asset("./styles/allcars.css") }} >
+        {% endblock %}
+        
+        {% block javascripts %}
+          <script src= {{ asset('./js/headers.js') }} defer></script>
+        {% endblock %}
+
 
 {% block body %}
+    {{ include ("./_partials/header.html.twig") }}  
+
+ {# {{ dump(allcars) }} #}
+
+ 
+ <div id="carre">
   
-  {% for item in images %}
-    {{ item.cars.brand}}
-  {% endfor %}
+   
+   
     
+    {{ form_start(search, {'attr': {'id': 'formulaire'}}) }}
+    <div id="cherche">
+      
+    <div id="chercheMarque">{{ form_widget(search.marques,{'attr': {'class': 'marque'}}) }}</div>
+     <div id="chercheCategorie">{{ form_widget(search.categories,{'attr': {'class': 'categorie'}} ) }}</div>
+    
+     </div>
+    {{ form_end(search) }}
+   
+  
+  <section id="container_items">
+  {% for item in allcars %}
+  <article class="items">
+  
+  <h2> <a href={{ path("onecar", {'id': item.id}) }}>{{ item.brand|upper }} | {{ item.model|upper }} | {{ item.category|upper }}</a></h2>
+  
+   
+  <div class="pic"><a href={{ path("onecar", {'id': item.id}) }}><img src= "./images/{{ item.image.image1 }}"></a></div>
+     <div class="sous_image">
+     <h1> A partir de : {{item.priceDay}} € / jour<h1>  
+     <div class="lien"><a href= {{ path("onecar", {'id': item.id}) }}  >En savoir plus</a></div>
+     <div>
+    </article> 
+  {% endfor %}
+ </section>
+
+ </div>
+ 
+  <script src= {{ asset('./js/allcars.js') }} defer>
 {% endblock %}
+ 

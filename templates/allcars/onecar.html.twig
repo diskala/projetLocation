@@ -1,0 +1,115 @@
+﻿{% extends 'base.html.twig' %}
+
+{% block title %}Hello AllcarsController!{% endblock %}
+  
+       {% block stylesheets %}
+             <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
+              <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
+             <link rel="stylesheet" href= {{ asset("./styles/onecar.css") }} >
+        {% endblock %}
+        
+        {% block javascripts %}
+          <script src= {{ asset('./js/headers.js') }} defer></script>
+          <script src= {{ asset('./js/onecar.js') }} defer></script>
+        {% endblock %}
+
+       
+{% block body %}
+   {{ include("./_partials/header.html.twig") }}  
+      
+
+
+<article id="one_car">
+
+<section id="info">
+
+ {% for item in onecar %}
+
+  
+   <ul id="groupInfo">
+   
+    <li> <h1 class="desc_car" id="brand_car"> Marque : {{ item.brand|upper }}  </h1></li>
+     <hr><br>
+     <li><h1 class="desc_car" id="model_car"> Modele : {{ item.model|upper }} | {{ item.category }}  </h1></li>
+      <hr><br>
+     
+     <li><h1 class="desc_car" id="energy_car">Energie : {{ item.energy|upper }}</h1></li>
+       <hr><br>
+    
+     <li><h1 class="desc_car" id="categorie_car"> Boite à vitesse : {{ item.gearBox|upper }} </h1></li>
+      <hr><br>
+     <li><h1 class="desc_car" id="categorie_car"> Nombre de places : {{ item.numberPlace }} </h1></li>
+       <hr><br>
+     <li><h1 class="desc_car" id="categorie_car"> Prix de location: <span>{{ item.priceDay }} €/jour</span> Pour un kilométrage limité à 150 Km/jour </h1></li>
+       <hr><br>
+     <li><h1 class="desc_car" id="categorie_car">  Prix de location avec un kilométrage illimité :<span> {{ item.priceKmUnlimited }} €/jour </span> </h1></li>
+       <hr><br>
+     <li><h1 class="desc_car" id="categorie_car"> Caution à payer :<span> {{ item.bail }} € </span></h1></li>
+     <hr>
+    </ul>
+
+     <div id="reserver"> <a href= {{ path("reserved", {'id': item.id}) }}  >LOUER</a></div>
+    </section>
+{% endfor %}
+
+
+
+
+ 
+            
+   
+    
+
+
+
+
+
+<section id="picCar">
+ 
+  
+ <div class="chevrons">
+     <i class="fa-solid fa-chevron-left" id="controlApres"></i>
+     <i class="fa-solid fa-chevron-right" id="controlAvant"></i> 
+     </div>
+   
+
+      
+  
+{% for items in onecar %}
+   
+  <div  class="slick-carousel" id="carousel-{{ items.id }}">
+  
+    <div class="picture"><img src="/images/{{ items.image.image1 }}" alt=""/></div>
+     <div class="picture"><img src="/images/{{ items.image.image2 }}" alt=""/></div>
+      <div class="picture"><img src="/images/{{ items.image.image3 }}" alt=""/></div>
+       <div class="picture"><img src="/images/{{ items.image.image4 }}" alt=""/></div>
+        <div class="picture"><img src="/images/{{ items.image.image5 }}" alt=""/></div>
+         <div class="picture"><img src="/images/{{ items.image.image6 }}" alt=""/></div>
+          <div class="picture"><img src="/images/{{ items.image.image7 }}" alt=""/></div>
+           <div class="picture"><img src="/images/{{ items.image.image8 }}" alt=""/></div>
+            <div class="picture"><img src="/images/{{ items.image.image9 }}" alt=""/></div>
+             <div class="picture"><img src="/images/{{ items.image.image10 }}" alt=""/></div>
+      
+  </div>
+   
+  
+     
+       
+
+         
+ 
+ 
+ </section>
+{% endfor %}
+
+
+
+</article>
+  {# {{ dump(onecar) }} #}
+ {# {% for key, value in onecar %}
+    {{ key }}: {{ value }}
+{% endfor %} #}
+
+ {# {{ include("./_partials/footer.html.twig") }} #}
+
+{% endblock %}
