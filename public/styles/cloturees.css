@@ -1,0 +1,112 @@
+﻿.flash-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50%;
+     text-align: center;
+     margin-left: 25rem;
+    
+    
+}
+
+
+.container_clotures{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.container_formulaire{
+    border: 2px solid black;
+    background-color: rgb(181, 221, 208);
+    width: 60rem;
+    height: 7rem;
+    padding: 1rem;
+     
+   
+    
+}
+
+.container_formulaire ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_formulaire ul li{
+  list-style:none ;
+   
+}
+.container_formulaire ul .mail,.container_formulaire ul .champ_mail{
+    
+    width: 20rem;
+}
+.container_formulaire ul li p{
+    
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.container_formulaire ul li .btn-res{
+     margin-top: 2rem;
+     background-color: black;
+     font-size: 15px;
+     font-weight: bold;
+     color:white;
+}
+.res_cloturees{
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    
+}
+.res_cloturees h3{
+    background-color: rgb(234, 180, 123);
+    padding: 0.5rem;
+    color: black;
+}
+.table_cloturees{
+    
+    
+    width: 100%;
+    text-align: center;
+}
+.table_cloturees tr{
+    border: 1px solid rgb(231, 94, 10);
+}
+.table_cloturees tr td{
+    border: 2px solid rgb(231, 94, 10);
+    
+}
+
+.titre_clotures{
+    background-color: aquamarine;
+    height: 3rem;
+}
+
+.titre_clotures .cloturees{
+
+     font-weight: bold;
+
+}
+
+.btn_facture{
+    
+    background-color: rgb(231, 94, 10);
+    margin-bottom: 3rem;
+    margin-left: 80%;
+    font-weight: bolder;
+}

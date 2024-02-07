@@ -132,10 +132,11 @@ public function ReservationConfirmed()
     return $this->createQueryBuilder('r')
         // Si vous voulez filtrer par une date spécifique, décommentez la ligne suivante et remplacez 'YYYY-MM-DD' par la date souhaitée
         ->where('r.Confirmed = :Confirmed')
-        // ->andWhere('r.dayDate = :dayDate')
+        ->andWhere('r.start_date >= :today')
+        ->setParameter('today', new DateTime('today'))
         // ->setParameter('dayDate', new DateTime('YYYY-MM-DD'))
         ->setParameter('Confirmed', true)
-        // ->orderBy('r.id', 'DESC')
+        ->orderBy('r.start_date', 'ASC')
         ->getQuery()
         ->getResult();
 }

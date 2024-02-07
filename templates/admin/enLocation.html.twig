@@ -1,0 +1,96 @@
+﻿{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_content %}
+ {{ include ("./_partials/headerAdmin.html.twig") }} 
+
+        
+    <div class="container_confirme">
+
+
+		<div class="nombre_sorties">
+			
+             
+             <div class="valeur">
+                  <h4> {{ nombreVoitureSortie }} </h4>
+			 </div>
+
+			 <h5>
+				Nombre de Voitures Sorties
+				  
+			</h5>
+
+		</div>
+		<div class="nombre_auStock">
+			
+            <div class="valeur">
+					<h4>{{ nombresAuStock }}<h1>
+				</div>
+
+             <h5>
+				Nombre de voitures au Stock
+				
+			</h5>
+		</div>
+
+    </div>
+          <h1> Les Voitures actuellement en Locations</h1>
+
+        <div class="container_restituee">
+         
+		   
+		  <table>
+
+		  <tr class="titre_restituee">
+	 
+		  <td class="td_res"> N°: RESERVATION</td>
+		  <td class="td_res"> NOM </td>
+		  <td class="td_res"> EMAIL</td>
+		  <td class="td_res"> MARQUE</td>
+		  <td class="td_res"> MODEL</td>
+		  <td class="td_res"> DATE DE LOCATION </td>
+		  <td class="td_res"> DATE DE RETOUR </td>
+		  <td class="td_res"> TOTAL_TTC </td>
+		  <td class="td_res"> ACTIONS </td>
+		  
+		  </tr>
+
+		   {% for res in voitureRestituees %}
+
+
+		   
+
+					
+
+			  <tr class= "donnee_res">
+		 
+		  <td class="restituee"> {{ res.reserved.id}} </td>
+		  <td class="restituee"> {{ res.reserved.users.firstname }} </td>
+		  <td class="restituee"> {{ res.reserved.users.email}} </td>
+		  <td class="restituee"> {{ res.reserved.car.brand }}  </td>
+		  <td class="restituee"> {{ res.reserved.car.model }} </td>
+		  <td class="restituee"> {{ res.dateRental| format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")}} </td>
+		    <td class="restituee"> {{ res.reserved.endDate| format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")}} </td>
+		  <td class="restituee"> {{ res.reserved.totalPrice }} </td>
+		  	{% if res.returnedCar == true %}
+                           <p> restituée</p>
+							{% else %}
+		   <td class="restituee"> 
+		   <div class="restituer_lien"><a href="{{ path('app_restitueStock', {'id': res.reserved.id}) }}">Restituée</a></div>
+		   </td>
+		  
+		  
+		  </tr>
+
+		  {% endif %}
+		   {% endfor %}
+			
+		  
+         
+		  </table>
+		 
+		</div>
+    
+ 
+
+
+{% endblock %}

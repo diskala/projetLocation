@@ -17,7 +17,7 @@
      
  document.addEventListener('DOMContentLoaded', function() {
     const marq=document.querySelector('.marque');
-    console.log(marq);
+    
     
     const formul=document.getElementById('formulaire');
          if(marq.value !==null){

@@ -29,7 +29,7 @@ class SearchType extends AbstractType
                     'Jaguar' => 'Jaguar',
                     'Lamborghini' => 'Lamborghini',
                     'Lexus' => 'Lexus',
-                    'Masirati' => 'Masirati',
+                    'Maserati' => 'Maserati',
                     'McLaren' => 'McLaren',
                     'Mercedes-Benz' => 'Mercedes-Benz',
                     'Porsche'=> 'Porsche',

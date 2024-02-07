@@ -30,8 +30,8 @@ class ActionStatusRepository extends ServiceEntityRepository
                    ->andWhere('r.id = :id')
                    ->setParameter('id', $id)
                    ->getQuery()
-                   ->getResult()
-               ;
+                   ->getOneOrNullResult(); // Utilisez getOneOrNullResult() au lieu de getResult()
+               
     }
 
     
@@ -46,6 +46,97 @@ class ActionStatusRepository extends ServiceEntityRepository
                    ->getResult()
                ;
     }
+
+    // recupérer les reservation actuellement en location 
+    public function CarEnLocation()
+    {
+        return $this->createQueryBuilder('a')
+                   ->leftJoin('a.reserved', 'r')
+                   ->where('a.returnedCar = :returnedCar')
+                   ->andWhere('a.rentedCar = :rentedCar')
+                   ->setParameter('returnedCar' , false)
+                   ->setParameter('rentedCar' , true)
+                   ->getQuery()
+                   ->getResult()
+               ;
+    }
+
+
+    // actions des les reservation cloturées
+    public function ResrvationCloturees()
+    {
+        return $this->createQueryBuilder('a')
+                //    ->leftJoin('a.reserved', 'r')
+                   ->where('a.returnedCar = :returnedCar')
+                   ->andWhere('a.rentedCar = :rentedCar')
+                   ->setParameter('returnedCar' , true)
+                   ->setParameter('rentedCar' , true)
+                   ->getQuery()
+                   ->getResult()
+               ;
+    }
+
+
+
+
+    // recherche une reservation coloturée par email utilisateur
+
+    public function actionClotureesEmail($email)
+    {
+        return $this->createQueryBuilder('a')
+                   ->leftJoin('a.reserved', 'r')
+                   ->leftJoin('r.users', 'u') // Rejoindre la relation avec l'entité User
+                   ->andWhere('u.email = :email') // Filtrer en fonction de l'email de l'utilisateur
+                   ->setParameter('email', $email)
+                   ->getQuery()
+                   ->getResult(); // Utilisez getOneOrNullResult() au lieu de getResult()
+            
+                   
+
+    }
+
+     // recherche une reservation coloturée par date de location utilisateur
+
+     public function actionClotureesDateDebut($dateDebut)
+     {
+         return $this->createQueryBuilder('a')
+                    ->leftJoin('a.reserved', 'r')
+                    ->andWhere('a.dateRental = :dateRental')
+                    ->setParameter('dateRental', $dateDebut)
+                    ->getQuery()
+                    ->getResult(); // Utilisez getOneOrNullResult() au lieu de getResult()
+                
+     }
+
+     public function actionClotureesDateDebutEtRetour($dateDebuts,$dateRetours)
+     {
+         return $this->createQueryBuilder('a')
+                    ->leftJoin('a.reserved', 'r')
+                    ->andWhere('a.dateRental = :dateRental')
+                    ->andWhere('a.returnDate = :returnDate')
+                    ->setParameter('dateRental', $dateDebuts)
+                    ->setParameter('returnDate', $dateRetours)
+                    ->getQuery()
+                    ->getResult(); // Utilisez getOneOrNullResult() au lieu de getResult()
+                
+     }
+
+
+     public function actionClotureesDateRetour($dateRetour)
+     {
+         return $this->createQueryBuilder('a')
+                    ->leftJoin('a.reserved', 'r')
+                    ->andWhere('a.returnDate = :returnDate')
+                    ->setParameter('returnDate', $dateRetour)
+                    ->getQuery()
+                    ->getResult(); // Utilisez getOneOrNullResult() au lieu de getResult()
+                
+     }
+
+
+
+
+
 //    /**
 //     * @return ActionStatus[] Returns an array of ActionStatus objects
 //     */

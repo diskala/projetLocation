@@ -315,10 +315,12 @@ $reservation->setStripeSessionId($checkoutSession->id);
     }
 
     #[Route("/cart/modifier/{id}", name: "modifier")]
-    public function modifier($id,SessionInterface $session, EntityManagerInterface $entityManager, Request $request, ReservationRepository $reservationRepository, CarRepository $carRepository): Response
+    public function modifier($id,SessionInterface $session, EntityManagerInterface $entityManager, Request $request, ReservationRepository $reservationRepository, CarRepository $carRepository, ActionStatusRepository $actionStatusRepository): Response
     {
        
         $reservations = $reservationRepository->find($id);
+        $tabActs= $actionStatusRepository->actionReservation($id);
+        $acts = $tabActs[0];
              
         if (!$reservations) {
             throw $this->createNotFoundException('Réservation introuvable');
@@ -330,8 +332,16 @@ $reservation->setStripeSessionId($checkoutSession->id);
 
         $form = $this->createForm(ReservationFormType::class, $reservations);
         $form->handleRequest($request);
+    
+         // si la reservation n'est pas encore confirmé ou la date de debut et != à la date d'aujourd'hui on peut toujours modifier les dates 
+        
+        if ($form->isSubmitted() && $form->isValid())
+        {
 
-        if ($form->isSubmitted() && $form->isValid()) {
+
+           
+           
+          
             // Mettez à jour la réservation avec les données modifiées
             $reservations->setStartDate($form->get('start_date')->getData());
             $reservations->setEndDate($form->get('end_date')->getData());
@@ -348,8 +358,10 @@ $reservation->setStripeSessionId($checkoutSession->id);
 
             // Redirigez vers la page du panier ou toute autre page appropriée
             return $this->redirectToRoute('app_cart_',  ['id' => $id]);
-        }
-
+         
+        } 
+        
+         
         return $this->render('cart/modifier.html.twig', [
             'reservation' => $reservations,
             'formModification' => $form->createView(),

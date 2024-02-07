@@ -22,6 +22,9 @@ class Invoice
     #[ORM\Column(type:"string")]
     private ?string $number = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $facturePdf = null;
+
      
 
     public function getId(): ?int
@@ -92,6 +95,18 @@ return $this->getId(); // Replace with the property or method you want to use as
 
         // Combine les éléments pour former le numéro de facture
         $this->number = $prefix . '-'.'-' . $uniId;
+    }
+
+    public function getFacturePdf(): ?string
+    {
+        return $this->facturePdf;
+    }
+
+    public function setFacturePdf(?string $facturePdf): static
+    {
+        $this->facturePdf = $facturePdf;
+
+        return $this;
     }
     
 }

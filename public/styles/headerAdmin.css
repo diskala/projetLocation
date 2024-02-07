@@ -1,0 +1,115 @@
+﻿.nav{
+    background-color: rgb(60, 186, 188);
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    gap: 2rem;
+    align-items: center;
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
+}
+
+.nombre_voiture{
+   
+    display: flex;
+    gap: 2rem;
+    width: 25rem;
+     margin-left: 15rem;
+     align-items: center;
+     justify-items: flex-end;
+  
+} 
+
+.icon_voiture{
+   width: 50%;
+   height:auto;
+   border-radius:50% ;
+   -webkit-border-radius:50% ;
+   -moz-border-radius:50% ;
+   -ms-border-radius:50% ;
+   -o-border-radius:50% ;
+}
+
+.icon_voiture img{
+   width: 100%;
+   height: auto;
+   border-radius: 50% ;
+   -webkit-border-radius: 50% ;
+   -moz-border-radius: 50% ;
+   -ms-border-radius: 50% ;
+   -o-border-radius: 50% ;
+}
+
+
+.text_voiture{
+   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+   
+ 
+}
+
+.text_voiture h2{
+width: 5rem;
+text-align: center;
+   background-color:  rgb(236, 105, 11);
+   color: white;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+  
+}
+.text_voiture p{
+   color: black;
+   font-size: 20px;
+   font-weight: bold;
+ 
+}
+.res_confirmer, .voitures_louée{
+   width: 12rem;
+   height: 3rem;
+   background-color: black;
+   /*background-color: rgb(236, 105, 11);
+   */display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius:10px;
+   -webkit-border-radius:10px;
+   -moz-border-radius:10px;
+   -ms-border-radius:10px;
+   -o-border-radius:10px;
+}
+.accueil_dashboard{
+   width: 5rem;
+   height: 3rem;
+   background-color: black;
+   /*background-color: rgb(236, 105, 11);
+   */display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+.res_confirmer a, .voitures_louée a{
+color: white;
+font-size: 15px;
+font-weight: bold;
+
+}
+.accueil_dashboard a{
+   color: white;
+font-size: 25px;
+font-weight: bold;
+
+}

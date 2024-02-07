@@ -3,85 +3,190 @@ body{
     background-color: rgb(241, 237, 237);
 }
 
-h1{
-    color: black;
-    text-align: center;
-    
-}
+
+
+
+
+
 
 .container_indicateurs{
-    border: 2px solid red;
+ 
     width: 100%;
     height: 15rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    margin-top: 4rem;
+    background-image: url('/images/mclaren-570s-1.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position-y: 70%;
+  
+     
  }
- .nombre_commandes, .nombre_voiture, .voitures_sorties, .voitures_auStock{
-    border: 1px solid black;
+
+
+ /* .nombre_commandes, .nombre_voiture, .voitures_sorties, .voitures_auStock{
+   border: 2px solid red;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 15rem;
-    height: 6rem;
+    width: 25rem;
+    height: auto;
     font-weight: bold;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-}
+} */
+
+ 
+
+
 .nombre_commandes{
-    background-color: rgb(243, 236, 224);
+    /* background-color: rgb(240, 184, 88); */
 }
+
+
 .nombre_voiture{
    
-    background-color: rgb(247, 223, 194);
+    /* background-color: rgb(243, 185, 127); */
    
 }
 .voitures_sorties{
    
-    background-color: rgb(192, 241, 215);
+    /* background-color: rgb(192, 241, 215); */
    
 }
 
 .voitures_auStock{
    
-    background-color: rgb(217, 215, 245);
+    /* background-color: rgb(217, 215, 245); */
     
 }
-.nombre_voiture h1, .voitures_sorties h1, .voitures_auStock h1, .nombre_commandes h1{
-    
-    color: black;
+ 
+/* .nombre_voiture h3, .voitures_sorties h3, .voitures_auStock h3, .nombre_commandes h3{
+   font-size: 30px;
+   color: white;
+} */
+
+ .container_table_principal{
+
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
  }
-.nombre_voiture h4, .voitures_sorties h4, .voitures_auStock h4, .nombre_commandes h4{
-   font-size: 18px;
-   color: black;
+.nombre_confirmation{
+   
+    background-color:rgb(60, 186, 188);
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
- 
+.nombre_confirmation .chiffre{
+    border: 3px solid rgb(236, 105, 11);
+    background-color: red;
+    
+    width: 5rem;
+    text-align: center;
+    height: 5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.nombre_confirmation .phrase{
+    color: black;
+    text-align: center;
+    
+    
+    
+}
 .container_table {
     height: 30rem;
     overflow: scroll;
+    background-color: rgb(190, 187, 187);
+    margin-top: 3rem;
    
      
 }
+
+.table{
+    width: 100%;
+    border: 2px solid black;
+} 
  .container_titre .titre{
     background-color: black;
     color: white;
-    font-size: 15px ;
+    font-size: 12px ;
     font-weight: bold;
     position: sticky;
     top: 0;
  }
 .table td{
     width: 15rem;
-    border-width: 0.5px;
-    border-style:dashed;
-    border-color: rgb(245, 182, 46);
-    background-color: antiquewhite;
+    border-width: 2px;
+    border-style:double;
+    border-color: white;
+    background-color: rgb(190, 187, 187);
+    
 }
+
+.table td{
+    color: black;
+}
+.boutton_confirme{
+    
+    background-color:  rgb(245, 182, 46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center ;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.table .actions a{
+    color: black;
+    font-weight: bold;
+    
+}
+.table td .pdf{
+    background-color:rgb(93, 229, 175);
+    width: 7rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.table td .pdf a{
+    color: black;
+}
+
+ 
  

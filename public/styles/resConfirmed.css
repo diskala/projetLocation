@@ -1,0 +1,147 @@
+﻿ 
+
+ .container_confirme{
+    
+    background-color: rgb(194, 188, 188);
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+ }
+
+ .nombre_sorties, .nombre_auStock{
+    
+    width: 30%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+     
+
+ }
+ .nombre_sorties .valeur, .nombre_auStock .valeur{
+     /* background-color: rgb(236, 105, 11); */
+     border: 3px solid rgb(236, 105, 11);
+    
+     width: 5rem;
+     height: 5rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+     border-radius:50% ;
+     -webkit-border-radius:50% ;
+     -moz-border-radius:50% ;
+     -ms-border-radius:50% ;
+     -o-border-radius:50% ;
+}
+.nombre_sorties .valeur h4, .nombre_auStock .valeur h4{
+font-size: 30px;
+font-weight: bold;
+
+color: black;
+}
+.nombre_sorties h5, .nombre_auStock h5{
+width: auto;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bold;
+} 
+
+.container_table_confirme{
+   
+   margin-top: 2rem;
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   justify-content: center;
+   justify-items: center;
+   width: 100%;
+   height: auto;
+
+  
+}
+
+.container_table_confirme h3{
+    background-color: rgb(60, 186, 188);
+    width: 40rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+   
+}
+
+
+.contoure_table{
+   min-height: 20rem;
+   background-color: rgb(190, 182, 170);
+   width: 100%;
+   margin-top: 2rem;
+}
+ .tables{
+   width: 100%;
+ 
+ }
+
+ .tables tr td {
+   text-align: center;
+   border-width: 2px ;
+   border: 2px dotted rgb(241, 132, 8);
+   
+}
+
+ 
+.container_titre_confirme{
+   background-color: rgb(79, 79, 79);
+   height: 3rem;
+} 
+.container_titre_confirme .titres{
+   color: white;
+   font-weight: bold;
+} 
+ 
+.red-text{
+   background-color: rgb(218, 103, 103);
+   color: aliceblue;
+}
+ .tables td .louer{
+   
+   background-color: rgb(126, 225, 243);
+   width: 6rem;
+   height: 2rem;
+   margin-left: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+.tables td .restituer{
+   border: 1px solid black;
+   background-color: rgb(245, 172, 46);
+   width: 6rem;
+   height: 2rem;
+   margin-left: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+.tables .louer a, .tables .restituer a{
+   text-align: center;
+   color: black;
+   font-weight: bold;
+}
+

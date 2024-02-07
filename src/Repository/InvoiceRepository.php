@@ -21,6 +21,22 @@ class InvoiceRepository extends ServiceEntityRepository
         parent::__construct($registry, Invoice::class);
     }
 
+
+
+// les invoice par id de reservation
+public function invoiceReservation($id){
+
+               return $this->createQueryBuilder('i')
+               ->leftJoin('i.reserve', 'r')
+               ->andWhere('r.id = :id')
+               ->setParameter('id', $id)
+               ->getQuery()
+               ->getOneOrNullResult()
+               ;
+
+}
+
+
 //    /**
 //     * @return Invoice[] Returns an array of Invoice objects
 //     */
