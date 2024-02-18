@@ -2,16 +2,16 @@
 
 namespace App\Controller;
 
-use App\Entity\ActionStatus;
 use Stripe\Stripe;
 use App\Entity\Car;
 use App\Entity\User;
 use App\Entity\Invoice;
 use Stripe\PaymentIntent;
 use App\Entity\Reservation;
+use App\Entity\ActionStatus;
 use Stripe\Checkout\Session;
+use Doctrine\ORM\EntityManager;
 use App\Form\ReservationFormType;
-use App\Repository\ActionStatusRepository;
 use App\Repository\CarRepository;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
@@ -21,12 +21,12 @@ use Stripe\Exception\ApiErrorException;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ReservationRepository;
 use Symfony\Component\Mime\Part\DataPart;
+use App\Repository\ActionStatusRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\HttpFoundation\Response;
 use ContainerQVTEl2T\getImageRepositoryService;
-use Doctrine\ORM\EntityManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bridge\Doctrine\Form\Type\DoctrineType;
 use Symfony\Component\Validator\Constraints\ImageValidator;
@@ -34,23 +34,24 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
  
 
  
 class CartController extends AbstractController
 {
-    #[Route("/cart/{id}", name: "app_cart_")]
-    public function index($id, CarRepository $carRepository,Request $request, SessionInterface $session, UserRepository $userRepository, ReservationRepository $reservation): Response
+    #[Route("/cart", name: "app_cart_")]
+    public function index( CarRepository $carRepository,Request $request, SessionInterface $session, UserRepository $userRepository, ReservationRepository $reservation): Response
     {
 
      
-// $id=$request->query->get('id');
+    // $id=$request->query->get('id');
   // Assurez-vous que l'utilisateur est connecté
  
-//   dd( $reserveds);
+
 
   $rUser = $this->getUser(); //recuperer le user
- 
+
      
             // $panier = $session->get('panier', []);
              // $tabPanier=[];
@@ -68,8 +69,10 @@ class CartController extends AbstractController
             // $panier = $session->set('panier', $panier);
 
             if ($rUser) {
-                $reserveds= $reservation->find($id);
-                
+                // $reserveds= $reservation->find($id);
+                $userId= $rUser->getId();
+                $reserveds= $reservation->userReservation($userId);
+               
 //  dd( $reserveds->isDecoration());
                 // dd($reserveds->getStatus());
 
@@ -95,7 +98,7 @@ class CartController extends AbstractController
       
     { 
 
-       
+      
          
         $user = $this->getUser(); // pour récupérer le user connecté 
         $rCar=$carRepository->find($id);
@@ -123,16 +126,20 @@ class CartController extends AbstractController
 
          $form = $this->createForm(ReservationFormType::class);
          $form->handleRequest($request);
+        
          $rUser= $this->getUser(); // affiche le tableau complet du user
           
          $rUser->getUserIdentifier(); // get l'adress mail connecter
          
       // si le stock est superieur à 0 on peut effectuer la reservation
-        //  if ($stockCar > 0) {
+         if ($stockCar > 0) {
 
         if($form->isSubmitted() && $form->isValid())
         {
-  
+
+
+
+            // dd($form->get('start_date')->getData());
             $reservation= new Reservation();
        
          
@@ -243,18 +250,18 @@ $reservation->setStripeSessionId($checkoutSession->id);
         //  return $this->redirectToRoute('app_cart_', ['userId' => $nouvelId]);
          
         
-       }
+       } 
      
-    //    }
+       }
 
-    //    elseif ($stockCar === 0) {
-    //     // Si le stock est 0, définissez la disponibilité sur false
-    //     $rCar->setAvailable(false);
-    //     $entityManager->flush();
+       elseif ($stockCar === 0) {
+        // Si le stock est 0, définissez la disponibilité sur false
+        $rCar->setAvailable(false);
+        $entityManager->flush();
 
-    //     // Message flash indiquant que la voiture n'est pas disponible
-    //     $this->addFlash('alert', 'La voiture n\'est plus disponible.');
-    // }
+        // Message flash indiquant que la voiture n'est pas disponible
+        $this->addFlash('alert', '<i class="fa-solid fa-triangle-exclamation"></i>La voiture n\'est plus disponible  ');
+    }
   
  
     
@@ -277,50 +284,53 @@ $reservation->setStripeSessionId($checkoutSession->id);
         
     }
     
-    #[Route("/cart/remove/{id}", name: "remove")]
-    public function remove($id, SessionInterface $session, ReservationRepository $reservation, EntityManagerInterface $entityManager)
-    {
+    // #[Route("/cart/remove/{id}", name: "remove")]
+    // public function remove($id, SessionInterface $session, ReservationRepository $reservation, EntityManagerInterface $entityManager)
+    // {
 
-       // Convertir la clé en chaîne (si nécessaire)
-       $id = (string) $id;
+    //    // Convertir la clé en chaîne (si nécessaire)
+    //    $id = (string) $id;
 
-       // Récupérer la réservation à partir du Repository
-       $reservations = $reservation->find($id);
+    //    // Récupérer la réservation à partir du Repository
+    //    $reservations = $reservation->find($id);
 
-       if (!$reservations) {
-           throw $this->createNotFoundException('La réservation avec l\'ID ' . $id . ' n\'existe pas.');
-       }
+    //    if (!$reservations) {
+    //        throw $this->createNotFoundException('La réservation avec l\'ID ' . $id . ' n\'existe pas.');
+    //    }
 
-       // Supprimer la réservation
-       $entityManager->remove($reservations);
-       $entityManager->flush();
+    //    // Supprimer la réservation
+    //    $entityManager->remove($reservations);
+    //    $entityManager->flush();
 
-       $this->addFlash('success', 'La réservation a été supprimée avec succès.');
+    //    $this->addFlash('success', 'La réservation a été supprimée avec succès.');
 
-       return $this->redirectToRoute('app_allcars_'); // Redirigez vers la page des réservations après la suppression
+    //    return $this->redirectToRoute('app_allcars_'); // Redirigez vers la page des réservations après la suppression
 
        
-        // $panier = $session->get('panier', []);
+    //     // $panier = $session->get('panier', []);
     
-        // // Convertir la clé en chaîne (si nécessaire)
-        // $id = (string) $id;
+    //     // // Convertir la clé en chaîne (si nécessaire)
+    //     // $id = (string) $id;
     
-        // if (array_key_exists($id, $panier)) {
-        //     unset($panier[$id]);
-        // }
+    //     // if (array_key_exists($id, $panier)) {
+    //     //     unset($panier[$id]);
+    //     // }
     
-        // $session->set('panier', $panier);
+    //     // $session->set('panier', $panier);
     
      
-    }
+    // }
 
+
+
+    
     #[Route("/cart/modifier/{id}", name: "modifier")]
     public function modifier($id,SessionInterface $session, EntityManagerInterface $entityManager, Request $request, ReservationRepository $reservationRepository, CarRepository $carRepository, ActionStatusRepository $actionStatusRepository): Response
     {
        
         $reservations = $reservationRepository->find($id);
         $tabActs= $actionStatusRepository->actionReservation($id);
-        $acts = $tabActs[0];
+        // $acts = $tabActs[0];
              
         if (!$reservations) {
             throw $this->createNotFoundException('Réservation introuvable');
@@ -357,7 +367,8 @@ $reservation->setStripeSessionId($checkoutSession->id);
             $entityManager->flush();
 
             // Redirigez vers la page du panier ou toute autre page appropriée
-            return $this->redirectToRoute('app_cart_',  ['id' => $id]);
+            // return $this->redirectToRoute('app_cart_',  ['id' => $id]);
+            return $this->redirectToRoute('app_cart_');
          
         } 
         
@@ -443,7 +454,8 @@ else{
 
   $resId = $reserved->getId();
     // Redirigez l'utilisateur vers la page de confirmation de réservation
-    return $this->redirectToRoute('app_cart_', ['id' => $resId]);
+    // return $this->redirectToRoute('app_cart_', ['id' => $resId]);
+    return $this->redirectToRoute('app_cart_');
  
      }
     

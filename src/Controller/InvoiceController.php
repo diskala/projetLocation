@@ -36,54 +36,68 @@ class InvoiceController extends AbstractController
     }
 
 
-    
+   
 
 
-    //générer une Facture
-    // #[route("invoice/{id}", name: 'app_facture')]
-    // public function generateInvoice($id, Dompdf $dompdf, MailerInterface $mailer, ReservationRepository $res, ActionStatusRepository $actionStatusRepository, EntityManagerInterface $entityManager, InvoiceRepository $invoiceRepository): Response
-    // {
      
-    //     $user = $this->getUser();
-    //     $user->getUserIdentifier(); // pour recuperer le mail de user connecter
-    //     $userId = $user->getId();
-    //     $reserved = $res->find($id);
-       
-    //     $reservationInvoice = $res->find($id);
-    //     $actionStatusInvoice = $actionStatusRepository->actionReservation($id); // par id de reservation<
-    //     $invoices = $invoiceRepository->invoiceReservation($id); // par id reservation
+    #[route("invoice/{id}", name: 'app_fichierFacture')]
+    public function generateInvoice($id, Dompdf $dompdf, MailerInterface $mailer, ReservationRepository $res, ActionStatusRepository $actionStatusRepository, EntityManagerInterface $entityManager, InvoiceRepository $invoiceRepository): Response
+    {
+ 
+
+        $resInvoice = $invoiceRepository->invoiceReservation($id); // par ID reservation
         
-    //     // $facture = $invoices[0];
-        
-    //      // Vérifier que des factures ont été trouvées
-    // if (!empty($invoices)) {
-    //     foreach ($invoices as $invoice) {
-    //         // Rendu du PDF
-    //         $dompdf->loadHtml($this->renderView('invoice/index.html.twig', ['data' => $invoice]));
-
-    //         // Rendu du PDF
-    //         $dompdf->render();
-
-    //         // Stocker le PDF dans le dossier "facture-pdf"
-    //         $pdfFilePath = $this->getParameter('kernel.project_dir') . '/public/facture-pdf/' . $invoice['number'] . '.pdf';
-    //         file_put_contents($pdfFilePath, $dompdf->output());
-    //     }
-
-    //     // Envoi du premier PDF en réponse
-    //     $response = new Response($dompdf->output());
-    //     $response->headers->set('Content-Type', 'application/pdf');
-    //     return $response;
-    // } else {
-    //     // Gérer le cas où aucune facture n'est trouvée
-    //     // Par exemple, rediriger l'utilisateur avec un message d'erreur
-    //     return $this->$this->addFlash(
-    //        'alert',
-    //        'alert', 'la voiture n\'est pas encore restituée'
-    //     );
-    // }
-
-    //     return $this->render('invoice/index.html.twig', [
-    //         'facture' => $invoices,
-    //     ]);
-    // }
+// Vérifier si la réservation existe
+if (!$resInvoice) {
+    $this->addFlash('alert','<i class="fa-solid fa-triangle-exclamation"></i>La facture sera disponible aprés la restitution de la voiture');
+    return $this->redirectToRoute('app_cart_');
 }
+
+// Récupérer le nom du fichier PDF depuis la réservation (adaptez cette partie selon votre modèle de données)
+$pdfFileName = $resInvoice->getFacturePdf(); // Assurez-vous que cette méthode retourne le nom du fichier
+
+// Vérifier si le nom du fichier PDF est valide
+if (!$pdfFileName) {
+    $this->addFlash('alert','<i class="fa-solid fa-triangle-exclamation"></i>La facture sera disponible aprés la restitution de la voiture');
+    return $this->redirectToRoute('app_cart_');
+}
+
+// Définir le chemin complet du fichier PDF dans le sous-dossier 'fichierPdf' du répertoire public
+$pdfPath = $this->getParameter('kernel.project_dir') . '/public/' . $pdfFileName;
+
+// Vérifier si le fichier existe
+if (!file_exists($pdfPath)) {
+    $this->addFlash('alert','<i class="fa-solid fa-triangle-exclamation"></i>La facture sera disponible aprés la restitution de la voiture');
+    return $this->redirectToRoute('app_cart_');
+}
+
+// Lire le contenu du fichier PDF
+$pdfContent = file_get_contents($pdfPath);
+
+// Retourner une réponse HTTP avec le contenu du PDF
+return new Response($pdfContent, 200, [
+    'Content-Type' => 'application/pdf',
+    'Content-Disposition' => 'attachment; filename="facture.pdf"',
+]);
+
+
+
+
+  
+
+
+}     
+              
+         
+    
+ 
+ 
+    
+       
+      
+
+        // return $this->render('invoice/index.html.twig', [
+        //     'facture' => $invoices,
+        // ]);
+    }
+

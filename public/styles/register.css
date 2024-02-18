@@ -85,7 +85,7 @@ table{
 
 /* Style pour les erreurs de validation */
 .erreurs {
-    color: black; /* Couleur du texte en blanc */
+    color:  rgb(239, 239, 6);  
     background-color: yellowgreen;
     
 }

@@ -1,105 +1,196 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello HomeController!{% endblock %}
- {% block stylesheets %}
-              <link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
-              <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
-               <link rel="stylesheet" href= {{ asset("./styles/home.css") }} >
-        
-        {% endblock %}
-     {% block javascripts %}
-        <script src={{ asset('./js/home.js') }} defer></script>
-        <script src={{ asset('./js/headers.js') }} defer></script>
-        {% endblock %}
-       
-{% block body %}
-      {{ include("./_partials/header.html.twig") }}
-          <span class="numero">Nous contacter au<br> 01.22.56.45.30</span>
-        <div class="louer_acheter">
-              <span class="louer"><a href= {{ path("app_allcars_") }}>LOUER</a></span>
-               <span class="achat"><a id="phone" href= "#">ACHETER</a></span>
-			  
-               
-          </div>
-<div class="image_home">
-        
-       {# <img src = "{{randomImage}}"  alt="Image aléatoire">  #}
-       	<div class="carrousel" style="--object-fit:cover">
-			<div class="slides">
-				<img src="/pictures/voiture1.png">
-				<img src="/pictures/voiture2.jpg">
-				<img src="/pictures/voiture3.jpg">
-				<img src="/pictures/voiture4.jpg">
-                <img src="/pictures/voiture5.jpg">
-				<img src="/pictures/voiture6.jpg">
-				<img src="/pictures/voiture7.jpg">
-				<img src="/pictures/voiture8.jpg">
-                <img src="/pictures/voiture9.jpg">
-				<img src="/pictures/voiture10.jpg">
-				<img src="/pictures/voiture11.jpg">
-				<img src="/pictures/voiture12.jpg">
-                <img src="/pictures/voiture13.jpg">
-				<img src="/pictures/voiture14.jpg">
-				<img src="/pictures/voiture15.jpg">
-				<img src="/pictures/voiture16.jpg">
-                <img src="/pictures/voiture17.jpg">
-				<img src="/pictures/voiture18.jpg">
-				<img src="/pictures/voiture19.jpg">
-				<img src="/pictures/voiture20.png">
-                <img src="/pictures/voiture21.jpg">
-				<img src="/pictures/voiture22.jpg">
-                <img src="/pictures/voiture23.jpg">
-				<img src="/pictures/voiture24.jpg">
-				<img src="/pictures/voiture25.jpg">
-				<img src="/pictures/voiture26.png">
-                            
-			</div>
-		</div>
 
+{% block stylesheets %}
+	<link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/inviteContact.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/footer.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/home.css") }}>
 
-
-              	{# <h2>Controls</h2>
-	<p>When carrousel in focus-state (white outline)</p>
-	<div class="controls-info">
-		<div class="title desc">Description</div>
-		<div class="title icon">Click</div>
-		<div class="title key">Key</div>
-		
-		<div class="desc">previous / next slide</div>
-		<div class="icon">
-			<i class="fa-solid fa-circle-left"></i>
-			<i class="fa-solid fa-circle-right"></i>
-		</div>
-		<div class="key">left / right arrow</div>
-
-		<div class="desc">go to n-th slide</div>
-		<div class="icon"><i class="fa-regular fa-circle"></i></div>
-		<div class="key">1-9 (single)</div>
-		
-		<div class="desc">toggle autoslide</div>
-		<div class="icon">
-			<i class="fa-solid fa-play"></i>
-			<i class="fa-solid fa-pause"></i>
-		</div>
-		<div class="key">spacebar</div>
-		
-		<div class="desc">toggle fullscreen</div>
-		<div class="icon">
-			<i class="fa-solid fa-maximize"></i>
-			<i class="fa-solid fa-minimize"></i>
-		</div>
-		<div class="key">enter</div>
-	
-		<div class="desc">toggle fullscreen</div>
-		<div class="double">Double click image</div>
-		
-		<div class="desc">toggle controls</div>
-		<div class="icon">
-			<i class="fa-solid fa-eye-slash"></i>
-			<i class="fa-solid fa-eye"></i>
-		</div>
-		<div class="key">C / c</div> #}
-	{# </div> #}
-</div>
 {% endblock %}
- 
+{% block javascripts %}
+	<script src={{ asset('./js/home.js') }} defer></script>
+	<script src={{ asset('./js/headers.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+	{{ include("./_partials/header.html.twig") }}
+
+
+
+	    <main class="page_home">
+		                    {# <div class="controls">
+                               <button id="prev">&#10094;</button>
+                               <button id="next">&#10095;</button>
+                            </div> #}
+                        <div class="carousel-container">
+                              
+                           <div class="slides" style="--object-fit:cover">
+                               <div class="slide"><img src="/pictures/voiture1.png" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture2.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture3.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture5.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture6.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture7.jpg" alt=""/></div>
+                                <div class="slide"><img src="/pictures/voiture8.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture10.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture12.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture13.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture14.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture16.jpg" alt=""/></div>
+                                <div class="slide"><img src="/pictures/voiture17.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture18.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture19.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture20.png" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture21.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture22.jpg" alt=""/></div>
+                                <div class="slide"><img src="/pictures/voiture23.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture24.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture25.jpg" alt=""/></div>
+                               <div class="slide"><img src="/pictures/voiture26.png" alt=""/></div>
+                               
+                               <!-- Ajoutez d'autres images ici -->
+                           </div>
+                       </div>
+
+
+		                    <div class="image_home">
+			                   <span class="numero">Nous contacter au<br>
+				                  01.22.56.45.30</span>
+			                <div class="louer_acheter">
+				                <span class="louer">
+					            <a href={{ path("app_allcars_") }}>LOUER</a>
+				                </span>
+				                <span class="achat">
+					            <a id="phone" href="#">ACHETER</a>
+				                </span>
+
+
+			                </div>
+
+			       {# <img src = "{{randomImage}}"  alt="Image aléatoire">  #}
+			        {# <div class="carrousel" style="--object-fit:cover">
+				        <div class="slides">
+
+					                
+					            <img src="/pictures/voiture1.png" alt=""/>
+					            <img src="/pictures/voiture2.jpg" alt=""/>
+					            <img src="/pictures/voiture3.jpg" alt=""/>
+					            <img src="/pictures/voiture5.jpg" alt=""/>
+					            <img src="/pictures/voiture6.jpg" alt=""/>
+					            <img src="/pictures/voiture7.jpg" alt=""/>
+					            <img src="/pictures/voiture8.jpg" alt=""/>
+					            <img src="/pictures/voiture10.jpg" alt=""/>
+					            <img src="/pictures/voiture12.jpg" alt=""/>
+					            <img src="/pictures/voiture13.jpg" alt=""/>
+					            <img src="/pictures/voiture14.jpg" alt=""/>
+					            <img src="/pictures/voiture16.jpg" alt=""/>
+					            <img src="/pictures/voiture17.jpg" alt=""/>
+					            <img src="/pictures/voiture18.jpg" alt=""/>
+					            <img src="/pictures/voiture19.jpg" alt=""/>
+					            <img src="/pictures/voiture20.png" alt=""/>
+					            <img src="/pictures/voiture21.jpg" alt=""/>
+					            <img src="/pictures/voiture22.jpg" alt=""/>
+					            <img src="/pictures/voiture23.jpg" alt=""/>
+					            <img src="/pictures/voiture24.jpg" alt=""/>
+					            <img src="/pictures/voiture25.jpg" alt=""/>
+					            <img src="/pictures/voiture26.png" alt=""/>
+
+				        </div>
+			        </div>
+                </div> #}
+
+			        <div id="description">
+
+
+				        <div id="article">
+					         <h3>VENTE ET LOCATION DE VOITURES DE PRESTIGE
+					         </h3>
+
+					        <p id="p1">
+						        DISCARS votre spécialiste automobile de sport et prestige vous propose ses services pour vous accompagner 
+						             et vous conseiller au mieux. Notre équipe de professionnels experts est là pour  répondre à tous vos souhaits,qu’il 
+						             s’agisse d’un achat, d’un import, d’une reprise de votre véhicule, d’une recherche personnalisée ou d’une location !</p>
+
+
+					        <p id="p2">DISCARS, une entreprise connue et reconnue dans le monde entier. Nos acheteurs travaillent avec un réseau important 
+						             de partenaires et concessions automobiles de confiance  en Allemagne, aux Pays-Bas,  en Italie et en Pologne.<br>
+						        Nous vous accueillons dans notre tout nouveau showroom afin de découvrir, tester et acheter nos différents modèles:
+						    <span>
+							(Ferrari, Aston Martin, Maserati, Mercedes AMG, Bmw, Audi RS, Lotus…).</span>
+					        </p>
+
+					        <p id="p3">Vous n’avez pas trouvé la voiture de vos rêves ? Pas d’inquiétude. L’équipe DISCARS vous propose aussi de la recherche
+						             personnalisée. Vous souhaitez acquérir un beau véhicule, mais n’avez pas le temps d’effectuer les recherches vous-même ?</p>
+				        </div>
+
+
+				        <article>
+
+					        <div class="infos">
+
+
+						        <div id="para">
+							        <div class="entete">
+								        <i id="emoji" class="fa-sharp fa-regular fa-face-smile fa-2xl"></i>
+								        <h3>EMOTION</h3>
+							        </div>
+							             <p>Le rêve à portée de main. Style, plaisir, sportivité et agrément
+										 de conduite sont les maîtres-mots de nos voitures de luxe et 
+										 de sport. Vous êtes le seul maître à bord, prenez le contrôle !</p>
+
+						        </div>
+
+
+						        <div id="para">
+							        <div class="entete">
+								         <i id="cles" class="fa-solid fa-key fa-2xl"></i>
+								        <h3>SERVICES</h3>
+							        </div>
+							            <p>À l’écoute et à votre service, AR Performance vous propose l’offre la plus qualitative
+										 et aboutie de la région. Notre équipe d’astreinte est à votre disposition 7j/7. Pour plus de confort,
+										  nous effectuons la livraison partout en France.</p>
+
+						        </div>
+
+
+						        <div id="para">
+							        <div class="entete">
+								        <i id="securite" class="fa-solid fa-clipboard fa-2xl"></i>
+								        <h3>SÉCURITÉ</h3>
+							        </div>
+							            <p>Aston Martin, Maserati, Jaguar, Porsche, Audi,… tous nos véhicules de sport à la location ou à l’achat,
+									       sont livrés à l’heure, nettoyés et dans les meilleures conditions de sécurité et mécanique. Un état des lieux 
+									      rigoureux à votre départ et à votre retour est effectué afin de garantir une location paisible.
+							            </p>
+						        </div>
+
+
+						    </div>
+
+
+						        <div id="section1">
+							            <h3>
+								        BESOIN D'UN RENSEIGNEMENT?</h3>
+							           <button type="buttons" id="appel">DEMANDE DE RAPPEL</button>
+							           <p>En tant que spécialiste d’automobiles de prestige, nous assurons un service 
+								            haut de gamme et répondons à vos attentes 7 jours sur 7 et 24h sur 24. Pour
+								             toute question, n’hésitez pas à nous contacter en faisant une demande de 
+								             rappel. Nous ferons notre maximum pour vous répondre dans les plus brefs délais.
+
+								        <span id="sec">
+									    Sportivement, l’équipe DISCARS.</span>
+							            </p>
+						        </div>
+
+					    </article>
+				    </div>
+
+				
+                
+	    </main>
+         {{ include("./_partials/inviteContact.html.twig") }} 
+		
+		{{ include("./_partials/footer.html.twig") }}  
+		{% endblock %}

@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use Dompdf\Dompdf;
 use App\Entity\Car;
+use App\Entity\Contact;
 use App\Entity\User;
 use App\Entity\Image;
 use App\Entity\Invoice;
@@ -18,6 +19,7 @@ use App\Repository\InvoiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ReservationRepository;
 use App\Repository\ActionStatusRepository;
+use App\Repository\ContactRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -48,7 +50,10 @@ class DashboardController extends AbstractDashboardController
     protected $AdminContextProvider;
 
     public function __construct(
-        ReservationRepository $Reservation, CarRepository $CarRepository, ActionStatusRepository $actionStatusRepository, EntityManagerInterface $entityManager, AdminUrlGenerator $adminUrlGenerator, AdminContextProvider $adminContextProvider
+        ReservationRepository $Reservation, CarRepository $CarRepository,
+         ActionStatusRepository $actionStatusRepository, EntityManagerInterface $entityManager,
+          AdminUrlGenerator $adminUrlGenerator, AdminContextProvider $adminContextProvider,
+         
     ) {
         $this->ReservationRepository = $Reservation;
         $this->CarRepository = $CarRepository;
@@ -56,6 +61,7 @@ class DashboardController extends AbstractDashboardController
         $this->entityManager = $entityManager;
          $this->AdminUrlGenerator = $adminUrlGenerator;
         $this->AdminContextProvider = $adminContextProvider;
+        
         
         // dd($Reservation->ReservationAccepted()->get);
         
@@ -148,12 +154,15 @@ class DashboardController extends AbstractDashboardController
     }
 
     #[Route('/admin/header', name: 'app_header')]
-    public function header()
+    public function header( ContactRepository $contactRepository)
     {
         $acts = $this->ActionStatusRepository->actiones(); // recupérer la table actionStatus
         $actsObj= $acts[0]; // récupérer le 1er index
         $voitureLouee = $actsObj->isRentedCar();  // recupérer la valeur actuel de rentedCar si la voiture est sortie ou pas
         $voitureRestituee = $actsObj->isReturnedCar();  // recupérer la valeur actuel returnedCar si la voiture restituée ou pas
+        // nombre de contact
+        $nombreDeContact = $contactRepository->count([]);
+        
          // nombre de reservation 
         $nombreDeReservations = $this->ReservationRepository->count([]);
 
@@ -650,7 +659,7 @@ public function Restitue($id, EntityManagerInterface $entityManager, CarReposito
     {
         
         return Dashboard::new()
-            // ->setTitle('DisCars');
+            ->setTitle('DisCars')
             
           -> setTitle('<img src="/icones_drapeaux/logo2.png">');
           
@@ -669,6 +678,7 @@ public function Restitue($id, EntityManagerInterface $entityManager, CarReposito
         yield MenuItem::linkToCrud('Invoice', 'fas fa-file-invoice', Invoice::class);
         yield MenuItem::linkToCrud('Image', 'fas fa-image', Image::class);
         yield MenuItem::linkToCrud('User', 'fas fa-user', User::class);
+        // yield MenuItem::linkToCrud('Contact', 'fas fa-address-book', Contact::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 

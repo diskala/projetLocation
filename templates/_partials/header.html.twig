@@ -15,17 +15,18 @@
  <body>
  <header class="container_header">
  
-         
+       
             <div class="logos"><a href= {{ path('app_home') }}><img class="logo" src={{ asset("./icones_drapeaux/logo-5.png") }}></a></div>
- <div class="burger-menu">&#9776;</div>
-            
+                 <div class="burger-menu">&#9776;</div>
+             
             <nav class="nav-links">
               
                 
                     <div class="menu_accueil">
-                    <a id="accueil" href={{ path('app_home') }}>Accueil</a>
+                    <a id="accueil" href={{ path("app_home") }}>Accueil</a>
                         <ul class="sous_accueil">
                             <li><a href="#">Qui sommes-nous?</a></li>
+                            <li><a href={{ path("app_allcars_") }}>Louer </a></li>
                             <li><a href="#">Nos agences</a></li>
                            
                         </ul>
@@ -62,12 +63,12 @@
                       
                      {% endif %}
                     </div>
-                    <div class="contacte"><a href="#">Contact</a></div>
+                    <div class="contacte"><a href= {{ path('app_contact') }}  >Contact</a></div>
                 
                 
             </nav>
         
-         
+        
     </header>
 
  

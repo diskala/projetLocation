@@ -36,6 +36,18 @@ public function invoiceReservation($id){
 
 }
 
+public function invoiceResId($id){
+
+    return $this->createQueryBuilder('i')
+    ->leftJoin('i.reserve', 'r')
+    ->andWhere('r.id = :id')
+    ->setParameter('id', $id)
+    ->getQuery()
+    ->getResult()
+    ;
+
+}
+
 
 //    /**
 //     * @return Invoice[] Returns an array of Invoice objects

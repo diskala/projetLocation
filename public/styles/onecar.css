@@ -11,7 +11,6 @@ body {
 }
 #one_car{
  
- 
    width: 100%;
    height: auto;
     display: flex;
@@ -28,12 +27,21 @@ body {
 
 #info{
 
-   
+  
     width: 40%; 
-    height: 100%; 
+    height: 38rem; 
+    margin-left: 2rem;
     
     
 
+}
+
+#groupInfo{
+   
+    width: 100%;
+    
+    
+    height: 100%;
 }
 
 #groupInfo li{
@@ -42,7 +50,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     
    
      
@@ -50,25 +58,32 @@ body {
 
 
 #groupInfo li .desc_car{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    color:white;
+    color:rgb(211, 208, 208);
     width: 100%;
 }
 
-hr{
+ 
 
-    width: 60%;
-    display: none;
-    border-width: 3px;
-    margin-left: 0;
-  
+hr{
+   width: 5%;
+    /*display: none;
+    *//*border-width: 1px;
+    */height: 0.3rem;
+    margin-top: 0.5rem;
+   
+    transition: 1s ease-in-out;
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -ms-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
 }
  
  
   
 .desc_car span{
-    font-size: 25px;
+    font-size: 20px;
     color:rgb(243, 53, 6);
 }
 
@@ -82,14 +97,24 @@ hr{
    background-color:  rgb(218, 213, 213);
    width: 15%;
    height: 3rem;
-   top: 48rem;
-   left: 2rem;
+   top: 46rem;
+   right: 22rem;
    border-radius: 15px ;
    -webkit-border-radius: 15px ;
    -moz-border-radius: 15px ;
    -ms-border-radius: 15px ;
    -o-border-radius: 15px ;
-   
+   transition: 0.5s ease-in-out;
+   -webkit-transition: 0.5s ease-in-out;
+   -moz-transition: 0.5s ease-in-out;
+   -ms-transition: 0.5s ease-in-out;
+   -o-transition: 0.5s ease-in-out;
+}
+
+#reserver:hover{
+    background-color:  rgb(246, 242, 242);
+    width: 15.5%;
+    height: 3.2rem;
 }
 
 #reserver a{
@@ -201,30 +226,51 @@ width: 50%;
 }
 
 
-@media screen and (max-width:786px)  {
+@media screen and (max-width:587px)  {
+
     #one_car{
         display: block;
-        height: auto;
+        height: 80rem;
+        border: 2px solid blue;
     }
+
     #info{
 
-   
-        min-width: 40%; 
-        height: 70%; 
-        
-        
+        position: relative;
+        min-width: 100%; 
+        height:35rem; 
+        margin-left: 0;
+        margin-top: 2rem;
+       
     
     }
 
-    #groupInfo li{
+    #groupInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        margin: 0;
         
+    }
+    #groupInfo li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
         list-style: none;
+        text-align: center;
+       
+       
        
          
     }
     
     #groupInfo li .desc_car{
-        font-size: 15px;
+        font-size: 12px;
         font-weight: bold;
         color:white;
         width: 70%;
@@ -247,29 +293,26 @@ width: 50%;
     }
     
     #reserver{
-      
+      position: absolute;
        z-index: 100;
        display: flex;
        justify-content: center;
        justify-items: center;
        align-items: center;
        background-color: rgb(239, 232, 232);
-       width: 50%;
-       height: 4rem;
-       margin-left: 20%;
-       margin-top: 50%;
-       border-radius: 10px ;
+       width: 30%;
+       height: 3rem;
+       left: 32%;
+       top: 65rem;
+       
       
-       -webkit-border-radius: 10px ;
-       -moz-border-radius: 10px ;
-       -ms-border-radius: 10px ;
-       -o-border-radius: 10px ;
+       
     }
     
     #reserver a{
       
         text-align: center;
-        font-size: 30px;
+        font-size: 15px;
         text-decoration: none;
         font-weight: bold;
         color: black;
@@ -292,8 +335,8 @@ width: 50%;
     #picCar{
 
         width: 100%;
-       margin: 0;
-        height: 40%; 
+       margin-top: 3rem;
+        height: 25rem; 
         overflow: hidden;
         
         /* overflow: hidden; */
@@ -301,30 +344,43 @@ width: 50%;
      
     
     .slick-carousel {
-      
-        
+      width: 100%;
+        height: 25rem;
         
         display: flex;
         /* transition: transform 0.5s ease-in-out; */
     }
     
     .picture {
-       
+       width: 100%;
+       height: 25rem;
         margin: 0;
        
         text-align: center;
-        width: 100%;
-        height: 100%;
-         
+        
     }
     
     .picture img {
-        margin: 0;
+        
+        object-fit: cover;
+     
+       
         width: 100%;
-        height: auto;
-        border-radius: 5px;
+        height: 25rem;
+       
+        
     }
     
+    .chevrons{
+        position: absolute;
+        width: 100%;
+        height: 5rem;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        top: 28%;
+        
+    }
     .fa-chevron-left{
         z-index: 100;
         position: absolute;
@@ -350,7 +406,7 @@ width: 50%;
 
 /******************************************/
 
-@media screen and (min-width:786px) and (max-width:1200px) {
+@media screen and (min-width:587px) and (max-width:1200px) {
     
 
 
@@ -372,7 +428,7 @@ width: 50%;
      #info{
      
         
-         min-width: 40%; 
+         min-width: 100%; 
          height: 90%; 
          
          
@@ -389,7 +445,7 @@ width: 50%;
      }
      
      #groupInfo li .desc_car{
-         font-size: 20px;
+         font-size: 15px;
          font-weight: bold;
          color:white;
          width: 100%;
@@ -405,50 +461,16 @@ width: 50%;
          
      }
      
-     #picCar{
-        border: 2px solid red;
-     } 
+     
        
      .desc_car span{
          font-size: 20px;
          color:rgb(243, 53, 6)
      }
      
-     #reserver{
-        position: absolute;
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-        background-color: rgb(239, 232, 232);
-        width: 20%;
-        height:auto;
-        top: 75rem;
-       left: 40%;
-        
-        border-radius: 10px ;
-        
-        -webkit-border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -ms-border-radius: 10px ;
-        -o-border-radius: 10px ;
-     }
-     
-     #reserver a{
-       
-         text-align: center;
-         font-size: 30px;
-         text-decoration: none;
-         font-weight: bold;
-         color: rgb(9, 9, 9);
-         padding: 1rem;
-         
      
      
-     
-     
-     }
+    
      
      #titre_onecar{
          color: white;
@@ -469,7 +491,9 @@ width: 50%;
          width: 80%;
         padding: 0;
        margin-left: 10%;
-         height: 80vh; 
+       margin-top: 2rem;
+       margin-bottom: 5rem;
+         height: 55vh; 
          overflow: hidden;
          
          
@@ -507,11 +531,26 @@ width: 50%;
          border-radius: 5px;
      }
      
+
+     .chevrons{
+        position: absolute;
+        width: 100%;
+        height: 5rem;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 43%;
+        
+        
+    }
+     
+
      .fa-chevron-left{
          z-index: 100;
-         position: absolute;
-         color: white;
-         font-size: 80px;
+       
+         color: rgb(246, 95, 8);
+         font-size: 65px;
          top: 100%;
          left: 7rem;
         
@@ -519,16 +558,43 @@ width: 50%;
      
      .fa-chevron-right{
          z-index: 100;
-         position: absolute;
-         color: white;
-         font-size: 80px;
+       
+         color:rgb(246, 95, 8);
+         font-size: 65px;
          top: 100%;
          right: 7rem;
      
      }
      
-
-
+     #reserver{
+        position: absolute;
+   z-index: 1000;
+   display: flex;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+   background-color:  rgb(218, 213, 213);
+   width: 10rem;
+   height: 3rem;
+   top: 76rem;
+   left: 40%;
+    
+   
+     }
+     #reserver a{
+       
+        text-align: center;
+        font-size: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        color: rgb(9, 9, 9);
+        padding: 1rem;
+        
+    
+    
+    
+    
+    }
     
 }
 

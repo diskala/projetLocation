@@ -46,32 +46,7 @@ body{
  
 
 
-.nombre_commandes{
-    /* background-color: rgb(240, 184, 88); */
-}
-
-
-.nombre_voiture{
-   
-    /* background-color: rgb(243, 185, 127); */
-   
-}
-.voitures_sorties{
-   
-    /* background-color: rgb(192, 241, 215); */
-   
-}
-
-.voitures_auStock{
-   
-    /* background-color: rgb(217, 215, 245); */
-    
-}
  
-/* .nombre_voiture h3, .voitures_sorties h3, .voitures_auStock h3, .nombre_commandes h3{
-   font-size: 30px;
-   color: white;
-} */
 
  .container_table_principal{
 
@@ -94,12 +69,12 @@ body{
 
 .nombre_confirmation .chiffre{
     border: 3px solid rgb(236, 105, 11);
-    background-color: red;
-    
+    background-color:  rgb(236, 105, 11);
     width: 5rem;
     text-align: center;
+    font-weight: bold;
     height: 5rem;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,16 +83,33 @@ body{
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+    animation-duration: 4s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: 1s ease-in-out;
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -ms-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
 }
+
+@keyframes clignoter {
+    0%   { background-color: rgb(236, 105, 11);; }
+    40%   {background-color:rgb(242, 238, 235); }
+    100% { background-color: rgb(236, 105, 11); }
+  }
 .nombre_confirmation .phrase{
     color: black;
     text-align: center;
     
     
     
+    
 }
 .container_table {
-    height: 30rem;
+    border: 2px solid blue;
+    min-height: 25rem;
+    width: 100%;
     overflow: scroll;
     background-color: rgb(190, 187, 187);
     margin-top: 3rem;
@@ -125,30 +117,36 @@ body{
      
 }
 
-.table{
+.container_table .tablese{
+    border: 2px solid greenyellow;
     width: 100%;
     border: 2px solid black;
 } 
- .container_titre .titre{
+.container_table .tablese .container_titre .titre{
     background-color: black;
     color: white;
+    height: 4rem;
     font-size: 12px ;
     font-weight: bold;
     position: sticky;
     top: 0;
  }
-.table td{
-    width: 15rem;
+
+ .container_table .tablese tr td{
+    
     border-width: 2px;
     border-style:double;
-    border-color: white;
-    background-color: rgb(190, 187, 187);
+    border-color:rgb(233, 119, 5);
+    background-color: rgb(197, 206, 207);
+    text-align: center;
+    color: black;
+    
     
 }
-
-.table td{
-    color: black;
+.container_table .tablese .donnees td{
+    text-align: center;
 }
+ 
 .boutton_confirme{
     
     background-color:  rgb(245, 182, 46);
@@ -164,12 +162,12 @@ body{
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
-.table .actions a{
+.container_table .tablese .actions a{
     color: black;
     font-weight: bold;
     
 }
-.table td .pdf{
+.container_table .tablese td .pdf{
     background-color:rgb(93, 229, 175);
     width: 7rem;
     height: 3rem;
@@ -184,8 +182,9 @@ body{
     -o-border-radius: 20px;
 }
 
-.table td .pdf a{
+.tablese td .pdf a{
     color: black;
+    font-weight: bold;
 }
 
  

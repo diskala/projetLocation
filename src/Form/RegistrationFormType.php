@@ -22,9 +22,23 @@ class RegistrationFormType extends AbstractType
         $builder
         ->add('firstname', TextType::class,[
             "label"=>false,
+            'constraints' => [
+                new Length(['min' => 3]),
+                new Regex([
+                    'pattern' => '/^[a-zA-Z0-9\s]*$/',
+                    'message' => 'Le Nom ne doit pas contenir de caractères spéciaux.'
+                ])
+            ]
         ])
         ->add('lastname', TextType::class,[
             "label"=>false,
+            'constraints' => [
+                new Length(['min' => 3]),
+                new Regex([
+                    'pattern' => '/^[a-zA-Z0-9\s]*$/',
+                    'message' => 'Le prénom ne doit pas contenir de caractères spéciaux.'
+                ])
+            ]
         ])
         ->add('email', EmailType::class,[
             "label"=>false,
@@ -40,7 +54,7 @@ class RegistrationFormType extends AbstractType
             'attr' => ['autocomplete' => 'new-password'],
             'constraints' => [
                 new NotBlank([
-                    'message' => 'Please enter a password',
+                    'message' => 'ENTRER VOTRE MOT DE PASSE',
                 ]),
                 new Regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/', "Il faut 8 caractères une lettre en majuscule, au moin un chiffre et un caractère special"
                 )],

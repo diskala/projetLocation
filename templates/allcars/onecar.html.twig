@@ -5,6 +5,7 @@
        {% block stylesheets %}
              <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
               <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
+              <link rel="stylesheet" href={{ asset("./styles/inviteContact.css") }}>
              <link rel="stylesheet" href= {{ asset("./styles/onecar.css") }} >
         {% endblock %}
         
@@ -28,22 +29,22 @@
   
    <ul id="groupInfo">
    
-    <li> <h1 class="desc_car" id="brand_car"> Marque : {{ item.brand|upper }}  </h1></li>
-     <hr><br>
-     <li><h1 class="desc_car" id="model_car"> Modele : {{ item.model|upper }} | {{ item.category }}  </h1></li>
-      <hr><br>
+    <li> <h1 class="desc_car" id="brand_car"> Marque : {{ item.brand|upper }}  </h1> </li>
+     <hr>
+     <li><h1 class="desc_car" id="model_car"> Modele : {{ item.model|upper }} | {{ item.category }}  </h1>  </li>
+      <hr>
      
-     <li><h1 class="desc_car" id="energy_car">Energie : {{ item.energy|upper }}</h1></li>
-       <hr><br>
+     <li><h1 class="desc_car" id="energy_car">Energie : {{ item.energy|upper }}</h1> </li>
+       <hr>
     
-     <li><h1 class="desc_car" id="categorie_car"> Boite à vitesse : {{ item.gearBox|upper }} </h1></li>
-      <hr><br>
-     <li><h1 class="desc_car" id="categorie_car"> Nombre de places : {{ item.numberPlace }} </h1></li>
-       <hr><br>
+     <li><h1 class="desc_car" id="categorie_car"> Boite à vitesse : {{ item.gearBox|upper }} </h1> </li>
+      <hr>
+     <li><h1 class="desc_car" id="categorie_car"> Nombre de places : {{ item.numberPlace }} </h1> </li>
+       <hr>
      <li><h1 class="desc_car" id="categorie_car"> Prix de location: <span>{{ item.priceDay }} €/jour</span> Pour un kilométrage limité à 150 Km/jour </h1></li>
-       <hr><br>
+       <hr>
      <li><h1 class="desc_car" id="categorie_car">  Prix de location avec un kilométrage illimité :<span> {{ item.priceKmUnlimited }} €/jour </span> </h1></li>
-       <hr><br>
+       <hr>
      <li><h1 class="desc_car" id="categorie_car"> Caution à payer :<span> {{ item.bail }} € </span></h1></li>
      <hr>
     </ul>
@@ -105,11 +106,12 @@
 
 
 </article>
+{{ include("./_partials/inviteContact.html.twig") }} 
   {# {{ dump(onecar) }} #}
  {# {% for key, value in onecar %}
     {{ key }}: {{ value }}
 {% endfor %} #}
 
- {# {{ include("./_partials/footer.html.twig") }} #}
+ {{ include("./_partials/footer.html.twig") }}
 
 {% endblock %}

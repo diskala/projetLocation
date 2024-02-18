@@ -15,11 +15,10 @@ body {
   
 }
 
- 
+  
 
 .container_header {
     width: 100%;
-    
     background-color: black;
     display: flex;
     justify-content:space-between;
@@ -30,58 +29,82 @@ body {
 
 
 .nav-links {
-
+   
     width: 60rem;
     display: flex;
-    justify-content: left;
-    gap: 2rem;
-    margin-right: 10rem; 
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 5rem; 
       
 }
 
 .nav-links a{
     
-    font-size:20px ;
+    font-size:17px ;
     text-decoration: none;
 }
 .menu_accueil, .menu_service, .user, .connexion, .deconnection, .inscrir, .contacte{
-    
+    cursor: pointer;
     text-align: center;
+    
+    height: 2rem;
+    
     
 }
 
 #accueil, #service, .user, .connexion a, .deconnection a, .inscrir a, .contacte a{
+  color: rgba(3, 230, 255, 0.962);
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+#accueil:hover, #service:hover, .user:hover, .connexion a:hover, .deconnection a:hover, .inscrir a:hover, .contacte a:hover{
     color: rgba(3, 230, 255, 0.962);
     font-weight: bold;
+    font-size: 18px;
+   
+    text-decoration: underline;
+  
    
 }
+
+
 .menu_accueil, .menu_service  {
     position: relative;
-  
     width: 15rem;
+    height: 2rem;
   
 } 
  
+ 
+
 .sous_accueil, .sous_service {
     position: absolute;
-  display: none;
-  
+    display: none;
     padding-left: 0;
-    height: auto;
-    width: 18rem;
+    height: 10rem;
+    width: 15rem;
     top: 1rem;
-    left: 2rem;
+    left: 3rem;
     z-index: 100;
     padding-bottom: 1rem;
+    padding-top: 0rem;
+    
 }
 
+ 
+ 
 .sous_accueil li, .sous_service li{
     list-style: none;
+   
     margin-left: 0;
     margin-top: 1rem;
     
-    
-   
 
 }
 
@@ -96,8 +119,12 @@ body {
 
  
 .monMail, .deconnecter, .contacte {
-   
+    
     width: 15rem;
+    text-align: center;
+    height: 2rem;
+   
+    
 } 
 
 
@@ -110,20 +137,24 @@ body {
     
     
 } 
+
+
  
 .logos {
-     
+    cursor: pointer;
     font-size: 1.5em;
     height: 5rem;
-    margin-left: 10rem;
+    margin-left: 5%;
     width: 5rem;
-  
     border-radius: 50% ;
     -webkit-border-radius: 50% ;
     -moz-border-radius: 50% ;
     -ms-border-radius: 50% ;
     -o-border-radius: 50% ;
+    
 }
+
+ 
 .logos img{
     width: 100%;
     height: auto;
@@ -147,7 +178,7 @@ body {
 
 
 
-@media only screen and (min-width: 578px) and (max-width:1200px)  {
+@media only screen and (min-width: 587px) and (max-width:1200px)  {
     
 
     
@@ -163,9 +194,13 @@ body {
         width: 70%;
         
         height: auto;
-        margin-left: 7rem;
+        margin-left: 7.5rem;
        
 
+    }
+
+    .nav-links .user{
+        margin-left: -0.6rem;
     }
     .menu_accueil, .menu_service, .monMail, .deconnecter, .contacte{
        
@@ -179,19 +214,25 @@ body {
 
     .sous_accueil, .sous_service{
        
+      
+       
         width: 20rem;
         height: auto;
         margin-top: -2rem;
-        margin-left: 65%;
-        background-color: antiquewhite;
+        margin-left: 5rem;
+        
     }
 
     .menu_accueil li, .menu_service li{
         width: 100%;  
+        border: 2px solid white;
+        
     }
     .menu_accueil li a, .menu_service li a{
-          text-align: center;
-          color: black;
+          text-align:right;
+          color: white;
+          font-weight: bolder;
+          margin-left: 5rem;
     }
 
     .burger-menu {
@@ -233,10 +274,25 @@ body {
 }
 }
 
-@media screen and (max-width: 578px) {
+@media screen and (max-width: 587px) {
    
+    .burger-menu {
+        position: absolute;
+        z-index: 100;
+        color: white;
+        display: block;
+        visibility: visible;
+        font-size: 40px;
+         left: 44%;
+        top:8rem;
+        
+       
+        
+    }
+
     .container_header{
         display: block;
+       /* height: 10rem; */
        
       
     }
@@ -246,9 +302,16 @@ body {
         display: none;
         width: 70%;
         height: auto;
-        margin-left: 3rem;
+        margin-left: 3.4rem;
+        margin-top: 7rem;
+        
+
        
 
+    }
+
+    .nav-links .user{
+        margin-left: -1rem;
     }
     .menu_accueil, .menu_service, .monMail, .deconnecter, .contacte{
        
@@ -266,14 +329,14 @@ body {
     .sous_accueil, .sous_service{
         width: 15rem;
         height: auto;
-        background-color: antiquewhite;
+        
         margin-left: 50%;
         margin-top: -2rem;
     }
 
     .sous_accueil li a, .sous_service li a{
         font-size: 15px;
-        color: black;
+        color: white;
     }
 
     .menu_accueil li, .menu_service li{
@@ -282,11 +345,7 @@ body {
        
     }
 
-    .burger-menu {
-        display: block;
-        margin-top: 1rem;
-        margin-right: 1.5rem;
-    }
+    
 
     .logos {
      

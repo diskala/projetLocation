@@ -1,0 +1,432 @@
+﻿body{
+     
+    margin: 0;
+    padding: 0;
+    /* border: 3px solid blue; */
+    height: 100%;
+   
+     
+  
+}
+
+.font_photo{
+    
+    margin-top: -6rem;
+   
+    width: 100%;
+    height: 100vh;
+   
+    z-index: -1;
+   
+    background-image: url('/images/lotus-exige-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    position: fixed;
+}
+.section_contact{
+   z-index: 100;
+   
+  
+   
+}
+
+.numero_tel{
+   
+    z-index: 100;
+    /* border: 4px solid green; */
+    width: 100%;
+    height: 100vh;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: black;
+    opacity: 0.8;
+    
+}
+.numero_tel h1{
+    /* border: 2px solid blue; */
+    width: 70rem !important ;
+    font-family: N27,Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #e02b20!important;
+    letter-spacing: 1em;
+    text-align: center;
+    line-height: 110%;
+     
+    
+    
+
+   
+   
+}
+
+.numero_tel h3{
+    /* border: 2px solid blue; */
+    width: 70rem !important ;
+    font-family: N27,Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    letter-spacing: 0.8em;
+    text-align: center;
+    line-height: 110%;
+}
+
+.numero_tel .boutton{
+    /* border: 2px solid yellowgreen; */
+    width: 70rem !important ;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.numero_tel .boutton a{
+    color: #fff!important;
+    border-width: 0!important;
+    border-radius: 100px;
+    padding: 1rem;
+    letter-spacing: .14em;
+    font-size: 18px;
+    font-family: Barlow,Helvetica,Arial,Lucida,sans-serif!important;
+    background-color: #242c30;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.numero_tel a{
+    text-decoration: none;
+} 
+
+.numero_tel .fleche{
+ 
+ width: 3rem;
+ height: 8rem;
+ display: block;
+/* background-color: #242c30; */
+ 
+
+ text-align: center;
+ transition: 1s ease-in-out ;
+ -webkit-transition: 1s ease-in-out ;
+ -moz-transition: 1s ease-in-out ;
+ -ms-transition: 1s ease-in-out ;
+ -o-transition: 1s ease-in-out ;
+
+ /* border-radius: 20px ;
+ -webkit-border-radius: 20px ;
+ -moz-border-radius: 20px ;
+ -ms-border-radius: 20px ;
+ -o-border-radius: 20px ; */
+}
+
+.numero_tel .fleche .fa-solid {
+    font-size: 30px;
+    display: none;
+    /* transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    border-width: 5px; */
+    margin-top: 0;
+    font-weight: bolder !important;
+    color: #e02b20!important;
+    transition: 1s ease-in-out ;
+    -webkit-transition: 1s ease-in-out ;
+    -moz-transition: 1s ease-in-out ;
+    -ms-transition: 1s ease-in-out ;
+    -o-transition: 1s ease-in-out ;
+   
+}
+
+
+/* .numero_tel .fleche #anime_1{
+    margin-top: 0;
+    
+}
+.numero_tel .fleche #anime_2{
+    margin-top: 3rem;
+   
+}
+.numero_tel .fleche #anime_3{
+    margin-top: 6rem;
+    
+}
+.numero_tel .fleche #anime_4{
+    margin-top: 9rem;
+    
+} */
+
+
+
+
+
+
+.formulaire_contact{
+    
+    z-index: 100;
+/* border: 2px solid rgb(206, 202, 202); */
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+background-color: black;
+opacity: 0.8;
+ 
+}
+
+.envloppe_form{
+    /* border: 2px solid blueviolet; */
+    width: 90%;
+    height: 80vh;
+    
+    
+   
+ 
+}
+
+
+.range{
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid rgb(223, 212, 212); */
+    width: 100%;
+    margin-top: 3rem;
+    /* border: 2px solid red; */
+
+}
+
+.range .ul_1 hr{
+    /* border: 0.2px solid rgb(248, 245, 245); */
+
+    border-color: #e02b20;
+   height: 0.1px;
+    
+   width: 95%;
+    
+}
+
+.range .ul_2 hr{
+    
+    width: 100%;
+  
+    border-color: #e02b20;
+}
+.range .ul_1{
+    width: 50%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.range .ul_2{
+    width: 97%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.range li .nom_prenom , .range li .email_tel {
+    width: 95%;
+    color: #fff;
+    font-size: 20px;
+    height: 2rem;
+    background-color: black;
+    opacity: 0.8;
+    border-width: 0;
+    /* border: 2px solid green; */
+   
+}
+
+.range li .objets {
+    width: 100%;
+    height: 4rem;
+    background-color: black;
+    opacity: 0.8;
+    border-width: 0;
+    color: #fff;
+    height: 2rem;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+   
+    /* border: 2px solid green; */
+}
+
+ .range .ul_2 li .message{
+    width: 100%;
+    
+    background-color: black;
+    opacity: 0.8;
+    border-width: 0;
+    color: #fff;
+    height: 10rem;
+    font-size: 20px;
+ }
+
+ .btn_valid{
+    margin-top: 3rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+ }
+
+ .btn_valid .btn_contact{
+    cursor: pointer;
+    width: 12rem;
+    height: 3rem;
+    letter-spacing: 0.3em;
+    color: #fff;
+    font-weight: bold;
+    background-color: #242c30;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+#messageAlert{
+    color: rgb(244, 170, 10);
+   
+    height: auto;
+    text-align: center;
+    font-size: 12px ;
+    letter-spacing: 0.3em;
+    font-style: italic;
+    width: 55%;
+}
+
+.erreurs {
+    color: rgb(239, 239, 6);
+    
+    font-size: 20px;
+    letter-spacing: 0;
+
+    
+}
+
+@media screen and (min-width: 587px) and (max-width: 1200px) {
+    .numero_tel h1{
+        font-size: 25px;
+    }
+
+    .numero_tel h3{
+        font-size: 12px;
+        letter-spacing: 0.4em;
+    }
+
+    .numero_tel .boutton a{
+        color: #fff!important;
+        border-width: 0!important;
+        border-radius: 100px;
+        padding: 1rem;
+        letter-spacing: 0.10em;
+        font-size: 15px;
+}
+
+.numero_tel .fleche .fa-solid {
+    
+    font-size: 25px;
+    display: none;
+   
+}
+
+.range{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.range li label{
+    font-size: 15px;
+}
+.range .ul_1{
+    width: 100%;
+}
+.range li .nom_prenom , .range li .email_tel, .range .ul_2 li .message{
+    font-size: 18px;
+}
+
+.erreurs {
+    color: rgb(239, 239, 6);
+    
+    font-size: 15px;
+    letter-spacing: 0;
+
+    
+}
+}
+
+
+@media screen and (max-width: 587px) {
+
+    .numero_tel h1{
+        font-size: 18px;
+    }
+
+    .numero_tel h3{
+        font-size: 10px;
+        letter-spacing: 0.3em;
+    }
+
+    .numero_tel .boutton a{
+        color: #fff!important;
+        border-width: 0!important;
+        border-radius: 100px;
+        padding: 1rem;
+        letter-spacing: 0.1em;
+        font-size: 12px;
+}
+
+.numero_tel .fleche .fa-solid {
+    
+    font-size: 20px;
+    display: none;
+   
+}
+
+.range{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.range li label{
+    font-size: 12px;
+}
+.range .ul_1{
+    width: 100%;
+}
+ 
+.range li .nom_prenom , .range li .email_tel,.range .ul_2 li .message{
+    font-size: 15px;
+}
+
+.erreurs {
+    color: rgb(239, 239, 6);
+    
+    font-size: 12px;
+    letter-spacing: 0;
+
+    
+}
+}

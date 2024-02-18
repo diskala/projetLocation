@@ -1,58 +1,5 @@
 ﻿ 
 
- .container_confirme{
-    
-    background-color: rgb(194, 188, 188);
-    width: 100%;
-    height: 15rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 3rem;
- }
- .nombre_sorties, .nombre_auStock{
-    
-    width: 30%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    
-     
-
- }
- .nombre_sorties .valeur, .nombre_auStock .valeur{
-     /* background-color: rgb(236, 105, 11); */
-     border: 3px solid rgb(236, 105, 11);
-    
-     width: 8rem;
-     height: 8rem;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     
-     border-radius:50% ;
-     -webkit-border-radius:50% ;
-     -moz-border-radius:50% ;
-     -ms-border-radius:50% ;
-     -o-border-radius:50% ;
-}
-.nombre_sorties .valeur h4, .nombre_auStock .valeur h4{
-font-size: 30px;
-font-weight: bold;
-color: black;
-}
-.nombre_sorties h5, .nombre_auStock h5{
-    
-    width: 35rem;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
-       font-weight: bold;
-       text-align: center;
-    } 
-
 
 
 

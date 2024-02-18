@@ -10,6 +10,7 @@
     -moz-border-radius:10px ;
     -ms-border-radius:10px ;
     -o-border-radius:10px ;
+    padding-left: 1rem;
 }
 
 .nombre_voiture{
@@ -17,7 +18,7 @@
     display: flex;
     gap: 2rem;
     width: 25rem;
-     margin-left: 15rem;
+      margin-left:20rem ;
      align-items: center;
      justify-items: flex-end;
   
@@ -73,43 +74,37 @@ text-align: center;
    font-weight: bold;
  
 }
-.res_confirmer, .voitures_louée{
-   width: 12rem;
+.accueil_dashboard, .res_confirmer, .voitures_louée, .res_clotures{
+   /* width: 10rem;
    height: 3rem;
    background-color: black;
-   /*background-color: rgb(236, 105, 11);
-   */display: flex;
+   
+   display: flex;
    align-items: center;
    justify-content: center;
    border-radius:10px;
    -webkit-border-radius:10px;
    -moz-border-radius:10px;
    -ms-border-radius:10px;
-   -o-border-radius:10px;
-}
-.accueil_dashboard{
-   width: 5rem;
-   height: 3rem;
-   background-color: black;
-   /*background-color: rgb(236, 105, 11);
-   */display: flex;
-   align-items: center;
-   justify-content: center;
-   border-radius: 10px;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   -ms-border-radius: 10px;
-   -o-border-radius: 10px;
-}
-.res_confirmer a, .voitures_louée a{
-color: white;
-font-size: 15px;
-font-weight: bold;
+   -o-border-radius:10px; */
+} 
 
+.accueil_dashboard a, .res_confirmer a, .voitures_louée a, .res_clotures a{
+   color: black;
+   font-size: 15px;
+   font-weight: bold;
+   transition: 0.5s ease-in-out ;
+   -webkit-transition: 0.2s ease-in-out ;
+   -moz-transition: 0.5s ease-in-out ;
+   -ms-transition: 0.5s ease-in-out ;
+   -o-transition: 0.5s ease-in-out ;
 }
-.accueil_dashboard a{
-   color: white;
-font-size: 25px;
-font-weight: bold;
 
+.accueil_dashboard a:hover, .res_confirmer a:hover, .voitures_louée a:hover, .res_clotures a:hover{
+     color: rgb(231, 133, 6);
+     text-decoration: underline;
+    
 }
+    
+ 
+ 

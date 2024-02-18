@@ -1,1 +1,341 @@
-﻿
+﻿footer{
+     
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+
+}
+
+#foot{
+    
+     display: grid;
+     grid-template-columns: 25% 45% 25%;
+     gap: 1rem;
+     width: 98%;
+     justify-content: space-between;
+     
+     align-items: center;
+}
+
+#agence{
+     
+    color: aliceblue;
+    
+    
+}
+
+#agence h3{
+
+    color: rgb(238, 240, 241);
+   font-size: 15px;
+     margin-left: 3rem;
+
+}
+
+#agence #ul_agence{
+    
+    margin-left: 3rem;
+    margin-top: 1rem;
+     
+}
+
+#agence #ul_agence li{
+    margin-top: 1rem;
+    list-style: none;
+}
+
+#agence #ul_agence li a{
+    font-size: 15px;
+    color: #e02b20!important;
+}
+
+.logo_reseau{
+     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   
+}
+
+.logo_reseau .logos_footer{
+    
+    padding: 0;
+    width: 5rem;
+    object-fit: cover;
+    height: 5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.logo_reseau .logos_footer img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.logo_reseau #reseau{
+    
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_reseau #reseau i{
+    font-size: 20px;
+    color: rgba(3, 230, 255, 0.962);
+}
+
+.logo_reseau #reseau #ico3{
+    color: #c4302b;
+}
+.logo_reseau #reseau #ico4{
+    color: #E4405F;
+}
+.logo_reseau #reseau #ico2{
+    color: #00acee;
+}
+
+#com{
+    
+}
+
+#com ul{
+   padding-top: 1rem;
+}
+#com ul li{
+margin-top: 1rem;
+margin-left: 3rem;
+list-style: none;
+}
+
+#com ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#bas{
+    
+   width: 100%;
+    margin-top: 1rem;
+    
+}
+
+#bas p{
+    color: aliceblue;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    text-align: center;
+}
+#bas p a{
+    color: #e02b20!important;
+    text-decoration: none;
+}
+
+ 
+
+@media screen  and (min-width: 587px) and (max-width: 1200px) {
+
+
+    footer{
+     
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    
+    
+    }
+    
+    #foot{
+       
+         display: grid;
+         grid-template-columns: 35% 30% 35%;
+         gap: 1rem;
+          justify-items: center;
+         width: 100%;
+        border: 2px solid white;
+    }
+   
+    #agence h3{
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+    #agence #ul_agence{
+        margin-left: 0;
+    }
+
+    #agence #ul_agence li a{
+        font-size: 12px;
+    }
+    .logo_reseau #reseau{
+        width: 90%;
+        display: flex;
+        gap: 1rem;
+    }
+    .logo_reseau #reseau i{
+        font-size: 12px;
+    }
+    
+    .logo_reseau .logos_footer{
+       
+        padding: 0;
+        width: 3rem;
+        
+        height: 3rem;
+        
+    }
+    
+    .logo_reseau .logos_footer img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    
+    #com ul li{
+        margin-left: 0;
+    }
+    #com ul li a{
+        font-size: 12px;
+    }
+
+    
+    
+    #bas p{
+       
+        font-size: 10px;
+        
+    }
+}
+
+@media screen and (max-width: 587px) {
+
+    footer{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+       
+    }
+
+    #foot{
+        
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         grid-template-areas: 
+         "post_1"
+         "post_3"
+         "post_2";
+         justify-content: center;
+         align-items: center;
+         gap: 2rem;
+         width: 50%;
+    }
+
+    .post_1{
+        grid-area: post_1;
+    }
+    .post_2{
+        grid-area: post_2;
+    }
+    .post_3{
+        grid-area: post_3;
+    }
+
+#agence{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+    #agence h3{
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+    #agence #ul_agence{
+        margin-left: 0;
+    }
+
+    #agence #ul_agence li a{
+        font-size: 12px;
+    }
+    .logo_reseau #reseau{
+        width: 60%;
+    }
+    .logo_reseau #reseau i{
+        font-size: 12px;
+    }
+    
+    .logo_reseau .logos_footer{
+       
+        padding: 0;
+        width: 3rem;
+        
+        height: 3rem;
+        
+    }
+    
+    .logo_reseau .logos_footer img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    
+#com{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    
+}
+
+    #com ul li{
+        margin-left: 0;
+    }
+    #com ul li a{
+        font-size: 12px;
+    }
+
+    
+    
+    #bas p{
+       
+        font-size: 10px;
+        
+    }
+    
+}

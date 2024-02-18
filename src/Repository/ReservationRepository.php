@@ -60,6 +60,21 @@ class ReservationRepository extends ServiceEntityRepository
         ->getResult();
 }
 
+// methode retourne reservation par Id  User
+public function userReservation($id)
+{
+    return $this->createQueryBuilder('r')
+        ->leftJoin('r.car', 'c') 
+        ->leftJoin('r.users', 'u')
+        // ->addSelect('c')
+        // ->addSelect('u')
+        ->where('u.id = :id')
+        ->setParameter('id', $id)
+        ->orderBy('r.dayDate', 'DESC')
+        ->getQuery()
+        ->getResult();
+}
+
 // retourne reservation par id
 public function Reservations($id)
 {

@@ -62,7 +62,7 @@ class ActionStatusRepository extends ServiceEntityRepository
     }
 
 
-    // actions des les reservation cloturées
+    // actions  reservations cloturées
     public function ResrvationCloturees()
     {
         return $this->createQueryBuilder('a')
@@ -71,6 +71,7 @@ class ActionStatusRepository extends ServiceEntityRepository
                    ->andWhere('a.rentedCar = :rentedCar')
                    ->setParameter('returnedCar' , true)
                    ->setParameter('rentedCar' , true)
+                   ->orderBy('a.returnDate' , 'DESC')
                    ->getQuery()
                    ->getResult()
                ;

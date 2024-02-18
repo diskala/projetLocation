@@ -38,7 +38,7 @@
 }
  
 .pic{
-    
+    width: 100%;
     height: 50vh;
     
 }
@@ -50,6 +50,8 @@
     cursor: pointer;
 }
 
+ 
+
 .sous_image{
     display: flex;
     justify-content: space-between;
@@ -59,131 +61,190 @@
    
    
 }
-.sous_image .lien{  
-    height: 3rem;
-    
-    width: 15rem;
-    justify-items: center;
-    margin-right: 3rem;
-}
-
-.sous_image .lien a{
+.sous_image .lien{
+    height: 2rem;
     background-color: rgb(242, 81, 27);
-    font-size: 20px;
-    cursor: pointer;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5rem;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+
+
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+}
+
+.sous_image .lien:hover{
+    height: 2.3rem;
+    width: 10.3rem;
+    background-color: rgb(243, 102, 56);
+}
+
+.sous_image .lien a{
+   color: black;
+    font-size: 17px;
+    cursor: pointer;
+    
+    
+    text-decoration: none;
+   
 }
 .items h2, .items h1{
     margin-left: 2rem;
     font-size: 20px;
+    margin-bottom: 1rem;
 }
 a, h1{
     text-decoration: none;
     color: white;
 }
 .sous_image h1{
-    font-size: 30px;
+    font-size: 20px;
 }
 #cherche{
   display: flex; 
-  
-  
-  width: 100%;
-  padding-left: 4rem;
- 
-   gap: 5rem;
    
+  align-items: center;
+  
+  /* width: 78%; */
+  width: 98%;
+  margin-left: 5rem;
+ gap: 17%;
   justify-items: center;
   
   
 }
  
 #chercheMarque{
-    width: 45%;
-   
+    width: 35%;
+    
 }
-
 #chercheCategorie{
-    width: 45%;
-   
+    width: 35%;
+    
 }
+ 
 
  .marque{
     background-color: rgb(13, 13, 13);
     width: 100%;
-    height: 4rem;
-    font-size: 30px;
+    height: 3rem;
+    font-size: 20px;
     border-color: white;
     color: white;
+
+    
    
  }
  .categorie{
     background-color: rgb(13, 13, 13);
     width: 100%;
-    height: 4rem;
-    font-size: 30px;
+    height: 3rem;
+    font-size: 20px;
     border-color: white;
     color: white;
     
  }
  
    
- @media screen and (min-width: 768px) and (max-width: 1200px) {
+ @media screen and (min-width: 587px) and (max-width: 1200px) {
     
     #container_items{
     
-        
+        margin-top: 2rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr) ;
-        margin:auto;
+        
         justify-content: center;
+        justify-items: center;
+        align-items: center;
         
             
     }
 
     .items{
-        margin: 2.5rem;
+       
      
         
          width: 90%;
-         height: 70vh;
+         height:63vh;
      }
 
+.pic{
+    width: 98%;
+    margin: 0;
+    
+}
+
+.pic a{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+}
+
+.pic a img{
+    min-width: 100%;
+    height: 100%;
+  padding: 0;
+}
      #cherche{
         display: block; 
-        width: 50%;
-        margin-left: 10rem;
+        width: 25rem;
+      
+    padding: 0;
+        margin-left: 25%;
 
 
       
       }
-
+ 
        
       #chercheMarque{
         width: 100%;
+        height: 3rem;
         
+        
+    }
+
+    #chercheMarque .marque, #chercheCategorie .categorie{
+        font-size: 18px;
+        height: 3rem;
     }
     #chercheCategorie{
         width: 100%;
-        
+        margin: 0;
+        height: 3rem;
         margin-top: 3rem;
     }
     
-      
+    .items h2, .items h1{
+        margin-left: 0;
+        font-size: 20px;
+    }  
      
      
  }
 
- @media screen and (max-width: 768px) {
+ @media screen and (max-width: 587px) {
     
+
+    #carre{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+    }
     #container_items{
     
         margin-top: 2rem;
@@ -197,16 +258,36 @@ a, h1{
 
     .items{
        
-     border: 2px solid white;
+    
         margin: 0;
-         width: 90%;
+         width: 100%;
+         padding: 0;
        
      }
+.pic{
+   
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+}
+.pic a{
+    
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
+.pic a img{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
      #cherche{
         display: block; 
-        width: 50%;
-        margin-left: 4rem;
+        width: 20rem;
+        margin-left: 1rem;
+       margin-top: 2rem;
+        padding: 0;
        
 
 
@@ -216,39 +297,18 @@ a, h1{
        
       #chercheMarque{
         width: 100%;
+        padding: 0;
+        margin-left: 0;
         
     }
     #chercheCategorie{
         width: 100%;
-        
+        padding: 0;
         margin-top: 3rem;
     }
     
-    .pic{
-        width: 100%;
-        height: 30vh;
-        margin-left: 1rem;
-         
-        
-    }
     
-    .pic img{
-        width: 80%;
-        height: 100%;
-        
-       
-    } 
-    
-    .items{
-       
-     
-       
-        margin-left: 0;
-         width: 100%;
-         height: 70vh;
-     }
-
-     #carre{
+     /* #carre{
    
         height:70%;
        padding-top: 2rem;
@@ -257,29 +317,55 @@ a, h1{
         margin-top: 2rem;
         
        
-    }
+    } */
 
     .items h2, .items h1{
-        margin-left: 2rem;
+       margin-left: 0;
         font-size: 15px;
+        margin-bottom: 1rem;
     }
     .marque{
         background-color: rgb(13, 13, 13);
         width: 100%;
-        height: 4rem;
-        font-size: 20px;
+        height: 2.5rem;
+        font-size: 15px;
         border-color: white;
         color: white;
+        padding: 0;
        
      }
      .categorie{
         background-color: rgb(13, 13, 13);
         width: 100%;
-        height: 4rem;
-        font-size: 20px;
+        height: 2.5rem;
+        font-size: 15px;
         border-color: white;
         color: white;
         
      } 
+
+
+     .sous_image{
+       
+        height: 3rem;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+       
+       
+    }
+    .sous_image .lien{
+        height: 2rem;
+        
+        width: 7rem;
+        margin-right: 1rem;
+         
+    }
+
+    .sous_image .lien a{
+        font-size: 12px;
+    }
+    
      
  }
