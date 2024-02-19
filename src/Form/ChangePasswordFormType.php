@@ -20,21 +20,24 @@ class ChangePasswordFormType extends AbstractType
                 'type' => PasswordType::class,
                 'options' => [
                     'attr' => [
-                        'autocomplete' => 'new-password',
+                        'autocomplete' => 'Nouveau mot de passe',
                     ],
                 ],
                 'first_options' => [
                     'constraints' => [
                         new NotBlank([
-                            'message' => 'Please enter a password',
+                            'message' => 'Veuillez entrer votre Mot de passe',
                         ]),
                         new Regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/', "Il faut 8 caractères une lettre en majuscule, au moin un chiffre et un caractère special"
                     )
                     ],
-                    'label' => 'New password',
+                    'label' => 'Nouveau mot de passe',
+                    'label_attr' => ['style' => 'margin-right: 1.9rem;  font-weight: bold;'], // Ajoute de l'espace à droite du label
+                    'row_attr' => ['style' => 'margin-bottom: 1rem ;'], // Ajoute de l'espace en bas
                 ],
                 'second_options' => [
-                    'label' => 'Repeat Password',
+                    'label' => 'Répéter le mot de passe ',
+                    'label_attr' => ['style' => 'margin-right: 1rem; font-weight: bold;'], // Ajoute de l'espace à droite du label
                 ],
                 'invalid_message' => 'The password fields must match.',
                 // Instead of being set onto the object directly,

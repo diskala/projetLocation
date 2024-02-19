@@ -48,11 +48,12 @@ class DashboardController extends AbstractDashboardController
     protected $entityManager;
     protected $AdminUrlGenerator;
     protected $AdminContextProvider;
+    protected $contactRepository;
 
     public function __construct(
         ReservationRepository $Reservation, CarRepository $CarRepository,
          ActionStatusRepository $actionStatusRepository, EntityManagerInterface $entityManager,
-          AdminUrlGenerator $adminUrlGenerator, AdminContextProvider $adminContextProvider,
+          AdminUrlGenerator $adminUrlGenerator, AdminContextProvider $adminContextProvider, ContactRepository $contactRepository
          
     ) {
         $this->ReservationRepository = $Reservation;
@@ -61,6 +62,7 @@ class DashboardController extends AbstractDashboardController
         $this->entityManager = $entityManager;
          $this->AdminUrlGenerator = $adminUrlGenerator;
         $this->AdminContextProvider = $adminContextProvider;
+        $this->contactRepository = $contactRepository; 
         
         
         // dd($Reservation->ReservationAccepted()->get);
@@ -91,7 +93,8 @@ class DashboardController extends AbstractDashboardController
         $voitureRestituee = $actsObj->isReturnedCar();  // recupérer la valeur actuel returnedCar si la voiture restituée ou pas
          // nombre de reservation 
         $nombreDeReservations = $this->ReservationRepository->count([]);
-
+ // nombre de contact
+ $nombreDeContact = $this->contactRepository->count([]);
         // calcule nombre des reservations non confirmer
         $allReservation = $this->ReservationRepository->ReservationNonConfirmed();
         $reservationNonConfirme = [];
@@ -149,7 +152,9 @@ class DashboardController extends AbstractDashboardController
             'nombresAuStock'=>$nombresAuStock, // nombre de voiture disponible au stock
             'nombreVoitureSortie'=> $nombreVoitureSortie,
             'voitureLouee'=> $voitureLouee,
-            'voitureRestituee'=> $voitureRestituee
+            'voitureRestituee'=> $voitureRestituee,
+            'nombreDeContact' =>  $nombreDeContact // nombre de contact
+          
          ]);
     }
 
@@ -428,14 +433,7 @@ $entityManager->flush();
 return new Response($dompdf->output(), 200, [
     'Content-Type' => 'application/pdf',
 ]);
- // Retourner une réponse HTTP avec le contenu du PDF
-//  return new Response($pdfRelativePath, 200, [
-//     'Content-Type' => 'application/pdf',
-//     'Content-Disposition' => 'attachment; filename="facture.pdf"',
-// ]);
-    
-    // Générez la réponse appropriée, par exemple :
-    // return $this->redirectToRoute('index'); // Redirigez vers une autre page
+  
 
 
 

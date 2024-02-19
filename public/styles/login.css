@@ -8,16 +8,25 @@
     background-image: url("/images/mclaren-speedtail-3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+
+    
+    border: 1px solid transparent;
+    
   
    
 }
 
 #container__login{
 
-   
+    
     width: 100%;
     height: 60vh;
-    /* margin-top: 10%; */
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
    
 
 } 
@@ -33,19 +42,25 @@ ul li{
 }
 
 ul li input{
-    width: 100%;
+    width: 50rem;
     height: 5vh;
      margin-top: 1rem;
-     border-color: rgb(198, 255, 42);;
+     /* border-color:#f0f008; */
+     background-color: black;
+     opacity: 0.8;
+     color: white;
+     font-size: 20px;
 }
 
 ul li button{
+    cursor: pointer;
     margin-top: 1rem;
-    font-size: 80%;
+    font-size: 20px;
+    color: white;
     font-weight: bold;
-    width: 100%;
+    width: 10rem;
     height: 5vh;
-    background-color: rgb(198, 255, 42);
+    background-color: #e02b20!important;
     border-radius: 10% 20%;
     -webkit-border-radius: 10% 20%;
     -moz-border-radius: 10% 20%;
@@ -55,13 +70,14 @@ ul li button{
 
 ul li label{
    
-    font-size: 100%;
-    color: white;
+    font-size: 20px;
+    color:white;
     font-weight: bold;
 }
 h1{
     text-align: center;
-    font-size: 150%;
+    font-size: 30px;
+    font-weight: bold;
     color: white;
 }
 
@@ -82,7 +98,7 @@ ul li a{
            TABLETTE
 *************************************************/
 
-@media screen and (min-width:600px) and (max-width:1200px) {
+@media screen and (min-width:587px) and (max-width:1200px) {
     #container__section{
         
         height: 100vh;
@@ -96,7 +112,7 @@ ul li a{
     }
     
     #container__login{
-    
+    border: 4px solid red;
         
         width: 100%;
         height: 60vh;
@@ -107,6 +123,8 @@ ul li a{
     
     ul{
         margin-left: 10%;
+        width: 70%;
+        border: 2px solid yellow;
     }
     
     ul li{
@@ -119,32 +137,28 @@ ul li a{
         width: 100%;
         height: 5vh;
          margin-top: 1rem;
-         border-color: rgb(198, 255, 42);;
+         border-color: transparent;
     }
     
     ul li button{
         margin-top: 1rem;
-        font-size: 100%;
+        font-size: 16px;
         font-weight: bold;
-        width: 100%;
+        width: 10rem;
         height: 5vh;
-        background-color: rgb(198, 255, 42);
-        border-radius: 10% 20%;
-        -webkit-border-radius: 10% 20%;
-        -moz-border-radius: 10% 20%;
-        -ms-border-radius: 10% 20%;
-        -o-border-radius: 10% 20%;
+        
+        
     }
     
     ul li label{
-        font-size: 150%;
+        font-size: 16px;
         color: white;
         font-weight: bold;
     }
     h1{
         text-align: center;
-        font-size: 150%;
-        color: black;
+        font-size: 25px;
+      
     }
     
     ul li p{
@@ -164,7 +178,7 @@ ul li a{
                   DESKTOP
 *************************************************/
 
-@media screen and (min-width: 1200px){
+@media screen and (max-width: 587px){
     
     #container__section{
         border: 2px solid black;
@@ -181,57 +195,55 @@ ul li a{
     #container__login{
 /*     
         border: 1px solid rgb(198, 255, 42); */
-        width: 50%;
-        height: 50vh;
+        width: 100%;
+        height: auto;
         margin-top: 10%;
-        margin-left: 25%;
+       
     
     } 
     
     ul{
-        margin-left: 10%;
+        margin-left: 0;
+        width: 100%;
     }
     
     ul li{
         margin-top: 1rem;
          list-style: none;
-         width: 80%;
+         width: 100%;
     }
     
     ul li input{
         width: 100%;
         height: 5vh;
          margin-top: 1rem;
-         border-color: rgb(198, 255, 42);;
+         border-color: transparent;
     }
     
     ul li button{
         margin-top: 1rem;
-        font-size: 100%;
+        font-size: 12px;
         font-weight: bold;
-        width: 30%;
+        width: 8rem;
         height: 5vh;
-        background-color: rgb(198, 255, 42);
-        border-radius: 10% 20%;
-        -webkit-border-radius: 10% 20%;
-        -moz-border-radius: 10% 20%;
-        -ms-border-radius: 10% 20%;
-        -o-border-radius: 10% 20%;
+        color: white;
+        background-color: #e02b20!important;
+        
     }
     
     ul li label{
-        font-size: 150%;
+        font-size: 15px;
         color: white;
         font-weight: bold;
     }
     h1{
         text-align: center;
-        font-size: 200%;
-        color: black;
+        font-size: 20px;
+        
     }
     
     ul li p{
-        font-size: 130%;
+        font-size: 15px;
         color: white;
         font-weight: bold;
     }

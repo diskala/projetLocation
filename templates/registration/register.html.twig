@@ -8,6 +8,9 @@
 
 
 {% block body %}
+
+ 
+
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
@@ -29,12 +32,18 @@
     <tr>
     <td class="labels"> {{ form_label(registrationForm.firstname, 'Nom') }}</td>
       <td class="labels">{{ form_label(registrationForm.lastname, 'Prénom') }}</td>
+      
+     
     </tr>
-
+     
     <tr>
+    <h1 class="erreurs"> {{ form_errors(registrationForm.firstname, { 'attr': {'class': 'erreurs'} }) }}</h1>
+    <h1 class="erreurs"> {{ form_errors(registrationForm.lastname, { 'attr': {'class': 'erreurs'} }) }}</h1>
      <td class="inscrir">{{ form_row(registrationForm.firstname, {'attr': {'class': 'champ'}}) }}</td>
       <td class="inscrir">{{ form_row(registrationForm.lastname, {'attr': {'class': 'champ'}}) }}</td>
+      
      </tr>
+    
    <tr>
     <td class="labels"> {{ form_label(registrationForm.email, 'Email') }}</td>
       <td class="labels">{{ form_label(registrationForm.plainPassword, 'Mot de Passe') }}</td>

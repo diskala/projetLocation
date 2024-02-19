@@ -8,14 +8,14 @@
 	 
 	{% block page_content %}
       {{ include ("./_partials/headerAdmin.html.twig") }} 
-    <div class="res_clotures">
+    {# <div class="enTete_cloture">
 
 				<p>
 					<a href={{ path('app_resClotures') }}>
 						Reservations cloturées</a>
 				</p>
 
-		</div>
+		</div> #}
       
 <div class="container_clotures">
      
@@ -57,7 +57,11 @@
         </tr>
             
           {% for item in resCloturees %}
-
+       {% if item.reserved.invoice is not null %}
+        {# L'objet Invoice existe pour cette réservation #}
+        {% set invoice = item.reserved.invoice %}
+        {# Maintenant vous pouvez accéder aux propriétés de l'objet Invoice #}
+            {% if invoice.facturePdf  %}
         
         <tr class="boucle_clotures">
            <td class="td_cloturees"> 
@@ -79,26 +83,45 @@
             <td class="td_cloturees">  {{ item.reserved.totalPrice  }} </td>
 
            
-  
-          {% if item.reserved.invoice is not null %}
-        {# L'objet Invoice existe pour cette réservation #}
-        {% set invoice = item.reserved.invoice %}
-        {# Maintenant vous pouvez accéder aux propriétés de l'objet Invoice #}
-            {% if invoice.facturePdf  %}
-               <td class="td_factureOk"> établie </td>
-               {% else %}
-               <td class="td_factureNonOk"> non établie </td>
-            {% endif %}
-       
-    {% endif %}
+   
+               <td class="td_factureOk" style="background-color:rgba(0,128,0,0.5)"> établie </td>
+               {# {% else %}
+         
+               <td class="td_factureNonOk" style="background-color: red;"> non établie </td> #}
+           
 
 
 
 
             
          </tr>
+             {% else %}
 
+<tr class="boucle_clotures" style="background-color: #FB335B;">
+           <td class="td_cloturees"> 
             
+               <input type="checkbox" name="selectedItem" value="{{ item.reserved.id }}" class="selection-checkbox" />
+                
+            
+            
+           </td>
+
+           <td class="td_cloturees">  {{ item.reserved.id }} </td>
+           <td class="td_cloturees">  {{ item.reserved.users.firstname }} </td>
+           <td class="td_cloturees">  {{ item.reserved.users.lastname }} </td>
+           <td class="td_cloturees">  {{ item.reserved.users.email }} </td>
+           <td class="td_cloturees">  {{ item.reserved.car.brand }} </td>
+           <td class="td_cloturees">  {{ item.reserved.car.model }} </td>
+           <td class="td_cloturees">  {{ item.dateRental|date('Y-m-d') }} </td>
+           <td class="td_cloturees">  {{ item.returnDate|date('Y-m-d') }} </td>
+            <td class="td_cloturees">  {{ item.reserved.totalPrice  }} </td>
+            <td class="td_factureNonOk"> non établie </td>
+
+           
+
+          {% endif %}
+       
+    {% endif %}   
 
        {% endfor %}
 
@@ -115,7 +138,7 @@
 
 
 
-<script>
+<script>// script pour selectionner une seul cases
     // Sélectionnez toutes les cases à cocher avec la classe 'selection-checkbox'
     const checkboxes = document.querySelectorAll('.selection-checkbox');
 

@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class RegistrationFormType extends AbstractType
 {
@@ -23,7 +24,11 @@ class RegistrationFormType extends AbstractType
         ->add('firstname', TextType::class,[
             "label"=>false,
             'constraints' => [
-                new Length(['min' => 3]),
+                new Assert\Length([
+                    'min' => 3,
+                
+                    'minMessage' => 'Votre Nom doit faire au moins {{ limit }} caractères',
+                ]),
                 new Regex([
                     'pattern' => '/^[a-zA-Z0-9\s]*$/',
                     'message' => 'Le Nom ne doit pas contenir de caractères spéciaux.'
@@ -33,7 +38,11 @@ class RegistrationFormType extends AbstractType
         ->add('lastname', TextType::class,[
             "label"=>false,
             'constraints' => [
-                new Length(['min' => 3]),
+                new Assert\Length([
+                    'min' => 3,
+                    
+                    'minMessage' => 'Votre Prénom doit faire au moins {{ limit }} caractères',
+                ]),
                 new Regex([
                     'pattern' => '/^[a-zA-Z0-9\s]*$/',
                     'message' => 'Le prénom ne doit pas contenir de caractères spéciaux.'
@@ -56,7 +65,7 @@ class RegistrationFormType extends AbstractType
                 new NotBlank([
                     'message' => 'ENTRER VOTRE MOT DE PASSE',
                 ]),
-                new Regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/', "Il faut 8 caractères une lettre en majuscule, au moin un chiffre et un caractère special"
+                new Regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/', "Il faut 8 caractères minimum au moins une lettre en majuscule, au moins un chiffre et un caractère spécial"
                 )],
         ])
 

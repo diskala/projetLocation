@@ -15,50 +15,26 @@
 
 		<div class="container_indicateurs">
 
-
-			{# <div class="nombre_voiture">
-			  <div class="chiffre_voiture"> 
-			   <h3>
-					{{ nombreTotalVoitures }}
-				</h3>
-			  </div>
-			  <div class="text_voiture">
-				
-				<p>
-					Voitures toutes marques
-				</p>
+         <a href = {{ path('admin_index') }}><div class="nombre_confirmation">
+                <div class="chiffre">
+					<h3>{{ nombreReservation }} </h3>
 				</div>
 
-		    </div> #}
+			    <div class="phrase">
+				<h3>En attente de confirmation</h3>
+			    </div>
+		 </div> </a>
 
-			{# <div class="nombre_confirmation">
-			 <div class="chiffre_voiture"> 
-				<h3>
-					{{ nombreReservation }}
-				</h3>
+		  
+			 <a href =""> <div class="nombre_contact"> 
+			   <div class="chiffre">
+					<h3>{{ nombreDeContact }}</h3>
 				</div>
-				<div class="text_voiture">
-				<p>
-					En attente de confirmation
-				</p>
-                </div>
-			</div> #}
-
-			{# <div class="voitures_sorties">
-			                     <h3>  {{ nombreVoitureSortie }}  </h3>
-			                     <p> voitures sorties </p>
-			
-			               </div> #}
-			{# <div class="voitures_auStock">
-               <div class="chiffre_voiture">
-				<h3>
-					{{ nombresAuStock }}
-				</h3>
-				</div>
-				<div class="text_voiture">
-				<p>Nombre de Voitures au Stock</p>
-                 </div>
-			</div> #}
+				 <div class="phrase">
+				   <h3> Messages reçu non lu </h3>
+			    </div>
+			  </div></a>
+			 
 
 
 		</div>
@@ -66,17 +42,11 @@
 
 		<div class="container_table_principal">
 
-         <div class="nombre_confirmation">
-                <h3 class="chiffre">
-					{{ nombreReservation }} 
-				</h3>
-
-			    <h3 class="phrase">
-				Reservations en attente de confirmation
-			    </h3>
-		 </div>
+         
  
-
+              <h3 class="enTete">
+				Reservations en attente de confirmation 
+			    </h3>
 			<div class="container_table">
 
 				<table class="tablese">
@@ -155,7 +125,7 @@
 										<td class="actions">
 											<div class="boutton_confirme">
 												<a href={{ path('app_confirme', {'id': item.id} ) }}>
-													confirmation par Mail</a>
+													confirmation </a>
 											</div>
 										</td>
 									 

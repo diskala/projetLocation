@@ -39,7 +39,7 @@ class InvoiceController extends AbstractController
    
 
 
-     
+     // route pour que l'utilisateur télecharge la facture si  établie par Admin
     #[route("invoice/{id}", name: 'app_fichierFacture')]
     public function generateInvoice($id, Dompdf $dompdf, MailerInterface $mailer, ReservationRepository $res, ActionStatusRepository $actionStatusRepository, EntityManagerInterface $entityManager, InvoiceRepository $invoiceRepository): Response
     {
