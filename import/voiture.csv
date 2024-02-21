@@ -1,70 +1,70 @@
-"Aston Martin","DB5 Superleggera","coupé","Essence","725 chevaux à 6 500 tr/m","automatique",2,1390,11,2200,3,8000
-"Aston Martin","Vantage V12 Bi-Turbo","coupé","Essence","426 ch à 4700 tr/mn","automatique",2,1110,9,1850,2,15000
-"Aston Martin","DB11 V8 4.0-Turbo","coupé","Essence","510 ch à 6000 tr/min","automatique",2,1459,11,2100,1,15000
-"Aston Martin","Rapide-V12"," berline","Essence","477 ch à 6000 tr/min","automatique",4,1325,10,2100,2,18000
-"Aston Martin","Vanquish-V12","cabriolet","Essence","573 ch à 6750 tr/min","automatique",2,1299,11,2050,3,20000
-"Audi","A8 TFSI",berline,"hybride","500 ch à 6200 tr/min","automatique",4,1150,9,1985,2,22000
-"Audi","A6 -TDI quattro","break","Diesel","245 ch à 4000 tr/min","manuelle",4,999,10,1420,1,15000
-"Audi"," Q5 TDI quattro S tronic","suv"," Diesel","240 ch à 4000 tr/min","manuelle",5,1320,12,2099,2,18000
-"Audi","Q7 TFSI e quattro ","suv","hybride","456 ch à 3250 tr/min","automatique",7,1280,11,2090,3,20000
-"Audi","R8 - V10 Performance quattro","coupé","Essence","620 ch à 8000 tr/min","automatique",2,1350,12,1980,2,15000
-"Audi","RS7 - SPORTBACK performance V8","berline","Essence","605 ch à 6100 tr/min","automatique",4,789,8,1100,2,15000
-"Audi","TT (8S) RS 2.5","coupé","Essence","272 ch à 6000 tr/min","automatique",2,840,9,1360,2,18000
-"Audi","E-TRON Sportback","break","Electrique","508 ch à 7200 tr/mn","automatique",4,620,8,1080,2,5700
-"Bentley","CONTINENTAL GT W12","berline","Essence","560 ch à NC","automatique",4,1199,11,2220,1,15000
-"Bentley","FLYING SPUR (I) W12","berline","Essence","560 ch à 6100 tr/min","manuelle",4,799,9,1469,1,15000
-"Bentley","BENTAYGA Hybrid 449","suv","Hybride","449 ch à 4200tr/min","automatique",5,2199,11,3050,2,25000
-"Bentley","MULSANNE Turbo","berline","Essence","350 ch à 4000 tr/min","manuelle",4,1299,9,1819,2,8000
-"BMW","SERIE 7 (G12 LCI) 730Ld xDrive ","berline","Diesel","245 ch à 4000 tr/min","automatique",4,998,10,1450,2,12000
-"BMW"," SERIE 5 (G30 Berline) 530e","berline","Diesel","184 ch à 4000 tr/min","automatique",4,1090,10,1620,2,15000
-"BMW","X5 (G05) M50i","suv","Essence","530 ch à 5500 tr/min","manuelle",5,1210,11,1899,2,18000
-"BMW","X7 (G07) xDrive30d","suv","Diesel","265 ch à 4000 tr/min","automatique",7,1340,10,2230,1,20000
-"BMW","M2 F30 Berline","berline ","Essence","431 ch à 5500 tr/min","automatique",4,569,8,990,2,5600
-"BMW","M5 (F90) V8","berline ","Essence","600 ch à 5600 tr/min","automatique",5,690,8.5,1110,1,8000
-"Bugatti","CHIRON Sport","SuperCar","Essence","1600 ch à 7050 tr/min","automatique",2,2199,15,3570,1,25000
-"Bugatti","Divo W16","SuperCar","Essence","1500 ch à 6700 trs/min","automatique",2,2460,20,3780,1,32000
-"Bugatti","Centodieci Quadri-turbos","SuperCar","Essence","1600 ch à 7000 tr/min","automatique",2,2700,25,4000,1,40000
-"Ferrari","812 SUPERFAST V12","coupé","Essence","800 ch à 8500 tr/min","automatique",2,1890,11,2350,1,9260
-"Ferrari","SF90 Stradale","superCar","Essence","1000 ch à 8000 tr/min","automatique",2,2400,16,2560,2,30000
-"Ferrari","F8 TRIBUTO V8","suoerCar","Essence","1200 ch à 7000 tr/min","automatique",2,2390,9.5,3050,2,25000
-"Ferrari","GTC4Lusso","break","Essence","689 ch à 8000 tr/min","automatique",4,1990,12,2560,2,22000
-"Ferrari","Portofino","cabriolet","Essence","620 ch à 7500 tr/min","automatique",4,2150,11,3020,1,20000
-"Jaguar","XJ 3.0 V6 AWD","berline ","Essence","340 ch à 6500 tr/min","manuelle",4,1125,9,1689,2,15000
-"Jaguar","F-TYPE R 5.0","coupé","Essence","550 ch à 6500 tr/min","automatique",2,1320,11,1859,2,22000
-"Jaguar","E-PACE P250","suv","Essence","250 ch à 5500 tr/min","automatique",5,1980,12,2489,2,25000
-"Lamborghini","AVENTADOR LP 700-4","superCar","Essence","1250 ch à 9250 tr/min","automatique",2,2650,25,3890,1,35000
-"Lamborghini","HURACAN Sterrato","superCar","Essence","610 ch à 8250 tr/min","automatique",2,2380,25,3970,1,35000
-"Lamborghini","URUS V8 4.0","suv","Essence","650 ch à 6000 tr/min","automatique",5,2350,12,3150,1,25000
-"Lamborghini","Sian","coupé","hybride","785 ch à 6000 tr/min","automatique",2,2470,18,3375,1,30000
-"Lexus","LEXUS LS","berline ","Essence","380 ch à 6400 tr/min","manuelle",5,1469,15,2170,1,18000
-"Lexus","LEXUS LC 500","cabriolet","Essence","464 ch à 7100 tr/min","automatique",2,1745,20,2359,1,25000
-"Lexus","UX 300e","suv","Electrique","184 ch à 7100 tr/min","automatique",5,1689,17,2420,1,25000
-"Lexus","RX","suv","Hybride","464 ch à 7100 tr/min","automatique",5,1780,18,2490,2,25000
-"Maserati","QUATTROPORTE (VI) GTS","berline ","Essence","530 ch à 6800 tr/min","automatique",5,1115,12,1785,2,22000
-"Maserati","GHIBLI (III) Trofeo","berline ","Essence","580 ch à 6750 tr/min","automatique",5,1799,15,2460,2,25000
-"Maserati","LEVANTE Trofeo","suv","Essence","430 ch à 5750 tr/min","automatique",5,1980,17,2635,2,25000
-"Maserati","GRANTURISMO (1) S 4.7 V8","coupé","Essence","460 ch à 7000 tr/min","automatique",4,1199,10,1850,2,15000
-"Maserati","GRANCABRIO 4.7 V8","cabriolet","Essence","440 ch à 7000 tr/min","automatique",4,1359,12,1985,1,22000
-"McLaren","600LT V8 3.8 biturbo","superCar","Essence","600 ch à 7500 tr/min","automatique",2,2290,15,3150,2,25000
-"McLaren","570S  spider","cabriolet","Essence","570 ch à 7400 tr/min","automatique",2,2390,15,3100,3,22000
-"McLaren","GT V8 4.0","coupé","Essence","620 ch à 7500 tr/min","automatique",2,2289,20,3125,3,28000
-"McLaren","SENNA V8 4.0","superCar","Essence","1200 ch à 7250 tr/min","automatique",2,2369,20,3750,3,32000
-"McLaren","Speedtail","superCar","hybride","1070 ch à 7000 tr/min","automatique",2,2780,28,4120,2,32000
-"Mercedes-Benz","Classe S8 LIMOUSINE 350 D","berline ","Diesel","286 Ch à 3400 trs/min","automatique",5,720,15,1278,2,22000
-"Mercedes-Benz"," CLASSE GLE 350  4MATIC","suv","hybride","320 ch à 5600tr/min","automatique",5,1760,18,2570,1,25000
-"Mercedes-Benz","CLASSE GLC 300 4MATIC","suv","Essence","245 ch à 5500 tr/min","automatique",5,1485,17,2249,1,25000
-"Mercedes-Benz","AMG GT (1) S","coupé","Essence","510 ch à 6250 tr/min","automatique",2,998,9.5,1420,2,8000
-"Porsche","911 Carrera S 3.8","coupé","Essence","400 ch à 7400 tr/min","automatique",4,879,11,1520,2,10000
-"Porsche","718 CAYMAN 2.0","coupé","Essence","300 ch à 6500 tr/min","manuelle",2,987,11,1430,2,12000
-"Porsche","CAYENNE PO536 Turbo V8","suv","Essence","550 ch à 5750 tr/min","automatique",5,930,11,1610,2,8000
-"Porsche","MACAN GTS","suv","Essence","440 ch à 6800 tr/min","automatique",2,580,8,1010,2,8000,false
-"Porsche","PANAMERA (1) D","bereak","Diesel","250 ch à 4400 tr/min","automatique",5,870,10,1350,3,8000,false
-"Porsche","TAYCAN CROSS TURISMO Turbo S ","break","Electrique","620 ch à 7500 tr/min","automatique",5,1985,18,2689,2,25000
-"Rolls-Royce","PHANTOM V12 Drophead Coupé","cabriolet","Essence","460 ch à 5350 tr/min","manuelle",2,1785,20,2579,2,25000
-"Rolls-Royce","GHOST V12 6.6","berline ","Essence","507 ch à NC","manuelle",5,1360,15,1999,2,18000,false
-"Rolls-Royce","DAWN V12 biturbo","cabriolet","Essence","570 ch à 6000 tr/min","automatique",4,1455,18,1879,2,20000
-"Rolls-Royce","Cullinan","suv","Essence","571 ch à 5000 tr/min","automatique",5,1770,20,2330,2,22000
-"Lotus","EXIGE S","coupé","Essence","300 ch à 7200 tr/mn","automatique",2,787,15,1245,1,8000
-"Lotus","ELISE","cabriolet","Essence","220 ch à 5000tr/mn","automatique",2,678,8,1010,1,8000
-"Jaguar","F-TYPE SVR","coupé","Essence","575 ch à 7800 tr/mn","automatique",2,899,11,1425,2,12000
+"Aston Martin","DB5 Superleggera","coup","Essence","725 chevaux  6 500 tr/m","automatique",2,1390,11,2200,3,8000,true,30,120,80,3
+"Aston Martin","Vantage V12 Bi-Turbo","coup","Essence","426 ch  4700 tr/mn","automatique",2,1110,9,1850,2,15000,true,30,120,80,2
+"Aston Martin","DB11 V8 4.0-Turbo","coup","Essence","510 ch  6000 tr/min","automatique",2,1459,11,2100,2,15000,true,30,120,80,2
+"Aston Martin","Rapide-V12"," berline","Essence","477 ch  6000 tr/min","automatique",4,1325,10,2100,2,18000,true,30,120,80,2
+"Aston Martin","Vanquish-V12","cabriolet","Essence","573 ch  6750 tr/min","automatique",2,1299,11,2050,3,20000,true,30,120,80,3
+"Audi","A8 TFSI",berline,"hybride","500 ch  6200 tr/min","automatique",4,1150,9,1985,2,22000,true,30,120,80,2
+"Audi","A6 -TDI quattro","break","Diesel","245 ch  4000 tr/min","manuelle",4,999,10,1420,2,15000,true,30,120,80,2
+"Audi"," Q5 TDI quattro S tronic","suv"," Diesel","240 ch ï¿½ 4000 tr/min","manuelle",5,1320,12,2099,2,18000,true,30,120,80,2
+"Audi","Q7 TFSI e quattro ","suv","hybride","456 ch  3250 tr/min","automatique",7,1280,11,2090,3,20000,true,30,120,80,3
+"Audi","R8 - V10 Performance quattro","coup","Essence","620 ch  8000 tr/min","automatique",2,1350,12,1980,2,15000,true,30,120,80,2
+"Audi","RS7 - SPORTBACK performance V8","berline","Essence","605 ch  6100 tr/min","automatique",4,789,8,1100,2,15000,true,30,120,80,2
+"Audi","TT (8S) RS 2.5","coup","Essence","272 ch  6000 tr/min","automatique",2,840,9,1360,2,18000,true,30,120,80,2
+"Audi","E-TRON Sportback","break","Electrique","508 ch  7200 tr/mn","automatique",4,620,8,1080,2,5700,true,30,120,80,2
+"Bentley","CONTINENTAL GT W12","berline","Essence","560 ch  NC","automatique",4,1199,11,2220,2,15000,true,30,120,80,2
+"Bentley","FLYING SPUR (I) W12","berline","Essence","560 ch  6100 tr/min","manuelle",4,799,9,1469,3,15000,true,30,120,80,3
+"Bentley","BENTAYGA Hybrid 449","suv","Hybride","449 ch  4200tr/min","automatique",5,2199,11,3050,2,25000,true,30,120,80,2
+"Bentley","MULSANNE Turbo","berline","Essence","350 ch  4000 tr/min","manuelle",4,1299,9,1819,2,8000,true,30,120,80,2
+"BMW","SERIE 7 (G12 LCI) 730Ld xDrive ","berline","Diesel","245 ch  4000 tr/min","automatique",4,998,10,1450,2,12000,true,30,120,80,2
+"BMW"," SERIE 5 (G30 Berline) 530e","berline","Diesel","184 ch  4000 tr/min","automatique",4,1090,10,1620,2,15000,true,30,120,80,2
+"BMW","X5 (G05) M50i","suv","Essence","530 ch  5500 tr/min","manuelle",5,1210,11,1899,2,18000,true,30,120,80,2
+"BMW","X7 (G07) xDrive30d","suv","Diesel","265 ch  4000 tr/min","automatique",7,1340,10,2230,2,20000,true,30,120,80,2
+"BMW","M2 F30 Berline","berline ","Essence","431 ch  5500 tr/min","automatique",4,569,8,990,2,5600,true,30,120,80,2
+"BMW","M5 (F90) V8","berline ","Essence","600 ch  5600 tr/min","automatique",5,690,8.5,1110,3,8000,true,30,120,80,3
+"Bugatti","CHIRON Sport","SuperCar","Essence","1600 ch  7050 tr/min","automatique",2,2199,15,3570,2,25000,true,30,120,80,2
+"Bugatti","Divo W16","SuperCar","Essence","1500 ch  6700 trs/min","automatique",2,2460,20,3780,3,32000,true,30,120,80,3
+"Bugatti","Centodieci Quadri-turbos","SuperCar","Essence","1600 ch  7000 tr/min","automatique",2,2700,25,4000,2,40000,true,30,120,80,2
+"Ferrari","812 SUPERFAST V12","coup","Essence","800 ch  8500 tr/min","automatique",2,1890,11,2350,3,9260,true,30,120,80,3
+"Ferrari","SF90 Stradale","superCar","Essence","1000 ch  8000 tr/min","automatique",2,2400,16,2560,2,30000,true,30,120,80,2
+"Ferrari","F8 TRIBUTO V8","suoerCar","Essence","1200 ch  7000 tr/min","automatique",2,2390,9.5,3050,2,25000,true,30,120,80,2
+"Ferrari","GTC4Lusso","break","Essence","689 ch  8000 tr/min","automatique",4,1990,12,2560,2,22000,true,30,120,80,2
+"Ferrari","Portofino","cabriolet","Essence","620 ch  7500 tr/min","automatique",4,2150,11,3020,2,20000,true,30,120,80,2
+"Jaguar","XJ 3.0 V6 AWD","berline ","Essence","340 ch  6500 tr/min","manuelle",4,1125,9,1689,2,15000,true,30,120,80,2
+"Jaguar","F-TYPE R 5.0","coupï¿½","Essence","550 ch  6500 tr/min","automatique",2,1320,11,1859,2,22000,true,30,120,80,2
+"Jaguar","E-PACE P250","suv","Essence","250 ch  5500 tr/min","automatique",5,1980,12,2489,2,25000,true,30,120,80,2
+"Lamborghini","AVENTADOR LP 700-4","superCar","Essence","1250 ch  9250 tr/min","automatique",2,2650,25,3890,3,35000,true,30,120,80,3
+"Lamborghini","HURACAN Sterrato","superCar","Essence","610 ch  8250 tr/min","automatique",2,2380,25,3970,2,35000,true,30,120,80,2
+"Lamborghini","URUS V8 4.0","suv","Essence","650 ch  6000 tr/min","automatique",5,2350,12,3150,2,25000,true,30,120,80,2
+"Lamborghini","Sian","coupï¿½","hybride","785 ch  6000 tr/min","automatique",2,2470,18,3375,2,30000,true,30,120,80,2
+"Lexus","LEXUS LS","berline ","Essence","380 ch  6400 tr/min","manuelle",5,1469,15,2170,2,18000,true,30,120,80,2
+"Lexus","LEXUS LC 500","cabriolet","Essence","464 ch  7100 tr/min","automatique",2,1745,20,2359,2,25000,true,30,120,80,2
+"Lexus","UX 300e","suv","Electrique","184 ch  7100 tr/min","automatique",5,1689,17,2420,3,25000,true,30,120,80,3
+"Lexus","RX","suv","Hybride","464 ch  7100 tr/min","automatique",5,1780,18,2490,2,25000,true,30,120,80,2
+"Maserati","QUATTROPORTE (VI) GTS","berline ","Essence","530 ch  6800 tr/min","automatique",5,1115,12,1785,2,22000,true,30,120,80,2
+"Maserati","GHIBLI (III) Trofeo","berline ","Essence","580 ch  6750 tr/min","automatique",5,1799,15,2460,2,25000,true,30,120,80,2
+"Maserati","LEVANTE Trofeo","suv","Essence","430 ch ï¿½ 5750 tr/min","automatique",5,1980,17,2635,2,25000,true,30,120,80,2
+"Maserati","GRANTURISMO (1) S 4.7 V8","coup","Essence","460 ch  7000 tr/min","automatique",4,1199,10,1850,2,15000,true,30,120,80,2
+"Maserati","GRANCABRIO 4.7 V8","cabriolet","Essence","440 ch  7000 tr/min","automatique",4,1359,12,1985,2,22000,true,30,120,80,2
+"McLaren","600LT V8 3.8 biturbo","superCar","Essence","600 ch  7500 tr/min","automatique",2,2290,15,3150,2,25000,true,30,120,80,2
+"McLaren","570S  spider","cabriolet","Essence","570 ch  7400 tr/min","automatique",2,2390,15,3100,2,22000,true,30,120,80,2
+"McLaren","GT V8 4.0","coup","Essence","620 ch  7500 tr/min","automatique",2,2289,20,3125,3,28000,true,30,120,80,3
+"McLaren","SENNA V8 4.0","superCar","Essence","1200 ch  7250 tr/min","automatique",2,2369,20,3750,3,32000,true,30,120,80,3
+"McLaren","Speedtail","superCar","hybride","1070 ch  7000 tr/min","automatique",2,2780,28,4120,2,32000,true,30,120,80,2
+"Mercedes-Benz","Classe S8 LIMOUSINE 350 D","berline ","Diesel","286 Ch  3400 trs/min","automatique",5,720,15,1278,2,22000,true,30,120,80,2
+"Mercedes-Benz"," CLASSE GLE 350  4MATIC","suv","hybride","320 ch  5600tr/min","automatique",5,1760,18,2570,3,25000,true,30,120,80,3
+"Mercedes-Benz","CLASSE GLC 300 4MATIC","suv","Essence","245 ch  5500 tr/min","automatique",5,1485,17,2249,2,25000,true,30,120,80,2
+"Mercedes-Benz","AMG GT (1) S","coup","Essence","510 ch  6250 tr/min","automatique",2,998,9.5,1420,2,8000,true,30,120,80,2
+"Porsche","911 Carrera S 3.8","coup","Essence","400 ch  7400 tr/min","automatique",4,879,11,1520,3,10000,true,30,120,80,3
+"Porsche","718 CAYMAN 2.0","coup","Essence","300 ch  6500 tr/min","manuelle",2,987,11,1430,2,12000,true,30,120,80,2
+"Porsche","CAYENNE PO536 Turbo V8","suv","Essence","550 ch  5750 tr/min","automatique",5,930,11,1610,2,8000,true,30,120,80,2
+"Porsche","MACAN GTS","suv","Essence","440 ch  6800 tr/min","automatique",2,580,8,1010,2,8000,true,30,120,80,2
+"Porsche","PANAMERA (1) D","bereak","Diesel","250 ch  4400 tr/min","automatique",5,870,10,1350,3,8000,true,30,120,80,3
+"Porsche","TAYCAN CROSS TURISMO Turbo S ","break","Electrique","620 ch  7500 tr/min","automatique",5,1985,18,2689,2,25000,true,30,120,80,2
+"Rolls-Royce","PHANTOM V12 Drophead Coup","cabriolet","Essence","460 ch  5350 tr/min","manuelle",2,1785,20,2579,2,25000,true,30,120,80,2
+"Rolls-Royce","GHOST V12 6.6","berline ","Essence","507 ch  NC","manuelle",5,1360,15,1999,2,18000,true,30,120,80,2
+"Rolls-Royce","DAWN V12 biturbo","cabriolet","Essence","570 ch  6000 tr/min","automatique",4,1455,18,1879,2,20000,true,30,120,80,2
+"Rolls-Royce","Cullinan","suv","Essence","571 ch  5000 tr/min","automatique",5,1770,20,2330,2,22000,true,30,120,80,2
+"Lotus","EXIGE S","coup","Essence","300 ch  7200 tr/mn","automatique",2,787,15,1245,2,8000,true,30,120,80,2
+"Lotus","ELISE","cabriolet","Essence","220 ch  5000tr/mn","automatique",2,678,8,1010,2,8000,true,30,120,80,2
+"Jaguar","F-TYPE SVR","coup","Essence","575 ch  7800 tr/mn","automatique",2,899,11,1425,2,12000,true,30,120,80,2
 

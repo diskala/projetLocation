@@ -105,11 +105,12 @@ table .donnee_res .restituee .restituer_lien a{
     table .titre_restituee {
         height: 3rem;
         font-size: 9px;
-        
+
     }
 
     table .donnee_res .restituee {
         height: 2.5rem;
+        
     }
 
     table .donnee_res .restituee .restituer_lien {
