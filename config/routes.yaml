@@ -23,6 +23,6 @@ download_pdf:
     path: '/dashboard/fichierPdf/{id}'
     controller: App\Controller\ReservationController::downloadPDF
  
-    
+ 
 
  

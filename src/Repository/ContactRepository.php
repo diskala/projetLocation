@@ -21,6 +21,19 @@ class ContactRepository extends ServiceEntityRepository
         parent::__construct($registry, Contact::class);
     }
 
+
+    public function contactNonLu(){
+        return $this->createQueryBuilder('c')
+        ->where('c.status_message = :statusMessage')
+        ->setParameter('statusMessage' , false)
+        ->getQuery()
+        ->getResult();
+        ;
+
+    }
+
+
+
 //    /**
 //     * @return Contact[] Returns an array of Contact objects
 //     */

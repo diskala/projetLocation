@@ -7,7 +7,7 @@
  
 	 
 	{% block page_content %}
-      {{ include ("./_partials/headerAdmin.html.twig") }} 
+     {{ include ("./admin/headerAdmins.html.twig") }} 
     {# <div class="enTete_cloture">
 
 				<p>
@@ -30,8 +30,8 @@
              
             <li class="mail"><p>{{ form_label(searchReservation.email, 'Email') }}</p>  {{ form_widget(searchReservation.email, {'attr': {'class': 'champ_mail'}}) }}</li>
             <li> <h3>OU</h3> </li>
-           <li class="date"><p>{{ form_label(searchReservation.dateLocation, 'date de location') }} </p> {{ form_widget(searchReservation.dateLocation) }}</li>
-           <li class="date"><p>{{ form_label(searchReservation.dateRetour, 'date de retour') }} </p>{{ form_widget(searchReservation.dateRetour) }}</li>
+           <li class="date"><p>{{ form_label(searchReservation.dateLocation, 'date de location') }} </p> {{ form_widget(searchReservation.dateLocation, {'attr': {'class': 'champ_mail'}}) }}</li>
+           <li class="date"><p>{{ form_label(searchReservation.dateRetour, 'date de retour') }} </p>{{ form_widget(searchReservation.dateRetour, {'attr': {'class': 'champ_mail'}}) }}</li>
             <li><button type="submit" class="btn-res">Rechercher</button></li>
             </ul>
             {{ form_end(searchReservation) }}
@@ -132,7 +132,7 @@
 
 
       </table>
-
+      </form>
        </main>
 </div>
 

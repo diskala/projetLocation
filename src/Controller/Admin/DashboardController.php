@@ -4,9 +4,9 @@ namespace App\Controller\Admin;
 
 use Dompdf\Dompdf;
 use App\Entity\Car;
-use App\Entity\Contact;
 use App\Entity\User;
 use App\Entity\Image;
+use App\Entity\Contact;
 use App\Entity\Invoice;
 use App\Entity\Reservation;
 use App\Form\FacturationType;
@@ -15,11 +15,11 @@ use App\Repository\CarRepository;
 use Symfony\Component\Mime\Email;
 use App\Form\SearchReservationType;
 use App\Repository\ActionRepository;
+use App\Repository\ContactRepository;
 use App\Repository\InvoiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ReservationRepository;
 use App\Repository\ActionStatusRepository;
-use App\Repository\ContactRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +27,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -76,7 +77,7 @@ class DashboardController extends AbstractDashboardController
         ->addCssFile('styles/resConfirmed.css')
         ->addCssFile('styles/restituees.css')
         ->addCssFile('styles/cloturees.css')
-        // ->addCssFile('styles/facture.css')
+        ->addCssFile('styles/contactAdmin.css')
         // ->addHtmlContentToHead('<link rel="dns-prefetch" href="https://assets.example.com">');
         ;
     }
@@ -93,8 +94,9 @@ class DashboardController extends AbstractDashboardController
         $voitureRestituee = $actsObj->isReturnedCar();  // recupérer la valeur actuel returnedCar si la voiture restituée ou pas
          // nombre de reservation 
         $nombreDeReservations = $this->ReservationRepository->count([]);
- // nombre de contact
- $nombreDeContact = $this->contactRepository->count([]);
+ // nombre de contact non lu
+ $contactsNonLus = $this->contactRepository->contactNonLu();
+ $nombreDeContact = count($contactsNonLus);
         // calcule nombre des reservations non confirmer
         $allReservation = $this->ReservationRepository->ReservationNonConfirmed();
         $reservationNonConfirme = [];
@@ -158,8 +160,8 @@ class DashboardController extends AbstractDashboardController
          ]);
     }
 
-    #[Route('/admin/header', name: 'app_header')]
-    public function header( ContactRepository $contactRepository)
+    #[Route('/admin/headerAdmins', name: 'app_header')]
+    public function header( ContactRepository $contactRepository, CarRepository $carRepository, ReservationRepository $ReservationRepository, ActionStatusRepository $actionStatusRepository)
     {
         $acts = $this->ActionStatusRepository->actiones(); // recupérer la table actionStatus
         $actsObj= $acts[0]; // récupérer le 1er index
@@ -182,9 +184,11 @@ class DashboardController extends AbstractDashboardController
          
         
         // $nombreCars=$this->CarRepository->count([]); // nombere de voitures total 
-       $allCars= $this->CarRepository->findcar();
+       $allCars= $carRepository->findcar();
+     
       // Créer un tableau pour stocker les stocks de chaque voiture
     $quantityVoitures = [];
+    
     $stockVoitures = [];
     
     // Parcourir chaque voiture pour obtenir son stock
@@ -192,8 +196,9 @@ class DashboardController extends AbstractDashboardController
         $quantityVoitures[$voiture->getId()] = $voiture->getQuantity(); // charger la quantity de chaque voiture dans un tableau
         $stockVoitures[$voiture->getId()] = $voiture->getStock();   // charger le stock de chaque voiture dans un tableau
     }
-
+    
     $nombreVoiture = array_sum($quantityVoitures );// nombere de voitures total 
+    
     $nombresAuStock = array_sum($stockVoitures ); // nombre de voitures disponible au stock
 
    
@@ -202,11 +207,13 @@ class DashboardController extends AbstractDashboardController
 
 
 
-    return $this->render('admin/header.html.twig',[
+    return $this->render('admin/headerAdmins.html.twig',[
+
+        
         'reserved'=>$this->ReservationRepository->ReservationAccepted(), // reservation status accepeted
         'actionStatus'=>$this->ActionStatusRepository->actiones(), // recupérer toute la table actionStatus
         'nombreReservation'=>$NonConfirmeds, // nombre de reservations non confirmé
-        'nombreTotalVoitures'=>$nombreVoiture, // nombre de voiture total 
+        'nombreTotalVoitures'=>'bonjour', // nombre de voiture total 
         'nombresAuStock'=>$nombresAuStock, // nombre de voiture disponible au stock
         'nombreVoitureSortie'=> $nombreVoitureSortie,
         'voitureLouee'=> $voitureLouee,
@@ -592,7 +599,7 @@ return new Response($dompdf->output(), 200, [
  
  }
 
-
+// logique pour restitution de voiture
 
  #[Route("/dashboard/RestitueStock/{id}", name: 'app_restitueStock')]
 public function Restitue($id, EntityManagerInterface $entityManager, CarRepository $carRepository, ReservationRepository $reserved, ActionStatusRepository $actionStatusRepository, InvoiceRepository $invoice): RedirectResponse
@@ -649,10 +656,69 @@ public function Restitue($id, EntityManagerInterface $entityManager, CarReposito
 }
 
 
+// les contacts non lu
 
+#[Route('/admin/contacts', name: 'app_contactNonLu')]
+public function Contact(ContactRepository $contactRepository, InvoiceRepository $invoice, CarRepository $carRepository, Request $request): Response
+{
+    // $nombreCars=$this->CarRepository->count([]); // nombere de voitures total 
+    $allCars= $carRepository->findcar();
+     
+    // Créer un tableau pour stocker les stocks de chaque voiture
+  $quantityVoitures = [];
+  
+  $stockVoitures = [];
+  
+  // Parcourir chaque voiture pour obtenir son stock
+  foreach ($allCars as $voiture) {
+      $quantityVoitures[$voiture->getId()] = $voiture->getQuantity(); // charger la quantity de chaque voiture dans un tableau
+      $stockVoitures[$voiture->getId()] = $voiture->getStock();   // charger le stock de chaque voiture dans un tableau
+  }
+  
+  $nombreVoiture = array_sum($quantityVoitures );// nombere de voitures tota
+    $contactNonLu = $contactRepository->contactNonLu(); // tous les messages non lu
+    
+ 
+   // Recherchez le message correspondant à l'ID
+   
+    return $this->render('admin/contacts.html.twig', [
+        'contactNonLu' => $contactNonLu,
+        
+        'nombreTotalVoitures'=>$nombreVoiture
+       
+    
+       
+    ]);
+    
+}
 
+// Route pour récupérer les détails du contact par son ID
+#[Route('/admin/contact/{id}', name: 'get_contact_details', methods: ['GET'])]
+public function getContactDetails($id, ContactRepository $contactRepository, EntityManagerInterface $entityManager): JsonResponse
+{
+    // Récupérer les détails du contact par son ID
+    $contact = $contactRepository->find($id);
 
+    if (!$contact) {
+        // Si le contact n'est pas trouvé, retourner une réponse JSON vide ou une erreur
+        return new JsonResponse(['error' => 'Contact non trouvé'], JsonResponse::HTTP_NOT_FOUND);
+    }
 
+    // Convertir les détails du contact en tableau associatif
+    $contactDetails = [
+        'message' => $contact->getMessage(),
+        // Ajoutez d'autres détails du contact selon vos besoins
+    ];
+
+    // Mettre à jour le statut du message et enregistrer dans la base de données
+    $contact->setStatusMessage(true);
+    $entityManager->flush();
+
+    // Retourner les détails du contact sous forme de réponse JSON
+    return new JsonResponse($contactDetails);
+}
+
+ 
     public function configureDashboard(): Dashboard
     {
         
@@ -676,7 +742,7 @@ public function Restitue($id, EntityManagerInterface $entityManager, CarReposito
         yield MenuItem::linkToCrud('Invoice', 'fas fa-file-invoice', Invoice::class);
         yield MenuItem::linkToCrud('Image', 'fas fa-image', Image::class);
         yield MenuItem::linkToCrud('User', 'fas fa-user', User::class);
-        // yield MenuItem::linkToCrud('Contact', 'fas fa-address-book', Contact::class);
+        yield MenuItem::linkToCrud('Contact', 'fas fa-address-book', Contact::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 

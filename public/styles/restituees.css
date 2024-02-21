@@ -62,3 +62,62 @@ table .donnee_res .restituee .restituer_lien a{
     color: black;
     font-weight: bolder;
 }
+
+@media screen and (min-width: 587px) and (max-width: 1200px) {
+    .container_restituee {
+        margin-top: 1rem;
+    }
+
+    .container_restituee h3 {
+        font-size: 24px;
+    }
+
+    .container_restituee table {
+        margin-top: 1rem;
+    }
+
+    table .titre_restituee {
+        height: 3rem;
+    }
+
+    table .donnee_res .restituee {
+        height: 2.5rem;
+    }
+
+    table .donnee_res .restituee .restituer_lien {
+        height: 2rem;
+    }
+
+    table .donnee_res .restituee .restituer_lien a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 587px) {
+    .container_restituee {
+        margin-top: 1rem;
+    }
+
+    .container_restituee h3 {
+        font-size: 20px;
+    }
+
+    table .titre_restituee {
+        height: 3rem;
+        font-size: 9px;
+        
+    }
+
+    table .donnee_res .restituee {
+        height: 2.5rem;
+    }
+
+    table .donnee_res .restituee .restituer_lien {
+        height: 2rem;
+        font-size: 12px;
+    }
+
+    table .donnee_res .restituee .restituer_lien a {
+        font-size: 12px;
+    }
+}

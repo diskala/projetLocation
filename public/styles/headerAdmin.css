@@ -1,24 +1,31 @@
-﻿.nav{
+﻿/* .nav{
     background-color: rgb(60, 186, 188);
     width: 100%;
+    height: auto;
     display: flex;
-    justify-content: left;
-    gap: 2rem;
+    justify-content:space-between;
+   
     align-items: center;
     border-radius:10px ;
     -webkit-border-radius:10px ;
     -moz-border-radius:10px ;
     -ms-border-radius:10px ;
     -o-border-radius:10px ;
-    padding-left: 1rem;
-}
-
-.nombre_voiture{
    
+}
+.menu_dash{
+   border: 2px solid red;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+}
+.nombre_voiture{
+   border: 2px solid red;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     width: 25rem;
-      margin-left:20rem ;
+     
      align-items: center;
      justify-items: flex-end;
   
@@ -74,20 +81,7 @@ text-align: center;
    font-weight: bold;
  
 }
-.accueil_dashboard, .res_confirmer, .voitures_louée, .res_clotures{
-   /* width: 10rem;
-   height: 3rem;
-   background-color: black;
-   
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border-radius:10px;
-   -webkit-border-radius:10px;
-   -moz-border-radius:10px;
-   -ms-border-radius:10px;
-   -o-border-radius:10px; */
-} 
+ 
 
 .accueil_dashboard a, .res_confirmer a, .voitures_louée a, .res_clotures a{
    color: black;
@@ -107,4 +101,197 @@ text-align: center;
 }
     
  
- 
+  */
+
+  .nav {
+   background-color: rgb(60, 186, 188);
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+.menu_dash {
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 1rem;
+   gap: 1rem;
+}
+
+.nombre_voiture {
+   /* background-color: antiquewhite; */
+   display: flex;
+   gap: 1rem;
+   width: 25rem;
+   align-items: center;
+   justify-items: flex-end;
+}
+
+.icon_voiture {
+   width: 50%;
+   height: auto;
+   border-radius: 50%;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+}
+
+.icon_voiture img {
+   width: 100%;
+   height: auto;
+   border-radius: 50%;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+}
+
+.text_voiture {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+}
+
+.text_voiture h2 {
+   width: 5rem;
+   text-align: center;
+   background-color: #e02b20;
+   color: white;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+.text_voiture p {
+   color: black;
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.accueil_dashboard,
+.res_confirmer,
+.voitures_louée,
+.res_clotures {
+   /* width: 10rem;
+  height: 3rem;
+  background-color: black;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  -o-border-radius:10px; */
+}
+
+.accueil_dashboard a,
+.res_confirmer a,
+.voitures_louée a,
+.res_clotures a {
+   color: black;
+   font-size: 15px;
+   font-weight: bold;
+   transition: 0.5s ease-in-out;
+   -webkit-transition: 0.2s ease-in-out;
+   -moz-transition: 0.5s ease-in-out;
+   -ms-transition: 0.5s ease-in-out;
+   -o-transition: 0.5s ease-in-out;
+}
+
+.accueil_dashboard a:hover,
+.res_confirmer a:hover,
+.voitures_louée a:hover,
+.res_clotures a:hover {
+   color: rgb(231, 133, 6);
+   text-decoration: underline;
+}
+
+@media screen and (min-width: 587px) and (max-width: 1200px) {
+   .nav {
+       flex-direction: column;
+       justify-content: center;
+       justify-items: center;
+       align-items: center;
+   }
+
+   .menu_dash
+    {
+        display: flex;
+       align-items: center;
+       height: 4rem;
+       gap: 2rem;
+       font-size: 15px;
+   }
+
+   .nombre_voiture {
+       width: 50%;
+       
+   }
+
+   .icon_voiture{
+      width: 50%;
+      height: auto;
+   }
+   .icon_voiture img{
+      width: 100%;
+      height: auto;
+   }
+   .text_voiture p{
+      font-size: 15px;
+   }
+}
+
+@media screen and (max-width: 587px) {
+   .nav {
+       flex-direction: column;
+       justify-content: center;
+       justify-items: center;
+       align-items: center;
+   }
+
+   .menu_dash
+    {
+        display: flex;
+       align-items: center;
+       height: 4rem;
+       gap: 1rem;
+       
+   }
+
+   .menu_dash a{
+      font-size: 12px;
+      font-weight: bold;
+   }
+
+   .nombre_voiture {
+       width: 100%;
+       
+   }
+   .icon_voiture{
+      width: 30%;
+      height: auto;
+   }
+   .icon_voiture img{
+      width: 100%;
+      height: auto;
+   }
+   .text_voiture p{
+      font-size: 15px;
+   }
+}

@@ -87,7 +87,7 @@ width: 35rem;
 
 
 .contoure_table{
-   min-height: 20rem;
+   min-height: 10rem;
    background-color: rgb(190, 182, 170);
    width: 100%;
    margin-top: 1rem;
@@ -155,3 +155,110 @@ width: 35rem;
    font-weight: bold;
 }
 
+@media screen and (min-width: 587px) and (max-width: 1200px) {
+   .container_confirme {
+       height: auto;
+       flex-direction: column;
+       align-items: center;
+       gap: 1rem;
+       margin-top: 1rem;
+   }
+
+   .nombre_sorties, .nombre_auStock {
+       width: 80%;
+   }
+
+   .nombre_sorties .valeur, .nombre_auStock .valeur {
+       width: 4rem;
+       height: 4rem;
+   }
+
+   .nombre_sorties h5, .nombre_auStock h5 {
+       width: 80%;
+       font-size: 15px;
+   }
+
+   .container_table_confirme {
+       margin-top: 1rem;
+       width: 100%;
+   }
+
+   .container_table_confirme h3 {
+       width: 80%;
+       font-size: 20px;
+   }
+
+   .contoure_table {
+       width: 100%;
+       margin-top: 1rem;
+   }
+
+   .tables {
+       width: 100%;
+   }
+
+   .tables tr td {
+       border-width: 2px;
+   }
+
+   .tables td .louer, .tables td .restituer {
+       width: 8rem;
+       height: 2rem;
+       margin-left: 0;
+   }
+}
+
+@media screen and (max-width: 587px){
+
+   .container_confirme {
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+  }
+
+  .nombre_sorties, .nombre_auStock {
+      width: 80%;
+  }
+
+  .nombre_sorties .valeur, .nombre_auStock .valeur {
+      width: 4rem;
+      height: 4rem;
+  }
+
+  .nombre_sorties h5, .nombre_auStock h5 {
+      width: 80%;
+      font-size: 15px;
+  }
+
+  .container_table_confirme {
+      margin-top: 1rem;
+      width: 100%;
+  }
+
+  .container_table_confirme h3 {
+      width: 80%;
+      font-size: 20px;
+  }
+
+  .contoure_table {
+      width: 100%;
+      margin-top: 1rem;
+  }
+
+  .tables {
+      width: 100%;
+  }
+
+  .tables tr td {
+      border-width: 2px;
+  }
+
+  .tables td .louer, .tables td .restituer {
+      width: 8rem;
+      height: 2rem;
+      margin-left: 0;
+  }
+
+}

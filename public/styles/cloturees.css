@@ -111,3 +111,102 @@
     margin-left: 80%;
     font-weight: bolder;
 }
+
+@media screen and (min-width: 587px) and (max-width: 1200px) {
+    .flash-message {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .container_formulaire {
+        width: 100%;
+        height: auto;
+       
+        
+    }
+
+    .container_formulaire ul{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .container_formulaire ul li .champ_mail {
+        width: 15rem; /* Ajuster la largeur du champ email */
+       
+        margin-left: 10%;
+    }
+
+    .container_formulaire ul .date {
+        
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap: 0;
+        width: 100%; /* Ajuster la largeur du champ de calendrier */
+        margin-top: 1rem; /* Ajouter une marge supérieure pour séparer les champs */
+       
+        
+    }
+    .container_formulaire ul .mail, .container_formulaire ul .champ_mail {
+        width: 40%;
+    }
+
+    .btn_facture {
+        margin-left: 70%;
+    }
+}
+
+@media screen and (max-width: 587px) {
+    .flash-message {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .container_formulaire {
+        width: 100%;
+        height: auto;
+       
+        
+    }
+
+    .container_formulaire ul{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .container_formulaire ul li .champ_mail {
+        width: 15rem; /* Ajuster la largeur du champ email */
+       
+        margin-left: 10%;
+    }
+
+    .container_formulaire ul .date {
+        
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap: 0;
+        width: 100%; /* Ajuster la largeur du champ de calendrier */
+        margin-top: 1rem; /* Ajouter une marge supérieure pour séparer les champs */
+       
+        
+    }
+    .container_formulaire ul .mail, .container_formulaire ul .champ_mail {
+        width: 40%;
+    }
+
+    .btn_facture {
+        margin-left: 70%;
+    }
+
+    .res_cloturees h3{
+        font-size: 15px;
+        margin-left: -45%;
+    }
+}
