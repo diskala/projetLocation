@@ -185,7 +185,7 @@ class ReservationFormType extends AbstractType
                 ->addViolation();
         }
         elseif ($dateFin > $startDatePlusTwoDays ) {
-            $message = 'La location ne doit pas dépasser 24 heures! redéfinir la date de fin';
+            $message = 'La location ne doit pas dépasser 24 heures ! Veuillez changer la date de fin';
             $context->buildViolation($message)
                 ->atPath('dateFin')
                 ->addViolation();

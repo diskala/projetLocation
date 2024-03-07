@@ -532,7 +532,7 @@ return new Response($dompdf->output(), 200, [
     
         // Définir le chemin complet du fichier PDF dans le sous-dossier 'fichierPdf' du répertoire public
         $pdfPath = $this->getParameter('kernel.project_dir') . '/public/fichier_Pdf/' . $pdfFileName;
-    
+       
         // Vérifier si le fichier existe
         if (!file_exists($pdfPath)) {
             throw new \Exception('Le fichier PDF n\'existe pas');
@@ -540,7 +540,7 @@ return new Response($dompdf->output(), 200, [
     
         // Lire le contenu du fichier PDF
         $pdfContent = file_get_contents($pdfPath);
-    
+        
         // Retourner une réponse HTTP avec le contenu du PDF
         return new Response($pdfContent, 200, [
             'Content-Type' => 'application/pdf',

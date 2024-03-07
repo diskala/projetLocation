@@ -138,15 +138,15 @@
    top: 48rem;
    right: 14%;
   z-index: 0;
-   background-color: rgb(255, 81, 0);
+   background-color: #e02b20;
    width: 13%;
-   height: 3rem;
+   height: 3.2rem;
    border-radius: 20px;
    -webkit-border-radius: 20px;
    -moz-border-radius: 20px;
    -ms-border-radius: 20px;
    -o-border-radius: 20px;
-   color: black;
+   color: white;
 }
 /***************************************************************************/
 
@@ -297,9 +297,14 @@ article #section1 #appel{
    
      
  }
-
+ .louer_acheter span:hover{
+  background-color: rgb(55, 55, 55);
+  width: 6.2rem;
+   height: 2.1rem;
+    
+}
  .louer_acheter span a{
-  color: rgb(255, 81, 0);;
+  color: white;
   font-size: 10px;
   font-weight: bold;
   text-decoration: none;
@@ -408,9 +413,14 @@ article .infos #para{
    
      
  }
-
+ .louer_acheter span:hover{
+  background-color: rgb(55, 55, 55);
+  width: 7.3rem;
+   height: 2.1rem;
+    
+}
  .louer_acheter span a{
-  color: rgb(255, 81, 0);;
+  color: white;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;

@@ -4,6 +4,7 @@
   
        {% block stylesheets %}
              <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
+             <link rel="stylesheet" href={{ asset("./styles/inviteContact.css") }}>
               <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
              <link rel="stylesheet" href= {{ asset("./styles/allcars.css") }} >
         {% endblock %}
@@ -44,13 +45,14 @@
   <div class="pic"><a href={{ path("onecar", {'id': item.id}) }}><img src= "./images/{{ item.image.image1 }}"></a></div>
      <div class="sous_image">
      <h1> A partir de : {{item.priceDay}} € / jour<h1>  
-     <div class="lien"><a href= {{ path("onecar", {'id': item.id}) }}  >En savoir plus</a></div>
+    <a href= {{ path("onecar", {'id': item.id}) }}  > <div class="lien">En savoir plus</div></a>
      <div>
     </article> 
   {% endfor %}
  </section>
 
  </div>
+  {{ include("./_partials/inviteContact.html.twig") }} 
  {{ include("./_partials/footer.html.twig") }} 
   <script src= {{ asset('./js/allcars.js') }} defer>
 {% endblock %}

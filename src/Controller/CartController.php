@@ -361,7 +361,25 @@ $reservation->setStripeSessionId($checkoutSession->id);
             $reservations->setOptionDriver($form->get('option_driver')->getData());
             $reservations->setPriceunlimitedKm($form->get('priceunlimitedKm')->getData());
 
+            // Récupérez le fichier PDF
+          $pdfFile = $form->get('fichierPdf')->getData();
+        
+       
+ 
+          // Générez un nom unique pour le fichier
+          $fileName = md5(uniqid()) . '.' . $pdfFile->guessExtension();
+ 
+          // Déplacez le fichier dans le répertoire public
+          try {
+            $pdfFile->move(
+                $this->getParameter('kernel.project_dir') . '/public/fichier_pdf',
+                $fileName
+            );
+            $reservations->setFichierPdf($fileName);
             
+          } catch (FileException $e) {
+              // Gérez l'exception si nécessaire
+          }
 
             // Persister les modifications dans la base de données
             $entityManager->flush();

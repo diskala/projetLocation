@@ -117,7 +117,7 @@ hr{
     height: 3.2rem;
 }
 
-#reserver a{
+a #reserver {
   
     text-align: center;
     font-size: 30px;
@@ -309,7 +309,7 @@ width: 50%;
        
     }
     
-    #reserver a{
+    a #reserver{
       
         text-align: center;
         font-size: 15px;
@@ -581,7 +581,7 @@ width: 50%;
     
    
      }
-     #reserver a{
+     a #reserver{
        
         text-align: center;
         font-size: 30px;

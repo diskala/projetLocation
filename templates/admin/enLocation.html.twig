@@ -70,7 +70,7 @@
 		  <td class="restituee"> {{ res.reserved.car.model }} </td>
 		  <td class="restituee"> {{ res.dateRental| format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")}} </td>
 		    <td class="restituee"> {{ res.reserved.endDate| format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")}} </td>
-		  <td class="restituee"> {{ res.reserved.totalPrice }} </td>
+		  <td class="restituee"> {{ res.reserved.totalPrice }} € </td>
 		  	{% if res.returnedCar == true %}
                            <p> restituée</p>
 							{% else %}

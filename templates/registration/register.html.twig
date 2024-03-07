@@ -4,12 +4,17 @@
 
  {% block stylesheets %}
             <link rel="stylesheet" href= {{ asset("./styles/register.css") }} >
+            <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
+            <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
 {% endblock %}
 
+{% block javascripts %}	 
+	<script src={{ asset('./js/headers.js') }} defer></script>
+{% endblock %}
 
 {% block body %}
 
- 
+  {{ include ("./_partials/header.html.twig") }} 
 
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
@@ -39,8 +44,8 @@
     <tr>
     <h1 class="erreurs"> {{ form_errors(registrationForm.firstname, { 'attr': {'class': 'erreurs'} }) }}</h1>
     <h1 class="erreurs"> {{ form_errors(registrationForm.lastname, { 'attr': {'class': 'erreurs'} }) }}</h1>
-     <td class="inscrir">{{ form_row(registrationForm.firstname, {'attr': {'class': 'champ'}}) }}</td>
-      <td class="inscrir">{{ form_row(registrationForm.lastname, {'attr': {'class': 'champ'}}) }}</td>
+     <td class="inscrirs">{{ form_row(registrationForm.firstname, {'attr': {'class': 'champ'}}) }}</td>
+      <td class="inscrirs">{{ form_row(registrationForm.lastname, {'attr': {'class': 'champ'}}) }}</td>
       
      </tr>
     
@@ -50,9 +55,9 @@
     </tr>
      <tr>
      <h1 class="erreurs"> {{ form_errors(registrationForm.plainPassword, { 'attr': {'class': 'erreurs'} }) }}</h1>
-       <td class="inscrir"> {{ form_row(registrationForm.email, {'attr': {'class': 'champ'}}) }}</td>
+       <td class="inscrirs"> {{ form_row(registrationForm.email, {'attr': {'class': 'champ'}}) }}</td>
        
-        <td class="inscrir">{{ form_row(registrationForm.plainPassword, {'attr': {'class': 'champ'}}) }}</td>
+        <td class="inscrirs">{{ form_row(registrationForm.plainPassword, {'attr': {'class': 'champ'}}) }}</td>
      </tr>
       
 
@@ -61,8 +66,8 @@
       <td class="labels">{{ form_label(registrationForm.phone, 'N°: Téléphone') }}</td>
     </tr>
       <tr>
-        <td class="inscrir"> {{ form_row(registrationForm.address, {'attr': {'class': 'champ'}}) }}</td>
-         <td class="inscrir">  {{ form_row(registrationForm.phone, {'attr': {'class': 'champ'}}) }}</td>
+        <td class="inscrirs"> {{ form_row(registrationForm.address, {'attr': {'class': 'champ'}}) }}</td>
+         <td class="inscrirs">  {{ form_row(registrationForm.phone, {'attr': {'class': 'champ'}}) }}</td>
       </tr>
 
       <tr>
@@ -82,5 +87,6 @@
 
 
 </div>
-    <script src= {{ asset('./js/register.js') }} defer>
+{{ include ("./_partials/footer.html.twig") }} 
+     
 {% endblock %}
