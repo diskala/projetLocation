@@ -1,0 +1,264 @@
+﻿ 
+
+ .container_confirme{
+    
+    background-color: rgb(211, 209, 208);
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 1rem;
+ }
+
+ .nombre_sorties, .nombre_auStock{
+    
+    width: 30%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+     
+
+ }
+ .nombre_sorties .valeur, .nombre_auStock .valeur{
+     background-color:#e02b20;
+     /* border: 3px solid black; */
+    
+     width: 5rem;
+     height: 5rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+     border-radius:50% ;
+     -webkit-border-radius:50% ;
+     -moz-border-radius:50% ;
+     -ms-border-radius:50% ;
+     -o-border-radius:50% ;
+     /* animation-duration: 3s;
+   animation-name: clignoter;
+   animation-iteration-count: infinite;
+   transition: none; */
+}
+/* @keyframes clignoter {
+   0%   { opacity:1; }
+   40%   {opacity:0.3; }
+   100% { opacity:1; }
+ } */
+.nombre_sorties .valeur h4, .nombre_auStock .valeur h4{
+font-size: 30px;
+font-weight: bold;
+
+color: white;
+}
+.nombre_sorties h5, .nombre_auStock h5{
+width: 35rem;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bold;
+   text-align: center;
+} 
+
+.container_table_confirme{
+   
+   margin-top: 1rem;
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   justify-content: center;
+   justify-items: center;
+   width: 100%;
+   height: auto;
+
+  
+}
+
+.container_table_confirme h3{
+    
+    width: 40rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+   
+}
+
+
+.contoure_table{
+   min-height: 10rem;
+   background-color: rgb(190, 182, 170);
+   width: 100%;
+   margin-top: 1rem;
+}
+ .tables{
+   width: 100%;
+ 
+ }
+
+ .tables tr td {
+   text-align: center;
+   border-width: 2px ;
+   border: 2px solid rgb(53, 52, 52);
+   
+}
+
+ 
+.container_titre_confirme{
+   background-color: rgb(79, 79, 79);
+   height: 3rem;
+} 
+.container_titre_confirme .titres{
+   color: white;
+   font-weight: bold;
+} 
+ 
+.red-text{
+   background-color: rgb(218, 103, 103);
+   color: aliceblue;
+}
+ .tables td .louer{
+   
+   background-color: rgb(126, 225, 243);
+   width: 6rem;
+   height: 2rem;
+   margin-left: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+.tables td .restituer{
+   border: 1px solid black;
+   background-color: rgb(245, 172, 46);
+   width: 6rem;
+   height: 2rem;
+   margin-left: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+.tables .louer a, .tables .restituer a{
+   text-align: center;
+   color: black;
+   font-weight: bold;
+}
+
+@media screen and (min-width: 587px) and (max-width: 1200px) {
+   .container_confirme {
+       height: auto;
+       flex-direction: column;
+       align-items: center;
+       gap: 1rem;
+       margin-top: 1rem;
+   }
+
+   .nombre_sorties, .nombre_auStock {
+       width: 80%;
+   }
+
+   .nombre_sorties .valeur, .nombre_auStock .valeur {
+       width: 4rem;
+       height: 4rem;
+   }
+
+   .nombre_sorties h5, .nombre_auStock h5 {
+       width: 80%;
+       font-size: 15px;
+   }
+
+   .container_table_confirme {
+       margin-top: 1rem;
+       width: 100%;
+   }
+
+   .container_table_confirme h3 {
+       width: 80%;
+       font-size: 20px;
+   }
+
+   .contoure_table {
+       width: 100%;
+       margin-top: 1rem;
+   }
+
+   .tables {
+       width: 100%;
+   }
+
+   .tables tr td {
+       border-width: 2px;
+   }
+
+   .tables td .louer, .tables td .restituer {
+       width: 8rem;
+       height: 2rem;
+       margin-left: 0;
+   }
+}
+
+@media screen and (max-width: 587px){
+
+   .container_confirme {
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+  }
+
+  .nombre_sorties, .nombre_auStock {
+      width: 80%;
+  }
+
+  .nombre_sorties .valeur, .nombre_auStock .valeur {
+      width: 4rem;
+      height: 4rem;
+  }
+
+  .nombre_sorties h5, .nombre_auStock h5 {
+      width: 80%;
+      font-size: 15px;
+  }
+
+  .container_table_confirme {
+      margin-top: 1rem;
+      width: 100%;
+  }
+
+  .container_table_confirme h3 {
+      width: 80%;
+      font-size: 20px;
+  }
+
+  .contoure_table {
+      width: 100%;
+      margin-top: 1rem;
+  }
+
+  .tables {
+      width: 100%;
+  }
+
+  .tables tr td {
+      border-width: 2px;
+  }
+
+  .tables td .louer, .tables td .restituer {
+      width: 8rem;
+      height: 2rem;
+      margin-left: 0;
+  }
+
+}

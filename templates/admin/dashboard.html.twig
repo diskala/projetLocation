@@ -1,0 +1,207 @@
+﻿{% extends '@EasyAdmin/page/content.html.twig' %}
+
+
+{% block body_javascript %}
+	{{ parent() }}
+	<script src="{{ asset('js/dashboard.js') }}"></script>
+{% endblock %}
+
+
+{% block page_content %}
+{{ include ("./admin/headerAdmins.html.twig") }} 
+	<main>
+
+		 
+
+		<div class="container_indicateurs">
+
+         <a href = {{ path('admin_index') }}><div class="nombre_confirmation">
+                <div class="chiffre">
+					<h3>{{ nombreReservation }} </h3>
+				</div>
+
+			    <div class="phrase">
+				<h3>En attente de confirmation</h3>
+			    </div>
+		 </div> </a>
+
+		  
+			 <a href = {{ path('app_contactNonLu') }}> <div class="nombre_contact"> 
+			   <div class="chiffre">
+					<h3>{{ nombreDeContact }}</h3>
+				</div>
+				 <div class="phrase">
+				   <h3> Messages reçu non lu </h3>
+			    </div>
+			  </div></a>
+			 
+
+
+		</div>
+
+
+		<div class="container_table_principal">
+
+         
+ 
+              <h3 class="enTete">
+				Reservations en attente de confirmation 
+			    </h3>
+			<div class="container_table">
+
+				<table class="tablese">
+					<tr class="container_titre">
+						 
+						<td class="titre">N° Reservation</td>
+						<td class="titre">Nom et Prénom</td>
+						<td class="titre">Email</td>
+						<td class="titre">Marque et Model</td>
+						<td class="titre">Date de Reservation</td>
+						<td class="titre">Date de debut</td>
+						<td class="titre">Date de fin</td>
+						<td class="titre">
+							Caution</td>
+						<td class="titre">
+							Permis de conduire</td>
+						<td class="titre">
+							Total à payer</td>
+						<td colspan="2" class="titre">
+							actions
+						</td>
+					</tr>
+
+					{% for item in reserved %}
+						{# <h1> <img src="/images/{{ item.car.image.image1 }}"  />  </h1> #}
+                        {# <a href = {{ path('app_facture', {'id': item.id }) }} > facture</a> #}
+
+						{% if item.isConfirmed %}
+
+							{% else %}
+								<tr class="donnees">
+										 
+									<td>
+										{{ item.id }}
+									</td>
+									<td>
+										{{ item.users.firstname }}
+										{{ item.users.lastname }}
+									</td>
+									<td>
+										{{ item.users.email }}
+									</td>
+									<td>
+										{{ item.car.brand }}
+										|
+										{{ item.car.Model }}
+									</td>
+									<td>
+										{{ item.DayDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td>
+									<td>
+										{{ item.StartDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td>
+									<td>
+										{{ item.EndDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td>
+									{% if item.status %}
+										<td>
+											Payée
+										</td>
+									{% else %}
+										<td>
+											Paiement refusé
+										</td>
+									{% endif %}
+
+									<td>
+										<div class="pdf">
+											<a href="{{ path('app_FichierPdf', {'id': item.id}) }}">Télécharger PDF</a>
+										</div>
+									</td>
+									<td>
+										{{ item.TotalPrice }} €
+									</td>
+									 
+										<td class="actions">
+											<div class="boutton_confirme">
+												<a href={{ path('app_confirme', {'id': item.id} ) }}>
+													confirmation </a>
+											</div>
+										</td>
+									 
+
+
+									{# {% if item is not null and item.actionStatus is not null %}
+									    {% if item.actionStatus.rentedCar is not null %} 
+									        {% if item.actionStatus.rentedCar %}
+									            <td><a href="{{ path('app_restitueStock', {'id': item.id}) }}">Restituée</a></td>
+									        {% else %}
+									            <td><a href="{{ path('app_updateStock', {'id': item.id}) }}">Louée</a></td>
+									        {% endif %}
+									
+									    {% else %}
+									        La propriété rentedCar n'est pas définie pour cette réservation.
+									    {% endif %}
+									{% else %}
+									    La réservation ou l'actionStatus est nulle.
+									{% endif %} #}
+
+
+									{# <td><a href="">Voiture Restituée</a></td> #}
+								</tr>
+
+
+						{% endif %}
+
+
+					</div>
+
+				{% endfor %}
+
+
+			</table>
+          
+		</div>
+		 
+      
+	</main>
+
+	{# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+		Ouvrir la modal
+	</button> #}
+
+	<!-- Modal -->
+	{# <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Titre de la modal</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+					<button type="button" class="btn btn-primary">Enregistrer les changements</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+    document.getElementById('selectionForm').addEventListener('submit', function(event) {
+        var selectedReservations = [];
+        document.querySelectorAll('input[name="selectedReservations[]"]:checked').forEach(function(checkbox) {
+            selectedReservations.push(checkbox.value);
+        });
+        if (selectedReservations.length === 0) {
+            event.preventDefault();
+            alert('Veuillez sélectionner au moins une réservation.');
+        } else {
+            var queryString = '?selectedReservations=' + selectedReservations.join(',');
+			console.log(queryString);
+            this.action += queryString;
+        }
+    });
+</script> #}
+{% endblock %}

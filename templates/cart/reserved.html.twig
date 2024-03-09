@@ -1,0 +1,218 @@
+﻿{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href={{ asset("./styles/reserved.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/inviteContact.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/footer.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src={{ asset('./js/headers.js') }} defer></script>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+	{{ include ("./_partials/header.html.twig") }}
+
+	{# {{ app.user.userIdentifier }} #}
+
+
+	<div id="page_reservation">
+{# Vérifiez si des messages flash existent #}
+			<div id="messageAlert">
+				{% for flashMessage in app.session.flashbag.get('alert') %}
+					<div class="alert alert-warning" role="alert">
+						<h1>
+							{{ flashMessage|raw }}
+							<a href={{ path('app_allcars_') }}>choisissez une autre voiture</a>
+						</h1>
+					</div>
+				{% endfor %}
+			</div>
+		{% for item in reserved %}
+
+
+			<div
+				class="div_centre">
+				{# <p class="titre_centre"> Votre Voiture </p> #}
+				<p class="centre">
+					{{ item.brand|upper }}
+					|
+					{{ item.model }}
+					à partir de :
+					{{ item.PriceDay }}
+					€ / jour
+				</p>
+
+				{# <p class="infos">  
+							Une caution de <span> {{ item.bail }} € </span> doit etre payer obligatoirement pour cette voiture pour pouvoir valider définitivement la reservation.
+					      </p>#}
+			</div>
+
+
+			
+			 
+           
+			{# <section id="container_reserve"> #}
+
+
+				<div class="container_pic_formulaire">
+
+
+					<div class="photo">
+
+						<img src="/images/{{ item.image.image2 }}" alt=""/>
+
+					</div>
+
+
+					<div class="formulaire">
+						 {{ form_errors(reservationForm) }}
+
+						<div
+							class="erreur">
+							{# Affichez les erreurs du champ spécifique avec une classe CSS personnalisée #}
+                                
+							   {{ form_errors(reservationForm.end_date) }}
+							
+						</div>
+						
+						{{ form_start(reservationForm) }}
+                           {# <h3>
+							Veuillez remplir votre formulaire de reservation</h3> #}
+						<ul class="formulaire_reserve">
+
+							<li class="reserve">
+
+								<p class="marq">
+									{{ item.brand|upper }}
+									|
+									{{ item.model }}
+									|
+									{{ item.power}}
+								</p>
+
+							</li>
+
+
+							<li class="reserve">
+
+								{{ form_label(reservationForm.start_date, '- Date de debut') }}
+								 {{ form_widget(reservationForm.start_date, {'attr': {'class': 'res', 'required': 'required'}}) }}
+
+							</li>
+							<li class="reserve">
+
+								{{ form_label(reservationForm.end_date, '- Date de fin') }}
+								 {{ form_widget(reservationForm.end_date, {'attr': {'class': 'fin', 'required': 'required'}}) }}
+
+							</li>
+
+							<li class="reserve">
+								{{ form_label(reservationForm.fichierPdf, '- Permis de conduire: ') }}
+								{{ form_widget(reservationForm.fichierPdf, {'attr': {'class': 'pdf', 'required': 'required'}}) }}
+							</li>
+
+
+							<li class="reserve">
+								<h5>Options et prestations:</h5>
+							</li>
+
+
+							<li class="reserve">
+								{{ form_label(reservationForm.priceunlimitedKm, ' - Kilométrage illimité') }}
+								|
+								<span>
+									{{ item.priceKmUnlimited }}
+									€ /jour
+								</span>
+								{{ form_widget(reservationForm.priceunlimitedKm, {'attr': {'class': 'chek'}}) }}
+							</li>
+
+
+							<li class="reserve">{{ form_label(reservationForm.option_driver, '- Chauffeur professionnel') }}
+								|
+								<span>
+									{{item.priceDriver }} €
+								</span>
+								{{ form_widget(reservationForm.option_driver, {'attr': {'class': 'chek'}}) }}
+							</li>
+
+
+							<li class="reserve">
+								{{ form_label(reservationForm.opt_child_seat, '- Siege pour enfant') }}
+								|
+								<span>
+									{{item.priceSeatChild }}€
+								</span>
+								{{ form_widget(reservationForm.opt_child_seat, {'attr': {'class': 'chek'}}) }}
+							</li>
+
+
+							<li class="reserve">
+								{{ form_label(reservationForm.decoration, '- Decoration pour mariage') }}
+								|
+								<span>
+									{{item.priceDecoration }} €
+								</span>
+								{{ form_widget(reservationForm.decoration, {'attr': {'class': 'chek'}}) }}
+							</li>
+
+
+							<li class="reserve">
+								{# {{ form_label(reservationForm.bail, '- Caution') }}
+								<span>
+									{{ item.bail }}
+									€
+								</span> #}
+								
+								{{ form_widget(reservationForm.bail, {'attr': {'class': 'chek', 'style': 'display: none;'}}) }}</li>
+
+
+							<li class="reserve">
+								{{ form_widget(reservationForm.envoyer, {'attr': {'class': 'boutton'}}) }}</li>
+						</td>
+
+
+						{{ form_end(reservationForm) }}
+					</div>
+				</div>
+
+
+				<div class="description">
+                 
+				 <h3>Essai {{ item.brand|upper }} | {{ item.model|upper }} </h3>
+				 <p> 
+
+					Expressive, vraiment très rapide, extrêmement efficace,<span> {{ item.brand|upper }}</span> transforme en vraie sportive
+					 radicale le <span> {{ item.category|upper }}</span>, sans qu'il ne laisse de plumes au passage. Toujours habitable, 
+					 confortable et exploitable au quotidien,<span> {{ item.model|upper }} </span>c'est le modéles le plus vendu, il devient simplement diabolique à la moindre sollicitation.
+					  De quoi combler le père de famille ou simplement, l'amateur de voitures de sport.<br>
+
+					  Dans l'habitacle, on retrouve le design et la qualité des matériaux typiques de la marque. 
+					  Les sièges baquets spécifiques offrent un typage orienté confort plutôt que maintien maximum, 
+					  une bonne mesure pour faciliter l'usage au quotidien qui reste une vocation de cette auto. Selon 
+					  les packs optionnels, on peut personnaliser l'ambiance à bord, tandis que le Virtual Cockpit peut 
+					  adopter un affichage typique des modèles RS avec compte-tours central et shift light.
+
+					  
+				  </p>
+
+			    </div>
+			{% endfor %}
+            
+			
+			
+		{# </section> #}
+	</div>
+ {{ include("./_partials/inviteContact.html.twig") }}
+ {{ include("./_partials/footer.html.twig") }} 
+{% endblock %}

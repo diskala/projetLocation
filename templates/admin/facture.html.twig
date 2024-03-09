@@ -1,0 +1,378 @@
+﻿{# {% extends '@EasyAdmin/page/content.html.twig' %} #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+    <link rel="stylesheet" href= "{{ asset("./styles/facture.css") }}" >
+    <style>
+       @page {
+    size: A4; /* ou d'autres tailles de page */
+}
+.container_facture{
+    margin-top: 3rem;
+    
+}
+.date{
+    font-size: 20px;
+    font-weight: bold;
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url(SourceSansPro-Regular.ttf);
+  }
+   
+   .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  a {
+    color: #0087C3;
+    text-decoration: none;
+  }
+  
+  /* body {
+    position: relative;
+    
+    width: 21cm;  
+    height: 29.7cm; 
+    margin: 0 auto; 
+    color: #555555;
+    background: #FFFFFF; 
+    font-family: Arial, sans-serif; 
+    font-size: 14px; 
+    font-family: SourceSansPro;
+  } */
+  
+  header {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #AAAAAA;
+  }
+  
+  #logo {
+    float: left;
+    margin-top: 8px;
+  }
+  
+  #logo img {
+    height: 70px;
+  }
+  
+  #company {
+    float: right;
+    text-align: right;
+  }
+  
+  
+  #details {
+    margin-bottom: 50px;
+  }
+  
+  #client {
+    padding-left: 6px;
+    border-left: 6px solid #0087C3;
+    float: left;
+  }
+  
+  #client .to {
+    color: #777777;
+  }
+  
+  h2.name {
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  #invoice {
+    float: right;
+    text-align: right;
+  }
+  
+  #invoice h1 {
+    color: #0087C3;
+    font-size: 2.4em;
+    line-height: 1em;
+    font-weight: normal;
+    margin: 0  0 10px 0;
+  }
+  
+  #invoice .date {
+    font-size: 1.1em;
+    color: #777777;
+  }
+  
+  table {
+ 
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+  }
+  
+  table th,
+  table td {
+    padding: 20px;
+    background: #EEEEEE;
+    text-align: center;
+    border-bottom: 1px solid #FFFFFF;
+  }
+  
+  table th {
+    white-space: nowrap;        
+    font-weight: normal;
+  }
+  
+  table td {
+    text-align: right;
+  }
+  
+  table td h3{
+    color: #57B223;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0 0 0.2em 0;
+  }
+  
+  table .no {
+    color: #FFFFFF;
+    font-size: 1.6em;
+    background: #57B223;
+  }
+  
+  table .desc {
+    text-align: left;
+  }
+  table .titre_desc, table .titre_unit{
+    font-weight: bold;
+    
+  }
+  table .unit {
+    background: #DDDDDD;
+  }
+  
+   
+  
+  table .total {
+    background: #57B223;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+  
+   
+  table td.total {
+    font-size: 1.2em;
+  }
+
+  table .grand_total{
+    background-color: rgb(166, 157, 157);
+  }
+  table .grand_total h3{
+
+    font-size: 25px;
+    font-weight: bolder;
+    color: black;
+     
+  }
+  table tbody tr:last-child td {
+    border: none;
+  }
+  
+  table tfoot td {
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border-bottom: none;
+    font-size: 1.2em;
+    white-space: nowrap; 
+    border-top: 1px solid #AAAAAA; 
+  }
+  
+  table tfoot tr:first-child td {
+    border-top: none; 
+  }
+  
+  table tfoot tr:last-child td {
+    color: #57B223;
+    font-size: 1.4em;
+    border-top: 1px solid #57B223; 
+  
+  }
+  
+  table tfoot tr td:first-child {
+    border: none;
+  }
+  
+  #thanks{
+    font-size: 2em;
+    margin-bottom: 50px;
+  }
+  
+  #notices{
+    padding-left: 6px;
+    border-left: 6px solid #0087C3;  
+  }
+  
+  #notices .notice {
+    font-size: 1.2em;
+  }
+  
+  footer {
+    color: #777777;
+    
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #AAAAAA;
+    padding: 8px 0;
+    text-align: center;
+  }
+  
+  
+    </style>
+</head>
+
+{# {% block page_content %} #}
+ 
+ {# <h1> {{ etablissementFacture.reserve.id }}  </h1> #}
+
+ 
+
+
+
+ <main class="container_facture">
+      <div id="details" class="clearfix">
+        <div id="client">
+          <div class="to">FACTURE POUR:</div>
+          <h2 class="name">  {{ etablissementFacture.reserve.users.lastname }}  {{ etablissementFacture.reserve.users.firstname }}</h2>
+          <div class="address">{{ etablissementFacture.reserve.users.address }}</div>
+          <div class="email"><a href="mailto:{{ etablissementFacture.reserve.users.email }}">{{ etablissementFacture.reserve.users.email }}</a></div>
+        </div>
+        <div id="invoice">
+          <h1>N° FACTURE: {{ etablissementFacture.number }} </h1>
+          <div class="date"> Le : {{ 'now'|date('Y-m-d') }}</div>
+           
+        </div>
+      </div>
+
+      <div class="info"></h3> VOITURE {{ etablissementFacture.reserve.car.brand }} modele {{ etablissementFacture.reserve.car.model }} </td>
+      
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="no">#</th>
+            <th class="titre_desc">DESCRIPTION</th>
+            <th class="titre_unit">PRIX DE LA LOCATION</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="no">01</td>
+            <td class="desc"> LOCATION LIMITÉ À 100 KM / JOUR </td>
+
+            
+
+
+            {% if etablissementFacture.reserve.priceunlimitedKm  %}
+                       <td class="total"> 0 €</td>
+                
+                 {% else %}
+
+                  
+                      <td class="total">{{etablissementFacture.reserve.car.PriceDay }} €</td>
+                     
+            {% endif %}
+           
+            
+            
+          </tr>
+          <tr>
+            <td class="no">02</td>
+            <td class="desc"></h3>LOCATION AVEC UN KILOMÉTRAGES ILLIMITÉ</td>
+            {% if etablissementFacture.reserve.priceunlimitedKm  %}
+                
+                <td class="total">  {{etablissementFacture.reserve.car.PriceKmUnlimited }} €</td>
+                 {% else %}
+
+                  
+                       
+                       <td class="total">  0 €</td>
+            {% endif %}
+           
+          </tr>
+          <tr>
+            <td class="no">03</td>
+            <td class="desc"></h3> CHAUFFEUR PROFESSIONEL </td>
+
+             {% if etablissementFacture.reserve.isOptionDriver  %}
+                 
+                <td class="total">  {{etablissementFacture.reserve.car.PriceDriver }} €</td>
+                 {% else %}
+
+                  
+                     
+                       <td class="total">  0 €</td>
+            {% endif %}
+            
+          </tr>
+
+          <tr>
+            <td class="no">04</td>
+            <td class="desc"></h3> DECORATION POUR MARIAGE </td>
+
+             {% if etablissementFacture.reserve.isDecoration  %}
+                
+                <td class="total">  {{etablissementFacture.reserve.car.PriceDecoration }} €</td>
+                 {% else %}
+
+                  
+                      
+                       <td class="total">  0 €</td>
+            {% endif %}
+            
+          </tr>
+
+           <tr>
+            <td class="no">05</td>
+            <td class="desc"></h3> SIEGE POUR ENFANT </td>
+
+             {% if etablissementFacture.reserve.isOptChildSeat  %}
+               
+                <td class="total">  {{etablissementFacture.reserve.car.PriceSeatChild }} €</td>
+                 {% else %}
+
+                  
+                       
+                       <td class="total">  0 €</td>
+            {% endif %}
+            
+          </tr>
+        </tbody>
+        <tfoot>
+          
+          <tr >
+           
+            <td colspan="2">GRAND TOTAL</td>
+            <td class="grand_total"> <h3>{{ etablissementFacture.reserve.TotalPrice }} €<h3></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div id="thanks">Merci d'avoir fait confiance à DISCARS !</div>
+      <div id="notices">
+        <div>NOTICE:</div>
+        <div class="notice">Des frais financiers de 1,5 % seront facturés sur les soldes impayés après 30 jours.</div>
+      </div>
+    </main>
+    <footer>
+      La facture a été créée sur un ordinateur et est valable sans signature ni sceau.
+    </footer>
+  
+</body>
+</html>
+
+{# {% endblock %} #}

@@ -1,0 +1,483 @@
+﻿ body{
+  /* background-color: black;  */
+   margin: 0;
+   padding: 0;
+   box-shadow: inset 0 0 0 1000px black; /* Ombre de boîte pour créer un fond semi-transparent */
+   
+   
+ }
+ .page_home{
+   
+ 
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3rem;
+  margin-top: 1rem;
+ }
+
+ .page_home .carousel-container {
+  position: relative;
+  height: 48rem;
+  margin-top: 3rem;
+  display: flex;
+  max-width: 1600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.page_home .carousel-container .slides {
+  display: flex;
+  
+  transition: transform 1s ease-in-out;
+  -webkit-transition: transform 1s ease-in-out;
+  -moz-transition: transform 1s ease-in-out;
+  -ms-transition: transform 1s ease-in-out;
+  -o-transition: transform 1s ease-in-out;
+}
+
+.page_home .carousel-container .slides .slide {
+  object-fit: cover;
+  display: flex;
+  flex: 0 0 auto;
+  
+  width: 1600px;
+  
+}
+.page_home .carousel-container .slides .slide img{
+  min-width: 100%;
+  
+}
+
+/* .controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls button {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  
+}
+
+.controls button:hover {
+  background: rgba(255, 255, 255, 0.8);
+} */
+  
+
+ 
+.louer_acheter{
+   position: absolute;
+   
+   top: 48rem;
+   width: 70% ;
+   height: auto;
+   z-index: 999;
+   display: flex;
+   justify-content: space-between;
+   margin-left: 15%;
+   align-items: center;
+   
+   
+}
+.louer_acheter span{
+  z-index: 100;
+ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #e02b20;
+   width: 10rem;
+   height: 3rem;
+   border-radius: 20px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+   transition:0.5s ease-in-out ;
+   -webkit-transition:0.5s ease-in-out ;
+   -moz-transition:0.5s ease-in-out ;
+   -ms-transition:0.5s ease-in-out ;
+   -o-transition:0.5s ease-in-out ;
+}
+.louer_acheter span:hover{
+  background-color: rgb(55, 55, 55);
+  width: 10.3rem;
+   height: 3.1rem;
+    
+}
+
+ 
+.louer_acheter span a{
+   color: white;
+   font-size: 20px;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+.numero{
+   cursor: pointer;
+   visibility: hidden;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: bold;
+   top: 48rem;
+   right: 14%;
+  z-index: 0;
+   background-color: #e02b20;
+   width: 13%;
+   height: 3.2rem;
+   border-radius: 20px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+   color: white;
+}
+/***************************************************************************/
+
+#description{
+ 
+
+display: flex;
+flex-direction: column;
+gap: 3rem;
+justify-content: center;
+justify-items: center;
+align-items: center;
+
+}
+#description #article{
+  
+  background-color: rgb(193, 193, 190);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  
+
+}
+
+#description #article h3{
+  color: black;
+  padding: 1rem;
+}
+
+#description #article p{
+  font-size: 20px;
+  font-family:Tahoma, sans-serif;
+  color: black;
+}
+ 
+article{
+  
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  color: white;
+}
+
+article .infos, article #section1{
+ 
+  width: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: rgb(45, 45, 45);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+article .infos #para{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+}
+article .infos #para .entete{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+article .infos #para i{
+  color: rgb(251, 247, 14);
+}
+
+article .infos #para h3{
+  color: white;
+}
+
+article #section1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+}
+
+article #section1 #appel{
+  background-color: rgb(113, 235, 229);
+  
+  cursor: pointer;
+  height: 2rem;
+  font-weight: bolder;
+  border-radius:10px ;
+  -webkit-border-radius:10px ;
+  -moz-border-radius:10px ;
+  -ms-border-radius:10px ;
+  -o-border-radius:10px ;
+}
+
+
+/* Pour les écrans de petite taille */
+@media screen and (max-width: 578px) {
+  .page_home{
+    width: 100%;
+    position: relative;
+    margin-top: 8rem;
+  }
+  .page_home .carousel-container{
+   
+    width: 100%;
+    height: 25rem;
+  }
+
+ 
+
+  .page_home .carousel-container .slides .slide{
+    width: 100%;
+    height: 25rem;
+  }
+
+  .page_home .carousel-container .slides .slide img{
+    width: 100%;
+    opacity: 1;
+  }
+
+
+  .louer_acheter{
+    position: absolute;
+    
+    top: 22rem;
+    width: 80% ;
+    height: auto;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    align-items: center;
+    
+    
+ }
+ .louer_acheter span{
+   
+    width: 6rem;
+    height: 2rem;
+   
+     
+ }
+ .louer_acheter span:hover{
+  background-color: rgb(55, 55, 55);
+  width: 6.2rem;
+   height: 2.1rem;
+    
+}
+ .louer_acheter span a{
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.numero{
+  cursor: pointer;
+  visibility: hidden;
+  position: absolute;
+  top: 26rem;
+  right: 10%;
+  width: 7rem;
+  height: 2rem;
+  font-size: 10px;
+  
+}
+
+article{
+  
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 2rem;
+  color: white;
+}
+
+article .infos, article #section1{
+ 
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: rgb(45, 45, 45);
+  
+  font-size: 12px;
+  
+}
+article .infos #para{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+}
+
+#description #article h3{
+   
+  font-size: 13px;
+}
+
+#description #article p{
+  font-size: 13px;
+   
+}
+ 
+#article{
+  padding-bottom: 1rem;
+}
+}
+
+ 
+@media screen and (min-width: 578px) and (max-width: 1200px) {
+  .page_home{
+    width: 100%;
+    position: relative;
+    
+  }
+  .page_home .carousel-container{
+     
+    width: 90%;
+    height:35rem;
+  }
+
+ 
+
+  .page_home .carousel-container .slides .slide{
+    width: 100%;
+    
+  }
+
+  .page_home .carousel-container .slides .slide img{
+    width: 100%;
+  }
+
+
+  .louer_acheter{
+    position: absolute;
+    
+    top: 30rem;
+    width: 80% ;
+    height: auto;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    align-items: center;
+    
+    
+ }
+ .louer_acheter span{
+   
+    width: 7rem;
+    height: 2rem;
+   
+     
+ }
+ .louer_acheter span:hover{
+  background-color: rgb(55, 55, 55);
+  width: 7.3rem;
+   height: 2.1rem;
+    
+}
+ .louer_acheter span a{
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.numero{
+  cursor: pointer;
+  visibility: hidden;
+  position: absolute;
+  top: 30rem;
+  right: 10%;
+  width: 9rem;
+  height: 2rem;
+  font-size: 12px;
+  
+}
+
+
+
+article{
+  
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 2rem;
+  color: white;
+}
+
+article .infos, article #section1{
+ 
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: rgb(45, 45, 45);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  
+}
+article .infos #para{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+}
+
+#description #article h3{
+   
+  font-size: 17px;
+}
+
+#description #article p{
+  font-size: 17px;
+   
+}
+ 
+} 

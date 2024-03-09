@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/footer.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/inviteContact.css") }}>
+	<link rel="stylesheet" href={{ asset("./styles/cart.css") }}>
+{% endblock %}
+
+{% block javascripts %}
+<script src={{ asset('./js/headers.js') }} defer></script>
+ <script src={{ asset('./js/cart.js') }} defer></script>
+
+	{% endblock %}
+			
+	 
+	{% block body %}
+	  
+	   {{ include ("./_partials/header.html.twig") }}     
+	  
+	 
+	<section class="container_panier"> 
+
+	{% for type, messages in app.flashes() %}
+    {% for message in messages %}
+        <div class="alert alert-{{ type }}" role="alert">
+            {{ message|raw }}
+        </div>
+    {% endfor %}
+{% endfor %}
+	  
+	 <h1> DÉTAILS DE VOTRE RESERVATIONS </h1>
+	{% for items in reservation %}
+	      
+	     
+	             {# {% for items in item %}   #}
+   
+	            <div class="second_container">
+	                  
+	                        
+	                <div class="image">
+	                       <img src= "/images/{{ items.car.image.image1}}" alt="{{ items.car.brand }}" /> 
+	                </div>  
+	     
+	                
+	
+	                <div class="article">
+  
+                            <div class="infos">
+
+						      <a class="facture" href= {{ path('app_fichierFacture', {'id': items.id}) }}>Votre Facture</a>
+                                <p> Voiture {{items.car.brand|upper }} | {{items.car.model|upper}}, la date de reservation : 
+					                {{ items.dayDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY")}}
+									 
+								 
+								
+								</p>
+							 	
+							</div>
+								
+							<div class="date_prix">  
+					            <p>
+								 Pour notre client: {{utilisateur.firstname|upper}} {{utilisateur.lastname}}
+								</p>
+								<p>
+								  Date de Location : du <span> {{ items.startDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </span> au 
+					            <span> {{ items.endDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }} </span>
+								</p>
+					  
+					         
+	                                 {% if items.isOptionDriver %}   
+                                            {%set valDriver = items.car.priceDriver%}
+											 {%set message1 = "Chauffeur professionnel"%}
+											{% else %}
+											 {% set valDriver = 0 %}
+                                     {% endif %}
+
+									 {% if items.isDecoration %}   
+                                            {%set valDecoration = items.car.priceDecoration%}
+											{% else %}
+											 {% set valDecoration = 0 %}
+                                    {% endif %}
+									 {% if items.isOptChildSeat %}   
+                                            {%set valSeatChild = items.car.priceSeatChild%}
+											{% else %}
+											 {% set valSeatChild = 0 %}
+	                                {% endif %}
+	                                 {% if items.priceunlimitedKm %}
+                                            
+	                                <h4>  Total à payer pour une location avec un kilometrage illimité et options :  {% set sum =  items.car.priceKmUnlimited +  valDriver
+									+ valSeatChild + valDecoration %}
+                                     <span class="somme">{{ sum }} €</span></h4>
+	                                {% else %}
+	                               <h4> Vous optez pour un kilometrage limité à 100 Km/jour maximum et options : {% set sum =  items.car.priceDay +  valDriver
+									+ valSeatChild + valDecoration %}
+                                    <span class="somme">{{ sum }} €</span> </h4>
+	                               {% endif %}
+								   
+								
+							</div>
+	               
+	                         <div class="contact_annule">
+							  <h3> Si vous voulez Annuler votre reservation veuillez nous contacter au &nbsp; <span>01.25.35.45.68</span></h3>
+							  
+							  </div>
+							 
+	                    <div class="supprime_modif">
+	                         {# <div class="supp"> <a  href= {{ path('remove', {'id': reservation.id}) }} class="annul">Annuler votre reservation <a/></div> #}
+							  {# <div class="supp"> <a  href="" class="annul">Annuler votre reservation <a/></div> #}
+							 
+							
+							 <div class="modif"> <a  href= {{ path('modifier', {'id': items.id}) }} class="modifier">Modifier votre reservation<a/></div>
+	                    </div>  
+	                      
+	                
+	
+	                  
+	                   
+	                  
+	               
+	                </div>
+	
+	                         
+	                              
+	               
+	                            
+	
+	                  
+	               
+	            </div>
+	
+	        
+			  
+               
+			
+	     {% endfor %} 
+	  
+	{# {% endfor %} #}
+	
+	   </section>
+	 {{ include("./_partials/inviteContact.html.twig") }} 
+	{{ include("./_partials/footer.html.twig") }} 
+{% endblock %}

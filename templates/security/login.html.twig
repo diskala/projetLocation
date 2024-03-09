@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href={{ asset("./styles/login.css") }}>
+{% endblock %}
+
+
+{% block body %}
+ 
+<section id="container__section">
+	<form method="post">
+
+
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+
+
+		{% if app.user %}
+			<div class="mb-3">
+				Vous êtes connecté en tant que
+				{{ app.user.userIdentifier }},
+				<a href="{{ path('app_logout') }}">Se déconnecter</a>
+			</div>
+		{% endif %}
+
+		<div id="container__login">
+
+
+			<h1 class="h3 mb-3 font-weight-normal">Veuillez vous connecter</h1>
+
+			<ul id="list__form">
+				<li>
+					<label for="inputEmail">Email</label>
+				</li>
+
+				<li>
+                
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus></li>
+
+				<li>
+					<label for="inputPassword">Password</label>
+				</li>
+
+
+				<li><input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required></li>
+
+				<li><input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"></li>
+
+				<li>
+					<button class="btn btn-lg btn-primary" type="submit">
+						Se connecter
+					</button>
+				</li>
+
+				<li>
+					<p>Nouveau client ?
+						<span>
+							<a href={{ path("app_register") }}>S'inscrire</a>
+						</span>
+					</p>
+				</li>
+
+
+				<li>
+					<p>Mot de passe oublié ?
+						 
+							<a href={{ path('app_forgot_password_request') }}>Réinitialiser votre mot de passe</a>
+						 
+					</p>
+				</li>
+			</ul>
+		</div>
+
+	</form>
+
+</section>
+
+
+<script src={{ asset('./js/login.js') }} defer>
+	{% endblock %}

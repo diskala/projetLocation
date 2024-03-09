@@ -1,0 +1,110 @@
+﻿{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_content %}
+
+{{ include ("./admin/headerAdmins.html.twig") }} 
+    <div class="contenair_contact">
+        <h3>MESSAGES NON LU</h3>
+        <form action="{{ path('app_contactNonLu') }}" method="POST">
+            <table class="table contactNonLu">
+                <thead>
+                    <tr class="enTete_tableau">
+                       
+                        <th class="titre_contact_1">NOM</th>
+                        <th class="titre_contact_2">PRÉNOM</th>
+                        <th class="titre_contact_1">EMAIL</th>
+                        <th class="titre_contact_2">TÉLÉPHONE</th>
+                        <th class="titre_contact_1">DATE</th>
+                        <th class="titre_contact_2">OBJET</th>
+                        <th class="titre_contact_1">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in contactNonLu %}
+                        <tr class="items_contact">
+                            
+                            <td class="valeurs_1">{{ item.firstname }}</td>
+                            <td class="valeurs_2">{{ item.lastname }}</td>
+                            <td class="valeurs_1">{{ item.email }}</td>
+                            <td class="valeurs_2">{{ item.phone }}</td>
+                            <td class="valeurs_1">{{ item.dateContact|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}</td>
+                            <td class="valeurs_2">{{ item.objet }}</td>
+                            <td> <input type="button"  class="btn btn-primary open-modal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-contact-id="{{ item.id }}"  value="Voir le message" />
+ 
+</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Message de contact</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body" id="modal-content"> </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Enregistrer les changements</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélectionnez toutes les cases à cocher avec la classe 'selection-checkbox'
+        const checkboxes = document.querySelectorAll('.selection-checkbox');
+
+        // Ajoutez un écouteur d'événements 'click' à chaque case à cocher
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                // Désélectionnez toutes les autres cases à cocher
+                checkboxes.forEach(cb => {
+                    if (cb !== this) {
+                        cb.checked = false;
+                    }
+                });
+            });
+        });
+
+          });
+       
+
+  
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const openModalButtons = document.querySelectorAll('.open-modal');
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const contactId = this.getAttribute('data-contact-id');
+
+                // Effectuer une requête AJAX pour récupérer les détails du contact
+                fetch(`/admin/contact/${contactId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Afficher les détails du contact dans la modal
+                        document.getElementById('modal-content').innerHTML = `
+                           
+                             <p> ${data.message} </p>
+                            <!-- Ajoutez d'autres détails du contact selon vos besoins -->
+                        `;
+
+                        // Afficher la modal
+                        $('#exampleModal').modal('show');
+                    })
+                    .catch(error => console.error('Erreur lors de la récupération des détails du contact:', error));
+            });
+        });
+    });
+</script>
+{% endblock %}

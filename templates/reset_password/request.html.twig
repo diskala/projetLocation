@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+ {% block stylesheets %}
+            <link rel="stylesheet" href= {{ asset("./styles/request.css") }} >
+              <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
+               <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
+               <link rel="stylesheet" href={{ asset("./styles/inviteContact.css") }}>
+{% endblock %}
+
+ {% block javascripts %}
+         <script src={{ asset('./js/headers.js') }} defer></script>
+        {% endblock %}
+
+
+{% block body %}
+
+ {{ include("./_partials/header.html.twig") }}
+
+<div class="container_mail">
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <div class="envois_mail">
+    <h1>réinitialisez votre mot de passe</h1>
+
+    {{ form_start(requestForm) }}
+        
+        <div class="champss">
+        <span>{{ form_row(requestForm.email, {'attr': {'class': 'mail'}}) }}</span>
+        </div>
+        
+        <div class="petit_message">
+            <p>
+               Entrez votre adresse e-mail et nous vous enverrons un
+                 lien pour réinitialiser votre mot de passe.
+            </p>
+        </div>
+       <div class="boutton">
+        <button class="btn btn-primary">Envoyer un e-mail de réinitialisation du mot de passe</button>
+        </div>
+    {{ form_end(requestForm) }}
+    </div>
+    </div>
+
+    {{ include("./_partials/inviteContact.html.twig") }} 
+		
+		{{ include("./_partials/footer.html.twig") }}  
+{% endblock %}

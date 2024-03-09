@@ -1,0 +1,520 @@
+﻿body{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+
+#page_reservation{
+ 
+ 
+  width: 100%;
+  height: 50rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  
+  align-items: center;
+ 
+}
+
+.container_pic_formulaire{
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+ 
+}
+
+.formulaire{
+ 
+  width: 45%;
+  height: 70vh;
+  padding: 0;
+  margin-right: 0rem;
+ background-color:  #242c30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+ 
+   
+   
+}
+.formulaire .formulaire_reserve{
+   
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   
+   
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin-top:0;
+ 
+  
+}
+
+
+.photo{
+ 
+  width: 50%;
+  height: 40rem;
+   
+}
+
+
+
+
+#messageAlert .alert h1{
+color: white;
+display: flex;
+gap: 1rem;
+font-size: 20px;
+margin-top: 0;
+
+}
+
+#messageAlert .alert h1 a{
+color: rgb(135, 252, 250);
+margin-left: 1rem;
+text-decoration:underline;
+}
+
+
+.formulaire .erreur{
+position: absolute;
+display: flex;
+gap: 0.5rem;
+color: rgb(229, 240, 13) !important;
+font-size: 20px; 
+text-align: center;
+list-style: none; 
+padding: 0;
+top: 11rem;
+left: 35%;
+}
+
+
+
+
+.formulaire h3{
+
+background-color: #e02b20;
+color: white;
+padding: 0;
+margin-top: -5rem;
+margin-left: 3rem;
+}
+
+
+
+
+
+.photo img{
+  width: 100%;
+  height: 100%;
+}
+
+.div_centre{
+width: auto;
+height: auto;
+
+}
+
+.div_centre .centre{
+font-size: 30px;
+text-align: center;
+font-family: 'Montserrat';
+color: rgb(254, 85, 7);
+}
+.div_centre .titre_centre{
+font-size: 20px;
+font-family: 'Montserrat';
+font-weight: bold;
+text-align: center;
+color: white;
+}
+.reserve{
+  margin-top: 1.5rem;
+  list-style: none;
+  font-size: 20px;
+  color: white;
+}
+
+.reserve .res, .fin{
+  width: 15rem;
+  height: 2rem;
+  font-size: 20px;
+  color: black;
+  background-color: rgb(206, 202, 202);
+  border-color: white;
+  cursor: pointer;
+ 
+  
+}
+
+.reserve .fin{
+  margin-left: 1.8rem;
+}
+
+.reserve .chek{
+   margin-left: 1rem;
+  
+}
+.reserve .marq{
+  width: 30rem;
+  height: 3rem;
+  display: flex;
+  text-align: center;
+ justify-content: center;
+ align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  
+  color: rgb(246, 72, 4);
+  background-color: rgb(173, 170, 170);
+  
+  
+}
+
+.reserve .boutton{
+   
+  width: 15rem;
+  height: 3rem;
+  margin-top: -1rem;
+  cursor: pointer;
+  color: white;
+  background-color:   #e02b20;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s ease-in-out ;
+  -webkit-transition: 0.5s ease-in-out ;
+  -moz-transition: 0.5s ease-in-out ;
+  -ms-transition: 0.5s ease-in-out ;
+  -o-transition: 0.5s ease-in-out ;
+}
+
+.reserve .boutton:hover{
+ 
+background-color:   #d96761;
+}
+
+
+ 
+/*******************************************************************************
+                        TABLETTE
+**********************************************************************************/
+@media screen and (min-width:587px) and (max-width:1200px) {
+
+#page_reservation{
+  width: 100%;
+  height: 85rem;
+   margin-top: 3rem;
+
+}
+
+
+ 
+.container_pic_formulaire{
+  
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+ margin-top: 0;
+  width: 100%;
+   height: 80rem;
+  
+}
+.formulaire{
+  width: 90%;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 2rem;
+  
+   
+   
+   
+   
+}
+
+.formulaire h3{
+  font-size: 15px;
+  width: 70%;
+  margin-left: 0;
+  background-color: blue;
+  text-align: center;
+
+}
+.formulaire .formulaire_reserve{
+ 
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+ 
+}
+
+.div_centre{
+
+   
+  width: auto;
+  
+  text-align: center;
+  margin-left: 0;
+  margin-top: 0rem;
+  
+  
+}
+
+.div_centre .centre{
+  font-size: 18px;
+  margin-left: 0;
+  font-family: 'Montserrat';
+  color: rgb(254, 85, 7);
+}
+
+.photo{
+  width: 100%;
+  height: 30rem;
+  
+
+  
+}
+
+.reserve .boutton{
+  width: 10rem;
+  height: 2rem;
+  margin-left: 30%;
+  font-weight: bold;
+  cursor: pointer;
+  color:white;
+   
+  font-size: 11px;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+
+
+#messageAlert .alert h1{
+color: white;
+ 
+}
+ 
+ 
+.formulaire .erreur{
+  position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  color: rgb(229, 240, 13) !important;
+  font-size: 15px;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  top: 8rem;
+  left: 30%;
+}
+
+#messageAlert .alert h1{
+  color: white;
+   
+  font-size: 15px;
+  }
+  
+  #messageAlert .alert h1 a{
+    color: rgb(135, 252, 250);
+    margin-left: 1rem;
+    text-decoration:underline;
+  }
+   
+   
+
+
+
+}
+
+@media screen and (max-width:587px) {
+
+#page_reservation{
+   
+   
+   
+   
+    width: 100%;
+  height: 110rem;
+     margin-top: 5rem;
+
+  }
+ 
+   
+
+
+
+
+ 
+.container_pic_formulaire{
+  
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+ 
+  width: 100%;
+   height: 70rem;
+  
+}
+.formulaire{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  margin-top: 2rem;
+  height: 40rem;
+   
+ 
+   
+   
+}
+.formulaire h3{
+  font-size: 15px;
+  margin-bottom: 0;
+  padding-top: 1rem;
+}
+.formulaire .formulaire_reserve{
+  
+  width: 100%;
+  height: 90%;
+  margin-left: 0;
+  margin-top: 0;
+ 
+}
+.formulaire .formulaire_reserve .reserve{
+  font-size: 15px;
+   
+}
+
+.formulaire .formulaire_reserve .reserve .marq{
+  width: 100%;
+
+  font-size: 15px;
+}
+
+ 
+
+.formulaire .formulaire_reserve .reserve .res{
+  width: 70%;
+  height: 2rem;
+}
+
+.formulaire .formulaire_reserve .reserve .fin{
+  width: 70%;
+  height: 2rem;
+  margin-left: 1.2rem;
+}
+.div_centre{
+
+  
+  width: auto;
+  
+  text-align: center;
+  margin-left: 0;
+  margin-top: 0rem;
+  
+  
+}
+
+.div_centre .centre{
+  font-size: 15px;
+  margin-left: 0;
+  font-family: 'Montserrat';
+  color: rgb(254, 85, 7);
+}
+
+.photo{
+  width: 100%;
+  height: 25rem;
+  
+
+  
+}
+
+.reserve .boutton{
+  width: 10rem;
+  height: 2rem;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+
+
+#messageAlert .alert h1{
+color: white;
+
+}
+ 
+ 
+.formulaire .erreur{
+  position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  color: rgb(229, 240, 13) !important;
+  font-size: 15px;
+
+  text-align: center;
+  list-style: none;
+  
+  
+  padding: 0;
+  top: 14rem;
+  left: 5%;
+}
+
+#messageAlert .alert h1{
+  color: white;
+   
+  font-size: 12px;
+  }
+  
+  #messageAlert .alert h1 a{
+    color: rgb(135, 252, 250);
+    margin-left: 1rem;
+    text-decoration:underline;
+  }
+  
+
+  
+
+}

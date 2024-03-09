@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+ {% block stylesheets %}
+            <link rel="stylesheet" href= {{ asset("./styles/register.css") }} >
+            <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
+            <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
+{% endblock %}
+
+{% block javascripts %}	 
+	<script src={{ asset('./js/headers.js') }} defer></script>
+{% endblock %}
+
+{% block body %}
+
+  {{ include ("./_partials/header.html.twig") }} 
+
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+<div id="container__register">
+ 
+   
+ 
+   
+   
+    
+    <section id="inscrir__form"> 
+    <h1 id="titre">FORMULAIRE D'INSCRIPETION</h1>
+    {{ form_start(registrationForm) }}
+
+    <h1> {{ form_errors(registrationForm) }}</h1>
+    
+    <table>
+    <tr>
+    <td class="labels"> {{ form_label(registrationForm.firstname, 'Nom') }}</td>
+      <td class="labels">{{ form_label(registrationForm.lastname, 'Prénom') }}</td>
+      
+     
+    </tr>
+     
+    <tr>
+    <h1 class="erreurs"> {{ form_errors(registrationForm.firstname, { 'attr': {'class': 'erreurs'} }) }}</h1>
+    <h1 class="erreurs"> {{ form_errors(registrationForm.lastname, { 'attr': {'class': 'erreurs'} }) }}</h1>
+     <td class="inscrirs">{{ form_row(registrationForm.firstname, {'attr': {'class': 'champ'}}) }}</td>
+      <td class="inscrirs">{{ form_row(registrationForm.lastname, {'attr': {'class': 'champ'}}) }}</td>
+      
+     </tr>
+    
+   <tr>
+    <td class="labels"> {{ form_label(registrationForm.email, 'Email') }}</td>
+      <td class="labels">{{ form_label(registrationForm.plainPassword, 'Mot de Passe') }}</td>
+    </tr>
+     <tr>
+     <h1 class="erreurs"> {{ form_errors(registrationForm.plainPassword, { 'attr': {'class': 'erreurs'} }) }}</h1>
+       <td class="inscrirs"> {{ form_row(registrationForm.email, {'attr': {'class': 'champ'}}) }}</td>
+       
+        <td class="inscrirs">{{ form_row(registrationForm.plainPassword, {'attr': {'class': 'champ'}}) }}</td>
+     </tr>
+      
+
+      <tr>
+    <td class="labels"> {{ form_label(registrationForm.address, 'Votre Adresse') }}</td>
+      <td class="labels">{{ form_label(registrationForm.phone, 'N°: Téléphone') }}</td>
+    </tr>
+      <tr>
+        <td class="inscrirs"> {{ form_row(registrationForm.address, {'attr': {'class': 'champ'}}) }}</td>
+         <td class="inscrirs">  {{ form_row(registrationForm.phone, {'attr': {'class': 'champ'}}) }}</td>
+      </tr>
+
+      <tr>
+        <td class="labels">{{ form_row(registrationForm.agreeTerms) }}</td>
+      </tr>
+
+      <tr>
+       <td> <button type="submit" class="btn">Enregistrer</button></td>
+    </tr>
+   </table>
+    {{ form_end(registrationForm) }}
+  
+   
+    </section>
+
+
+
+
+</div>
+{{ include ("./_partials/footer.html.twig") }} 
+     
+{% endblock %}

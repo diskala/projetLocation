@@ -1,0 +1,224 @@
+﻿{% extends '@EasyAdmin/page/content.html.twig' %}
+{# {% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('./styles/resConfirmed.css') }}">
+{% endblock %} #}
+{% block page_content %}
+{{ include ("./admin/headerAdmins.html.twig") }} 
+         
+
+
+
+
+
+
+	<div class="container_confirme">
+
+
+		<div class="nombre_sorties">
+			
+             
+             <div class="valeur">
+                  <h4> {{ nombreVoitureSortie }} </h4>
+			 </div>
+
+			 <h5>
+			   Voitures actuellement en location
+				  
+			</h5>
+
+		</div>
+		<div class="nombre_auStock">
+			
+            <div class="valeur">
+					<h4>{{ nombresAuStock }}<h1>
+				</div>
+
+             <h5>
+				Voitures disponible au Stock
+				
+			</h5>
+		</div>
+
+        
+
+
+
+		 
+	</div>
+
+
+	<div class="container_table_confirme">
+		<h3>
+			Les Reservations Confirmées
+		</h3>
+			
+             
+		 
+        <div class="contoure_table">
+			<table class="tables">
+				<tr class="container_titre_confirme">
+					 
+					<td class="titres">N° Reservation</td>
+					<td class="titres">Nom </td>
+					<td class="titres">Email</td>
+					<td class="titres">Marque et Model</td>
+					{# <td class="titres">Date de Reservation</td> #}
+					<td class="titres">Date de debut</td>
+					<td class="titres">Date de fin</td>
+					<td class="titres">
+						Total_TTC</td>
+					<td class="titres">
+						actions
+					</td>
+				</tr>
+
+				{% for item in reserved %}
+					{# <h1> <img src="/images/{{ item.car.image.image1 }}"  />  </h1> #}
+
+
+					{% if item.actionStatus %}
+
+						{% if item.actionStatus.rentedCar == true %}
+ 
+							{% else %}
+
+							      
+							 {% set currentDate = 'now'|date('Y-m-d') %}
+                                     {% set StartDate = item.StartDate|date('Y-m-d') %}
+                                     {% set diffDays = item.StartDate|date_modify('+3 days') %}
+							  {% if item.StartDate >= 'now'|date('Y-m-d') and  item.StartDate <= currentDate|date_modify('+3 days') and item.actionStatus.rentedCar == false %}
+
+                                <tr class="red-text">
+									 
+									<td>
+										{{ item.id }}
+									</td>
+									<td>
+										{{ item.users.firstname }}
+									 
+									</td>
+									<td>
+										{{ item.users.email }}
+									</td>
+									<td>
+										{{ item.car.brand }}
+										|
+										{{ item.car.Model }}
+									</td>
+									{# <td>
+										{{ item.DayDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td> #}
+ 
+									 
+									
+									<td>
+										{{ item.StartDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td>
+									
+									<td>
+										{{ item.EndDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td>
+									 
+
+									 
+									<td>
+										{{ item.TotalPrice }} €
+									</td>
+									 
+										<td >
+											<div class="louer"><a href="{{ path('app_updateStock', {'id': item.id}) }}">En Location</a></div>
+										</td> 
+
+
+									{# {% if item.actionStatus.isRentedCar %}
+										<td >
+											<div class="restituer"><a href="{{ path('app_restitueStock', {'id': item.id}) }}">Restituée</a></div>
+										</td>
+									{% else %}
+										<td >
+											<div class="louer"><a href="{{ path('app_updateStock', {'id': item.id}) }}">En Location</a></div>
+										</td>
+									{% endif %} #}
+
+
+									{# <td><a href="">Voiture Restituée</a></td> #}
+								</tr>
+
+
+
+                         
+
+                            {% else %}
+								<tr class="donnees_confirme">
+									 
+
+									<td>
+										{{ item.id }}
+									</td>
+									<td>
+										{{ item.users.firstname }}
+									 
+									</td>
+									<td>
+										{{ item.users.email }}
+									</td>
+									<td>
+										{{ item.car.brand }}
+										|
+										{{ item.car.Model }}
+									</td>
+									{# <td>
+										{{ item.DayDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td> #}
+ 
+									  {# {% set currentDate = 'now'|date('Y-m-d') %}
+                                     {% set StartDate = item.StartDate|date('Y-m-d') %}
+                                     {% set diffDays = item.StartDate|date_modify('+10 days') %} #}
+									
+									<td >
+										{{ item.StartDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td>
+									
+									<td>
+										{{ item.EndDate|format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY") }}
+									</td>
+									 
+
+									 
+									<td>
+										{{ item.TotalPrice }}
+									</td>
+									 
+									 <td >
+											<div class="louer"><a href="{{ path('app_updateStock', {'id': item.id}) }}">En Location</a></div>
+										</td>
+
+
+									 
+								</tr>
+                              {% endif %}	
+
+						{% endif %}
+
+						{% else %}
+
+					{% endif %}
+
+
+				</div>
+
+			  {% endfor %}
+
+
+		    </table>
+
+	   </div>
+           
+    
+    </div>     
+          
+ 
+
+
+{% endblock %}

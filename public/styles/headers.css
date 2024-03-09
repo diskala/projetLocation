@@ -1,0 +1,378 @@
+﻿
+/******************************************
+                   HEADER 
+********************************************/
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+   
+    
+  
+}
+
+  
+
+.container_header {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-color: black;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+   
+    
+}
+
+
+.nav-links {
+     
+    width: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 5rem; 
+      
+}
+
+.nav-links a{
+    
+    font-size:17px ;
+    text-decoration: none;
+}
+.menu_accueil, .menu_service, .user, .connexion, .deconnection, .inscrir, .contacte{
+    cursor: pointer;
+    text-align: center;
+    
+    height: 2rem;
+    
+    
+}
+
+#accueil, #service, .user, .connexion a, .deconnection a, .inscrir a, .contacte a{
+  color: rgba(3, 230, 255, 0.962);
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+#accueil:hover, #service:hover, .user:hover, .connexion a:hover, .deconnection a:hover, .inscrir a:hover, .contacte a:hover{
+    color: rgba(3, 230, 255, 0.962);
+    font-weight: bold;
+    font-size: 18px;
+   
+    text-decoration: underline;
+  
+   
+}
+
+
+.menu_accueil, .menu_service  {
+    position: relative;
+    width: 15rem;
+    height: 2rem;
+  
+} 
+ 
+ 
+
+.sous_accueil, .sous_service {
+    position: absolute;
+    display: none;
+    padding-left: 0;
+    height: 10rem;
+    width: 15rem;
+    top: 1rem;
+    left: 3rem;
+    z-index: 100;
+    padding-bottom: 1rem;
+    padding-top: 0rem;
+    
+}
+
+ 
+ 
+.sous_accueil li, .sous_service li{
+    list-style: none;
+   
+    margin-left: 0;
+    margin-top: 1rem;
+    
+
+}
+
+.sous_accueil li a, .sous_service li a{
+ display: flex;
+ justify-content: left;
+ font-weight: bold;
+ text-decoration: none;
+ color: white;
+}
+
+
+ 
+.monMail, .deconnecter, .contacte {
+    
+    width: 15rem;
+    text-align: center;
+    height: 2rem;
+   
+    
+} 
+
+
+
+ 
+.nav-links .monMail .user{
+   text-decoration: none;
+    font-weight: bold;
+    color: #e02b20;
+    
+    
+} 
+
+
+ 
+.logos {
+    cursor: pointer;
+    font-size: 1.5em;
+    height: 4rem;
+    margin-left: 5%;
+    margin-bottom:1rem ;
+    width: 4rem;
+    border-radius: 50% ;
+    -webkit-border-radius: 50% ;
+    -moz-border-radius: 50% ;
+    -ms-border-radius: 50% ;
+    -o-border-radius: 50% ;
+    
+}
+
+ 
+.logos img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+ 
+.burger-menu {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
+}   
+
+
+
+
+
+
+
+@media only screen and (min-width: 587px) and (max-width:1200px)  {
+    
+
+    
+    .container_header{
+        display: block;
+       
+       
+      
+    }
+
+    .nav-links{
+        
+        display: none;
+        width: 70%;
+        
+        height: auto;
+        margin-left: 6rem;
+       
+
+    }
+
+    .nav-links .user{
+        margin-left: -0.6rem;
+    }
+    .menu_accueil, .menu_service, .monMail, .deconnecter, .inscrir, .contacte{
+       
+        margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+        width: 12rem;
+      
+    }
+
+    .sous_accueil, .sous_service{
+       
+      
+       
+        width: 20rem;
+        height: auto;
+        margin-top: -2rem;
+        margin-left: 5rem;
+        
+    }
+
+    .menu_accueil li, .menu_service li{
+        width: 100%;  
+         
+        
+    }
+    .menu_accueil li a, .menu_service li a{
+          text-align:right;
+          color: white;
+          font-weight: bolder;
+          margin-left: 5rem;
+    }
+
+    .burger-menu {
+        position: absolute;
+        z-index: 100;
+        color: white;
+        display: block;
+        visibility: visible;
+        font-size: 40px;
+        right: 6rem;
+        top:2rem;
+        
+       
+        
+    }
+
+    .logos {
+     
+        font-size: 1.5em;
+        height: 4rem;
+        margin-left: 4rem;
+        width: 4rem;
+        margin-bottom:1rem ;
+        border-radius: 50% ;
+        -webkit-border-radius: 50% ;
+        -moz-border-radius: 50% ;
+        -ms-border-radius: 50% ;
+        -o-border-radius: 50% ;
+    }
+    .logos img{
+        width: 100%;
+        margin-left: 6rem;
+        height: auto;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
+}
+
+@media screen and (max-width: 587px) {
+   
+    .burger-menu {
+        position: absolute;
+        z-index: 100;
+        color: white;
+        display: block;
+        visibility: visible;
+        font-size: 40px;
+         left: 46%;
+        top:8rem;
+        
+       
+        
+    }
+
+    .container_header{
+        display: block;
+       /* height: 10rem; */
+       
+      
+    }
+
+    .nav-links{
+        
+        display: none;
+        width: 70%;
+        height: auto;
+        margin-left: 2.1rem;
+        margin-top: 7rem;
+        
+
+       
+
+    }
+
+    .nav-links .user{
+        margin-left: -1rem;
+    }
+    .menu_accueil, .menu_service, .monMail, .deconnecter, .inscrir, .contacte{
+       
+        margin-top: 2rem;
+        margin-left: 7rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+        width: 10rem;
+     
+    }
+    .menu_accueil #accueil, .menu_service #service, .monMail a, .deconnecter a, .contacte a{
+        font-size: 15px;
+    }
+    .sous_accueil, .sous_service{
+        width: 15rem;
+        height: auto;
+        
+        margin-left: 50%;
+        margin-top: -2rem;
+    }
+
+    .sous_accueil li a, .sous_service li a{
+        font-size: 15px;
+        color: white;
+    }
+
+    .menu_accueil li, .menu_service li{
+        width: 100%;
+        margin-left: 2rem;
+       
+    }
+
+    
+
+    .logos {
+     
+        font-size: 1.5em;
+        height: 4rem;
+        margin-left: 6rem;
+        width: 4rem;
+        margin-bottom:1rem ;
+        border-radius: 50% ;
+        -webkit-border-radius: 50% ;
+        -moz-border-radius: 50% ;
+        -ms-border-radius: 50% ;
+        -o-border-radius: 50% ;
+    }
+    .logos img{
+        width: 100%;
+        margin-left: 6rem;
+        height: auto;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
+     
+}
