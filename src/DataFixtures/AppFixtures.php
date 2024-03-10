@@ -15,7 +15,6 @@ use Doctrine\Persistence\ObjectManager;
 use function Symfony\Component\Clock\now;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\Security\Core\Role\Role;
-
 class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
@@ -134,7 +133,12 @@ class AppFixtures extends Fixture
           $car->setPriceDriver(80);
           $car->setQuantity('10');
           // Available colonne  boolean aléatoire
-         
+      
+          $car->setStock($arraycsv[$i][10]);
+          $car->setBail($arraycsv[$i][11]);
+          // Available colonne  boolean aléatoire
+          $car->setAvailable($faker->boolean());
+
           $car->setImage($imagesTab[$i]);
           array_push($carArray, $car);
           $manager->persist($car);
