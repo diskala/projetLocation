@@ -11,7 +11,7 @@
         "api-platform/core": "^3.2",
         "doctrine/doctrine-bundle": "^2.10",
         "doctrine/doctrine-migrations-bundle": "^3.2",
-        "doctrine/orm": "^2.16",
+        "doctrine/orm": "^3.1",
         "dompdf/dompdf": "^2.0",
         "easycorp/easyadmin-bundle": "^4.8",
         "knplabs/knp-snappy-bundle": "^1.10",
