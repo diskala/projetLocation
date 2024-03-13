@@ -23,6 +23,17 @@ download_pdf:
     path: '/dashboard/fichierPdf/{id}'
     controller: App\Controller\ReservationController::downloadPDF
  
- 
+# Route pour la page de contact
+app_contact:
+    path: /contact
+    controller: App\Controller\ContactController::index
+
+app_allcars_:
+    path: /allcars
+    controller: App\Controller\AllcarsController::index
+
+app_register:
+    path: /register
+    controller: App\Controller\RegistrationController::register
 
  
