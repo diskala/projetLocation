@@ -38,6 +38,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/admin_index, roles: ROLE_ADMIN }
+         - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/app_home, roles: ROLE_USER }
          - { path: ^/app_allcars_, roles: ROLE_USER }
          - { path: ^/app_contact, roles: ROLE_USER }
