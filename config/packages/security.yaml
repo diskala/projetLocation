@@ -39,6 +39,15 @@ security:
     access_control:
          - { path: ^/admin_index, roles: ROLE_ADMIN }
          - { path: ^/app_home, roles: ROLE_USER }
+         - { path: ^/app_allcars_, roles: ROLE_USER }
+         - { path: ^/app_contact, roles: ROLE_USER }
+         - { path: ^/app_register, roles: ROLE_USER }
+         - { path: ^/reserved, roles: ROLE_USER }
+         - { path: ^/app_cart_, roles: ROLE_USER }
+         - { path: ^/onecar, roles: ROLE_USER }
+
+         
+         
 
 when@test:
     security:
