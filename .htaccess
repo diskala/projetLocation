@@ -2,12 +2,10 @@
     RewriteEngine On
     RewriteBase /
 
-    # Exclure certains répertoires et fichiers de la réécriture
-    RewriteCond %{REQUEST_URI} !^/public/
-    RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|gif)$
-
     # Rediriger toutes les requêtes vers index.php sauf si le fichier existe réellement
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>
+
+ 
