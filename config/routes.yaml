@@ -28,16 +28,16 @@ download_pdf:
 app_contact:
     path: /contact
     controller: App\Controller\ContactController::index
-    methods: ['GET']
+     
 
 app_allcars_:
     path: /allcars
     controller: App\Controller\AllcarsController::index
-    methods: ['GET']
+    methods: ['POST']
 
 app_register:
     path: /register
     controller: App\Controller\RegistrationController::register
-    methods: ['GET']
+    
 
  
