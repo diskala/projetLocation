@@ -54,9 +54,6 @@ class HomeController extends AbstractController
 // Sélectionnez une image aléatoire
 $randomImage = $images[array_rand($images)];
 
- 
-
-
 
         return $this->render('home/index.html.twig', [
             'randomImage' => $randomImage,

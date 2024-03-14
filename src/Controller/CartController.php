@@ -43,12 +43,9 @@ class CartController extends AbstractController
     #[Route("/cart", name: "app_cart_")]
     public function index( CarRepository $carRepository,Request $request, SessionInterface $session, UserRepository $userRepository, ReservationRepository $reservation): Response
     {
-
-     
+    
     // $id=$request->query->get('id');
-  // Assurez-vous que l'utilisateur est connecté
- 
-
+    // Assurez-vous que l'utilisateur est connecté
 
   $rUser = $this->getUser(); //recuperer le user
 
@@ -57,13 +54,9 @@ class CartController extends AbstractController
              // $tabPanier=[];
 
             // foreach ($panier as $id => $quantity) {
-            
                 
-            //     // Vérifiez si la réservation existe et si le stock est supérieur à 0
-            //     // Ajoutez la réservation au tableau
             //     $tabPanier[]= $reservation->userCarReservation($id);
-                
-                
+                   
             // }
  
             // $panier = $session->set('panier', $panier);
@@ -73,13 +66,6 @@ class CartController extends AbstractController
                 $userId= $rUser->getId();
                 $reserveds= $reservation->userReservation($userId);
                
-//  dd( $reserveds->isDecoration());
-                // dd($reserveds->getStatus());
-
-               
-
-               
-       
             return $this->render('cart/index.html.twig', [
                 'reservation' => $reserveds,
                 'utilisateur' => $rUser,// pour récuperer l'utilisateur
@@ -97,26 +83,24 @@ class CartController extends AbstractController
     public function add($id, SessionInterface $session, MailerInterface $mailer,EntityManagerInterface $entityManager, Request $request, CarRepository $carRepository, UserRepository $userRepository, ReservationRepository $reservationRepository): Response
       
     { 
-
-      
-         
+    
         $user = $this->getUser(); // pour récupérer le user connecté 
         $rCar=$carRepository->find($id);
        
        $this->denyAccessUnlessGranted('ROLE_USER');
        
-// crée un panier stocker dans la session
-    //    $panier=$session->get('panier', []);
+       // crée un panier stocker dans la session
+       //    $panier=$session->get('panier', []);
      
-    //    if(!empty($panier[$id]))
-    //    {
-    //     $panier[$id]++;
-    //    }
-    //    else
-    //    {
-    //     $panier[$id]=1;
-    //    }
-    //    $session->set('panier', $panier);
+       //    if(!empty($panier[$id]))
+       //    {
+       //     $panier[$id]++;
+       //    }
+       //    else
+       //    {
+       //     $panier[$id]=1;
+       //    }
+       //    $session->set('panier', $panier);
 
 
          $stock=$rCar->getStock();// pour récuperer la quantité au stock
@@ -131,7 +115,7 @@ class CartController extends AbstractController
           
          $rUser->getUserIdentifier(); // get l'adress mail connecter
          
-      // si le stock est superieur à 0 on peut effectuer la reservation
+         // si le stock est superieur à 0 on peut effectuer la reservation
          if ($stockCar > 0) {
 
         if($form->isSubmitted() && $form->isValid())
@@ -183,15 +167,15 @@ class CartController extends AbstractController
               Envois un Mail de confirmation de la reservation
 ***************************************************************************************/    
          
-    //      $email = (new Email())
-    //      ->from('projet@projet.com')
-    //      ->to( $rUser->getUserIdentifier())
+         $email = (new Email())
+         ->from('projet@projet.com')
+         ->to( $rUser->getUserIdentifier())
        
-    //      ->subject('Time for Symfony Mailer!')
-    //      ->text('Bonjour '  . ', votre produit réservé est : ' . $rCar->getBrand())
-    // ->html('<p>Bonjour ' . ', votre produit réservé est : ' . $rCar->getBrand() . '</p>');
-    //      $mailer->send($email);
- // dd($form);
+         ->subject('Time for Symfony Mailer!')
+         ->text('Bonjour '  . ', votre produit réservé est : ' . $rCar->getBrand())
+    ->html('<p>Bonjour ' . ', votre produit réservé est : ' . $rCar->getBrand() . '</p>');
+         $mailer->send($email);
+ 
  
       // si la voiture est reservé mise à jour de la nouvelle valeur de quantité au stock 
     
@@ -288,10 +272,10 @@ $reservation->setStripeSessionId($checkoutSession->id);
     // public function remove($id, SessionInterface $session, ReservationRepository $reservation, EntityManagerInterface $entityManager)
     // {
 
-    //    // Convertir la clé en chaîne (si nécessaire)
+       // Convertir la clé en chaîne (si nécessaire)
     //    $id = (string) $id;
 
-    //    // Récupérer la réservation à partir du Repository
+       // Récupérer la réservation à partir du Repository
     //    $reservations = $reservation->find($id);
 
     //    if (!$reservations) {
@@ -307,16 +291,16 @@ $reservation->setStripeSessionId($checkoutSession->id);
     //    return $this->redirectToRoute('app_allcars_'); // Redirigez vers la page des réservations après la suppression
 
        
-    //     // $panier = $session->get('panier', []);
+        // $panier = $session->get('panier', []);
     
-    //     // // Convertir la clé en chaîne (si nécessaire)
-    //     // $id = (string) $id;
+        // Convertir la clé en chaîne (si nécessaire)
+        // $id = (string) $id;
     
-    //     // if (array_key_exists($id, $panier)) {
-    //     //     unset($panier[$id]);
-    //     // }
+        // if (array_key_exists($id, $panier)) {
+        //     unset($panier[$id]);
+        // }
     
-    //     // $session->set('panier', $panier);
+        // $session->set('panier', $panier);
     
      
     // }
@@ -346,11 +330,7 @@ $reservation->setStripeSessionId($checkoutSession->id);
          // si la reservation n'est pas encore confirmé ou la date de debut et != à la date d'aujourd'hui on peut toujours modifier les dates 
         
         if ($form->isSubmitted() && $form->isValid())
-        {
-
-
-           
-           
+        { 
           
             // Mettez à jour la réservation avec les données modifiées
             $reservations->setStartDate($form->get('start_date')->getData());
@@ -398,19 +378,14 @@ $reservation->setStripeSessionId($checkoutSession->id);
     }
 
 
-
-
     #[Route("/cart/success/{id}", name: 'accepter')]
      
     public function paymentSuccess($id, EntityManagerInterface $entityManager, ReservationRepository $res, CarRepository $carRepository, ActionStatusRepository $actionStatusRepository)
 {
     
- 
   // Récupérez la réservation en fonction de l'ID
   $reservation = $entityManager->getRepository(Reservation::class)->userCarReservation($id);
   
-
-
   // Vérifiez si la réservation existe
   if (!$reservation || empty($reservation)) {
       // Gérer le cas où la réservation n'existe pas, par exemple, rediriger avec un message d'erreur
@@ -469,7 +444,6 @@ else{
  
   // Enregistrez les modifications dans la base de données
   
-
   $resId = $reserved->getId();
     // Redirigez l'utilisateur vers la page de confirmation de réservation
     // return $this->redirectToRoute('app_cart_', ['id' => $resId]);

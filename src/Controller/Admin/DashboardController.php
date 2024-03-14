@@ -125,7 +125,6 @@ class DashboardController extends AbstractDashboardController
    
     $nombreVoitureSortie = $nombreVoiture - $nombresAuStock; // calculer le nombre de voiture actuellement louées
       
-        // // nombre de voiture disponible
 
         // $nombreDeVoituresDisponibles=$this->CarRepository->NombrecarsDisponible();
         
@@ -279,14 +278,7 @@ class DashboardController extends AbstractDashboardController
       
       $nombreVoitureSortie = $nombreVoiture - $nombresAuStock; // calculer le nombre de voiture actuellement louées
 
-
 // établir la facture en fonction de id reservation
-
-
-
-
-
-
 
         return $this->render('admin/enLocation.html.twig',[
             'reserved'=>$this->ReservationRepository->ReservationConfirmed(), // reservations confirmées
@@ -492,7 +484,6 @@ return new Response($dompdf->output(), 200, [
         $entityManager->flush();
         // Autres logiques liées à l'envoi de l'e-mail...
     
-        // // Envoyer l'e-mail de confirmation
         // $email = (new Email())
         //     ->from('votre@email.com')
         //     ->to($reservation->getUsers()->getEmail())
