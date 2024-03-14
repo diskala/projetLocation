@@ -33,7 +33,7 @@ app_contact:
 app_allcars_:
     path: /allcars
     controller: App\Controller\AllcarsController::index
-    methods: ['POST']
+    
 
 app_register:
     path: /register
