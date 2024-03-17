@@ -1,1 +1,1 @@
-﻿web: heroku-php-apache2 carsProjet/
+﻿web: heroku-php-apache2 web/
