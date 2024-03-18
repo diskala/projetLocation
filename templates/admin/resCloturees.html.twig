@@ -28,7 +28,10 @@
            {{ form_start(searchReservation) }}
             <ul>
              
-            <li class="mail"><div class="labele">{{ form_label(searchReservation.email, 'Email') }}</div> <div> {{ form_widget(searchReservation.email, {'attr': {'class': 'champ_mail'}}) }}</div></li>
+            <li class="mail">
+            {# <div class="labele">{{ form_label(searchReservation.email, 'Email') }}</div> #}
+            <div>{{ form_widget(searchReservation.email, {'attr': {'class': 'champ_mail'}}) }}</div>
+            </li>
             <li> <h3>OU</h3> </li>
            <li class="date"><div class="labele">{{ form_label(searchReservation.dateLocation, 'date de location') }} </div> <div>{{ form_widget(searchReservation.dateLocation, {'attr': {'class': 'champ_mail'}}) }}</div></li>
            <li class="date"><div class="labele">{{ form_label(searchReservation.dateRetour, 'date de retour') }} </div> <div>{{ form_widget(searchReservation.dateRetour, {'attr': {'class': 'champ_mail'}}) }}</div></li>
