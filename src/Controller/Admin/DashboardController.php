@@ -76,7 +76,7 @@ class DashboardController extends AbstractDashboardController
         ->addCssFile('styles/dashboard.css')
         ->addCssFile('styles/resConfirmed.css')
         ->addCssFile('styles/restituees.css')
-        ->addCssFile('styles/cloturees.css')
+        ->addCssFile('/styles/cloturees.css')
         ->addCssFile('styles/contactAdmin.css')
         // ->addHtmlContentToHead('<link rel="dns-prefetch" href="https://assets.example.com">');
         ;
