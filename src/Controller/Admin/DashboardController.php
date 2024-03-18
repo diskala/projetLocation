@@ -86,77 +86,71 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin_index')]
     public function index(): Response
     {
-
-     $this->redirect($this->AdminUrlGenerator->setController(CarCrudController::class)->generateUrl()); // À garder.
-        $acts = $this->ActionStatusRepository->actiones(); // recupérer la table actionStatus
-        $actsObj= $acts[0]; // récupérer le 1er index
-        $voitureLouee = $actsObj->isRentedCar();  // recupérer la valeur actuel de rentedCar si la voiture est sortie ou pas
-        $voitureRestituee = $actsObj->isReturnedCar();  // recupérer la valeur actuel returnedCar si la voiture restituée ou pas
-         // nombre de reservation 
-        $nombreDeReservations = $this->ReservationRepository->count([]);
- // nombre de contact non lu
- $contactsNonLus = $this->contactRepository->contactNonLu();
- $nombreDeContact = count($contactsNonLus);
-        // calcule nombre des reservations non confirmer
-        $allReservation = $this->ReservationRepository->ReservationNonConfirmed();
-        $reservationNonConfirme = [];
-         foreach( $allReservation as $res){
-            $reservationNonConfirme[$res->getId()] = $res->isConfirmed();
-         }
+        // Rediriger vers la page CarCrudController
+        $this->redirect($this->AdminUrlGenerator->setController(CarCrudController::class)->generateUrl());
         
-         $NonConfirmeds = count($reservationNonConfirme);
-         
-        
-        // $nombreCars=$this->CarRepository->count([]); // nombere de voitures total 
-       $allCars= $this->CarRepository->findcar();
-      // Créer un tableau pour stocker les stocks de chaque voiture
-    $quantityVoitures = [];
-    $stockVoitures = [];
+        // Récupérer toutes les actions
+        $acts = $this->ActionStatusRepository->actiones();
     
-    // Parcourir chaque voiture pour obtenir son stock
-    foreach ($allCars as $voiture) {
-        $quantityVoitures[$voiture->getId()] = $voiture->getQuantity(); // charger la quantity de chaque voiture dans un tableau
-        $stockVoitures[$voiture->getId()] = $voiture->getStock();   // charger le stock de chaque voiture dans un tableau
-    }
-
-    $nombreVoiture = array_sum($quantityVoitures );// nombere de voitures total 
-    $nombresAuStock = array_sum($stockVoitures ); // nombre de voitures disponible au stock
-
-   
-    $nombreVoitureSortie = $nombreVoiture - $nombresAuStock; // calculer le nombre de voiture actuellement louées
-      
-
-        // $nombreDeVoituresDisponibles=$this->CarRepository->NombrecarsDisponible();
-        
-     
-        // return parent::index();
-
-        // Option 1. You can make your dashboard redirect to some common page of your backend
-        //
-        // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        // return $this->redirect($adminUrlGenerator->setController(CarCrudControllerController::class)->generateUrl());
-
-        // Option 2. You can make your dashboard redirect to different pages depending on the user
-        //
-        // if ('jane' === $this->getUser()->getUsername()) {
-        //     return $this->redirect('...');
-        // }
-
-        // Option 3. You can render some custom template to display a proper dashboard with widgets, etc.
-        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
-        //
-         return $this->render('admin/dashboard.html.twig',[
-            'reserved'=>$this->ReservationRepository->ReservationAccepted(), // reservation status accepeted
-            'actionStatus'=>$this->ActionStatusRepository->actiones(), // recupérer toute la table actionStatus
-            'nombreReservation'=>$NonConfirmeds, // nombre de reservations non confirmé
-            'nombreTotalVoitures'=>$nombreVoiture, // nombre de voiture total 
-            'nombresAuStock'=>$nombresAuStock, // nombre de voiture disponible au stock
-            'nombreVoitureSortie'=> $nombreVoitureSortie,
-            'voitureLouee'=> $voitureLouee,
-            'voitureRestituee'=> $voitureRestituee,
-            'nombreDeContact' =>  $nombreDeContact // nombre de contact
-          
-         ]);
+        // Vérifier si la liste des actions n'est pas vide
+        if (!empty($acts)) {
+            // Récupérer le premier élément de la liste des actions
+            $actsObj = $acts[0];
+    
+            // Récupérer la valeur actuelle de rentedCar si la voiture est sortie ou pas
+            $voitureLouee = $actsObj->isRentedCar();
+    
+            // Récupérer la valeur actuelle returnedCar si la voiture restituée ou pas
+            $voitureRestituee = $actsObj->isReturnedCar();
+        } else {
+            // Si la liste des actions est vide, définir les valeurs par défaut à false
+            $voitureLouee = false;
+            $voitureRestituee = false;
+        }
+    
+        // Récupérer le nombre de réservations
+        $nombreDeReservations = $this->ReservationRepository->count([]);
+    
+        // Récupérer le nombre de contacts non lus
+        $contactsNonLus = $this->contactRepository->contactNonLu();
+        $nombreDeContact = count($contactsNonLus);
+    
+        // Calculer le nombre des réservations non confirmées
+        $reservationNonConfirme = $this->ReservationRepository->ReservationNonConfirmed();
+        $NonConfirmeds = count($reservationNonConfirme);
+    
+        // Récupérer toutes les voitures
+        $allCars = $this->CarRepository->findcar();
+    
+        // Initialiser les tableaux pour stocker les stocks de chaque voiture
+        $quantityVoitures = [];
+        $stockVoitures = [];
+    
+        // Parcourir chaque voiture pour obtenir son stock
+        foreach ($allCars as $voiture) {
+            $quantityVoitures[$voiture->getId()] = $voiture->getQuantity(); // charger la quantity de chaque voiture dans un tableau
+            $stockVoitures[$voiture->getId()] = $voiture->getStock();   // charger le stock de chaque voiture dans un tableau
+        }
+    
+        // Calculer le nombre total de voitures et le nombre de voitures disponibles au stock
+        $nombreVoiture = array_sum($quantityVoitures);
+        $nombresAuStock = array_sum($stockVoitures);
+    
+        // Calculer le nombre de voitures actuellement louées
+        $nombreVoitureSortie = $nombreVoiture - $nombresAuStock;
+    
+        // Rendre la vue du tableau de bord avec les données récupérées
+        return $this->render('admin/dashboard.html.twig', [
+            'reserved' => $this->ReservationRepository->ReservationAccepted(),
+            'actionStatus' => $this->ActionStatusRepository->actiones(),
+            'nombreReservation' => $NonConfirmeds,
+            'nombreTotalVoitures' => $nombreVoiture,
+            'nombresAuStock' => $nombresAuStock,
+            'nombreVoitureSortie' => $nombreVoitureSortie,
+            'voitureLouee' => $voitureLouee,
+            'voitureRestituee' => $voitureRestituee,
+            'nombreDeContact' => $nombreDeContact
+        ]);
     }
 
     #[Route('/admin/headerAdmins', name: 'app_header')]
@@ -716,7 +710,7 @@ public function getContactDetails($id, ContactRepository $contactRepository, Ent
         return Dashboard::new()
             ->setTitle('DisCars')
             
-          -> setTitle('<img src="/icones_drapeaux/logo2.png">');
+            -> setTitle('<img src="/icones_drapeaux/logo2.png">');
           
 
         
