@@ -4,13 +4,14 @@
     padding: 0;
     /* border: 3px solid blue; */
     height: 100%;
+    background-color: black;
    
      
   
 }
 
 .font_photo{
-    
+   
     margin-top: -6rem;
    
     width: 100%;
@@ -378,9 +379,15 @@ opacity: 0.8;
 
 
 @media screen and (max-width: 587px) {
-
+      
+.numero_tel{
+    
+    height: 30rem;
+}
     .numero_tel h1{
+        
         font-size: 18px;
+        
     }
 
     .numero_tel h3{

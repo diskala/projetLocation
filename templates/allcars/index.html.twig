@@ -10,7 +10,7 @@
         {% endblock %}
         
         {% block javascripts %}
-          <script src= {{ asset('./js/headers.js') }} defer></script>
+           <script src= {{ asset('./js/headers.js') }} defer></script>
            <script src= {{ asset('./js/allcars.js') }} defer>
         {% endblock %}
 
@@ -44,7 +44,7 @@
   
    
   <div class="pic">
-    <a href="{{ path("onecar", {'id': item.id}) }}">
+    <a href={{ path("onecar", {'id': item.id}) }}>
         <img src="{{ asset('IMAGES/' ~ item.image.image1) }}">
     </a>
 </div>

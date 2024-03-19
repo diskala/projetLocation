@@ -167,12 +167,12 @@ a, h1{
         justify-content: center;
         justify-items: center;
         align-items: center;
-        
+       
             
     }
 
     .items{
-       
+      
      
         
          width: 90%;
@@ -244,29 +244,32 @@ a, h1{
       justify-content: center;
       justify-items: center;
       align-items: center;
+      
     }
     #container_items{
-    
+        
         margin-top: 2rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr) ;
       
         justify-content: center;
-        height: 70vh;
+        height: auto;
             
     }
 
     .items{
        
-    
+        
         margin: 0;
          width: 100%;
+         height: 35rem;
          padding: 0;
        
      }
 .pic{
    
     width: 100%;
+    height: 20rem;
     margin: 0;
     padding-left: 0;
 }
@@ -286,7 +289,7 @@ a, h1{
         display: block; 
         width: 20rem;
         margin-left: 1rem;
-       margin-top: 2rem;
+       margin-top: 0rem;
         padding: 0;
        
 

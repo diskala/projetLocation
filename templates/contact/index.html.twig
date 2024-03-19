@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Hello ContactController!
+{% endblock %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
@@ -16,130 +17,142 @@
 {% block body %}
 	{# {{ include("./_partials/header.html.twig") }} #}
 
-<section class="section_contact">
-  {{ include("./_partials/header.html.twig") }}
-   
-<div class="font_photo">
+	<section class="section_contact">
+		{{ include("./_partials/header.html.twig") }}
+
+		<div class="font_photo"></div>
+		<div class="numero_tel">
 
 
-</div>
-     <div class="numero_tel">
-     
-  
+			<h4 class="erreurs">
+				{{ form_errors(contactForm.firstname) }}</h4>
+			<h4 class="erreurs">
+				{{ form_errors(contactForm.lastname) }}</h4>
 
- <h4 class="erreurs"> {{ form_errors(contactForm.firstname) }}</h4>
- <h4 class="erreurs"> {{ form_errors(contactForm.lastname) }}</h4>
+			<div id="messageAlert">
 
-     <div id="messageAlert">
-       
 				{% for flashMessage in app.session.flashbag.get('alert') %}
 					<div class="alert alert-success" role="alert">
 						<h2>
 							{{  flashMessage|raw }}
-							 
+
 						</h2>
 					</div>
 				{% endfor %}
 			</div>
-     
-       <h1> CONTACTEZ-NOUS</h1>
-       <h3>   POUR TOUTE VISITE PENSEZ À PRENDRE RENDEZ-VOUS </h3>
-       <div class="boutton"><a href=""> 01.25.32.45.61</a></div>
-       
-          <a href="" id="scrollButton"><div class="fleche" >
-          <i id ="anime_1" class="fa-solid fa-chevron-down"></i>
-          <i id ="anime_2" class="fa-solid fa-chevron-down"></i>
-          <i id ="anime_3" class="fa-solid fa-chevron-down"></i>
-          <i id ="anime_4" class="fa-solid fa-chevron-down"></i>
-          </div></a>
-       
-       
-     </div>
 
-     
+			<h1>
+				CONTACTEZ-NOUS</h1>
+			<h3>
+				POUR TOUTE VISITE PENSEZ À PRENDRE RENDEZ-VOUS
+			</h3>
+			<div class="boutton">
+				<a href="">
+					01.25.32.45.61</a>
+			</div>
 
-          <div class="formulaire_contact" id="scrollTarget">
-                   {# {% if contactExit %}
-
-                   <div></div>
-                    
-                   {% endif %} #}
-                    <div class="envloppe_form" >
-                         {{ form_start(contactForm, {'attr': {'id': 'myForm'}}) }}
-
-                         {# <h1 class="erreurs"> {{ form_errors(contactForm) }}</h1> #}
-                        
-                    
-                        <div class="range">
-                            
-                            <ul class="ul_1">
-                            
-                              {# <li><h3 class="erreurs"> {{ form_errors(contactForm.firstname) }}</h3></li> #}
-                             <li>{{ form_widget(contactForm.firstname, { 'attr': {'class': 'nom_prenom', 'required': 'required', 'style': 'color: white;'} }) }}</li>
-                             {# <div class="trait"></div> #}
-                             <hr>
-
-                             </ul>
-
-                             <ul class="ul_1">
-                            {# <li><h3 class="erreurs"> {{ form_errors(contactForm.lastname|raw) }}</h3></li> #}
-                             <li>{{ form_widget(contactForm.lastname, { 'attr': {'class': 'nom_prenom', 'required': 'required'} }) }}</li>
-                            <hr>
-                             </ul>
-                        </div>
-
-                        <div class="range">
-                        <ul class="ul_1">
-                              {# <li>{{ form_label(contactForm.email, 'EMAIL') }}</li> #}
-                             <li>{{ form_widget(contactForm.email, { 'attr': {'class': 'email_tel', 'required': 'required'} }) }}</li>
-                             <hr>
-                        </ul>
-                        
-
-                        <ul class="ul_1">
-                             {# <li> {{ form_label(contactForm.phone, 'N°: TÉLÉPHONE') }}</li> #}
-                             <li>{{ form_widget(contactForm.phone, { 'attr': {'class': 'email_tel', 'required': 'required'} }) }}</li>
-                              <hr>
-                        </ul>
-                        
-                        </div>
-
-                        <div class="range">
-
-                        <ul class="ul_2">
-                            {# <li>  {{ form_label(contactForm.objet, 'Comment nous pouvons vous aidez ?') }}</li> #}
-                            <li> {{ form_widget(contactForm.objet, { 'attr': {'class': 'objets', 'required': 'required'} }) }}</li>
-                            <hr>
-                        </ul>
-
-                        </div>
-
-                         <div class="range">
-
-                         <ul class="ul_2">
-                             {# <li> {{ form_label(contactForm.message, 'Message') }}</li> #}
-                             <li>{{ form_widget(contactForm.message, { 'attr': {'class': 'message', 'required': 'required'} }) }}</li>
-                             <hr>
-                        </ul>
-
-                        </div>
-
-                        <div class="btn_valid">
-                        
-                        <button type="submit" class="btn_contact" id= "valid"> ENVOYER </button>
-                        </div>
-                   
-                             {{ form_end(contactForm) }}
-                </div>
-
-          </div>
+			<a href="" id="scrollButton">
+				<div class="fleche">
+					<i id="anime_1" class="fa-solid fa-chevron-down"></i>
+					<i id="anime_2" class="fa-solid fa-chevron-down"></i>
+					<i id="anime_3" class="fa-solid fa-chevron-down"></i>
+					<i id="anime_4" class="fa-solid fa-chevron-down"></i>
+				</div>
+			</a>
 
 
+		</div>
 
 
-   {# {{ include("./_partials/footer.html.twig") }}    #}
-</section>
- 
+		<div
+			class="formulaire_contact" id="scrollTarget">
+			{# {% if contactExit %}
+			
+			                   <div></div>
+			                    
+			                   {% endif %} #}
+			<div class="envloppe_form">
+				{{ form_start(contactForm, {'attr': {'id': 'myForm'}}) }}
 
-  
+				{# <h1 class="erreurs"> {{ form_errors(contactForm) }}</h1> #}
+
+
+				<div class="range">
+
+					<ul
+						class="ul_1">
+
+						{# <li><h3 class="erreurs"> {{ form_errors(contactForm.firstname) }}</h3></li> #}
+						<li>{{ form_widget(contactForm.firstname, { 'attr': {'class': 'nom_prenom', 'required': 'required', 'style': 'color: white;'} }) }}</li>
+						{# <div class="trait"></div> #}
+						<hr>
+
+					</ul>
+
+					<ul
+						class="ul_1">
+						{# <li><h3 class="erreurs"> {{ form_errors(contactForm.lastname|raw) }}</h3></li> #}
+						<li>{{ form_widget(contactForm.lastname, { 'attr': {'class': 'nom_prenom', 'required': 'required'} }) }}</li>
+						<hr>
+					</ul>
+				</div>
+
+				<div class="range">
+					<ul
+						class="ul_1">
+						{# <li>{{ form_label(contactForm.email, 'EMAIL') }}</li> #}
+						<li>{{ form_widget(contactForm.email, { 'attr': {'class': 'email_tel', 'required': 'required'} }) }}</li>
+						<hr>
+					</ul>
+
+
+					<ul
+						class="ul_1">
+						{# <li> {{ form_label(contactForm.phone, 'N°: TÉLÉPHONE') }}</li> #}
+						<li>{{ form_widget(contactForm.phone, { 'attr': {'class': 'email_tel', 'required': 'required'} }) }}</li>
+						<hr>
+					</ul>
+
+				</div>
+
+				<div class="range">
+
+					<ul
+						class="ul_2">
+						{# <li>  {{ form_label(contactForm.objet, 'Comment nous pouvons vous aidez ?') }}</li> #}
+						<li>
+							{{ form_widget(contactForm.objet, { 'attr': {'class': 'objets', 'required': 'required'} }) }}</li>
+						<hr>
+					</ul>
+
+				</div>
+
+				<div class="range">
+
+					<ul
+						class="ul_2">
+						{# <li> {{ form_label(contactForm.message, 'Message') }}</li> #}
+						<li>{{ form_widget(contactForm.message, { 'attr': {'class': 'message', 'required': 'required'} }) }}</li>
+						<hr>
+					</ul>
+
+				</div>
+
+				<div class="btn_valid">
+
+					<button type="submit" class="btn_contact" id="valid">
+						ENVOYER
+					</button>
+				</div>
+
+				{{ form_end(contactForm) }}
+			</div>
+
+		</div>
+
+
+		{# {{ include("./_partials/footer.html.twig") }}    #}
+	</section>
+
+
 {% endblock %}

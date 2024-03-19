@@ -112,7 +112,7 @@ hr{
 }
 
 #reserver:hover{
-    background-color:  rgb(246, 242, 242);
+    background-color:  rgb(202, 200, 200);
     width: 15.5%;
     height: 3.2rem;
 }
@@ -230,8 +230,9 @@ width: 50%;
 
     #one_car{
         display: block;
-        height: 80rem;
-        border: 2px solid blue;
+        height: 75rem;
+       
+        
     }
 
     #info{
@@ -240,9 +241,8 @@ width: 50%;
         min-width: 100%; 
         height:35rem; 
         margin-left: 0;
-        margin-top: 2rem;
-       
-    
+        margin-top: 0rem;
+        
     }
 
     #groupInfo{
@@ -276,14 +276,7 @@ width: 50%;
         width: 70%;
     }
     
-    /* hr{
-       display: none;
-        width: 50%;
-      
-       
-        
-        
-    } */
+    
     
      
       
@@ -308,7 +301,11 @@ width: 50%;
       
        
     }
-    
+    #reserver:hover{
+        background-color:  rgb(202, 200, 200);
+        width: 30.5%;
+        height: 3.1rem;
+    }
     a #reserver{
       
         text-align: center;
@@ -411,13 +408,13 @@ width: 50%;
 
 
     #one_car{
- 
- display: flex;
- flex-direction: column;
+  
+       display: flex;
+       flex-direction: column;
         width: 100%;
         height: auto;
          gap: 2rem;
-         margin-top: 1rem;
+         margin-bottom: 5rem;
         padding-top: 2rem;
          /* overflow: hidden; */
          
@@ -435,7 +432,16 @@ width: 50%;
          
      
      }
-     
+     #groupInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        margin: 0;
+        
+    }
      #groupInfo li{
         
          list-style: none;
@@ -452,7 +458,7 @@ width: 50%;
          text-align: center;
      }
      
-     hr{
+     /* hr{
         display: none;
          width: 50%;
          margin-left: 10%;
@@ -460,7 +466,7 @@ width: 50%;
           
          
      }
-     
+      */
      
        
      .desc_car span{
@@ -493,10 +499,9 @@ width: 50%;
        margin-left: 10%;
        margin-top: 2rem;
        margin-bottom: 5rem;
-         height: 55vh; 
+         height: auto; 
          overflow: hidden;
-         
-         
+            
      }
       
      
@@ -505,7 +510,7 @@ width: 50%;
         margin: 0; 
         padding: 0;
          width: 100%;
-         height: 100%;
+         height: auto;
          display: flex;
          /* transition: transform 0.5s ease-in-out; */
      }
@@ -516,7 +521,7 @@ width: 50%;
          padding: 0;
        
          width: 100%;
-         height: 100%;
+         height: auto;
          
          flex: 0 0 100%; /* Chaque image occupe 100% de la largeur */
          box-sizing: border-box;
@@ -526,7 +531,7 @@ width: 50%;
      .picture img {
          margin: 0;
          width: 100%;
-         height: 60vh;
+         height: auto;
          
          border-radius: 5px;
      }
@@ -567,7 +572,8 @@ width: 50%;
      }
      
      #reserver{
-        position: absolute;
+        
+    position: absolute;
    z-index: 1000;
    display: flex;
    justify-content: center;
@@ -576,11 +582,17 @@ width: 50%;
    background-color:  rgb(218, 213, 213);
    width: 10rem;
    height: 3rem;
-   top: 76rem;
+   top: 97rem;
    left: 40%;
     
-   
      }
+
+   #reserver:hover{
+     
+        background-color:  rgb(202, 200, 200);
+        width: 10.5rem;
+        height: 3.1rem;
+    }
      a #reserver{
        
         text-align: center;
@@ -590,9 +602,6 @@ width: 50%;
         color: rgb(9, 9, 9);
         padding: 1rem;
         
-    
-    
-    
     
     }
     

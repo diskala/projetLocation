@@ -45,63 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
  
 
  
-//  const hrs=document.querySelectorAll('hr');
  
-//      const lis=document.querySelectorAll('li');
-//     lis.addEventListener('mouseover', agrandir);
-//     function agrandir(){
-//         lis.forEach(element => {
-//             element.nextElementSibling.style.display="block";
-//         });;
-//     }
-
-//     function grandir(arg){
-//         arg.nextElementSibling.style.display="block";
-//         setTimeout(() => {
-//             arg.nextElementSibling.style.width="0";
-//         }, 30);
-//         setTimeout(() => {
-//             arg.nextElementSibling.style.width="50%";
-//         }, 300);
-//         setTimeout(() => {
-//             arg.nextElementSibling.style.width="80%";
-//         }, 600);
-
-        
-//         arg.nextElementSibling.style.transition="transform 0.5s ease-in-out";
-        
-          
-          
-          
-//     };
-//     function normal(arg){
-//         arg.nextElementSibling.style.display="none";
-//         setTimeout(() => {
-//             arg.nextElementSibling.style.width="50%";
-//         }, 100);
-//         setTimeout(() => {
-//             arg.nextElementSibling.style.width="30%";
-//         }, 300);
-       
-          
-//         setTimeout(() => {
-//             arg.nextElementSibling.style.width="0%";
-//         }, 600);
-          
-//   }
-//      li.forEach(element => {
-       
-//     element.addEventListener('mouseover', ()=>{
-//           grandir(element);
-//     });
-
-//     element.addEventListener('mouseout', ()=>{
-
-//         normal(element);
-//     });
-       
-    
-//      });
       
   
 //Sélection des éléments <hr> et <li>
