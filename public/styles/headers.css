@@ -194,7 +194,6 @@ body {
         
         display: none;
         width: 70%;
-        
         height: auto;
         margin-left: 6rem;
        
@@ -291,10 +290,7 @@ body {
         visibility: visible;
         font-size: 40px;
        margin-left: 1rem;
-        top:8rem;
-        
-       
-        
+        margin-top: 1rem;   
     }
 
     .container_header{
@@ -302,46 +298,48 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        justify-items: center;
+        border: 2px solid white;
+        width: 100%;
+        
        
     }
 
     .nav-links{
-        
+        border: 2px solid white;
         display: none;
-        width: 70%;
+        width: auto;
         height: auto;
-        margin-left: 2.1rem;
-        margin-top: 0rem;
-        
-
-       
+        margin-top: 0rem; 
+        margin-left: 5.5rem; 
 
     }
 
     .nav-links .user{
-        margin-left: -1rem;
+        margin-left: 0;
+        
     }
     .menu_accueil, .menu_service, .monMail, .deconnecter, .contacte{
        
         margin-top: 2rem;
-        margin-left: 7rem;
+        /* margin-left: 0; */
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-        width: 10rem;
+      /* justify-content: flex-start; */
+        
      
     }
     .inscrir{
         margin-top: 0rem;
         margin-left: 0rem; 
+        
     }
     .menu_accueil #accueil, .menu_service #service, .monMail a, .deconnecter a, .contacte a{
         font-size: 15px;
     }
     .sous_accueil, .sous_service{
-        width: 15rem;
+        width: 12rem;
         height: auto;
-        
         margin-left: 50%;
         margin-top: -2rem;
     }

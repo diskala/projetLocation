@@ -6,6 +6,7 @@
     burgerMenu.addEventListener('click', function () {
         
         navLinks.style.display = (navLinks.style.display === 'block' ? 'none' : 'block');
+       
     });
 
 
