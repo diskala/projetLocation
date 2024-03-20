@@ -299,14 +299,12 @@ body {
         justify-content: center;
         align-items: center;
         justify-items: center;
-        border: 2px solid white;
         width: 100%;
         
        
     }
 
     .nav-links{
-        border: 2px solid white;
         display: none;
         width: auto;
         height: auto;
@@ -369,7 +367,7 @@ body {
         -moz-border-radius: 50% ;
         -ms-border-radius: 50% ;
         -o-border-radius: 50% ;
-        border: 2px solid white;
+        
     }
     .logos img{
         width: 100%;
