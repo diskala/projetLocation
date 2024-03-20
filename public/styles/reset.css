@@ -13,12 +13,11 @@
  
   width: 100%;
   height: 100vh;
-  border: 3px solid black;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  background-image: url("/images/audi-sportback-3.jpg");
+  background-image: url("/IMAGES/audi-sportback-3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   
@@ -63,10 +62,24 @@
 
 @media screen and (min-width: 587px) and (max-width: 1200px) {
   .contenair_reset{
-    background-size:cover;
-    background-position-x:-15rem;
+ 
+    width: 100%;
+  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-image: url("/IMAGES/audi-sportback-3.jpg");
+    background-repeat: no-repeat;
+   
+      background-size: cover; /* Taille de l'image pour les tablettes */
+      background-position: center;
+     
+  
+    
     
   }
+   
 
   .reset_password{
     width: 30rem;
@@ -83,11 +96,23 @@
 
 @media screen and (max-width: 587px){
   .contenair_reset{
-    background-size:cover;
-    background-position-x:-15rem;
+ 
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-image: url("/IMAGES/audi-sportback-3.jpg");
+    background-repeat: no-repeat;
+   
+      background-size:cover; /* Taille de l'image pour les tablettes */
+      background-position-x: center; /* Centrer l'image sur les tablettes */
+  
+    
     
   }
-
+   
   .reset_password{
     width: 100%;
     height: auto;

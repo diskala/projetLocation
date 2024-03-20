@@ -19,10 +19,7 @@
     padding: 4rem;
     
     display: flex;
-    flex-direction: column;
-     
-  
-     
+    flex-direction: column; 
      background-image: url("/pictures/voiture20.png");
      background-repeat: no-repeat;
      background-size: cover;
