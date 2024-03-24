@@ -121,7 +121,7 @@ class ResetPasswordController extends AbstractController
             // La session est nettoyée après la modification du mot de passe.
             $this->cleanSessionAfterReset();
 
-            return $this->redirectToRoute('app_allcars_');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('reset_password/reset.html.twig', [
