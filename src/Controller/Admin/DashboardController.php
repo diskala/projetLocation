@@ -516,7 +516,7 @@ return new Response($dompdf->output(), 200, [
         }
     
         // Définir le chemin complet du fichier PDF dans le sous-dossier 'fichierPdf' du répertoire public
-        $pdfPath = $this->getParameter('kernel.project_dir') . '/public/fichier_Pdf/' . $pdfFileName;
+        $pdfPath = $this->getParameter('kernel.project_dir') . '/var/tmp/' . $pdfFileName;
        
         // Vérifier si le fichier existe
         if (!file_exists($pdfPath)) {

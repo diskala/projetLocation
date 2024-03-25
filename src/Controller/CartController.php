@@ -154,7 +154,7 @@ class CartController extends AbstractController
           // Déplacez le fichier dans le répertoire public
           try {
             $pdfFile->move(
-                $this->getParameter('kernel.project_dir') . '/public/fichier_pdf',
+                $this->getParameter('kernel.project_dir') . '/var/tmp',
                 $fileName
             );
           $reservation->setFichierPdf($fileName);
