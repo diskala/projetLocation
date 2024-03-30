@@ -125,7 +125,7 @@ class AppFixtures extends Fixture
           $car->setPriceDay($arraycsv[$i][7]);
           $car->setPriceDPKM($arraycsv[$i][8]);
           $car->setPriceKmUnlimited($arraycsv[$i][9]);
-          $car->setStock(10);
+          $car->setStock($arraycsv[$i][10]);
           $car->setBail($arraycsv[$i][11]);
           $car->setAvailable(true);
           $car->setPriceSeatChild(30);
@@ -134,8 +134,8 @@ class AppFixtures extends Fixture
           $car->setQuantity('10');
           // Available colonne  boolean aléatoire
       
-          $car->setStock($arraycsv[$i][10]);
-          $car->setBail($arraycsv[$i][11]);
+          
+         
           // Available colonne  boolean aléatoire
           $car->setAvailable($faker->boolean());
 
