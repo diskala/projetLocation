@@ -167,14 +167,14 @@ class CartController extends AbstractController
               Envois un Mail de confirmation de la reservation
 ***************************************************************************************/    
          
-         $email = (new Email())
-         ->from('projet@projet.com')
-         ->to( $rUser->getUserIdentifier())
+    //      $email = (new Email())
+    //      ->from('projet@projet.com')
+    //      ->to( $rUser->getUserIdentifier())
        
-         ->subject('Time for Symfony Mailer!')
-         ->text('Bonjour '  . ', votre produit réservé est : ' . $rCar->getBrand())
-    ->html('<p>Bonjour ' . ', votre produit réservé est : ' . $rCar->getBrand() . '</p>');
-         $mailer->send($email);
+    //      ->subject('Time for Symfony Mailer!')
+    //      ->text('Bonjour '  . ', votre produit réservé est : ' . $rCar->getBrand())
+    // ->html('<p>Bonjour ' . ', votre produit réservé est : ' . $rCar->getBrand() . '</p>');
+    //      $mailer->send($email);
  
  
       // si la voiture est reservé mise à jour de la nouvelle valeur de quantité au stock 
