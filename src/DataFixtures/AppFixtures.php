@@ -127,11 +127,11 @@ class AppFixtures extends Fixture
           $car->setPriceKmUnlimited($arraycsv[$i][9]);
           $car->setStock($arraycsv[$i][10]);
           $car->setBail($arraycsv[$i][11]);
-          $car->setAvailable(true);
-          $car->setPriceSeatChild(30);
-          $car->setPriceDecoration(120);
-          $car->setPriceDriver(80);
-          $car->setQuantity('10');
+          $car->setAvailable($arraycsv[$i][12]);
+          $car->setPriceSeatChild($arraycsv[$i][13]);
+          $car->setPriceDecoration($arraycsv[$i][14]);
+          $car->setPriceDriver($arraycsv[$i][15]);
+          $car->setQuantity($arraycsv[$i][16]);
           // Available colonne  boolean aléatoire
       
           
