@@ -363,8 +363,7 @@ class DashboardController extends AbstractDashboardController
         } else {
             $reservationCloturees = $actions->ResrvationCloturees();
         }
-            
-          
+           
         return $this->render('admin/resCloturees.html.twig', [
             'reserved' => $this->ReservationRepository->ReservationConfirmed(), // reservations confirmées
             'resCloturees' => $reservationCloturees,
@@ -478,13 +477,13 @@ return new Response($dompdf->output(), 200, [
         $entityManager->flush();
         // Autres logiques liées à l'envoi de l'e-mail...
     
-        // $email = (new Email())
-        //     ->from('votre@email.com')
-        //     ->to($reservation->getUsers()->getEmail())
-        //     ->subject('Confirmation de réservation')
-        //     ->html("<p>Votre réservation a été confirmée avec succès. {$reservation->getUsers()->getFirstName()} </p>");
+        $email = (new Email())
+            ->from('votre@email.com')
+            ->to($reservation->getUsers()->getEmail())
+            ->subject('Confirmation de réservation')
+            ->html("<p>Votre réservation a été confirmée avec succès. {$reservation->getUsers()->getFirstName()} </p>");
     
-        // $mailer->send($email);
+        $mailer->send($email);
     
         // Autres logiques après l'envoi de l'e-mail...
     

@@ -427,7 +427,7 @@ else{
     $valKm= $reserved->getCar()->getPriceDay();
     $totalPrice= $valKm + $valOptionDriver + $valDecoration + $valSeatChild;
 }
-  // Mettez à jour le statut de la réservation en "canceled"
+  // Mettez à jour le statut de la réservation 
   $reserved->setStatus(true);
   $reserved->setTotalPrice($totalPrice);
 
