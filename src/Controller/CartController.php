@@ -80,7 +80,12 @@ class CartController extends AbstractController
 
 
     #[Route("/cart/reserved/{id}", name: "reserved")]
-    public function add($id, SessionInterface $session, MailerInterface $mailer,EntityManagerInterface $entityManager, Request $request, CarRepository $carRepository, UserRepository $userRepository, ReservationRepository $reservationRepository): Response
+    public function add($id, SessionInterface $session,
+    MailerInterface $mailer,
+    EntityManagerInterface $entityManager,
+    Request $request, CarRepository $carRepository,
+    UserRepository $userRepository, 
+    ReservationRepository $reservationRepository): Response
       
     { 
     
