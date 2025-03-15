@@ -101,7 +101,7 @@ class RegistrationController extends AbstractController
        $connecte=$this->getUser();
         return $this->render('registration/notif.html.twig', [
             'connecte'=>$connecte,
-            'message' => 'un Email de confirmation est envoyer à votre adresse email',
+            'message' => 'un Email de confirmation est envoyé à votre adresse email',
              
         ]);
     }
