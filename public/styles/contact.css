@@ -244,7 +244,7 @@ opacity: 0.8;
 }
 .range li .nom_prenom , .range li .email_tel {
     width: 95%;
-    height: 2rem;
+   
     color: #fff;
     font-size: 20px;
     height: 2rem;
@@ -258,7 +258,7 @@ opacity: 0.8;
 
 .range li .nom_prenom:focus, .range li .email_tel:focus, .range .ul_2 li .message:focus {
     outline: none;
-    border: 2px solid #f0efef;
+    /* border: 2px solid #f0efef; */
     background-color: black;
     opacity: 0.8;
     color: #fff;
@@ -283,7 +283,7 @@ opacity: 0.8;
 
  .range .ul_2 li .message{
     width: 100%;
-    
+    padding: 0.5rem;
     background-color: black;
     opacity: 0.8;
     border-width: 0;
