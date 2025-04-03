@@ -255,7 +255,7 @@ opacity: 0.8;
    
 }
 
-.range li .nom_prenom:focus, .range li .email_tel:focus{
+.range li .nom_prenom:focus, .range li .email_tel:focus, .range .ul_2 li .message:focus {
     outline: none;
     border: 2px solid #f0efef;
     background-color: black;
