@@ -284,6 +284,7 @@ opacity: 0.8;
  .range .ul_2 li .message{
     width: 100%;
     padding: 0.5rem;
+    border: 1px solid #f0efef;
     background-color: black;
     opacity: 0.8;
     border-width: 0;
