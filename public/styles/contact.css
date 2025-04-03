@@ -244,6 +244,7 @@ opacity: 0.8;
 }
 .range li .nom_prenom , .range li .email_tel {
     width: 95%;
+    height: 2rem;
     color: #fff;
     font-size: 20px;
     height: 2rem;
