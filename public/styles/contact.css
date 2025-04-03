@@ -257,7 +257,7 @@ opacity: 0.8;
 
 .range li .nom_prenom:focus, .range li .email_tel:focus{
     outline: none;
-    border: 2px solid #e02b20;
+    border: 2px solid #f0efef;
     background-color: black;
     opacity: 0.8;
     color: #fff;
