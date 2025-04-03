@@ -136,7 +136,7 @@ class ReservationFormType extends AbstractType
 
             // ->add('priceNormalKm', CheckboxType::class)
             ->add('priceunlimitedKm', CheckboxType::class, [
-                'label' => 'Prix pour un kilometrage illimité',
+                'label' => 'Prix pour un kilométrage illimité',
                 'required' => false,
                 // 'empty_data' => '',
                 'attr' => [
@@ -152,7 +152,7 @@ class ReservationFormType extends AbstractType
                 ],
             ])
             ->add('envoyer', SubmitType::class, [
-                'label' => 'Payer la caution et reserver',
+                'label' =>"Payer la caution et réserver",
                 
             ])
            

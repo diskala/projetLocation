@@ -36,10 +36,10 @@ class ChangePasswordFormType extends AbstractType
                     'row_attr' => ['style' => 'margin-bottom: 1rem ;'], // Ajoute de l'espace en bas
                 ],
                 'second_options' => [
-                    'label' => 'Répéter le mot de passe ',
+                    'label' => 'Confirmer le mot de passe ',
                     'label_attr' => ['style' => 'margin-right: 1rem; font-weight: bold;'], // Ajoute de l'espace à droite du label
                 ],
-                'invalid_message' => 'The password fields must match.',
+                'invalid_message' => 'Les champs du mot de passe doivent se correspondre.',
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
