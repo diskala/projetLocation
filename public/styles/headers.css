@@ -1,38 +1,37 @@
-﻿
-/******************************************
+﻿/******************************************
                    HEADER 
 ********************************************/
 
-
-
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-   
-    
+/* body{
   
-}
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: 'Arial', sans-serif;
+  width: 1870px;
+   
+  
+
+ } */
 
   
 
 .container_header {
+     background-color: black;
     width: 100%;
-    height: auto;
+    height: 5rem;
     padding: 1rem;
-    background-color: black;
+    
     display: flex;
     justify-content:space-between;
     align-items: center;
-    
-   
+    z-index: 1000;
     
 }
 
 
 .nav-links {
-     
+      z-index: 1000;
     width: 60rem;
     display: flex;
     justify-content: center;
@@ -49,15 +48,19 @@ body {
 }
 .menu_accueil, .menu_service, .user, .connexion, .deconnection, .inscrir, .contacte{
     cursor: pointer;
-    text-align: center;
+      z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 2rem;
     
     
 }
 
 #accueil, #service, .user, .connexion a, .deconnection a, .inscrir a, .contacte a{
-  color: rgba(3, 230, 255, 0.962);
-  font-weight: bold;
+  /* color: rgba(3, 230, 255, 0.962); */
+  color: white;
+  z-index: 1000;
   transition: 0.5s ease-in-out;
   -webkit-transition: 0.5s ease-in-out;
   -moz-transition: 0.5s ease-in-out;
@@ -66,17 +69,21 @@ body {
 }
 
 #accueil:hover, #service:hover, .user:hover, .connexion a:hover, .deconnection a:hover, .inscrir a:hover, .contacte a:hover{
-    color: rgba(3, 230, 255, 0.962);
+    /* color: rgba(3, 230, 255, 0.962); */
+    /* color: #e02b20; */
+    color: white;
     font-weight: bold;
     font-size: 18px;
    
-    text-decoration: underline;
+    
   
    
 }
 
 
 .menu_accueil, .menu_service  {
+     z-index: 1000;
+    
     position: relative;
     width: 15rem;
     height: 2rem;
@@ -86,17 +93,23 @@ body {
  
 
 .sous_accueil, .sous_service {
+    z-index: 1000;
+    background-color: #2b2a2a;
     position: absolute;
     display: none;
-    padding-left: 0;
-    height: 10rem;
-    width: 15rem;
-    top: 1rem;
-    left: 3rem;
+    padding-left: 0.5rem;
+    height: 12rem;
+    width: 12rem;
+    top: 1.7rem;
+    left: 3.5rem;
     z-index: 100;
     padding-bottom: 1rem;
-    padding-top: 0rem;
-    
+    padding-top: 1rem;
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
 }
 
  
@@ -113,9 +126,10 @@ body {
 .sous_accueil li a, .sous_service li a{
  display: flex;
  justify-content: left;
- font-weight: bold;
+ 
  text-decoration: none;
- color: white;
+/* color: #e02b20; */
+color: white;
 }
 
 
@@ -129,12 +143,14 @@ body {
     
 } 
 
+ 
+
 
 
  
 .nav-links .monMail .user{
    text-decoration: none;
-    font-weight: bold;
+    
     color: #e02b20;
     
     
@@ -182,10 +198,12 @@ body {
 
 
 @media only screen and (min-width: 587px) and (max-width:1200px)  {
-     
+    
+
+    
     .container_header{
         display: block;
-       
+       width: 100%;
        
       
     }
@@ -194,6 +212,7 @@ body {
         
         display: none;
         width: 70%;
+        
         height: auto;
         margin-left: 6rem;
        
@@ -210,14 +229,11 @@ body {
       flex-direction: column;
       justify-content: flex-start;
         width: 12rem;
-        
       
     }
     .inscrir{
         margin-top: 0;
-       
     }
-
     .sous_accueil, .sous_service{
        
       
@@ -225,7 +241,7 @@ body {
         width: 20rem;
         height: auto;
         margin-top: -2rem;
-        margin-left: 5rem;
+        margin-left: 4.5rem;
         
     }
 
@@ -283,62 +299,69 @@ body {
 @media screen and (max-width: 587px) {
    
     .burger-menu {
-        /* position: absolute; */
+        position: absolute;
         z-index: 100;
         color: white;
         display: block;
         visibility: visible;
         font-size: 40px;
-       margin-left: 1rem;
-        margin-top: 1rem;   
+         left: 43%;
+        top:8rem;
+        
+       
+        
     }
 
     .container_header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        justify-items: center;
-        width: 100%;
+        display: block;
         
+       /* height: 10rem; */
        
+       
+      
     }
 
     .nav-links{
+        
         display: none;
-        width: auto;
+        width: 70%;
         height: auto;
-        margin-top: 0rem; 
-        margin-left: 6rem; 
+        margin-left: 2.1rem;
+        margin-top: 7rem;
+        
+        
+
+       
 
     }
 
     .nav-links .user{
-        margin-left: 0;
-        
+        margin-left: -1rem;
+       
     }
     .menu_accueil, .menu_service, .monMail, .deconnecter, .contacte{
        
         margin-top: 2rem;
-        /* margin-left: 0; */
+        margin-left: 7rem;
       display: flex;
       flex-direction: column;
-      /* justify-content: flex-start; */
-        
+      justify-content: flex-start;
+        width: 10rem;
+         
      
     }
     .inscrir{
-        margin-top: 0rem;
-        margin-left: 0rem; 
-        
+        margin-top: 0.5rem;
+        margin-left: 0rem;
     }
-    .menu_accueil #accueil, .menu_service #service, .monMail a, .deconnecter a, .contacte a{
+    .menu_accueil #accueil, .menu_service #service, .monMail a, .inscrir a, .deconnecter a, .contacte a{
         font-size: 15px;
     }
     .sous_accueil, .sous_service{
-        width: 12rem;
+        width: 15rem;
         height: auto;
-        margin-left: 50%;
+        
+        margin-left: 30%;
         margin-top: -2rem;
     }
 
@@ -359,7 +382,7 @@ body {
      
         font-size: 1.5em;
         height: 4rem;
-        /* margin-left: 6rem; */
+        margin-left: 6rem;
         width: 4rem;
         margin-bottom:1rem ;
         border-radius: 50% ;
@@ -367,10 +390,10 @@ body {
         -moz-border-radius: 50% ;
         -ms-border-radius: 50% ;
         -o-border-radius: 50% ;
-        
     }
     .logos img{
         width: 100%;
+        margin-left: 6rem;
         height: auto;
         border-radius: 50%;
         -webkit-border-radius: 50%;

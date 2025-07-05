@@ -1,26 +1,239 @@
-﻿ body{
-  /* background-color: black;  */
-   margin: 0;
-   padding: 0;
-   box-shadow: inset 0 0 0 1000px black; /* Ombre de boîte pour créer un fond semi-transparent */
+﻿ body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+   background-color: black;
    
    
- }
+  
+}
  .page_home{
-   
- 
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 3rem;
+  /* display: grid;
+  grid-template-columns: repeat(1, 1fr); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
   margin-top: 1rem;
+  max-width: 100%;
+  
+  
+ 
  }
 
- .page_home .carousel-container {
-  position: relative;
-  height: 48rem;
-  margin-top: 3rem;
+ .hero {
+   
+ 
+  width: 100%;
+  height: 50rem;
   display: flex;
-  max-width: 1600px;
+  justify-content: center;
+  
+  padding: 2rem;
+ 
+ }
+
+ .div_vide_image{
+  
+  background-image: url('../pictures/ChatGPT Image 30 juin 2025, 17_36_11.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top 50% left 50%;
+  
+ 
+ 
+  width: 60%;
+  height: 40rem;
+
+ }
+
+  .hero-text {
+    
+    
+    display: flex;
+    flex-direction: column;
+    
+    
+    gap: 1rem;
+    width: 40%;
+    height: 30rem;
+    margin-top: 2rem;
+    color: white;
+    /* text-align: center; */
+   
+    font-family:' Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     
+    
+  
+    
+  }
+
+  .hero .hero-text h4 {
+      font-size: 30px;  
+      letter-spacing: 1.5px;
+       
+    }
+    .hero .hero-text h6 {
+     
+      font-size: 20px;
+      letter-spacing: 1px;
+    
+     
+      
+
+    }
+   
+   .hero .hero-text p  {
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+    
+    }
+    .hero_boutton{
+      
+      cursor: pointer;
+      
+      background-color: #e02b20;
+      color: white;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    
+      
+       
+      
+      
+      
+}
+    .lien_boutton{
+       background-color: #e02b20;
+       color: white;
+       text-decoration: none;
+       letter-spacing: 1.5px;
+       width: 20rem;
+       height: 3rem;
+       cursor: pointer;
+       border-radius: 5px;
+       -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+       -ms-border-radius: 5px;
+       -o-border-radius: 5px;
+}
+  .hero_boutton:hover {
+        background-color: #c02a1f;
+      }
+    
+.section_carousel{
+ 
+  position: relative;
+  max-width: 99%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  
+  
+}
+
+.carousel-title{
+  max-width: 100%;
+ 
+}
+
+.h2_carousel{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+ 
+  font-family: 'Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.selection_voitures{
+  
+  max-width: 100%;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  gap: 1rem;
+  
+}
+
+  .div_louer{
+    width: 40%;
+    
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .louer{
+    cursor: pointer;
+   
+    background-color: #e02b20;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+   
+    text-align: center;
+  }
+   .louer:hover  {
+    cursor: pointer;
+    background-color: #ea6b64;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+   
+    text-align: center;
+  }
+  .achat{
+    cursor: pointer;
+    background-color: #e02b20;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  .lien_achat{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    
+     
+  }
+
+
+
+  
+
+ .page_home .carousel-container {
+  z-index: 0;
+  
+  position: relative;
+  height: 100vh;
+  
+  display: flex;
+   
+  width: 80vw;
   margin: auto;
   overflow: hidden;
   border-radius: 10px;
@@ -28,11 +241,13 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+ 
 }
 
 .page_home .carousel-container .slides {
   display: flex;
-  
+  min-width: 100%; /* ou une largeur suffisante pour contenir toutes les slides */
+   
   transition: transform 1s ease-in-out;
   -webkit-transition: transform 1s ease-in-out;
   -moz-transition: transform 1s ease-in-out;
@@ -41,19 +256,40 @@
 }
 
 .page_home .carousel-container .slides .slide {
-  object-fit: cover;
+   
   display: flex;
   flex: 0 0 auto;
-  
-  width: 1600px;
-  
+  min-width: 100%; /* ou la même largeur que le conteneur */
+  flex-shrink: 0;
+   box-sizing: border-box;
+  border-radius:10px ;
+  -webkit-border-radius:10px ;
+  -moz-border-radius:10px ;
+  -ms-border-radius:10px ;
+  -o-border-radius:10px ;
+   overflow: hidden;
+   
 }
 .page_home .carousel-container .slides .slide img{
+  
   min-width: 100%;
   
+    display: flex;
+  align-items: center; /* centre verticalement */
+  justify-content: center; /* optionnel : centre horizontalement aussi */
+  height: 100%; /* ou une hauteur fixe comme 400px */
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  object-fit:contain;
+  position: calc(100% - 10px);
+   box-sizing: border-box;
 }
 
-/* .controls {
+ .controls {
+  z-index: 10;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -63,25 +299,25 @@
   align-items: center;
 }
 
-.controls button {
-  background: rgba(255, 255, 255, 0.5);
+#prev, #next {
+  background: white;
   border: none;
   cursor: pointer;
   padding: 10px;
-  font-size: 18px;
+  font-size: 2rem;
   
 }
 
-.controls button:hover {
-  background: rgba(255, 255, 255, 0.8);
-} */
+#prev:hover, #next:hover {
+  background-color: #ea938d;
+} 
   
 
  
-.louer_acheter{
+/* .louer_acheter{
    position: absolute;
    
-   top: 48rem;
+   top: 70rem;
    width: 70% ;
    height: auto;
    z-index: 999;
@@ -91,8 +327,8 @@
    align-items: center;
    
    
-}
-.louer_acheter span{
+} */
+/* .louer_acheter span{
   z-index: 100;
  
    display: flex;
@@ -115,12 +351,12 @@
 .louer_acheter span:hover{
   background-color: rgb(55, 55, 55);
   width: 10.3rem;
-   height: 3.1rem;
+  height: 3.1rem;
     
-}
+} */
 
  
-.louer_acheter span a{
+/* .louer_acheter span a{
    color: white;
    font-size: 20px;
    font-weight: bold;
@@ -135,11 +371,11 @@
    align-items: center;
    justify-content: center;
    font-weight: bold;
-   top: 48rem;
+   top: 12rem;
    right: 14%;
   z-index: 0;
    background-color: #e02b20;
-   width: 13%;
+   width: 50%;
    height: 3.2rem;
    border-radius: 20px;
    -webkit-border-radius: 20px;
@@ -147,7 +383,7 @@
    -ms-border-radius: 20px;
    -o-border-radius: 20px;
    color: white;
-}
+} */
 /***************************************************************************/
 
 #description{
@@ -196,22 +432,25 @@ article{
 }
 
 article .infos, article #section1{
- 
   width: 50%;
   color: white;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(237, 236, 236);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 article .infos #para{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: white;
+  color: black;
 }
 article .infos #para .entete{
   display: flex;
@@ -220,11 +459,11 @@ article .infos #para .entete{
 }
 
 article .infos #para i{
-  color: rgb(251, 247, 14);
+  color: #e02b20;
 }
 
 article .infos #para h3{
-  color: white;
+  color: black;
 }
 
 article #section1{
@@ -233,20 +472,22 @@ article #section1{
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  color: white;
+  color: black;
 }
 
 article #section1 #appel{
-  background-color: rgb(113, 235, 229);
-  
+  background-color: #e02b20;
+  border: none;
   cursor: pointer;
-  height: 2rem;
+  height: 3rem;
+  width: 10rem;
   font-weight: bolder;
-  border-radius:10px ;
-  -webkit-border-radius:10px ;
-  -moz-border-radius:10px ;
-  -ms-border-radius:10px ;
-  -o-border-radius:10px ;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -ms-border-radius:5px;
+  -o-border-radius:5px;
+  color: white;
 }
 
 
@@ -256,19 +497,124 @@ article #section1 #appel{
     width: 100%;
     position: relative;
     margin-top: 8rem;
-    height: auto;
   }
+
+  .hero {
+  width: 100%;
+  height: 70rem;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+   
+  
+   
+ }
+
+ .div_vide_image{
+   z-index: -1;
+   
+   
+  background-image: url('../pictures/ChatGPT Image 30 juin 2025, 17_36_11.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top 90% left 50%;
+  
+ 
+ 
+  width:100%;
+  height: 40rem;
+
+ }
+
+  .hero-text {
+      z-index: 0;
+   
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
+    gap: 1rem;
+    width: 100%;
+    height: 30rem;
+   
+    color: white;
+    /* text-align: center; */
+   
+    font-family:' Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     
+    
+  
+    
+  }
+
+  .hero .hero-text h4 {
+      font-size: 30px;  
+      letter-spacing: 1.5px;
+       
+    }
+    .hero .hero-text h6 {
+     
+      font-size: 20px;
+      letter-spacing: 1px;
+    
+     
+      
+
+    }
+   
+   .hero .hero-text p  {
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+    
+    }
+    .hero_boutton{
+     
+      cursor: pointer;
+      
+      background-color: #e02b20;
+      color: white;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    
+      
+       
+      
+      
+      
+}
+    .lien_boutton{
+       background-color: #e02b20;
+       color: white;
+       text-decoration: none;
+       letter-spacing: 1.5px;
+       width: 20rem;
+       height: 3rem;
+       cursor: pointer;
+       border-radius: 5px;
+       -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+       -ms-border-radius: 5px;
+       -o-border-radius: 5px;
+}
   .page_home .carousel-container{
    
     width: 100%;
-    height: 17rem;
+    height: 25rem;
   }
 
  
 
   .page_home .carousel-container .slides .slide{
     width: 100%;
-    height: 17rem;
+    height: 25rem;
   }
 
   .page_home .carousel-container .slides .slide img{
@@ -280,7 +626,7 @@ article #section1 #appel{
   .louer_acheter{
     position: absolute;
     
-    top: 14rem;
+    top: 22rem;
     width: 80% ;
     height: auto;
     z-index: 999;
@@ -299,13 +645,13 @@ article #section1 #appel{
      
  }
  .louer_acheter span:hover{
-  background-color: rgb(55, 55, 55);
+ 
   width: 6.2rem;
    height: 2.1rem;
     
 }
  .louer_acheter span a{
-  color: white;
+   
   font-size: 10px;
   font-weight: bold;
   text-decoration: none;
@@ -330,18 +676,18 @@ article{
   flex-direction: column;
   
   gap: 2rem;
-  color: white;
+  
 }
 
 article .infos, article #section1{
  
   width: 100%;
-  color: white;
+  
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  background-color: rgb(45, 45, 45);
+  
   
   font-size: 12px;
   
@@ -350,7 +696,7 @@ article .infos #para{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: white;
+   
 }
 
 #description #article h3{
@@ -374,33 +720,139 @@ article .infos #para{
     width: 100%;
     position: relative;
     
+  }
+
+ .hero {
+ 
+   
+ 
+  width: 100%;
+  height: 70rem;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+   
+  
+   
+ }
+
+ .div_vide_image{
+   z-index: -1;
+   
+   
+  background-image: url('../pictures/ChatGPT Image 30 juin 2025, 17_36_11.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top 90% left 50%;
+  
+ 
+ 
+  width:100%;
+  height: 40rem;
+
+ }
+
+  .hero-text {
+      z-index: 0;
+   
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
+    gap: 1rem;
+    width: 50%;
+    height: 30rem;
+   
+    color: white;
+    /* text-align: center; */
+   
+    font-family:' Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     
+    
+  
     
   }
-  .page_home .carousel-container{
+
+  .hero .hero-text h4 {
+      font-size: 30px;  
+      letter-spacing: 1.5px;
+       
+    }
+    .hero .hero-text h6 {
+     
+      font-size: 20px;
+      letter-spacing: 1px;
     
      
-    width: 100%;
-    height:25rem;
+      
+
+    }
+   
+   .hero .hero-text p  {
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+    
+    }
+    .hero_boutton{
+     
+      cursor: pointer;
+      
+      background-color: #e02b20;
+      color: white;
+      width: 100%;
+      height: 100%;
+      
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    
+      
+       
+      
+      
+      
+}
+    .lien_boutton{
+       background-color: #e02b20;
+       color: white;
+       text-decoration: none;
+       letter-spacing: 1.5px;
+       width: 20rem;
+       height: 3rem;
+       cursor: pointer;
+       border-radius: 5px;
+       -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+       -ms-border-radius: 5px;
+       -o-border-radius: 5px;
+}
+  
+  .page_home .carousel-container{
+     
+    width: 90%;
+    height:35rem;
   }
 
  
 
   .page_home .carousel-container .slides .slide{
     width: 100%;
-    height: 25rem;
     
   }
 
   .page_home .carousel-container .slides .slide img{
     width: 100%;
-    height: 25rem;
   }
 
 
   .louer_acheter{
     position: absolute;
     
-    top: 21rem;
+    top: 30rem;
     width: 80% ;
     height: auto;
     z-index: 999;
@@ -419,13 +871,13 @@ article .infos #para{
      
  }
  .louer_acheter span:hover{
-  background-color: rgb(55, 55, 55);
+  
   width: 7.3rem;
    height: 2.1rem;
     
 }
  .louer_acheter span a{
-  color: white;
+ 
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
@@ -443,30 +895,27 @@ article .infos #para{
   
 }
 
-#description{
-  
-  margin-top: 0;
-}
+
 
 article{
- 
+  
   width: 80%;
   display: flex;
   flex-direction: column;
   
   gap: 2rem;
-  color: white;
+   
 }
 
 article .infos, article #section1{
-  
+ 
   width: 100%;
-  color: white;
+  
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  background-color: rgb(45, 45, 45);
+  
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
   
@@ -475,18 +924,17 @@ article .infos #para{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: white;
  
 }
 
 #description #article h3{
- 
+   
   font-size: 17px;
 }
 
 #description #article p{
   font-size: 17px;
- 
+   
 }
  
 } 

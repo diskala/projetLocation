@@ -1,33 +1,36 @@
-﻿body{
-     
+﻿body {
     margin: 0;
     padding: 0;
-    /* border: 3px solid blue; */
-    height: 100%;
-    background-color: black;
+    font-family: 'Arial', sans-serif;
+   background-color: black;
+    width: 1870px;
    
-     
   
 }
 
 .font_photo{
-   
-    margin-top: -6rem;
-   
+   position: relative;
+    /* margin-top: -8rem; */
+     
     width: 100%;
     height: 100vh;
-   
+   margin-top: -8rem;
     z-index: -1;
-   
-    background-image: url('/IMAGES/lotus-exige-1.jpg');
+  
+    background-image: url('../images/lotus-exige-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
-    position: fixed;
+    /* position: fixed; */
 }
 .section_contact{
-   z-index: 100;
-   
+   /* z-index: 100; */
+   position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    top: 7rem;
+
   
    
 }
@@ -37,7 +40,7 @@
     z-index: 100;
     /* border: 4px solid green; */
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     color: aliceblue;
     display: flex;
     flex-direction: column;
@@ -46,7 +49,6 @@
     gap: 3rem;
     background-color: black;
     opacity: 0.8;
-
     
 }
 .numero_tel h1{
@@ -244,34 +246,22 @@ opacity: 0.8;
 }
 .range li .nom_prenom , .range li .email_tel {
     width: 95%;
-   
     color: #fff;
     font-size: 20px;
     height: 2rem;
     background-color: black;
     opacity: 0.8;
     border-width: 0;
-    padding: 0.5rem;
     /* border: 2px solid green; */
    
-}
-
-.range li .nom_prenom:focus, .range li .email_tel:focus, .range .ul_2 li .message:focus {
-    outline: none;
-    /* border: 2px solid #f0efef; */
-    background-color: black;
-    opacity: 0.8;
-    color: #fff;
 }
 
 .range li .objets {
     width: 100%;
     height: 4rem;
-    border: 1px solid #f0efef;
-    background-color: rgb(0, 0, 0);
-    border-radius: 3px;
+    background-color: black;
     opacity: 0.8;
-   
+    border-width: 0;
     color: #fff;
     height: 2rem;
     font-size: 17px;
@@ -285,19 +275,14 @@ opacity: 0.8;
 
  .range .ul_2 li .message{
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #f0efef;
+    
     background-color: black;
     opacity: 0.8;
-    border-radius: 3px;
+    border-width: 0;
     color: #fff;
     height: 10rem;
     font-size: 20px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-}
+ }
 
  .btn_valid{
     margin-top: 3rem;
@@ -344,11 +329,34 @@ opacity: 0.8;
 }
 
 @media screen and (min-width: 587px) and (max-width: 1200px) {
-    .numero_tel{
-        height: 60vh;
-    }
+   .section_contact{
+   /* z-index: 100; */
+   border: 1px solid white;
+    padding: 0;
+    margin: 0;
+  
+ 
+  
+   
+}
+.font_photo{
+   position: relative;
+    /* margin-top: -8rem; */
+     
+    width: 100%;
+    height: 100vh;
+   margin-top: -8rem;
+    z-index: -1;
+  
+    background-image: url('../images/lotus-exige-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    /* position: fixed; */
+}
     .numero_tel h1{
         font-size: 25px;
+        
     }
 
     .numero_tel h3{
@@ -400,20 +408,37 @@ opacity: 0.8;
 
 
 @media screen and (max-width: 587px) {
-      
-.numero_tel{
+    .font_photo{
+   position: relative;
+    /* margin-top: -8rem; */
      
-    height: 50vh;
+    width: 100%;
+    height: 100vh;
+   margin-top: -8rem;
+    z-index: -1;
+  
+    background-image: url('../images/lotus-exige-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    /* position: fixed; */
+}
+.section_contact{
+   /* z-index: 100; */
+   position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    top: 2rem;
+
+  
    
 }
     .numero_tel h1{
-        
         font-size: 18px;
-        
     }
 
     .numero_tel h3{
-        
         font-size: 10px;
         letter-spacing: 0.3em;
     }

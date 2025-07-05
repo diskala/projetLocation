@@ -3,16 +3,18 @@
     padding: 0;
     font-family: 'Arial', sans-serif;
    background-color: black;
+    
+    
    
   
 }
 #carre{
-   
+ 
     height:auto;
    padding-top: 4rem;
-    width: 100%;
-   
-    margin-top: 2rem;
+     width:97%;
+    
+    margin-top: 5rem;
   
    
 }
@@ -24,30 +26,40 @@
     /* border: 2px solid rgb(240, 240, 241); */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin:auto;
+   
+    width: 100%;
     
         
 }
 
 .items{
-   margin: 2.5rem;
-
-   
-    width: 45vw;
-    height: 70vh;
+     /* border: 5px solid rgb(240, 240, 241); */
+     margin: 2.5rem;
+     width: 45vw;
+     height: 70vh;
+    
 }
  
 .pic{
+     /* border: 2px solid rgb(240, 240, 241); */
     width: 100%;
     height: 50vh;
-    
+     
 }
 
 .pic img{
-    width: 90%;
-    height: 100%;
-    padding-left: 2rem;
-    cursor: pointer;
+     /* border: 2px solid rgb(240, 240, 241); */
+     width: 100%;
+     height: 100%;
+     
+     cursor: pointer;
+     border-radius: 10px;
+     -webkit-border-radius:10px;
+     -moz-border-radius:10px;
+     -ms-border-radius:10px;
+     -o-border-radius:10px;
+     object-fit:cover;
+     
 }
 
  
@@ -167,12 +179,12 @@ a, h1{
         justify-content: center;
         justify-items: center;
         align-items: center;
-       
+        
             
     }
 
     .items{
-      
+       
      
         
          width: 90%;
@@ -244,32 +256,29 @@ a, h1{
       justify-content: center;
       justify-items: center;
       align-items: center;
-      
     }
     #container_items{
-        
+    
         margin-top: 2rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr) ;
       
         justify-content: center;
-        height: auto;
+        /* height: 70vh; */
             
     }
 
     .items{
        
-        
+    
         margin: 0;
          width: 100%;
-         height: 35rem;
          padding: 0;
        
      }
 .pic{
    
     width: 100%;
-    height: 20rem;
     margin: 0;
     padding-left: 0;
 }
@@ -289,7 +298,7 @@ a, h1{
         display: block; 
         width: 20rem;
         margin-left: 1rem;
-       margin-top: 0rem;
+       margin-top: 2rem;
         padding: 0;
        
 
@@ -324,14 +333,14 @@ a, h1{
 
     .items h2, .items h1{
        margin-left: 0;
-       font-size: 12px;
-       margin-bottom: 1rem;
+        font-size: 15px;
+        margin-bottom: 1rem;
     }
     .marque{
         background-color: rgb(13, 13, 13);
         width: 100%;
         height: 2.5rem;
-        font-size: 12px;
+        font-size: 15px;
         border-color: white;
         color: white;
         padding: 0;
@@ -341,7 +350,7 @@ a, h1{
         background-color: rgb(13, 13, 13);
         width: 100%;
         height: 2.5rem;
-        font-size: 12px;
+        font-size: 15px;
         border-color: white;
         color: white;
         
@@ -360,6 +369,7 @@ a, h1{
     }
     .sous_image .lien{
         height: 2rem;
+        
         width: 7rem;
         margin-right: 1rem;
          

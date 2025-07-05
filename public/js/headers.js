@@ -1,12 +1,13 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
     const burgerMenu = document.querySelector('.burger-menu');
+    const contenairehead = document.querySelector('.container_header');
    
     const navLinks = document.querySelector('.nav-links');
     
     burgerMenu.addEventListener('click', function () {
         
         navLinks.style.display = (navLinks.style.display === 'block' ? 'none' : 'block');
-       
+        contenairehead.style.height=(contenairehead.style.height==='20rem'?'5rem':'20rem');
     });
 
 
@@ -75,6 +76,3 @@
         sousMenuService.style.display = 'none';
     });
 });
- 
-
- 

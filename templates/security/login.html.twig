@@ -4,19 +4,23 @@
 {% endblock %}
 
 {% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
 	<link rel="stylesheet" href={{ asset("./styles/login.css") }}>
 {% endblock %}
-
+{% block javascripts %}
+	 {{ encore_entry_script_tags('app') }}
+{% endblock %}
 
 {% block body %}
  
 <section id="container__section">
-	<form method="post">
+      
+	<form method="post" class="formulaire_login">
 
-
-		{% if error %}
-			<div class="alert alert-danger"> Mot de passe ou {{ error.messageKey|trans(error.messageData, 'security') }} </div>
-		{% endif %}
+             {% if error %}
+			<div class="alert alert-danger"><i class="fa-solid fa-circle-exclamation"></i> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		       {% endif %}
+		
 
 
 		{% if app.user %}
@@ -26,12 +30,12 @@
 				<a href="{{ path('app_logout') }}">Se déconnecter</a>
 			</div>
 		{% endif %}
-
+           
 		<div id="container__login">
 
-
+               
 			<h1 class="h3 mb-3 font-weight-normal">Veuillez vous connecter</h1>
-
+             
 			<ul id="list__form">
 				<li>
 					<label for="inputEmail">Email</label>
@@ -80,5 +84,5 @@
 </section>
 
 
-<script src={{ asset('./js/login.js') }} defer>
+<script src={{ asset('assets/js/login.js') }} defer>
 	{% endblock %}
