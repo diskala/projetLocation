@@ -17,6 +17,7 @@ body {
     justify-content: space-between;
     margin-top: 2rem;
     padding-top: 2rem;
+    margin-bottom: 2rem;
    
    
     /* overflow: hidden; */
@@ -84,7 +85,7 @@ hr{
   
 .desc_car span{
     font-size: 20px;
-    color:rgb(243, 53, 6);
+    color:#e02b20!important;
 }
 
 #reserver{
@@ -95,9 +96,9 @@ hr{
    justify-items: center;
    align-items: center;
    background-color:  rgb(218, 213, 213);
-   width: 15%;
+   width: 12%;
    height: 3rem;
-   top: 48rem;
+   top: 47rem;
    right: 25rem;
    border-radius: 15px ;
    -webkit-border-radius: 15px ;
@@ -112,17 +113,17 @@ hr{
 }
 
 #reserver:hover{
-    background-color:  rgb(202, 200, 200);
-    width: 15.5%;
+    background-color:  rgb(246, 242, 242);
+    width: 12.5%;
     height: 3.2rem;
 }
 
 a #reserver {
   
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
-    font-weight: bold;
+    
     color: black;
     padding: 1rem;
     cursor: pointer;
@@ -204,7 +205,9 @@ width: 50%;
 .fa-chevron-left{
     z-index: 100;
     /* position: absolute; */
-    color: rgb(250, 100, 7);
+    color:white;
+    background-color: #e02b20!important;
+    height: 3rem;
     font-size: 50px;
     font-weight: bold;
     
@@ -216,8 +219,11 @@ width: 50%;
 
 .fa-chevron-right{
     z-index: 100;
+    color:white;
+    background-color: #e02b20!important;
+    height: 3rem;
     /* position: absolute; */
-    color:rgb(250, 100, 7);
+    
     font-size: 50px;
     /* top: 45%;
     right: 0; */
@@ -230,9 +236,8 @@ width: 50%;
 
     #one_car{
         display: block;
-        height: 75rem;
-       
-        
+        height: 80rem;
+        border: 2px solid blue;
     }
 
     #info{
@@ -241,8 +246,9 @@ width: 50%;
         min-width: 100%; 
         height:35rem; 
         margin-left: 0;
-        margin-top: 0rem;
-        
+        margin-top: 2rem;
+       
+    
     }
 
     #groupInfo{
@@ -276,7 +282,14 @@ width: 50%;
         width: 70%;
     }
     
-    
+    /* hr{
+       display: none;
+        width: 50%;
+      
+       
+        
+        
+    } */
     
      
       
@@ -301,11 +314,7 @@ width: 50%;
       
        
     }
-    #reserver:hover{
-        background-color:  rgb(202, 200, 200);
-        width: 30.5%;
-        height: 3.1rem;
-    }
+    
     a #reserver{
       
         text-align: center;
@@ -408,13 +417,13 @@ width: 50%;
 
 
     #one_car{
-  
-       display: flex;
-       flex-direction: column;
+ 
+ display: flex;
+ flex-direction: column;
         width: 100%;
         height: auto;
          gap: 2rem;
-         margin-bottom: 5rem;
+         margin-top: 1rem;
         padding-top: 2rem;
          /* overflow: hidden; */
          
@@ -432,16 +441,7 @@ width: 50%;
          
      
      }
-     #groupInfo{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        justify-items: center;
-        width: 100%;
-        margin: 0;
-        
-    }
+     
      #groupInfo li{
         
          list-style: none;
@@ -458,7 +458,7 @@ width: 50%;
          text-align: center;
      }
      
-     /* hr{
+     hr{
         display: none;
          width: 50%;
          margin-left: 10%;
@@ -466,7 +466,7 @@ width: 50%;
           
          
      }
-      */
+     
      
        
      .desc_car span{
@@ -499,9 +499,10 @@ width: 50%;
        margin-left: 10%;
        margin-top: 2rem;
        margin-bottom: 5rem;
-         height: auto; 
+         height: 55vh; 
          overflow: hidden;
-            
+         
+         
      }
       
      
@@ -510,7 +511,7 @@ width: 50%;
         margin: 0; 
         padding: 0;
          width: 100%;
-         height: auto;
+         height: 100%;
          display: flex;
          /* transition: transform 0.5s ease-in-out; */
      }
@@ -521,7 +522,7 @@ width: 50%;
          padding: 0;
        
          width: 100%;
-         height: auto;
+         height: 100%;
          
          flex: 0 0 100%; /* Chaque image occupe 100% de la largeur */
          box-sizing: border-box;
@@ -531,7 +532,7 @@ width: 50%;
      .picture img {
          margin: 0;
          width: 100%;
-         height: auto;
+         height: 60vh;
          
          border-radius: 5px;
      }
@@ -572,8 +573,7 @@ width: 50%;
      }
      
      #reserver{
-        
-    position: absolute;
+        position: absolute;
    z-index: 1000;
    display: flex;
    justify-content: center;
@@ -582,17 +582,11 @@ width: 50%;
    background-color:  rgb(218, 213, 213);
    width: 10rem;
    height: 3rem;
-   top: 97rem;
+   top: 76rem;
    left: 40%;
     
+   
      }
-
-   #reserver:hover{
-     
-        background-color:  rgb(202, 200, 200);
-        width: 10.5rem;
-        height: 3.1rem;
-    }
      a #reserver{
        
         text-align: center;
@@ -602,6 +596,9 @@ width: 50%;
         color: rgb(9, 9, 9);
         padding: 1rem;
         
+    
+    
+    
     
     }
     
