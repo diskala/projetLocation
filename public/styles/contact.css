@@ -14,7 +14,7 @@
      /* border:2px solid white; */
     width: 100%;
     height: 100vh;
-   margin-top: -8rem;
+   /* margin-top: -8rem; */
     z-index: -1;
   
     background-image: url('../images/lotus-exige-1.jpg');
@@ -37,7 +37,7 @@
 
 .numero_tel{
    position: absolute;
-   top: 4rem;
+   top: 6rem;
     z-index: 100;
     /* border: 4px solid green; */
     width: 100%;
@@ -45,7 +45,7 @@
     color: aliceblue;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:baseline;
     align-items: center;
     gap: 3rem;
     background-color: black;
