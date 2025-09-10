@@ -267,7 +267,7 @@
    
 }
 .page_home .carousel-container .slides .slide .imagee{
-  border:3px solid green;
+  /* border:3px solid green; */
   min-width: 100%;
   
     display: flex;
