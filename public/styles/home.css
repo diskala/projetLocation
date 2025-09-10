@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-   background-color: black;
+   background-color: rgb(15, 15, 15);
    
    
   
@@ -35,18 +35,18 @@
  }
 
  .div_vide_image{
-  
   background-image: url('../pictures/ChatGPT Image 30 juin 2025, 17_36_11.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top 50% left 50%;
-  
- 
- 
   width: 60%;
   height: 40rem;
-
- }
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
 
   .hero-text {
     
@@ -91,23 +91,19 @@
     
     }
     .hero_boutton{
-      
       cursor: pointer;
-      
       background-color: #e02b20;
       color: white;
       width: 100%;
       height: 100%;
-      
       border-radius: 5px;
       text-decoration: none;
       font-size: 18px;
-    
-      
-       
-      
-      
-      
+      border-radius:10px ;
+      -webkit-border-radius:10px ;
+      -moz-border-radius:10px ;
+      -ms-border-radius:10px ;
+      -o-border-radius:10px ;
 }
     .lien_boutton{
        background-color: #e02b20;
@@ -117,11 +113,11 @@
        width: 20rem;
        height: 3rem;
        cursor: pointer;
-       border-radius: 5px;
-       -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-       -ms-border-radius: 5px;
-       -o-border-radius: 5px;
+       border-radius: 10px;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       -ms-border-radius: 10px;
+       -o-border-radius: 10px;
 }
   .hero_boutton:hover {
         background-color: #c02a1f;
