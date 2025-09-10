@@ -223,13 +223,11 @@
   
 
  .page_home .carousel-container {
+   
   z-index: 0;
-  
   position: relative;
   height: 100vh;
-  
   display: flex;
-   
   width: 80vw;
   margin: auto;
   overflow: hidden;
@@ -242,6 +240,7 @@
 }
 
 .page_home .carousel-container .slides {
+  
   display: flex;
   min-width: 100%; /* ou une largeur suffisante pour contenir toutes les slides */
    
@@ -253,7 +252,7 @@
 }
 
 .page_home .carousel-container .slides .slide {
-   
+  
   display: flex;
   flex: 0 0 auto;
   min-width: 100%; /* ou la même largeur que le conteneur */
@@ -267,8 +266,8 @@
    overflow: hidden;
    
 }
-.page_home .carousel-container .slides .slide img{
-  
+.page_home .carousel-container .slides .slide .imagee{
+  border:3px solid green;
   min-width: 100%;
   
     display: flex;
@@ -280,7 +279,7 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  object-fit:contain;
+  object-fit: contain; /* pour que l'image couvre tout l'espace sans déformation */
   position: calc(100% - 10px);
    box-sizing: border-box;
 }

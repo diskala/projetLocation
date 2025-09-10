@@ -21,14 +21,15 @@
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlidePosition();
     }
+    nextSlide();
 
     function prevSlide() {
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateSlidePosition();
     }
 
-    prevButton.addEventListener('click', nextSlide);
-    nextButton.addEventListener('click', prevSlide);
+    // prevButton.addEventListener('click', nextSlide);
+    // nextButton.addEventListener('click', prevSlide);
 
     setInterval(nextSlide, 5000);
 });
