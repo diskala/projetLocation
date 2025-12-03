@@ -46,7 +46,7 @@
   <div class="pic"><a href={{ path("onecar", {'id': item.id}) }}><img src= "/IMAGES/{{ item.image.image1 }}" /></a></div>
      <div class="sous_image">
      <h1> A partir de : {{item.priceDay}} € / jour<h1>  
-    <a href= {{ path("onecar", {'id': item.id}) }}  > <div class="lien">En savoir plus</div></a>
+    <a href= "{{ path("onecar", {'id': item.id}) }}" > <span class="lien"> En savoir plus</span></a>
      <div>
     </article> 
   {% endfor %}
