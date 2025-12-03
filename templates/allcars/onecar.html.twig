@@ -3,15 +3,15 @@
 {% block title %}Hello AllcarsController!{% endblock %}
   
        {% block stylesheets %}
-             <link rel="stylesheet" href= {{ asset("/styles/headers.css") }} >
-              <link rel="stylesheet" href= {{ asset("/styles/footer.css") }} >
-              <link rel="stylesheet" href={{ asset("/styles/inviteContact.css") }}>
-             <link rel="stylesheet" href= {{ asset("/styles/onecar.css") }} >
+             <link rel="stylesheet" href= {{ asset("./styles/headers.css") }} >
+              <link rel="stylesheet" href= {{ asset("./styles/footer.css") }} >
+              <link rel="stylesheet" href={{ asset("./styles/inviteContact.css") }}>
+             <link rel="stylesheet" href= {{ asset("./styles/onecar.css") }} >
         {% endblock %}
         
         {% block javascripts %}
-          <script src= {{ asset('/js/headers.js') }} defer></script>
-          <script src= {{ asset('/js/onecar.js') }} defer></script>
+          <script src= {{ asset('./js/headers.js') }} defer></script>
+          <script src= {{ asset('./js/onecar.js') }} defer></script>
         {% endblock %}
 
        
@@ -113,5 +113,8 @@
 {% endfor %} #}
 
  {{ include("./_partials/footer.html.twig") }}
+
+ <script src= {{ asset('./js/headers.js') }} defer></script>
+ <script src= {{ asset('./js/onecar.js') }} defer></script>
 
 {% endblock %}
