@@ -3,14 +3,14 @@
 {% block title %}Hello AllcarsController!{% endblock %}
   
       {% block stylesheets %}
-             <link rel="stylesheet" href= "{{ asset("./styles/headers.css") }}?v={{ date().timestamp }}" >
-             <link rel="stylesheet" href="{{ asset("./styles/inviteContact.css") }}?v={{ date().timestamp }}">
-              <link rel="stylesheet" href="{{ asset("./styles/footer.css") }}?v={{ date().timestamp }}">
-             <link rel="stylesheet" href= "{{ asset("./styles/allcars.css") }}?v={{ date().timestamp }}" >
+             <link rel="stylesheet" href= "{{ asset("/styles/headers.css") }}?v={{ date().timestamp }}" >
+             <link rel="stylesheet" href="{{ asset("/styles/inviteContact.css") }}?v={{ date().timestamp }}">
+              <link rel="stylesheet" href="{{ asset("/styles/footer.css") }}?v={{ date().timestamp }}">
+             <link rel="stylesheet" href= "{{ asset("/styles/allcars.css") }}?v={{ date().timestamp }}" >
          {% endblock %}
         
          {% block javascripts %}
-          <script src= {{ asset('./js/headers.js') }} defer></script>
+          <script src= {{ asset('/js/headers.js') }} defer></script>
           
        {% endblock %}
 
