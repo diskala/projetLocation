@@ -25,7 +25,7 @@
 
 {% block body %}
          
- 
+  {{ include("./_partials/header.html.twig") }}
          
                      <div id="notif">
                       <h1> {{ message }} </h1>
@@ -35,5 +35,5 @@
                
        
    
-    
+    {{ include("./_partials/footer.html.twig") }}
 {% endblock %}
