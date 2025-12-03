@@ -43,7 +43,7 @@
   <h2> <a href={{ path("onecar", {'id': item.id}) }}>{{ item.brand|upper }} | {{ item.model|upper }} | {{ item.category|upper }}</a></h2>
   
    
-  <div class="pic"><a href={{ path("onecar", {'id': item.id}) }}><img src= "./images/{{ item.image.image1 }}"></a></div>
+  <div class="pic"><a href={{ path("onecar", {'id': item.id}) }}><img src= "/images/{{ item.image.image1 }}"></a></div>
      <div class="sous_image">
      <h1> A partir de : {{item.priceDay}} € / jour<h1>  
     <a href= {{ path("onecar", {'id': item.id}) }}  > <div class="lien">En savoir plus</div></a>
