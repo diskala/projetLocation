@@ -1,81 +1,201 @@
-﻿   
-  <footer>
+﻿<footer>
+    <div id="foot">
+        <!-- Section Agences -->
+        <div id="agence" class="post_1">
+            <h3>NOS AGENCES PRESTIGE</h3>
+            <ul id="ul_agence">
+                <li>
+                    <a href="#" class="agency-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        RENNES
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="agency-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        NANTES
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="agency-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        VANNES
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="agency-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        ANGERS
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-	<div id="foot">
-		<div id="agence" class="post_1">
-			<h3>TOUTES NOS AGENCES</h3>
-			<ul id="ul_agence">
-				<li>
-					<a>RENNES</a>
-				</li>
-				<li>
-					<a>NANTES</a>
-				</li>
-				<li>
-					<a>VANNES</a>
-				</li>
-				<li>
-					<a>ANGERS</a>
-				</li>
+        <!-- Section Logo et Réseaux sociaux -->
+        <div class="logo_reseau post_3">
+            <div class="logos_footer">
+                <a href="{{ path('app_home') }}">
+                    <img class="logo" src="{{ asset('./icones_drapeaux/logoSite4.png') }}" alt="DISCARS - Location voitures de luxe">
+                </a>
+            </div>
 
-			</ul>
-		</div>
+            <div id="reseau">
+                <div>
+                    <a href="#" aria-label="Facebook DISCARS">
+                        <i class="fa-brands fa-square-facebook fa-xl" id="ico1"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" aria-label="Instagram DISCARS">
+                        <i class="fa-brands fa-instagram fa-xl" id="ico4"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" aria-label="Twitter DISCARS">
+                        <i class="fa-brands fa-twitter fa-xl" id="ico2"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" aria-label="YouTube DISCARS">
+                        <i class="fa-brands fa-youtube fa-xl" id="ico3"></i>
+                    </a>
+                </div>
+            </div>
 
-		<div class="logo_reseau post_3">
-			<div class="logos_footer">
-				<a href={{ path('app_home') }}><img class="logo" src={{ asset("./icones_drapeaux/logoSite4.png") }}></a>
-			</div>
+            <div class="footer-newsletter">
+                <p>Restez informé de nos dernières exclusivités</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
 
+        <!-- Section Services -->
+        <div id="com" class="post_2">
+            <h3>SERVICES EXCLUSIFS</h3>
+            <ul>
+                <li><a href="#">ÉVÉNEMENT ENTREPRISE</a></li>
+                <li><a href="#">MARIAGE & CÉRÉMONIE</a></li>
+                <li><a href="#">SÉMINAIRE D'ENTREPRISE</a></li>
+                <li><a href="#">DEVENIR PARTENAIRE</a></li>
+                <li><a href="{{ path('app_contact') }}">CONTACT & DEVIS</a></li>
+            </ul>
+        </div>
+    </div>
 
-			<div id="reseau">
-				<div>
-					<a href="">
-						<i class="fa-brands fa-square-facebook fa-2xl" id="ico1"></i>
-					</a>
-				</div>
-				<div>
-					<a href="">
-						<i class="fa-brands fa-instagram fa-2xl" id="ico4"></i>
-					</a>
-				</div>
-				<div>
-					<a href="">
-						<i class="fa-brands fa-twitter fa-2xl" id="ico2"></i>
-					</a>
-				</div>
-				<div>
-					<a href="">
-						<i class="fa-brands fa-youtube fa-2xl" id="ico3"></i>
-					</a>
-				</div>
-
-
-			</div>
-
-
-		</div>
-
-
-		<div id="com" class="post_2">
-			<ul>
-				<li><a href="">EVENEMENT ENTREPRISE</a></li>
-				<li><a href="">MARIAGE</a></li>
-				<li><a href="">SEMINAIRE D'ENTREPRISE</a></li>
-				<li><a href="">PARTENAIRES</a></li>
-				<li><a href="">CONTACT</a></li>
-			</ul>
-
-		</div>
-
-
-	</div>
-	<div id="bas">
-		<p>
-			&copy; DISCARS ©2024 - TOUS DROITS RÉSERVÉ - Seghir Ouali Nacime - 
-			<a href="">
-				MENTIONS LÉGALES</a>
-		</p>
-	</div>
-
-
+    <!-- Section bas de footer -->
+    <div id="bas">
+        <p>
+            <span>&copy; DISCARS ©2024 - TOUS DROITS RÉSERVÉS</span>
+            <span>•</span>
+            <span>Seghir Ouali Nacime</span>
+            <span>•</span>
+            <a href="#">MENTIONS LÉGALES</a>
+            <span>•</span>
+            <a href="#">POLITIQUE DE CONFIDENTIALITÉ</a>
+            <span>•</span>
+            <a href="#">CGV</a>
+        </p>
+    </div>
 </footer>
+
+<style>
+    /* Styles additionnels pour la newsletter */
+    .footer-newsletter {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .footer-newsletter p {
+        color: var(--text-gray);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .newsletter-form {
+        display: flex;
+        gap: 0.5rem;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+
+    .newsletter-form input::placeholder {
+        color: var(--text-gray);
+    }
+
+    .newsletter-form input:focus {
+        outline: none;
+        border-color: var(--text-gold);
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .newsletter-form button {
+        padding: 0.8rem 1.2rem;
+        background: var(--text-gold);
+        border: none;
+        border-radius: 25px;
+        color: var(--footer-bg);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+        background: var(--hover-gold);
+        transform: translateY(-2px);
+    }
+
+    /* Amélioration des liens d'agences */
+    .agency-link {
+        display: flex !important;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .agency-link i {
+        color: var(--text-gold);
+        font-size: 0.8em;
+    }
+</style>
+
+<script>
+    // Animation simple pour le footer
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animation des icônes réseaux sociaux
+        const socialIcons = document.querySelectorAll('#reseau a');
+        socialIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                // Ajouter ici la logique d'envoi de newsletter
+                console.log('Newsletter subscription:', email);
+                alert('Merci pour votre inscription à notre newsletter !');
+                this.reset();
+            });
+        }
+    });
+</script>

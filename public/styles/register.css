@@ -1,26 +1,42 @@
-﻿body{
+﻿/* body{
     background-color: black;
+} */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #d4af37;
+    --accent-color: #c19b30;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --bg-light: #f8f9fa;
+    --bg-dark: #1a1a1a;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 #container__register{
- 
+    
     background-image: url("/IMAGES/lotus-exige-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
-    margin-top: 1rem;
+    margin-top: 2rem;
     width: 100%;
     height: 100vh;
+    padding-top:5rem ;
     
 }
 
 #inscrir__form{
-   
+    
+  
     width: 70%;
     height: 50vh;
     margin-top: 5%;
     margin-left: 15%;
 }
-
+ 
 table{
     
     width: 100%;
@@ -49,7 +65,7 @@ table{
     background-color: rgb(0, 0, 0);
     opacity: 0.5;
     color: white;
-    border-color: #e02b20;
+    border-color: var(--accent-color);
 }
 
 .labels{
@@ -71,7 +87,7 @@ table{
     color: white;
     font-size: 150%;
     font-weight: bold;
-    background-color: #e02b20;
+    background-color: var(--accent-color);
     border-radius: 10% 30%;
     -webkit-border-radius: 10% 30%;
     -moz-border-radius: 10% 30%;
@@ -85,19 +101,22 @@ table{
 }
 
 .btn:hover{
-    background-color: #ee5850;
+    background-color: var(--secondary-color);
     color: black;
 }
 
 #titre{
    
-    color:  #e02b20!important;
+    color: var(--secondary-color)!important;
     display: flex;
     justify-content: center;
+    font-family  :cursive;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
    background-color: black;
     height: 3rem;
+    letter-spacing: 1px;
+   
     
 }
 
@@ -169,7 +188,7 @@ table{
         font-weight: bold;
         border-color: transparent;
         color: white;
-        border-color: #e02b20;
+        border-color: var(--accent-color);
     }
 
     .labels{

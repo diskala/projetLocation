@@ -4,9 +4,9 @@
 {% endblock %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href={{ asset("./styles/headers.css") }}>
-	<link rel="stylesheet" href={{ asset("./styles/footer.css") }}>
-	<link rel="stylesheet" href={{ asset("./styles/contact.css") }}>
+	<link rel="stylesheet" href="{{ asset("./styles/headers.css") }}?v={{ date().timestamp }}">
+	<link rel="stylesheet" href="{{ asset("./styles/footer.css") }}?v={{ date().timestamp }}">
+	<link rel="stylesheet" href="{{ asset("./styles/contact.css") }}?v={{ date().timestamp }}">
 
 {% endblock %}
 {% block javascripts %}
@@ -16,11 +16,12 @@
 
 {% block body %}
 	{# {{ include("./_partials/header.html.twig") }} #}
-
+    {{ include("./_partials/header.html.twig") }}
+    <div class="font_photo"></div>
 	<section class="section_contact">
-		{{ include("./_partials/header.html.twig") }}
-
-		<div class="font_photo"></div>
+		
+        
+		
 		<div class="numero_tel">
 
 
@@ -51,7 +52,7 @@
 					01.25.32.45.61</a>
 			</div>
 
-			<a href="" id="scrollButton">
+			<a href="javascript:void(0);" id="scrollButton">
 				<div class="fleche">
 					<i id="anime_1" class="fa-solid fa-chevron-down"></i>
 					<i id="anime_2" class="fa-solid fa-chevron-down"></i>
@@ -151,8 +152,9 @@
 		</div>
 
 
-		{# {{ include("./_partials/footer.html.twig") }}    #}
+		{{ include("./_partials/footer.html.twig") }}  
 	</section>
+ 
 
-
+ 
 {% endblock %}

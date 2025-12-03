@@ -1,383 +1,380 @@
-﻿body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-   background-color: black;
-    
-    
-   
-  
-}
-#carre{
- 
-    height:auto;
-   padding-top: 4rem;
-     width:97%;
-    
-    margin-top: 5rem;
-  
-   
-}
- 
-
- 
-#container_items{
-    
-    /* border: 2px solid rgb(240, 240, 241); */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-   
-    width: 100%;
-    
-        
+﻿/* Variables */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #d4af37;
+    --accent-color: #c19b30;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --bg-light: #f8f9fa;
+    --bg-dark: #1a1a1a;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.items{
-     /* border: 5px solid rgb(240, 240, 241); */
-     margin: 2.5rem;
-     width: 45vw;
-     height: 70vh;
-    
-}
- 
-.pic{
-     /* border: 2px solid rgb(240, 240, 241); */
-    width: 100%;
-    height: 50vh;
-     
+/* Reset et styles de base */
+#carre {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 120px 2rem 2rem;
 }
 
-.pic img{
-     /* border: 2px solid rgb(240, 240, 241); */
-     width: 100%;
-     height: 100%;
-     
-     cursor: pointer;
-     border-radius: 10px;
-     -webkit-border-radius:10px;
-     -moz-border-radius:10px;
-     -ms-border-radius:10px;
-     -o-border-radius:10px;
-     object-fit:cover;
-     
+/* Formulaire de recherche */
+#formulaire {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
 }
 
- 
-
-.sous_image{
+#cherche {
     display: flex;
-    justify-content: space-between;
-   
-    height: 7rem;
-    margin-top: 2rem;
-   
-   
-}
-.sous_image .lien{
-    height: 2rem;
-    background-color: #e02b20;
-    width: 10rem;
-    display: flex;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
-    margin-right: 5rem;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    position: relative;
+}
+
+#cherche::before {
+    content: '🔍';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#chercheMarque, #chercheCategorie {
+    flex: 1;
+    min-width: 250px;
+}
+
+.marque, .categorie {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.marque:focus, .categorie:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.marque option, .categorie option {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+}
+
+/* Container des véhicules */
+#container_items {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Carte véhicule */
+.items {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+}
+
+.items::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.items:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.items:hover::before {
+    transform: scaleX(1);
+}
+
+/* En-tête carte */
+.items h2 {
+    margin: 0;
+    padding: 1.5rem 1.5rem 1rem;
+}
+
+.items h2 a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: block;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.items h2 a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+/* Image véhicule */
+.pic {
+     
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+     border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.pic img {
+    
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    transition: var(--transition);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-
-
-    transition: 0.5s ease-in-out;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -ms-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
 }
 
-.sous_image .lien:hover{
-    height: 2.3rem;
-    width: 10.3rem;
-    background-color: #e96c66;
+.items:hover .pic img {
+    transform: scale(1.05);
 }
 
-.sous_image .lien a{
-   color: black;
-    font-size: 17px;
-    cursor: pointer;
-    
-    
+.pic::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+/* Section sous image */
+.sous_image {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.sous_image h1 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Bouton en savoir plus */
+.lien {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    border-radius: 25px;
     text-decoration: none;
-   
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
-.items h2, .items h1{
-    margin-left: 2rem;
-    font-size: 20px;
+
+.lien::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: var(--transition);
+}
+
+.lien:hover::before {
+    left: 100%;
+}
+
+.lien:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* État vide */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-light);
+}
+
+.no-results h3 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--secondary-color);
 }
-a, h1{
-    text-decoration: none;
-    color: white;
-}
-.sous_image h1{
-    font-size: 20px;
-}
-#cherche{
-  display: flex; 
-   
-  align-items: center;
-  
-  /* width: 78%; */
-  width: 98%;
-  margin-left: 5rem;
- gap: 17%;
-  justify-items: center;
-  
-  
-}
- 
-#chercheMarque{
-    width: 35%;
-    
-}
-#chercheCategorie{
-    width: 35%;
-    
-}
- 
 
- .marque{
-    background-color: rgb(13, 13, 13);
-    width: 100%;
-    height: 3rem;
-    font-size: 20px;
-    border-color: white;
-    color: white;
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
 
-    
-   
- }
- .categorie{
-    background-color: rgb(13, 13, 13);
-    width: 100%;
-    height: 3rem;
-    font-size: 20px;
-    border-color: white;
-    color: white;
-    
- }
- 
-   
- @media screen and (min-width: 587px) and (max-width: 1200px) {
-    
-    #container_items{
-    
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr) ;
-        
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-        
-            
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-
-    .items{
-       
-     
-        
-         width: 90%;
-         height:63vh;
-     }
-
-.pic{
-    width: 98%;
-    margin: 0;
-    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.pic a{
-    width: 100%;
+.items {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #container_items {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #carre {
+        padding: 100px 1rem 1rem;
+    }
+    
+    #cherche {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    #chercheMarque, #chercheCategorie {
+        min-width: 100%;
+    }
+    
+    #container_items {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .items h2 a {
+        font-size: 1.1rem;
+    }
+    
+    .sous_image h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #carre {
+        padding: 90px 0.5rem 0.5rem;
+    }
+    
+    #cherche {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .marque, .categorie {
+        padding: 0.8rem 1rem;
+    }
+    
+    .pic {
+        height: 200px;
+    }
+    
+    .sous_image {
+        padding: 1rem;
+    }
+    
+    .lien {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Filtres actifs */
+.filter-active {
+    border-color: var(--secondary-color) !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+}
+
+/* Badge nouveau véhicule */
+.items::after {
+    content: 'NOUVEAU';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 2;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.items:hover::after {
+    opacity: 1;
+}
+
+/* Effet de brillance sur les cartes */
+.items::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
     height: 100%;
-    margin: 0;
-    
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: var(--transition);
 }
 
-.pic a img{
-    min-width: 100%;
-    height: 100%;
-  padding: 0;
+.items:hover::before {
+    left: 100%;
 }
-     #cherche{
-        display: block; 
-        width: 25rem;
-      
-    padding: 0;
-        margin-left: 25%;
-
-
-      
-      }
- 
-       
-      #chercheMarque{
-        width: 100%;
-        height: 3rem;
-        
-        
-    }
-
-    #chercheMarque .marque, #chercheCategorie .categorie{
-        font-size: 18px;
-        height: 3rem;
-    }
-    #chercheCategorie{
-        width: 100%;
-        margin: 0;
-        height: 3rem;
-        margin-top: 3rem;
-    }
-    
-    .items h2, .items h1{
-        margin-left: 0;
-        font-size: 20px;
-    }  
-     
-     
- }
-
- @media screen and (max-width: 587px) {
-    
-
-    #carre{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      justify-items: center;
-      align-items: center;
-    }
-    #container_items{
-    
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr) ;
-      
-        justify-content: center;
-        /* height: 70vh; */
-            
-    }
-
-    .items{
-       
-    
-        margin: 0;
-         width: 100%;
-         padding: 0;
-       
-     }
-.pic{
-   
-    width: 100%;
-    margin: 0;
-    padding-left: 0;
-}
-.pic a{
-    
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.pic a img{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-     #cherche{
-        display: block; 
-        width: 20rem;
-        margin-left: 1rem;
-       margin-top: 2rem;
-        padding: 0;
-       
-
-
-      
-      }
-
-       
-      #chercheMarque{
-        width: 100%;
-        padding: 0;
-        margin-left: 0;
-        
-    }
-    #chercheCategorie{
-        width: 100%;
-        padding: 0;
-        margin-top: 3rem;
-    }
-    
-    
-     /* #carre{
-   
-        height:70%;
-       padding-top: 2rem;
-        width: 98%;
-         
-        margin-top: 2rem;
-        
-       
-    } */
-
-    .items h2, .items h1{
-       margin-left: 0;
-        font-size: 15px;
-        margin-bottom: 1rem;
-    }
-    .marque{
-        background-color: rgb(13, 13, 13);
-        width: 100%;
-        height: 2.5rem;
-        font-size: 15px;
-        border-color: white;
-        color: white;
-        padding: 0;
-       
-     }
-     .categorie{
-        background-color: rgb(13, 13, 13);
-        width: 100%;
-        height: 2.5rem;
-        font-size: 15px;
-        border-color: white;
-        color: white;
-        
-     } 
-
-
-     .sous_image{
-       
-        height: 3rem;
-        margin-top: 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items:center;
-       
-       
-    }
-    .sous_image .lien{
-        height: 2rem;
-        
-        width: 7rem;
-        margin-right: 1rem;
-         
-    }
-
-    .sous_image .lien a{
-        font-size: 12px;
-    }
-    
-     
- }

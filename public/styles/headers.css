@@ -2,404 +2,400 @@
                    HEADER 
 ********************************************/
 
-/* body{
-  
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  font-family: 'Arial', sans-serif;
-  width: 1870px;
-   
-  
+/* Variables pour le header */
+:root {
+    --header-bg: rgba(26, 26, 26, 0.95);
+    --header-border: rgba(212, 175, 55, 0.3);
+    --text-gold: #d4af37;
+    --text-light: #ffffff;
+    --text-gray: #b0b0b0;
+    --hover-gold: #f4d03f;
+    --dropdown-bg: rgba(26, 26, 26, 0.98);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
 
- } */
-
-  
-
+/* Reset et styles de base */
 .container_header {
-     background-color: black;
-    width: 100%;
-    height: 5rem;
-    padding: 1rem;
-    
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
+    background: var(--header-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--header-border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    
+    padding: 0;
+    transition: var(--transition);
 }
 
+.container_header.scrolled {
+    background: rgba(10, 10, 10, 0.98);
+    box-shadow: var(--shadow);
+}
 
-.nav-links {
-      z-index: 1000;
-    width: 60rem;
+/* Layout principal */
+.container_header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-right: 5rem; 
-      
+    padding: 0 5%;
+    height: 80px;
 }
 
-.nav-links a{
-    
-    font-size:17px ;
-    text-decoration: none;
-}
-.menu_accueil, .menu_service, .user, .connexion, .deconnection, .inscrir, .contacte{
-    cursor: pointer;
-      z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-    
-    
-}
-
-#accueil, #service, .user, .connexion a, .deconnection a, .inscrir a, .contacte a{
-  /* color: rgba(3, 230, 255, 0.962); */
-  color: white;
-  z-index: 1000;
-  transition: 0.5s ease-in-out;
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -ms-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-}
-
-#accueil:hover, #service:hover, .user:hover, .connexion a:hover, .deconnection a:hover, .inscrir a:hover, .contacte a:hover{
-    /* color: rgba(3, 230, 255, 0.962); */
-    /* color: #e02b20; */
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-   
-    
-  
-   
-}
-
-
-.menu_accueil, .menu_service  {
-     z-index: 1000;
-    
-    position: relative;
-    width: 15rem;
-    height: 2rem;
-  
-} 
- 
- 
-
-.sous_accueil, .sous_service {
-    z-index: 1000;
-    background-color: #2b2a2a;
-    position: absolute;
-    display: none;
-    padding-left: 0.5rem;
-    height: 12rem;
-    width: 12rem;
-    top: 1.7rem;
-    left: 3.5rem;
-    z-index: 100;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    border-radius:10px ;
-    -webkit-border-radius:10px ;
-    -moz-border-radius:10px ;
-    -ms-border-radius:10px ;
-    -o-border-radius:10px ;
-}
-
- 
- 
-.sous_accueil li, .sous_service li{
-    list-style: none;
-   
-    margin-left: 0;
-    margin-top: 1rem;
-    
-
-}
-
-.sous_accueil li a, .sous_service li a{
- display: flex;
- justify-content: left;
- 
- text-decoration: none;
-/* color: #e02b20; */
-color: white;
-}
-
-
- 
-.monMail, .deconnecter, .contacte {
-    
-    width: 15rem;
-    text-align: center;
-    height: 2rem;
-   
-    
-} 
-
- 
-
-
-
- 
-.nav-links .monMail .user{
-   text-decoration: none;
-    
-    color: #e02b20;
-    
-    
-} 
-
-
- 
+/* Logo */
 .logos {
-    cursor: pointer;
-    font-size: 1.5em;
-    height: 4rem;
-    margin-left: 5%;
-    margin-bottom:1rem ;
-    width: 4rem;
-    border-radius: 50% ;
-    -webkit-border-radius: 50% ;
-    -moz-border-radius: 50% ;
-    -ms-border-radius: 50% ;
-    -o-border-radius: 50% ;
+    flex-shrink: 0;
     
-}
-
- 
-.logos img{
-    width: 100%;
-    height: auto;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
- 
+
+.logo {
+    width: 100%;
+    height: 100%;
+     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    
+    /* transition: var(--transition);
+    filter: brightness(0) invert(1); */
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transition: 1s aese ease-in-out;
+    -webkit-transition: 1s aese ease-in-out;
+    -moz-transition: 1s aese ease-in-out;
+    -ms-transition: 1s aese ease-in-out;
+    -o-transition: 1s aese ease-in-out;
+}
+
+/* Navigation principale */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Liens de navigation */
+.nav-links > div {
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--text-gold);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links > div:hover > a::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--text-gold);
+}
+
+/* Menus déroulants */
+.sous_accueil,
+.sous_service {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--dropdown-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--header-border);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.menu_accueil:hover .sous_accueil,
+.menu_service:hover .sous_service {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sous_accueil li,
+.sous_service li {
+    list-style: none;
+}
+
+.sous_accueil a,
+.sous_service a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.sous_accueil a:hover,
+.sous_service a:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--text-gold);
+    border-left-color: var(--text-gold);
+    padding-left: 2rem;
+}
+
+/* Section utilisateur */
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.monMail,
+.deconnecter {
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    color: var(--text-gold);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user::before {
+    content: '👤';
+    font-size: 1.1em;
+}
+
+.connexion a,
+.deconnection a,
+.inscrir a {
+    background: transparent;
+    border: 1px solid var(--text-gold);
+    border-radius: 25px;
+    padding: 0.5rem 1.2rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.connexion a::before {
+    content: '🔐';
+}
+
+.inscrir a::before {
+    content: '✨';
+}
+
+.deconnection a::before {
+    content: '🚪';
+}
+
+.connexion a:hover,
+.inscrir a:hover,
+.deconnection a:hover {
+    background: var(--text-gold);
+    color: var(--header-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Bouton contact spécial */
+.contacte a {
+    background: linear-gradient(135deg, var(--text-gold), #c19b30);
+    color: var(--header-bg);
+    border-radius: 25px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contacte a::before {
+    content: '📞';
+}
+
+.contacte a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #f4d03f, var(--text-gold));
+}
+
+/* Menu burger pour mobile */
 .burger-menu {
     display: none;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    color: var(--text-light);
     cursor: pointer;
-    text-align: center;
-}   
+    padding: 0.5rem;
+    transition: var(--transition);
+}
 
+.burger-menu:hover {
+    color: var(--text-gold);
+}
 
-
-
-
-
-
-@media only screen and (min-width: 587px) and (max-width:1200px)  {
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container_header {
+        padding: 0 3%;
+    }
     
+    .nav-links {
+        gap: 1.5rem;
+    }
+}
 
-    
-    .container_header{
-        display: block;
-       width: 100%;
-       
-      
-    }
-
-    .nav-links{
-        
-        display: none;
-        width: 70%;
-        
-        height: auto;
-        margin-left: 6rem;
-       
-
-    }
-
-    .nav-links .user{
-        margin-left: -0.6rem;
-    }
-    .menu_accueil, .menu_service, .monMail, .deconnecter, .contacte{
-       
-        margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-        width: 12rem;
-      
-    }
-    .inscrir{
-        margin-top: 0;
-    }
-    .sous_accueil, .sous_service{
-       
-      
-       
-        width: 20rem;
-        height: auto;
-        margin-top: -2rem;
-        margin-left: 4.5rem;
-        
-    }
-
-    .menu_accueil li, .menu_service li{
-        width: 100%;  
-         
-        
-    }
-    .menu_accueil li a, .menu_service li a{
-          text-align:right;
-          color: white;
-          font-weight: bolder;
-          margin-left: 5rem;
-    }
-
+@media (max-width: 768px) {
     .burger-menu {
-        position: absolute;
-        z-index: 100;
-        color: white;
         display: block;
-        visibility: visible;
-        font-size: 40px;
-        right: 6rem;
-        top:2rem;
-        
-       
-        
     }
-
-    .logos {
-     
-        font-size: 1.5em;
-        height: 4rem;
-        margin-left: 4rem;
-        width: 4rem;
-        margin-bottom:1rem ;
-        border-radius: 50% ;
-        -webkit-border-radius: 50% ;
-        -moz-border-radius: 50% ;
-        -ms-border-radius: 50% ;
-        -o-border-radius: 50% ;
-    }
-    .logos img{
-        width: 100%;
-        margin-left: 6rem;
-        height: auto;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-}
-}
-
-@media screen and (max-width: 587px) {
-   
-    .burger-menu {
-        position: absolute;
-        z-index: 100;
-        color: white;
-        display: block;
-        visibility: visible;
-        font-size: 40px;
-         left: 43%;
-        top:8rem;
-        
-       
-        
-    }
-
-    .container_header{
-        display: block;
-        
-       /* height: 10rem; */
-       
-       
-      
-    }
-
-    .nav-links{
-        
-        display: none;
-        width: 70%;
-        height: auto;
-        margin-left: 2.1rem;
-        margin-top: 7rem;
-        
-        
-
-       
-
-    }
-
-    .nav-links .user{
-        margin-left: -1rem;
-       
-    }
-    .menu_accueil, .menu_service, .monMail, .deconnecter, .contacte{
-       
-        margin-top: 2rem;
-        margin-left: 7rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-        width: 10rem;
-         
-     
-    }
-    .inscrir{
-        margin-top: 0.5rem;
-        margin-left: 0rem;
-    }
-    .menu_accueil #accueil, .menu_service #service, .monMail a, .inscrir a, .deconnecter a, .contacte a{
-        font-size: 15px;
-    }
-    .sous_accueil, .sous_service{
-        width: 15rem;
-        height: auto;
-        
-        margin-left: 30%;
-        margin-top: -2rem;
-    }
-
-    .sous_accueil li a, .sous_service li a{
-        font-size: 15px;
-        color: white;
-    }
-
-    .menu_accueil li, .menu_service li{
-        width: 100%;
-        margin-left: 2rem;
-       
-    }
-
     
-
-    .logos {
-     
-        font-size: 1.5em;
-        height: 4rem;
-        margin-left: 6rem;
-        width: 4rem;
-        margin-bottom:1rem ;
-        border-radius: 50% ;
-        -webkit-border-radius: 50% ;
-        -moz-border-radius: 50% ;
-        -ms-border-radius: 50% ;
-        -o-border-radius: 50% ;
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--dropdown-bg);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: var(--transition);
+        border-bottom: 1px solid var(--header-border);
     }
-    .logos img{
+    
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .nav-links > div {
         width: 100%;
-        margin-left: 6rem;
-        height: auto;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links > div:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a {
+        padding: 1rem 0;
+        justify-content: space-between;
+    }
+    
+    .sous_accueil,
+    .sous_service {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding-left: 1rem;
+        display: none;
+    }
+    
+    .menu_accueil:hover .sous_accueil,
+    .menu_service:hover .sous_service {
+        display: block;
+    }
+    
+    .user-section {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
-     
+
+@media (max-width: 480px) {
+    .container_header {
+        height: 70px;
+        padding: 0 5%;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+    
+    .nav-links {
+        top: 70px;
+    }
+}
+
+/* Animation d'entrée */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container_header {
+    animation: slideDown 0.6s ease-out;
+}
+
+/* Indicateur de page active */
+.nav-links a[href*="{{ path('app_home') }}"]:not(.sous_accueil a),
+.nav-links a[href*="{{ path('app_contact') }}"] {
+    color: var(--text-gold);
+}
+
+.nav-links a[href*="{{ path('app_home') }}"]:not(.sous_accueil a)::after,
+.nav-links a[href*="{{ path('app_contact') }}"]::after {
+    width: 100%;
 }
